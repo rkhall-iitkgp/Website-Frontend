@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Sen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Sen&display=swap');
 
 .aboutUs{
     background: #F4F0F8;
@@ -36,17 +38,21 @@
     width: 45%;
     margin: 5%;
     text-align: left;
+    margin-right: 0;
+    padding-right: 0;
     margin-bottom: 0;
 }
 .content1 .part1{
     font-family: 'Sen';
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 23px;
     /* line-height: 48px; */
     /* or 133% */
 
     letter-spacing: -2px;
+    margin-right: 0;
+    padding-right: 0;
 
     /* Black */
     color: #232536;
@@ -62,7 +68,7 @@
     font-family: 'Sen';
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 23px;
     line-height: 40px;
     /* or 143% */
 
@@ -91,7 +97,7 @@
     font-size: 14px;
     line-height: 28px;
     /* or 175% */
-
+    width: 45%;
 
     /* Medium grey */
 
@@ -110,7 +116,7 @@
     font-size: 14px;
     line-height: 28px;
     /* or 175% */
-
+    width: 50%;
 
     /* Medium grey */
     color: #6D6E76;
@@ -153,7 +159,7 @@
     font-family: 'Sen';
     font-style: normal;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 32px;
     /* identical to box height, or 178% */
 
@@ -166,7 +172,7 @@
 .more p{
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 14px;
     line-height: 20px;
     /* identical to box height, or 125% */

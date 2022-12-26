@@ -91,7 +91,7 @@ function homeAbout() {
 
           <div className="text">
             <p>
-              <br /> A great pLace to learn and ... live
+              <br /> <br /> A great pLace to learn and ... live
             </p>
           </div>
         </div>
