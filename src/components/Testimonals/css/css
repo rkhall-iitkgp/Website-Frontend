@@ -1,1 +1,121 @@
-css files
+.testimonials{
+  background-color: #FBF6EA;
+  margin: 3%;
+  height: 50vh;
+}
+
+.divide{
+  display: flex;
+  flex-direction: row;
+  height: 40vh;
+  padding: 2%;
+}
+
+.left{
+  padding: 3vh;
+  flex: 0 0 40%;
+  border-right: 1px solid #6D6E76;
+}
+
+.right{
+  flex: 0 0 59%;
+
+}
+
+.testimonialsContent1{
+  margin: 3vh;
+}
+
+.first1{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 1.2vw;
+letter-spacing: 0.5vw;
+text-transform: uppercase;
+color: #232536;
+}
+
+.second1{
+margin-top: 2vh;
+font-family: 'Sen';
+font-style: normal;
+font-weight: 700;
+font-size: 3vw;
+line-height: 133%;
+/* identical to box height, or 133% */
+
+letter-spacing: -2px;
+color: #232536;
+}
+
+.third1{
+margin-top: 1vh;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 1.5vw;
+line-height: 175%;
+color: #232536;
+}
+
+.testimonialsContent2{
+  margin: 3vh;
+  transition: transform 400ms ease-in;
+}
+
+.first2{
+font-family: 'Sen';
+font-style: normal;
+font-weight: 700;
+font-size: 1.9vw;
+line-height: 133%;
+color: #232536;
+}
+
+.second2{
+margin-top: 7vh;
+margin-left: 2vw;
+font-family: 'Sen';
+font-style: normal;
+font-weight: 700;
+font-size: 2vw;
+line-height: 133%;
+color: #232536;
+}
+
+.third2{
+margin-left: 2.5vw;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 1.1vw;
+color: #6D6E76;
+}
+
+.rightArrow{
+  float: right;
+  margin-left: 1%;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.icons{
+  margin-top: 2vh;
+  margin-right: 1vw;
+}
+
+image{
+  padding: 2px;
+}
+
+.rightArrow:hover , .leftArrow:hover{
+  background-color: black;
+  cursor: pointer;
+}
+
+.leftArrow{
+  float: right;
+  border-radius: 5px;
+  border: 1px solid black;
+}
