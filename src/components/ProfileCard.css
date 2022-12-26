@@ -1,0 +1,65 @@
+.profile-card {
+    width: 23%; /* set the width of each profile card to 30% */
+    height: 350px;
+    display: inline-block; /* display the profile cards as inline blocks */
+    vertical-align: top; /* align the profile cards to the top of the container */
+    text-align: center;
+    margin: 0 40px 40px 0;
+    padding-top: 30px;
+    background-color: #FBF6EA;
+  }
+  
+  /* add a media query to adjust the layout on smaller screens */
+@media screen and (max-width: 800px) {
+    .profile-card {
+      width: 45%; /* set the width of each profile card to 45% on small screens */
+      text-align: center;
+    }
+  }
+  
+@media screen and (max-width: 600px) {
+    .profile-card {
+      width: 90%; /* set the width of each profile card to 90% on very small screens */
+    }
+  }
+
+.profile-card_info {
+    padding: 0 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+.profile-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+.profile-card h3 {
+    font-size: 20px;
+    margin: 20px 0;
+  }
+  
+.profile-card p {
+    font-size: 16px;
+    color: #666;
+  }
+
+.social-icons {
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  
+a.social {
+    margin: 0 1rem;
+    transition: transform 250ms;
+    display: inline-block;
+    color: #232536;
+  }
+
+a.social:hover {
+  color: #2c2d37c8;
+  }

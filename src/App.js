@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
+import ProfileCard from './components/ProfileCard';
 import './App.css';
 
-function App() {
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='profile-container'>
+      <div className='title'>
+        <h2>Current Office-Bearers</h2>
+      </div>
+      <div className="profile-list">
+        {props.profiles.map(profile => (
+          <ProfileCard
+            key={profile.id}
+            name={profile.name}
+            position={profile.position}
+            imageUrl={profile.imageUrl}
+            twitterUrl={profile.twitterUrl}
+            facebookUrl={profile.facebookUrl}
+            instagramUrl={profile.instagramUrl}
+            linkedinUrl={profile.linkedinUrl}
+          />
+        ))}
+      </div>
     </div>
   );
 }
