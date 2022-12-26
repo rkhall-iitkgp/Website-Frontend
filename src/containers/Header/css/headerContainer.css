@@ -1,0 +1,150 @@
+.header{
+                position: relative;
+                background-image: url("https://s3-alpha-sig.figma.com/img/0a51/97ff/021ee9948564ec64eb93fb8d8fbcc689?Expires=1672617600&Signature=MLLVcQ1VynbA~mj4Gu-tt1uhsAVC8bMQPWLwmO8BWZWstfPrGlG0lPr5L5TaB7zaJvHHl3l9N9N5UB7A5WNftMDIRSbqrE~UrZYulDzHb35WMbO74sNdm1-bLCJPgit2Dxgxn3d~3h~1DnRtX6sqZBz73oHmA7pb-vvyCCpWKzW3xmfwslzZqn~2iCxhCuLbzWjAJqZpZtY4FzFtVZcQ7BjLz1LRrCcrTBiKKMHP~AlkioQxF2LTx6Kn0RvgAm9c~GYVG9aBdQsuvnDhq-qeeMean3FdZkQgzNL0OeS6DKO~-D92v0Pa1mSpQ~EJ7FHD3zVH58i2nvXa3~NnztYS2g__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"); 
+                height: 60vw;
+                top:-10vw;
+                width:100%;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                right: 0px;
+                margin:0;
+            }
+            .hallName{
+            position: absolute;
+            width: 60vw;
+            height: 128px;
+            top: 24%;
+            left: 8%;
+            font-family: 'Sen';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 4rem;
+            line-height: 0.9;
+            letter-spacing: -2px;
+            color: #6D6E76;
+            }
+            @media (max-width:1000px) {
+                .hallName{
+                    font-size: 2.5rem;
+                }
+            }
+            @media (max-width:600px) {
+                .hallName{
+                    top: 20%;
+                    font-size: 2.25rem;
+                }
+            }
+            @media (max-width:450px) {
+                .hallName{
+                    left: 6%;
+                    top: 20%;
+                    font-size: 1.65rem;
+                }
+            }
+            .hallDescription{
+                position: absolute;
+                height: 112px;
+                left: 8%;
+                top: 60%;
+                font-family: 'Inika';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 1rem;
+                line-height: 1.4;
+                color: #FFFFFF;
+                max-width: 32vw;
+            }
+            @media (min-width: 1500px) {
+                .hallDescription{
+                    font-size: 1.2rem;
+                }
+            }
+            @media (max-width: 900px) {
+                .hallDescription{
+                    top: 56%;
+                    max-width: 32vw;
+                    font-size: 14px;
+                    line-height: 1.2;
+                }
+            }
+            @media (max-width: 600px) {
+                .hallDescription{
+                    top: 56%;
+                    max-width: 38vw;
+                    font-size: 12px;
+                    line-height: 1;
+                }
+            }
+            @media (max-width: 450px) {
+                .hallDescription{
+                    left:6%;
+                    top: 56%;
+                    max-width: 34vw;
+                    font-size: 9px;
+                    line-height: 1;
+                }
+            }
+            @media (max-width: 350px) {
+                .hallDescription{
+                    left:6%;
+                    top: 54%;
+                    max-width: 42vw;
+                    font-size: 9px;
+                    line-height: 0.8;
+                }
+            }
+            .headerReadMore{
+                padding: 0px;
+                flex-direction: row;
+                text-align: center;
+                font-size: 1rem;
+                position: absolute;
+                width: 200px;
+                height: 50px;
+                max-height: 54px;
+                left: 8%;
+                top: 84%;
+                background: #FFD050;
+            }
+            @media (max-width: 900px) {
+                .headerReadMore{
+                    width: 120px;
+                    height: 44px;
+                    font-size: 14px;
+                }
+            }
+            @media (max-width: 600px) {
+                .headerReadMore{
+                    width: 100px;
+                    height: 32px;
+                    font-size: 12px;
+                }
+            }
+            @media (max-width: 450px) {
+                .headerReadMore{
+                    left: 6%;
+                    width: 80px;
+                    height: 24px;
+                    font-size: 11px;
+                }
+            }
+            @media (max-width: 400px) {
+                .headerReadMore{
+                    left: 6%;
+                    width: 80px;
+                    height: 24px;
+                    font-size: 10px;
+                }
+            }
+            @media (max-width: 370px) {
+                .headerReadMore{
+                    left: 6%;
+                    width: 80px;
+                    height: 20px;
+                    top:86%;
+                    font-size: 10px;
+                }
+            }
+            .headerReadMore:hover{
+                cursor: pointer;
+            }
