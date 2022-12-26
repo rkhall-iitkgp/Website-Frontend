@@ -1,6 +1,7 @@
 /*
 sen
 */
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;400&family=Sen:wght@400;700;800&display=swap");
 
 .gallery-out-box {
   display: flex;
@@ -44,6 +45,7 @@ sen
 
   color: #232536;
 }
+
 .gallery-left > .content {
   box-sizing: border-box;
   margin: 0;
@@ -53,6 +55,7 @@ sen
   /* Medium grey */
 
   border: 1px solid #6d6e76;
+  border-radius: 5px;
 }
 .gallery-left > .content > img {
   width: 90%;
@@ -63,6 +66,8 @@ sen
 }
 
 .gallery-left > .content > h4 {
+  /* Festival for you, Tradition for us. */
+
   /* Heading H4 */
 
   font-family: "Sen";
@@ -70,7 +75,7 @@ sen
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
-  width: 26%;
+  width: 30%;
   /* or 133% */
 
   display: flex;
@@ -78,6 +83,7 @@ sen
   text-align: right;
   margin-block-end: 0.5em;
   margin-block-start: 0em;
+
 
   /* Black */
 
@@ -88,13 +94,13 @@ sen
 
 .gallery-left .text {
   width: 52%;
-  height: 168px;
+  height: 22.3%;
   position: relative;
   left: 6%;
 
   /* Body 1 */
 
-  font-family: "Inter";
+  font-family: "Inter Tight";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -109,22 +115,24 @@ sen
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 16px 48px;
+  padding: 2% 5%;
   gap: 12px;
   border: 0;
 
   position: relative;
-  width: 204px;
-  height: 56px;
+  /* width: 204px; */
+  width: 26%;
+  height: 7.4%;
   left: 69%;
-  bottom: 40px;
+  bottom: 5.5%;
 
   /* Yellow */
 
   background: #ffd050;
 }
 .gallery-out-box button > .text {
-  width: 108px;
+  /* Read More > */
+  width: 120px;
   height: 24px;
 
   font-family: "Sen";
@@ -152,12 +160,15 @@ sen
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: calc(100% - 3.6em);
 }
 .gallery-right > .content > img {
   width: 100%;
   height: 180px;
   /* padding: 10px 0; */
-  margin: 5px 0;
+  margin: 2px 0;
+  /* no stretch  */
+
   border-radius: 10px;
 }
 
@@ -178,7 +189,7 @@ sen
 
   /* Body 1 */
 
-  font-family: "Inter";
+  font-family: "Inter Tight";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -188,4 +199,27 @@ sen
   /* Purple */
 
   color: #592ea9;
+}
+
+label {
+  /* ILLUMINATION l 2016 */
+
+  position: relative;
+  width: 151px;
+  height: 20px;
+  left: 78.5%;
+  top: -30px;
+
+  /* Label 01 */
+
+  font-family: "Inter Tight";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  /* Dark Grey */
+
+  color: #4c4c4c;
 }
