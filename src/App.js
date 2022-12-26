@@ -1,9 +1,10 @@
-import './App.css';
+import "./App.css";
+import Gallery from "./components/Home_Gallery/galleryHome.js";
 
 function App() {
   return (
     <div className="App">
-      Hey There!
+      <Gallery></Gallery>
     </div>
   );
 }
