@@ -30,7 +30,7 @@ function Footer() {
                 name="email"
                 placeholder="Your email address"
               />
-              <button className="submit">Subscribe</button>
+              <button type="submit" className="submit">Subscribe</button>
             </Box>
           </Grid>
 

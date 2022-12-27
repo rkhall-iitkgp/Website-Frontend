@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Margarine&family=Montserrat:wght@500;600;700&family=Sen:wght@700&display=swap');
 
-@font-face{
+@font-face {
   font-family: myFont;
   src: url(./trade-gothic-lt-std-extended_JmcsL/myFont/Trade\ Gothic\ LT\ Std\ Extended.otf);
 }
@@ -11,12 +11,13 @@
   box-sizing: border-box;
 }
 
-.footer{
+.footer {
   border-radius: 20px 20px 0 0;
-  position: absolute;
-  bottom: 0;
+  /* position: absolute;
+  bottom: 0; */
   width: 100%;
   z-index: 1;
+  margin-top: 50px;
 }
 
 .query {
@@ -33,7 +34,7 @@
   position: relative;
 }
 
-.query .emailsubmit{
+.query .emailsubmit {
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 1rem;
@@ -41,14 +42,6 @@
   margin: auto;
   padding-bottom: 25px;
   max-width: 500px;
-}
-
-.submit:hover{
-  background-color: #8DD3BB;
-}
-
-.query:nth-child(1){
-  align-items: center;
 }
 
 .query .email {
@@ -92,7 +85,13 @@
   order: 0;
   align-self: stretch;
   flex-grow: 1;
+  transition: ease 0.3s;
+  border: 0px;
+}
 
+.query .submit:hover{
+  background-color: #204e3e;
+  transition: ease 0.3s;
 }
 
 .query p {
@@ -107,7 +106,7 @@
   color: #112211;
 }
 
-.social-links{
+.social-links {
   padding: 1rem;
   display: flex;
   margin: auto;
@@ -115,17 +114,17 @@
   width: 100%;
 }
 
-.social-icons{
+.social-icons {
   width: 24px;
   height: 24px;
 }
 
-.image img{
+.image img {
   width: 350px;
   margin-bottom: -4px;
 }
 
-.lowerfooter{
+.lowerfooter {
   padding: 30px;
 }
 
@@ -171,13 +170,16 @@
 
 
 @media screen and (min-width: 900px) {
-  .query{
+  .query {
     transform: translateY(-50%);
   }
-  .footer{
+
+  .footer {
     border-radius: 0;
+    margin-top: 185px;
   }
-  .lowerfooter{
-margin-top: -135px;
+
+  .lowerfooter {
+    margin-top: -135px;
   }
 }
