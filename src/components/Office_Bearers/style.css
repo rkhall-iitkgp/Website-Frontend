@@ -1,0 +1,12 @@
+.profile-container {
+  text-align: center;
+  text-justify: center;
+}
+
+.title {
+  text-align: center;
+  font-family: 'Sen', sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  padding-bottom: 50px;
+}
