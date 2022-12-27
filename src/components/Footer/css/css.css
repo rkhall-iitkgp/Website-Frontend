@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Montserrat:wght@500;700&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Margarine&family=Montserrat:wght@500;600;700&family=Sen:wght@700&display=swap');
+
+@font-face{
+  font-family: myFont;
+  src: url(./trade-gothic-lt-std-extended_JmcsL/myFont/Trade\ Gothic\ LT\ Std\ Extended.otf);
+}
 
 * {
   margin: 0;
@@ -6,37 +11,44 @@
   box-sizing: border-box;
 }
 
+.footer{
+  border-radius: 20px 20px 0 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
+
 .query {
   display: flex;
   flex-direction: row;
   /* gap: 1rem; */
   margin: auto;
-  max-width: 800px;
+  max-width: 930px;
+
   justify-content: space-around;
   align-items: center;
   background-color: #CDEAE1;
   border-radius: 18px;
-  margin-bottom: -50px;
-  z-index: 99;
   position: relative;
 }
 
-.lowerfooter{
-  padding-top: 75px;
-  z-index: 98;
-  padding-bottom: 24px;
-}
-
 .query .emailsubmit{
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
   gap: 1rem;
-  justify-content: center;
-  margin: 10px;
+  justify-content: space-around;
+  margin: auto;
+  padding-bottom: 25px;
+  max-width: 500px;
 }
 
 .submit:hover{
   background-color: #8DD3BB;
+}
+
+.query:nth-child(1){
+  align-items: center;
 }
 
 .query .email {
@@ -46,7 +58,7 @@
   padding: 0px;
   gap: 10px;
   height: 56px;
-
+  font-family: 'Montserrat', sans-serif;
   background: #FFFFFF;
   border-radius: 4px;
 
@@ -54,6 +66,9 @@
   order: 0;
   align-self: stretch;
   flex-grow: 0;
+
+  border: none;
+  padding: 20px;
 }
 
 .query .submit {
@@ -63,12 +78,15 @@
   align-items: center;
   padding: 8px 16px;
   gap: 4px;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
 
-  width: 104px;
+  /* width: 104px; */
   height: 56px;
 
   background: #112211;
   border-radius: 4px;
+  color: #FFFFFF;
 
   flex: none;
   order: 0;
@@ -78,18 +96,43 @@
 }
 
 .query p {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Sen', sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 48px;
   letter-spacing: -2px;
   text-align: left;
-  margin: 24px;
+  margin: 15px;
+  text-align: center;
+  color: #112211;
+}
+
+.social-links{
+  padding: 1rem;
+  display: flex;
+  margin: auto;
+  max-width: 300px;
+  width: 100%;
+}
+
+.social-icons{
+  width: 24px;
+  height: 24px;
+}
+
+.image img{
+  width: 350px;
+  margin-bottom: -4px;
+}
+
+.lowerfooter{
+  padding: 30px;
 }
 
 .logo {
-  font-family: 'Gloria Hallelujah', cursive;
+  font-family: 'Margarine', cursive;
   font-size: 30px;
+  margin-top: 20px;
 }
 
 .social-icons {
@@ -98,12 +141,13 @@
 }
 
 .footer-subhead {
-  font-family: 'Montserrat', sans-serif;
+  font-family: myfont;
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
+  margin-top: 20px;
 }
 
 .footer-sublink {
@@ -123,4 +167,17 @@
 .footer-subhead,
 .footer-sublink {
   text-align: center;
+}
+
+
+@media screen and (min-width: 900px) {
+  .query{
+    transform: translateY(-50%);
+  }
+  .footer{
+    border-radius: 0;
+  }
+  .lowerfooter{
+margin-top: -135px;
+  }
 }
