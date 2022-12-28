@@ -1,4 +1,9 @@
-function Testimonals() {
+import React from 'react';
+import './css/testimonials.css';
+import leftarrow from './images/left-arrow.jpg';
+import rightarrow from './images/next.jpg';
+
+function Testimonials() {
     return (
         <>
             <div>
@@ -55,10 +60,10 @@ function Testimonals() {
         </div>
             <div className="icons">
               <button className="rightArrow">
-                <img src="next.jpg" alt="" className="image" />
+                <img src={rightarrow} alt="" className="image" />
               </button>
               <button className="leftArrow">
-              <img src="left-arrow.jpg" alt="" className="image"  />
+              <img src={leftarrow} alt="" className="image"  />
               </button>
             </div>
           </div>
@@ -70,4 +75,4 @@ function Testimonals() {
     )
 }
 
-export default Testimonals;
+export default Testimonials;
