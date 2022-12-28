@@ -3,6 +3,7 @@ import Navbar from './components/Navbar/Navbar';
 import Header from './containers/Header/headerContainer';
 import GalleryHome from './components/Home_Gallery/galleryHome';
 import AboutUs from "./components/Home_About/About";
+import Footer from "./components/Footer/Footer"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <GalleryHome />
       <AboutUs />
+      <Footer />
     </div>
   );
 }

@@ -10,7 +10,7 @@ export default function ButtonAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
         <CssBaseline/>
-      <AppBar position="static" style={{ background: '#2E3B55' }}>
+      <AppBar position="static" style={{ background: '#232536' }}>
         <Toolbar>
           <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} >
             R K H
