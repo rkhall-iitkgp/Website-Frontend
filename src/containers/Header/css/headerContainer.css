@@ -1,43 +1,84 @@
 .header{
                 position: relative;
-                background-image: url("https://s3-alpha-sig.figma.com/img/0a51/97ff/021ee9948564ec64eb93fb8d8fbcc689?Expires=1672617600&Signature=MLLVcQ1VynbA~mj4Gu-tt1uhsAVC8bMQPWLwmO8BWZWstfPrGlG0lPr5L5TaB7zaJvHHl3l9N9N5UB7A5WNftMDIRSbqrE~UrZYulDzHb35WMbO74sNdm1-bLCJPgit2Dxgxn3d~3h~1DnRtX6sqZBz73oHmA7pb-vvyCCpWKzW3xmfwslzZqn~2iCxhCuLbzWjAJqZpZtY4FzFtVZcQ7BjLz1LRrCcrTBiKKMHP~AlkioQxF2LTx6Kn0RvgAm9c~GYVG9aBdQsuvnDhq-qeeMean3FdZkQgzNL0OeS6DKO~-D92v0Pa1mSpQ~EJ7FHD3zVH58i2nvXa3~NnztYS2g__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"); 
-                height: 60vw;
-                top:-10vw;
+                background-image: url("https://s3-alpha-sig.figma.com/img/0a51/97ff/021ee9948564ec64eb93fb8d8fbcc689?Expires=1673222400&Signature=BV38zEBRf7XBEcx3FYBkQ5ZuwmEBmDLCQj~ei16tXQNnatybZUbMryB1WXJ6ixi2NfXgWP43-XDock6XDymf8liVOYmR3QN19XpFuFHSoizFvwrfaO7OvikFTWyYC~TQx9mjXtrUr2txbJHBDp8nU4yX8PHfZYqODqPLWM2VsCgJ8WFpcBHzpWjIQdQBMs~IdoB9KyTooWquUR6-J~DtKpzqlW0aD4AUf2LUdLxkPJYDfVnTF3ljjOCEB4JdDywa-wiyshurEFZ03NGH2Y441Tt07nFoHBId5Xn9CCI0SecfZH2e5V5iZP6bZIdDZVLQWcAZF8EMsdr0WJdlDFRk4g__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"); 
+                height: 80vh;
                 width:100%;
-                background-size: 100% 100%;
                 background-repeat: no-repeat;
+                background-position: right 50% bottom 30%;
+                background-size: cover;
                 right: 0px;
                 margin:0;
+            }
+            @media (max-aspect-ratio: 3/2) {
+                .header{
+                    height: 66vh;
+                    background-position: right 50% bottom 20%;
+                }
+            }
+            @media (max-aspect-ratio: 1/1) {
+                .header{
+                    height: 50vh;
+                }
             }
             .hallName{
             position: absolute;
             width: 60vw;
-            height: 128px;
-            top: 24%;
+            top: 5vw;
             left: 8%;
             font-family: 'Sen';
             font-style: normal;
             font-weight: 700;
-            font-size: 4rem;
+            font-size: 4.5rem;
             line-height: 0.9;
             letter-spacing: -2px;
             color: #6D6E76;
             }
-            @media (max-width:1000px) {
+            
+            
+            @media (min-aspect-ratio: 5/4) {
+                .hallName{
+                    top: 6vh;
+                }
+            }
+            @media (min-aspect-ratio: 3/2) {
+                .hallName{
+                    top: 6vh;
+                }
+            }
+            @media (max-aspect-ratio: 5/4) {
+                .hallName{
+                    top: 8vh;
+                    width: 65vw;
+                }
+            }
+            @media (max-aspect-ratio: 5/4) and (max-width: 600px) {
+                .hallName{
+                    top: 15vh;
+                }
+            }
+            @media (max-aspect-ratio: 1/1) {
+                .hallName{
+                    top: 15vh;
+                }
+            }
+            @media (min-width:1500px) {
+                .hallName{
+                    font-size: 6.0rem;
+                }
+            }
+            @media (max-width:1050px) {
                 .hallName{
                     font-size: 2.5rem;
                 }
             }
             @media (max-width:600px) {
                 .hallName{
-                    top: 20%;
-                    font-size: 2.25rem;
+                    font-size: 1.8rem;
                 }
             }
             @media (max-width:450px) {
                 .hallName{
                     left: 6%;
-                    top: 20%;
                     font-size: 1.65rem;
                 }
             }
@@ -45,41 +86,44 @@
                 position: absolute;
                 height: 112px;
                 left: 8%;
-                top: 60%;
+                top: 50%;
                 font-family: 'Inika';
                 font-style: normal;
                 font-weight: 400;
-                font-size: 1rem;
-                line-height: 1.4;
+                font-size: 1.1rem;
+                line-height: 1.3;
                 color: #FFFFFF;
                 max-width: 32vw;
+                fill:#FFFFFF;
+                -webkit-text-stroke: 0.1px #000000;
             }
+
             @media (min-width: 1500px) {
                 .hallDescription{
-                    font-size: 1.2rem;
+                    font-size: 1.5rem;
                 }
             }
             @media (max-width: 900px) {
                 .hallDescription{
-                    top: 56%;
+                    top: 55%;
                     max-width: 32vw;
-                    font-size: 14px;
+                    font-size: 13px;
                     line-height: 1.2;
                 }
             }
             @media (max-width: 600px) {
                 .hallDescription{
-                    top: 56%;
-                    max-width: 38vw;
-                    font-size: 12px;
+                    top: 60%;
+                    max-width: 34vw;
+                    font-size: 11px;
                     line-height: 1;
                 }
             }
             @media (max-width: 450px) {
                 .hallDescription{
                     left:6%;
-                    top: 56%;
-                    max-width: 34vw;
+                    top: 64%;
+                    max-width: 33vw;
                     font-size: 9px;
                     line-height: 1;
                 }
@@ -87,7 +131,7 @@
             @media (max-width: 350px) {
                 .hallDescription{
                     left:6%;
-                    top: 54%;
+                    top: 64%;
                     max-width: 42vw;
                     font-size: 9px;
                     line-height: 0.8;
@@ -99,6 +143,7 @@
                 text-align: center;
                 font-size: 1rem;
                 position: absolute;
+                font-family: 'Sen';
                 width: 200px;
                 height: 50px;
                 max-height: 54px;
@@ -109,20 +154,23 @@
             @media (max-width: 900px) {
                 .headerReadMore{
                     width: 120px;
-                    height: 44px;
+                    top:87%;
+                    height: 32px;
                     font-size: 14px;
                 }
             }
             @media (max-width: 600px) {
                 .headerReadMore{
                     width: 100px;
-                    height: 32px;
-                    font-size: 12px;
+                    top:86%;
+                    height: 26px;
+                    font-size: 10px;
                 }
             }
             @media (max-width: 450px) {
                 .headerReadMore{
                     left: 6%;
+                    top:88%;
                     width: 80px;
                     height: 24px;
                     font-size: 11px;
@@ -140,8 +188,8 @@
                 .headerReadMore{
                     left: 6%;
                     width: 80px;
-                    height: 20px;
-                    top:86%;
+                    height: 18px;
+                    top:91%;
                     font-size: 10px;
                 }
             }
