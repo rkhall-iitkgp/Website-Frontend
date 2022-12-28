@@ -6,7 +6,7 @@ import AboutUs from "./components/Home_About/About";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Navbar />
       <Header />
       <GalleryHome />
