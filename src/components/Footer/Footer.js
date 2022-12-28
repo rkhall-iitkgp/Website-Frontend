@@ -10,8 +10,8 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
+// import Button from "@mui/material/Button";
+// import TextField from "@mui/material/TextField";
 import img from "./mailbox.png";
 
 function Footer() {
@@ -35,7 +35,7 @@ function Footer() {
           </Grid>
 
           <Grid item className="image" xs={12} md={5}>
-            <img src={img} />
+            <img src={img} alt="subs" />
           </Grid>
         </Grid>
 
