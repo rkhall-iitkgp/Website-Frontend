@@ -1,9 +1,9 @@
-function homeGallery() {
-    return (
-        <>
-            homeGallery
-        </>
-    )
+function galleryHome() {
+  return (
+      <>
+        Home Gallery
+      </>
+  );
 }
 
-export default homeGallery;
+export default galleryHome;
