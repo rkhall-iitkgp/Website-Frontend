@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Data } from "./Data";
 import "./css/style.css";
 
-const Testimonals = () => {
+const Testimonials = () => {
   const [current, setCurrent] = useState(0);
   const length = Data.length;
 
@@ -96,4 +96,4 @@ const Testimonals = () => {
   );
 };
 
-export default Testimonals;
+export default Testimonials;
