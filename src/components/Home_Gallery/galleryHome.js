@@ -13,6 +13,7 @@ function galleryHome() {
           <h2>Gallery</h2>
           <div className="content">
             <img src={illu} alt="img" />
+            <label>ILLUMINATION | 2016</label>
             <h4>Festival for you, Tradition for us.</h4>
             <div className="text">
               The Illuminatinon (or ‘illu’) is the IIT Kharagpur way of
@@ -29,7 +30,7 @@ function galleryHome() {
         </div>
         <div className="gallery-right">
           <div className="right-top">
-            <h2>Feature Photos </h2>
+            <h2>Featured Photos </h2>
             <div className="text">View All</div>
           </div>
           <div className="content">
