@@ -10,7 +10,7 @@ const Header = () => {
             </div>
             <div class="headerbutton">
             <a href="/">
-                <button>
+                <button class="headerReadMore">
                     <b>Read More &gt;</b>
                 </button>
             </a>
