@@ -10,8 +10,8 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
+// import Button from "@mui/material/Button";
+// import TextField from "@mui/material/TextField";
 import img from "./mailbox.png";
 
 function Footer() {
@@ -19,9 +19,11 @@ function Footer() {
     <footer>
       <Box bgcolor="#8DD3BB" color="black" className="footer">
         <Grid container className="query">
-          <Grid item xs={12} md={7}>
-            <p>Any Queries?</p>
-            <p>Don't worry, write to us!</p>
+          <Grid item xs={12} md={7} className="querytext">
+            <div>
+              <p>Any Queries?</p>
+              <p>Don't worry, write to us!</p>
+            </div>
             <Box item className="emailsubmit">
               <input
                 className="email"
@@ -30,7 +32,9 @@ function Footer() {
                 name="email"
                 placeholder="Your email address"
               />
-              <button type="submit" className="submit">Subscribe</button>
+              <button type="submit" className="submit">
+                Subscribe
+              </button>
             </Box>
           </Grid>
 
@@ -38,7 +42,6 @@ function Footer() {
             <img src={img} />
           </Grid>
         </Grid>
-
 
         <Container maxwidth="lg" className="lowerfooter">
           <Grid container spacing={0}>
@@ -83,7 +86,7 @@ function Footer() {
                 </Grid>
               </div>
             </Grid>
-            <Grid item xs={12} sm={3}>
+            <Grid item xs={6} sm={3}>
               <Box pb={1} className="footer-subhead">
                 Help
               </Box>
@@ -109,7 +112,7 @@ function Footer() {
               </Box>
             </Grid>
 
-            <Grid item xs={12} sm={3}>
+            <Grid item xs={6} sm={3}>
               <Box pb={1} className="footer-subhead">
                 Help
               </Box>
