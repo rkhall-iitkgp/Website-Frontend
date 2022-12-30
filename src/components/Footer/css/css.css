@@ -19,8 +19,8 @@
   z-index: 1;
 
   border-radius: 0;
-  /* margin-top: 185px; */
-  margin-top: 5%;
+  margin-top: 185px;
+  /* margin-top: 5%; */
 }
 
 .query {
@@ -120,8 +120,9 @@
   padding: 1rem;
   display: flex;
   margin: auto;
-  max-width: 300px;
-  width: 100%;
+  justify-content: center;
+  gap: 12px;
+  max-width: 100%;
 }
 
 .social-icons {
@@ -137,7 +138,7 @@
 .lowerfooter {
   padding: 30px;
 
-  margin-top: -135px;
+  margin-top: -145px;
 }
 
 .logo {
@@ -205,6 +206,8 @@
 
   .query {
     width: 90% !important;
+    flex-direction: column !important;
+    align-items: center;
   }
 
   .query p {
@@ -222,7 +225,7 @@
   }
 
   .lowerfooter {
-    margin-top: -250px;
+    margin-top: -220px;
   }
 
   .query img {
@@ -230,12 +233,22 @@
     max-width: 300px;
     margin:  20px 20px -4px 20px;
   }
+
+  .submit{
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
 }
 
 @media screen and (max-width:400px) {
   .emailsubmit{
     display: flex !important;
     flex-direction: column;
+    width: 100%;
+  }
+
+  .submit{
     width: 100%;
   }
 
