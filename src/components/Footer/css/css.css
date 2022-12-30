@@ -19,7 +19,8 @@
   z-index: 1;
 
   border-radius: 0;
-  margin-top: 185px;
+  /* margin-top: 185px; */
+  margin-top: 5%;
 }
 
 .query {
