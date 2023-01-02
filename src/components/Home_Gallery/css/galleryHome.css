@@ -3,10 +3,6 @@ sen
 */
 @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;400&family=Sen:wght@400;700;800&display=swap");
 
-* {
-  box-sizing: border-box;
-}
-
 .gallery-out-box {
   display: flex;
   justify-content: center;
@@ -14,14 +10,16 @@ sen
   /* background-color: rgb(188, 118, 25); */
   height: 817px;
   width: 100%;
-  margin: 0 0;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 .galler-box {
   display: flex;
   justify-content: space-between;
-  /* padding: 32px; */
+
+  width: px;
   /* height: 817px; */
-  width: 100%;
+  width: 90%;
   /* left: 80px; */
   /* top: 928px; */
   border-radius: 5px;
@@ -29,13 +27,11 @@ sen
 }
 .gallery-left {
   width: 58%;
-  padding: 20px;
 
   /* border: 1px solid rgba(109, 110, 118, 1); */
 }
 .gallery-right {
   width: 40%;
-  padding: 20px;
   /* border: 1px solid rgba(109, 110, 118, 1); */
 }
 .gallery-out-box h2 {
@@ -45,33 +41,33 @@ sen
   font-size: 36px;
   line-height: 0;
   letter-spacing: -2px;
+  padding-bottom: 15px;
 
   /* Black */
 
   color: #232536;
 }
 
-.gallery-left .content {
+.gallery-left > .content {
   box-sizing: border-box;
   margin: 0;
-  padding: 4.8%;
-
+  margin-top: 5%;
   height: calc(100% - 3.6em);
   opacity: 0.9;
   /* Medium grey */
 
-  border: 1px solid #6d6e76;
+  border: 1px solid #a0a1a9;
   border-radius: 5px;
 }
-.gallery-left .content > img {
-  width: 100%;
-  height: auto;
-  /* margin: 5%; */
+.gallery-left > .content > img {
+  width: 90%;
+  height: 48%;
+  margin: 5%;
   border-radius: 17px;
   /* object-fit: cover; */
 }
 
-.gallery-left .content h4 {
+.gallery-left > .content > h4 {
   /* Festival for you, Tradition for us. */
 
   /* Heading H4 */
@@ -81,14 +77,15 @@ sen
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
-  width: 100%;
+  width: 30%;
   /* or 133% */
 
   display: flex;
   align-items: center;
-  /* text-align: right; */
+  text-align: right;
   margin-block-end: 0.5em;
   margin-block-start: 0em;
+
 
   /* Black */
 
@@ -97,15 +94,11 @@ sen
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.gallery-left .content-text {
-  height: auto;
-}
-
 .gallery-left .text {
-  width: 100%;
-  /* height: 100%; */
-  /* position: relative; */
-  /* left: 6%; */
+  width: 52%;
+  height: 22.3%;
+  position: relative;
+  left: 6%;
 
   /* Body 1 */
 
@@ -115,7 +108,7 @@ sen
   font-size: 16px;
   line-height: 28px;
   /* or 175% */
-  margin: 8% 0;
+
   /* Medium grey */
 
   color: #6d6e76;
@@ -129,43 +122,19 @@ sen
   border: 0;
 
   position: relative;
-  width: 100%;
-  height: 100%;
-  /* left: 69%;
-  bottom: 5.5%; */
-  justify-content: center;
-  align-items: center;
+  /* width: 204px; */
+  width: 26%;
+  height: 7.4%;
+  left: 69%;
+  bottom: 5.5%;
+
+  /* Yellow */
 
   background: #ffd050;
 }
-
-label {
-  /* ILLUMINATION l 2016 */
-
-  /* position: relative; */
-  width: 151px;
-  height: 20px;
-  /* left: 78.5%; */
-  /* top: -30px; */
-
-  /* Label 01 */
-
-  font-family: "Inter Tight";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 20px;
-  text-align: right;
-  /* identical to box height, or 143% */
-
-  /* Dark Grey */
-
-  color: #4c4c4c;
-}
-
 .gallery-out-box button > .text {
   /* Read More > */
-  /* width: 120px; */
+  width: 120px;
   height: 24px;
 
   font-family: "Sen";
@@ -176,7 +145,6 @@ label {
   /* identical to box height, or 133% */
 
   display: flex;
-  justify-content: center;
   align-items: center;
 
   /* Black */
@@ -195,10 +163,11 @@ label {
   flex-direction: column;
   justify-content: space-between;
   height: calc(100% - 3.6em);
+  margin-top: 5%;
 }
 .gallery-right > .content > img {
   width: 100%;
-  height: auto;
+  height: 180px;
   /* padding: 10px 0; */
   margin: 2px 0;
   /* no stretch  */
@@ -235,37 +204,25 @@ label {
   color: #592ea9;
 }
 
-@media screen and (max-width: 900px) {
-  .gallery-out-box h2 {
-    font-size: 30px;
-  }
+label {
+  /* ILLUMINATION l 2016 */
 
-  .gallery-left .content {
-    padding: 25px;
-  }
+  position: relative;
+  width: 151px;
+  height: 20px;
+  left: 78.5%;
+  top: -30px;
 
-  .gallery-left .content h4 {
-    font-size: 20px;
-    line-height: 28px;
-  }
+  /* Label 01 */
 
-  .gallery-left .text {
-    
-    font-size: 12px;
-    line-height: 13px;
-    /* or 175% */
-   
-  }
-  
-  label{
-    font-size: 10px;
-    /* line-height: 13px; */
-  }
-
-  .gallery-out-box button > .text {
-  /* Read More > */
-  /* width: 120px; */
+  font-family: "Inter Tight";
+  font-style: normal;
+  font-weight: 700;
   font-size: 14px;
-}
+  line-height: 20px;
+  /* identical to box height, or 143% */
 
+  /* Dark Grey */
+
+  color: #4c4c4c;
 }

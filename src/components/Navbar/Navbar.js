@@ -25,5 +25,3 @@ export default function ButtonAppBar() {
     </Box>
   );
 }
-
-export default Navbar;
