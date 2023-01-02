@@ -1,0 +1,228 @@
+/*
+sen
+*/
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;400&family=Sen:wght@400;700;800&display=swap");
+
+.gallery-out-box {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* background-color: rgb(188, 118, 25); */
+  height: 817px;
+  width: 100%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.galler-box {
+  display: flex;
+  justify-content: space-between;
+
+  width: px;
+  /* height: 817px; */
+  width: 90%;
+  /* left: 80px; */
+  /* top: 928px; */
+  border-radius: 5px;
+  /* border: 1px solid rgba(109, 110, 118, 1); */
+}
+.gallery-left {
+  width: 58%;
+
+  /* border: 1px solid rgba(109, 110, 118, 1); */
+}
+.gallery-right {
+  width: 40%;
+  /* border: 1px solid rgba(109, 110, 118, 1); */
+}
+.gallery-out-box h2 {
+  font-family: "Sen";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 0;
+  letter-spacing: -2px;
+  padding-bottom: 15px;
+
+  /* Black */
+
+  color: #232536;
+}
+
+.gallery-left > .content {
+  box-sizing: border-box;
+  margin: 0;
+  margin-top: 5%;
+  height: calc(100% - 3.6em);
+  opacity: 0.9;
+  /* Medium grey */
+
+  border: 1px solid #a0a1a9;
+  border-radius: 5px;
+}
+.gallery-left > .content > img {
+  width: 90%;
+  height: 48%;
+  margin: 5%;
+  border-radius: 17px;
+  /* object-fit: cover; */
+}
+
+.gallery-left > .content > h4 {
+  /* Festival for you, Tradition for us. */
+
+  /* Heading H4 */
+
+  font-family: "Sen";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  width: 30%;
+  /* or 133% */
+
+  display: flex;
+  align-items: center;
+  text-align: right;
+  margin-block-end: 0.5em;
+  margin-block-start: 0em;
+
+
+  /* Black */
+
+  color: #232536;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.gallery-left .text {
+  width: 52%;
+  height: 22.3%;
+  position: relative;
+  left: 6%;
+
+  /* Body 1 */
+
+  font-family: "Inter Tight";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  /* or 175% */
+
+  /* Medium grey */
+
+  color: #6d6e76;
+}
+.gallery-out-box button {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 2% 5%;
+  gap: 12px;
+  border: 0;
+
+  position: relative;
+  /* width: 204px; */
+  width: 26%;
+  height: 7.4%;
+  left: 69%;
+  bottom: 5.5%;
+
+  /* Yellow */
+
+  background: #ffd050;
+}
+.gallery-out-box button > .text {
+  /* Read More > */
+  width: 120px;
+  height: 24px;
+
+  font-family: "Sen";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  /* identical to box height, or 133% */
+
+  display: flex;
+  align-items: center;
+
+  /* Black */
+
+  color: #232536;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.gallery-right > .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 3.6em);
+  margin-top: 5%;
+}
+.gallery-right > .content > img {
+  width: 100%;
+  height: 180px;
+  /* padding: 10px 0; */
+  margin: 2px 0;
+  /* no stretch  */
+
+  border-radius: 10px;
+}
+
+.right-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.right-top > .text {
+  /* View All */
+
+  /* position: absolute; */
+  width: 60px;
+  height: 28px;
+  /* right: 80px;
+  top: 939px; */
+
+  /* Body 1 */
+
+  font-family: "Inter Tight";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  /* identical to box height, or 175% */
+
+  /* Purple */
+
+  color: #592ea9;
+}
+
+label {
+  /* ILLUMINATION l 2016 */
+
+  position: relative;
+  width: 151px;
+  height: 20px;
+  left: 78.5%;
+  top: -30px;
+
+  /* Label 01 */
+
+  font-family: "Inter Tight";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  /* Dark Grey */
+
+  color: #4c4c4c;
+}
