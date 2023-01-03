@@ -14,7 +14,10 @@ function galleryHome() {
           <div className="content">
             <img src={illu} alt="img" />
             <label>ILLUMINATION | 2016</label>
-            <h4>Festival for you, Tradition for us.</h4>
+            <div className="quote">
+              <h4>Festival for you,</h4>
+              <h4>Tradition for us.</h4>
+            </div>
             <div className="text">
               The Illuminatinon (or ‘illu’) is the IIT Kharagpur way of
               celebrating Diwali. This unique culture is celebrated by students
