@@ -9,9 +9,12 @@
     margin-right: 4%;
 }
 
+.about_type3, .about_type2{
+    display: none;
+}
+
 .heading{
     /* Cap 1 */
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -219,3 +222,80 @@
     height: 2px;
     width: auto;
 } */
+
+@media only screen and (max-width: 500px){
+    .aboutUs {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .design {
+        margin: 0;
+        margin-bottom: 0;
+    }
+
+    .heading{
+        padding-top: 15%;
+        padding-bottom: 5%;
+        padding-left: 1%;
+    }
+
+    .design .d1 {
+        background: #ffffff;
+        color: #ffffff;
+        width: 20%;
+    }
+    .design .d2 {
+        background: #FFD050;
+        width: 80%;
+        color: #FFD050;
+    }
+    .design .d3 {
+        background: #592EA9;
+        color: #592EA9;
+        width: 80%;
+    }
+
+    .main-content{
+        width: 100%;
+    }
+    .content1{
+        width: 100%;
+        margin-right: 2%;
+    }
+    .item2 .part1{
+        width: 100%;
+        margin-right: 2%;
+    }
+
+    .content2 {
+        width: 100%;
+        margin-right: 2%;
+    }
+    .item2 .part2 {
+        width: 100%;
+        margin-right: 2%;
+    }
+
+    .more {
+        margin: 5%;
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .more .text {
+        width: 100%;
+        margin-left: 0;
+    }
+    .more .link {
+        width: 100%;
+    }
+
+    /* .content1, .content2, .item2 .part1 p, .item2 .part2 p, .more{
+        margin-left: 5%;
+    } */
+    .about_type1{
+        display: none;
+    }
+    .about_type2, .about_type3{
+        display: block;
+    }
+}
