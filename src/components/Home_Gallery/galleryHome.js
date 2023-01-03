@@ -4,6 +4,8 @@ import img1 from "./1.jpeg";
 import img2 from "./2.jpeg";
 import img3 from "./3.jpeg";
 import img4 from "./4.jpeg";
+import * as React from "react";
+import Grid from "@mui/material/Grid";
 
 function galleryHome() {
   return (
@@ -44,7 +46,25 @@ function galleryHome() {
           </div>
         </div>
       </div>
-      <div></div>
+      {/* <Grid container spacing={2}>
+        <Grid item xs={8} container>
+          <Grid item xs={6}>
+            dddddddddddddddd
+          </Grid>
+          <Grid item xs={6}>
+            dffddddddddddssssssssss
+          </Grid>
+        </Grid>
+        <Grid item xs={4}>
+          ddddddddddddd
+        </Grid>
+        <Grid item xs={4}>
+          dddddddddddddddd
+        </Grid>
+        <Grid item xs={8}>
+          dffddddddddddssssssssss
+        </Grid>
+      </Grid> */}
     </div>
   );
 }

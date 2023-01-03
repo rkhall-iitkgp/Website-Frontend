@@ -39,7 +39,7 @@ function Footer() {
           </Grid>
 
           <Grid item className="image" xs={12} md={5}>
-            <img src={img} />
+            <img src={img} alt="subs" />
           </Grid>
         </Grid>
 
