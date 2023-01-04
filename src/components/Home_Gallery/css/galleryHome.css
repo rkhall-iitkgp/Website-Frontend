@@ -20,13 +20,9 @@ sen
   margin-bottom: 5%;
 }
 .galler-box {
-  /* display: flex;
-  justify-content: space-between; */
-  display: grid;
-  grid-template-columns: 0.6fr 0.4fr;
-  gap: 20px;
-
-  /* width: px; */
+  display: flex;
+  justify-content: space-between;
+  /* padding: 32px; */
   /* height: 817px; */
   width: 90%;
   /* left: 80px; */
@@ -35,11 +31,14 @@ sen
   /* border: 1px solid rgba(109, 110, 118, 1); */
 }
 .gallery-left {
-  /* width: 58%; */
+  width: 58%;
+  padding: 20px;
+
   /* border: 1px solid rgba(109, 110, 118, 1); */
 }
 .gallery-right {
-  /* width: 40%; */
+  width: 40%;
+  padding: 20px;
   /* border: 1px solid rgba(109, 110, 118, 1); */
 }
 .gallery-out-box h2 {
@@ -49,31 +48,29 @@ sen
   font-size: 7.5vmin;
   /* line-height: 0; */
   letter-spacing: -2px;
-  padding-top: 15px;
 
   /* Black */
 
   color: #232536;
 }
 
-.gallery-left > .content {
-  margin-top: 20px;  
-  padding: 3%;
-  height: 750px;
-  /* height: calc(100% - 3.6em); */
-  /* opacity: 0.9; */
+.gallery-left .content {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 4.8%;
+
+  height: calc(100% - 3.6em);
+  opacity: 0.9;
   /* Medium grey */
 
-  border: 1px solid #c5c5c5;
-  border-radius: 10px;
-
-  position: relative;
+  border: 1px solid #6d6e76;
+  border-radius: 5px;
 }
-.gallery-left > .content > img {
+.gallery-left .content > img {
   width: 100%;
-  /* height: 48%; */
+  height: auto;
   /* margin: 5%; */
-  border-radius: 10px;
+  border-radius: 17px;
   /* object-fit: cover; */
 }
 
@@ -82,7 +79,7 @@ sen
   margin-bottom: 20px;
 }
 
-.gallery-left .content h4 {
+.gallery-left > .content > h4 {
   /* Festival for you, Tradition for us. */
 
   /* Heading H4 */
@@ -92,28 +89,29 @@ sen
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
-  width: 50%;
+  width: 100%;
   /* or 133% */
 
   /* display: flex;
   align-items: center;
   text-align: right;
   margin-block-end: 0.5em;
-  margin-block-start: 0em; */
-
-  /* margin-top: 20px;
-  margin-bottom: 20px; */
+  margin-block-start: 0em;
 
   /* Black */
 
   color: #232536;
 
-  text-shadow: -1px 2px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.gallery-left .content-text {
+  height: auto;
 }
 
 .gallery-left .text {
-  width: 50%;
-  /* height: 22.3%; */
+  width: 100%;
+  /* height: 100%; */
   /* position: relative; */
   /* left: 6%; */
 
@@ -138,26 +136,21 @@ sen
   width: 125px;
   height: 50px;
   border: 0;
-  margin-top: 20px;
-  position: absolute;
-  /* width: 204px; */
-  /* width: 26%; */
-  /* height: 7.4%; */
-  /* left: 69%; */
-  right: 3%;
-  bottom: 3%;
-  /* bottom: 5.5%; */
-  border-radius: 5px;
-  /* Yellow */
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* left: 69%;
+  bottom: 5.5%; */
+  justify-content: center;
+  align-items: center;
 
   background: #ffd050;
 }
 .gallery-out-box button > .text {
   /* Read More > */
-  width: 100%;
-  text-align: center;
-  align-items: center;
-  /* height: 24px; */
+  /* width: 120px; */
+  height: 24px;
 
   font-family: "Sen";
   font-style: normal;
@@ -166,8 +159,9 @@ sen
   line-height: 24px;
   /* identical to box height, or 133% */
 
-  /* display: flex;
-  align-items: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   /* Black */
 
@@ -184,8 +178,7 @@ sen
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* height: calc(100% - 3.6em); */
-  margin-top: 20px;
+  height: calc(100% - 3.6em);
 }
 .gallery-right > .content > img {
   width: 100%;
@@ -226,72 +219,37 @@ sen
   color: #592ea9;
 }
 
-label {
-  /* ILLUMINATION l 2016 */
-
-  /* position: absolute; */
-  /* width: 151px;
-  height: 20px; */
-  display: block;
-  text-align: right;
-  /* left: 78.5%;
-  top: -30px; */
-
-  /* Label 01 */
-
-  font-family: "Inter Tight";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 2px;
-  /* identical to box height, or 143% */
-
-  /* Dark Grey */
-
-  color: #4c4c4c;
-}
-
-@media screen and (max-width:1000px) and (min-width:600px){
-  .galler-box{
-    display: flex;
-    flex-direction: column;
+@media screen and (max-width: 900px) {
+  .gallery-out-box h2 {
+    font-size: 30px;
   }
 
-  .gallery-right .content{
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+  .gallery-left .content {
+    padding: 25px;
   }
 
-  .gallery-right .content img{
-    margin: 0;
-  }
-}
-
-@media screen and (max-width:600px){
-  .galler-box{
-    display: flex;
-    flex-direction: column;
+  .gallery-left .content h4 {
+    font-size: 20px;
+    line-height: 28px;
   }
 
-  .gallery-left .text{
-    width: 100%;
-  }
-
-  .gallery-left .content{
-    height: auto;
-  }
-
-  .gallery-left button{
-    position: static;
-    display: block;
-    margin: 10px 0 0 auto;
+  .gallery-left .text {
     
+    font-size: 12px;
+    line-height: 13px;
+    /* or 175% */
+   
+  }
+  
+  label{
+    font-size: 10px;
+    /* line-height: 13px; */
   }
 
-  .gallery-left .content h4{
-    width: 75%;
-  }
+  .gallery-out-box button > .text {
+  /* Read More > */
+  /* width: 120px; */
+  font-size: 14px;
+}
+
 }

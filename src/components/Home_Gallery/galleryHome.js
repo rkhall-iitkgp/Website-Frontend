@@ -6,7 +6,6 @@ import img3 from "./3.jpeg";
 import img4 from "./4.jpeg";
 import * as React from "react";
 import Grid from "@mui/material/Grid";
-import { Link } from "react-router-dom";
 
 function galleryHome() {
   return (
@@ -47,25 +46,7 @@ function galleryHome() {
           </div>
         </div>
       </div>
-      {/* <Grid container spacing={2}>
-        <Grid item xs={8} container>
-          <Grid item xs={6}>
-            dddddddddddddddd
-          </Grid>
-          <Grid item xs={6}>
-            dffddddddddddssssssssss
-          </Grid>
-        </Grid>
-        <Grid item xs={4}>
-          ddddddddddddd
-        </Grid>
-        <Grid item xs={4}>
-          dddddddddddddddd
-        </Grid>
-        <Grid item xs={8}>
-          dffddddddddddssssssssss
-        </Grid>
-      </Grid> */}
+      <div></div>
     </div>
   );
 }
