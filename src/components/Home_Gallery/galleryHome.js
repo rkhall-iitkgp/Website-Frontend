@@ -1,4 +1,5 @@
 import "./css/galleryHome.css";
+import { Link } from "react-router-dom";
 import illu from "./illu.jpeg";
 import img1 from "./1.jpeg";
 import img2 from "./2.jpeg";
