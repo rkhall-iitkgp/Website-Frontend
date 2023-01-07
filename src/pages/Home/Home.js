@@ -6,6 +6,7 @@ import Testimonials from "../../components/Testimonials/Testimonials";
 import ProfileList from "../../components/Office_Bearers/ProfileList";
 import Footer from "../../components/Footer/Footer"
 import './css/Home.css'
+import profiles from '../../components/Office_Bearers/profiles.json';
 
 function Home() {
     return (
@@ -15,9 +16,9 @@ function Home() {
             <GalleryHome />
             <AboutUs />
             <Testimonials />
-            {/* <div className='profile-container'>
-                <ProfileList />
-            </div> */}
+            <div className='profile-container'>
+                <ProfileList profiles={profiles} />
+            </div>
             <Footer />
         </>
     );
