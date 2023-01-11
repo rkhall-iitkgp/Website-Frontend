@@ -1,15 +1,21 @@
-import React from 'react'
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserGroup } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCaretDown
+} from "@fortawesome/free-solid-svg-icons";
 
 const Yearbox = (props) => {
   return (
-    <div className='yearbox'>
-        <FontAwesomeIcon icon={faUserGroup} className='icon' />
+    <>
+      <div
+        onClick={() => props.handleClick(props.year)}
+        className={`yearbox ${props.selected === true ? "active" : ""}`}
+      >
         <span>{props.year}</span>
-    </div>
-    
-  )
-}
+        <FontAwesomeIcon icon={faCaretDown} className="dropdown" />
+      </div>
+    </>
+  );
+};
 
-export default Yearbox
+export default Yearbox;
