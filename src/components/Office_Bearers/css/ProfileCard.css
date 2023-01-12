@@ -3,7 +3,7 @@
 .profile-card {
     position: relative;
     width: 16.5vw; 
-    height: 290px;
+    height: 307px;
     display: inline-block; /* display the profile cards as inline blocks */
     vertical-align: top; /* align the profile cards to the top of the container */
     align-items: center;
@@ -29,7 +29,7 @@
 
 /* profile card info */
 .profile-card_info {
-    padding: 0 20px;
+    padding: 0 20px 20px;
   }
   
 .profile-card img {
@@ -42,7 +42,7 @@
 .profile-card h3 {
     font-family: 'Sen', sans-serif;
     font-size: 23px;
-    height: 37px;
+    height: 49px;
     margin: 20px 0;
   }
   
@@ -50,20 +50,20 @@
     font-size: 18px;
     color: #666;
     font-family: 'Inter', sans-serif;
-    height: 40px;
+    height: 53px;
   }
 
 .social-icons {
-    font-size: 16px;
     text-align: center;
     text-decoration: none;
     border-radius: 50%;
     padding-top: 3px;
+    display: flex;
   }
   
 a.social {
-    margin: 0 1rem;
-    display: inline-block;
+    font-size: 16px;
+    margin: 0 1.1rem;
     color: #232536;
   }
 
