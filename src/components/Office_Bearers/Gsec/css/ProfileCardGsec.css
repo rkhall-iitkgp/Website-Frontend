@@ -3,14 +3,14 @@
 .profile-card {
     position: relative;
     width: 16.5vw; 
-    height: 307px;
+    height: 315px;
     display: inline-block; /* display the profile cards as inline blocks */
     vertical-align: top; /* align the profile cards to the top of the container */
     align-items: center;
     text-align: center;
-    margin: 0 142px 50px 0;
+    margin: 20px 127px 50px 0;
     padding-top: 15px;
-    background-color: #FBF6EA;
+    /*background-color: #dce4e1;*/
   }
   
   /* add a media query to adjust the layout on smaller screens */
@@ -50,7 +50,7 @@
     font-size: 18px;
     color: #666;
     font-family: 'Inter', sans-serif;
-    height: 53px;
+    height: 59px;
   }
 
 .social-icons {

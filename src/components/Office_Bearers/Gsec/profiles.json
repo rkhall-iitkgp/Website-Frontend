@@ -1,55 +1,5 @@
 [
     {
-      "id": 1,
-      "name": "Shailendra Kumar Varshney",
-      "position": "Warden",
-      "imageUrl": "person.png",
-      "twitterUrl": "https://twitter.com/",
-      "facebookUrl": "https://facebook.com/",
-      "instagramUrl": "https://instagram.com",
-      "linkedinUrl": "https://linkedin.com/in/"
-    },
-    {
-      "id": 2,
-      "name": "Md. Saud Afzal",
-      "position": "Assistant Warden",
-      "imageUrl": "person.png",
-      "twitterUrl": "https://twitter.com/",
-      "facebookUrl": "https://facebook.com/",
-      "instagramUrl": "https://instagram.com",
-      "linkedinUrl": "https://linkedin.com/in/"
-    },
-    {
-      "id": 3,
-      "name": "Manish Kaushal",
-      "position": "Assistant Warden",
-      "imageUrl": "person.png",
-      "twitterUrl": "https://twitter.com/",
-      "facebookUrl": "https://facebook.com/",
-      "instagramUrl": "https://instagram.com",
-      "linkedinUrl": "https://linkedin.com/in/"
-    },
-    {
-      "id": 4,
-      "name": "Sahil Katewa",
-      "position": "Hall President",
-      "imageUrl": "person.png",
-      "twitterUrl": "https://twitter.com/",
-      "facebookUrl": "https://facebook.com/",
-      "instagramUrl": "https://instagram.com",
-      "linkedinUrl": "https://linkedin.com/in/"
-    },
-    {
-      "id": 5,
-      "name": "Ankit Suthar",
-      "position": "Second Senate Member",
-      "imageUrl": "person.png",
-      "twitterUrl": "https://twitter.com/",
-      "facebookUrl": "https://facebook.com/",
-      "instagramUrl": "https://instagram.com",
-      "linkedinUrl": "https://linkedin.com/in/"
-    },
-    {
       "id": 6,
       "name": "Pratik Choudhary",
       "position": "General Secretary Social and Cultural",

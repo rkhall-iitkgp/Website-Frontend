@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfileCard from './ProfileCard';
+import ProfileCardHeads from './ProfileCardHeads';
 import './css/style.css';
 
 
@@ -11,7 +11,7 @@ function ProfileList(props) {
       </div>
       <div className="profile-list">
         {props.profiles.map(profile => (
-          <ProfileCard
+          <ProfileCardHeads
             key={profile.id}
             classStyle={profile.classStyle}
             name={profile.name}
