@@ -27,6 +27,10 @@
 // }
 
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 import React from 'react';
 import styled from 'styled-components';
 import Burger from './Burger';

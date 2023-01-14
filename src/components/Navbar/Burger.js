@@ -52,4 +52,8 @@ const Burger = () => {
   )
 }
 
+<<<<<<< Updated upstream
 export default Burger
+=======
+export default Burger
+>>>>>>> Stashed changes
