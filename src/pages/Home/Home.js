@@ -23,7 +23,7 @@ function Home() {
                 <GsecProfileList profiles={gsecprofiles} />
             </div>
             <Footer />
-        </>
+         </>
     );
 }
 
