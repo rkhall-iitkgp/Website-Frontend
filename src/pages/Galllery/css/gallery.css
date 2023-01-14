@@ -275,6 +275,29 @@
     cursor: pointer;
 }
 
+.prev, .next{
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.prev:hover,
+.prev:focus,
+.next:hover,
+.next:focus{
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.imagewithbutton{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+}
+
 .column {
     display: flex;
     flex-direction: column;
@@ -304,10 +327,10 @@
 
 @media screen and (max-width:1200px) {
 
-    body {
+    /* body {
         overflow-y: hidden;
         overflow-x: hidden;
-    }
+    } */
 
     .yearbox {
         display: none;

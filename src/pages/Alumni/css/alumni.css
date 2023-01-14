@@ -116,7 +116,10 @@
 }
 
 .alumnuscard{
+    margin: auto;
+    max-width: 400px;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -135,6 +138,11 @@
     border-radius: 50%;
     margin-top: 10px;
     margin-bottom: 30px;
+}
+
+.namebatch{
+    display: flex;
+    flex-direction: column;
 }
 
 .name{
@@ -162,9 +170,9 @@
     display: flex;
     flex-direction: row;
     gap: 10px;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 20px;
+    /* position: absolute;
+    bottom: 0; */
+    /* margin-bottom: 20px; */
 }
 
 .mobileyears{
@@ -182,10 +190,10 @@
 
 @media screen and (max-width:1350px){
     
-    body{
+    /* body{
         overflow-y: hidden;
         overflow-x: hidden;
-    }
+    } */
 
     .year-box{
         display: none;
@@ -233,7 +241,7 @@
     }
 
     .alumnuscard{
-        height: calc(100vh - 200px);
+        /* min-height: calc(100vh - 200px); */
         max-height: 600px;
     }
 

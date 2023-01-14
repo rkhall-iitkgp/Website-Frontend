@@ -12,8 +12,10 @@ const Alumnus = () => {
   return (
     <div className="alumnuscard">
       <img src={image} className="headshot" />
-      <span className="name">Melon Husk</span>
-      <span className="batch">Batch of 2023</span>
+      <div className="namebatch">
+        <span className="name">Melon Husk</span>
+        <span className="batch">Batch of 2023</span>
+      </div>
       <p className="desc">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
