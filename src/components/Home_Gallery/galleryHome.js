@@ -7,7 +7,7 @@ import img4 from "./4.jpeg";
 
 function galleryHome() {
   return (
-    <div className="gallery-out-box">
+    <div className="gallery-out-box" id="jump-to-gallery">
       <div className="galler-box">
         <div className="gallery-left">
           <h2>Gallery</h2>

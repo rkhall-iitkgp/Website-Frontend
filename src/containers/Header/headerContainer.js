@@ -1,7 +1,7 @@
 import './css/headerContainer.css';
 const Header = () => {
     return (
-        <div class="header">
+        <div class="header" id="jump-to-header">
             <div class="hallName">
                 RADHAKRISHNAN HALL OF RESIDENCE
             </div>

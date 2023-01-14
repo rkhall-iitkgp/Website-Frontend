@@ -4,7 +4,7 @@ import "./css/css.css";
 function homeAbout() {
   return (
     <div>
-      <div className="design">
+      <div className="design" id="jump-to-aboutUs">
         {/* <img src={require("./css/design2.jpg")} alt="" /> */}
 
         <div className="d1">
