@@ -1,0 +1,32 @@
+.profile-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 3vw; */
+  }
+
+.profile-list {
+  margin-left: 7rem;
+}
+
+@media screen and (max-width: 900px) {
+  .profile-list {
+    margin-left: 16vw; 
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .profile-list {
+    margin-left: 22vw; 
+  }
+}
+  
+  .title {
+    text-align: center;
+    font-family: 'Sen', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    padding-bottom: 50px;
+  }
+
+  
