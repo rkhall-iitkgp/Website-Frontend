@@ -15,9 +15,9 @@ function Home() {
             <GalleryHome />
             <AboutUs />
             <Testimonials />
-            <div className='profile-container'>
+            {/* <div className='profile-container'>
                 <ProfileList />
-            </div>
+            </div> */}
             <Footer /> 
         </>
     );
