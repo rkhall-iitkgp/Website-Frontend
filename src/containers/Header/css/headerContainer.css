@@ -1,6 +1,6 @@
 .header{
     position: relative;
-    background-image: url("https://s3-alpha-sig.figma.com/img/0a51/97ff/021ee9948564ec64eb93fb8d8fbcc689?Expires=1673222400&Signature=BV38zEBRf7XBEcx3FYBkQ5ZuwmEBmDLCQj~ei16tXQNnatybZUbMryB1WXJ6ixi2NfXgWP43-XDock6XDymf8liVOYmR3QN19XpFuFHSoizFvwrfaO7OvikFTWyYC~TQx9mjXtrUr2txbJHBDp8nU4yX8PHfZYqODqPLWM2VsCgJ8WFpcBHzpWjIQdQBMs~IdoB9KyTooWquUR6-J~DtKpzqlW0aD4AUf2LUdLxkPJYDfVnTF3ljjOCEB4JdDywa-wiyshurEFZ03NGH2Y441Tt07nFoHBId5Xn9CCI0SecfZH2e5V5iZP6bZIdDZVLQWcAZF8EMsdr0WJdlDFRk4g__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"); 
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(181, 181, 181, 0.3)), url("/public/header.png"); 
     height: 80vh;
     width:100%;
     background-repeat: no-repeat;
@@ -54,7 +54,7 @@ color: #6D6E76;
 }
 @media (max-width:450px) {
     .hallName{
-        left: 6%;
+        left: 5%;
     }
 }
 @media (max-width:300px) {
@@ -98,7 +98,7 @@ color: #6D6E76;
 }
 @media (max-width:350px) {
     .hallDescription{
-        left: 6%;
+        left: 5%;
         font-size: 8px;
     }
 }
@@ -123,10 +123,11 @@ color: #6D6E76;
     font-size: 2.5vh;
     width:20vw;
     background: #FFD050;
+    border: none;
 }
 @media (max-width: 450px) {
     .headerReadMore{
-        left:6%;
+        left:5%;
     }
 }
 @media (max-width: 300px) {
