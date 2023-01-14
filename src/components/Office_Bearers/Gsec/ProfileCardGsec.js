@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/ProfileCardGsec.css';
+// import './css/ProfileCardGsec.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 

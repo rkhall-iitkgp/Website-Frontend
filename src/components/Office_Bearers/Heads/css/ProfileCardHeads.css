@@ -2,9 +2,9 @@
 
 .profile-card {
     position: relative;
+    display: inline-block;
     width: 16.5vw; 
-    height: 307px;
-    display: inline-block; /* display the profile cards as inline blocks */
+    height: 24vw;
     vertical-align: top; /* align the profile cards to the top of the container */
     align-items: center;
     text-align: center;
@@ -12,20 +12,7 @@
     padding-top: 15px;
     background-color: #FBF6EA;
   }
-  
-  /* add a media query to adjust the layout on smaller screens */
-@media screen and (max-width: 800px) {
-    .profile-card {
-      width: 45vw; /* set the width of each profile card to 45% on small screens */
-      text-align: center;
-    }
-  }
-  
-@media screen and (max-width: 600px) {
-    .profile-card {
-      width: 90vw; /* set the width of each profile card to 90% on very small screens */
-    }
-  }
+
 
 /* profile card info */
 .profile-card_info {
@@ -33,40 +20,114 @@
   }
   
 .profile-card img {
-    width: 110px;
-    height: 110px;
+    width: 8vw;
+    height: 8vw;
     border-radius: 50%;
     object-fit: cover;
   }
   
 .profile-card h3 {
     font-family: 'Sen', sans-serif;
-    font-size: 23px;
-    height: 49px;
-    margin: 20px 0;
+    font-size: 1.5vw;
+    height: 3vw;
+    margin: 1.4rem 0;
   }
   
 .profile-card p {
-    font-size: 18px;
+    font-size: 1.17vw;
     color: #666;
     font-family: 'Inter', sans-serif;
-    height: 53px;
+    height: 4.5vw;
   }
 
 .social-icons {
+    display: flex;
     text-align: center;
     text-decoration: none;
     border-radius: 50%;
-    padding-top: 3px;
-    display: flex;
+    padding-top: 0;
+    margin-left: 0.6vw;
   }
   
 a.social {
-    font-size: 16px;
-    margin: 0 1.1rem;
+    font-size: 1.3vw;
+    margin: 0 0.9vw;
     color: #232536;
   }
 
 a.social:hover {
-  color: #2c2d37c8;
+  color: #7e809681;
   }
+
+@media screen and (max-width: 900px) { /*900px screen*/
+  .profile-card {
+    width: 30vw;
+    height: 36vw;
+  }
+
+  .profile-card img {
+    width: 12vw;
+    height: 12vw;
+  }
+  .profile-card h3 {
+    font-size: 2.5vw;
+    height: 5vw;
+  }
+  .profile-card p {
+    font-size: 1.8vw;
+    height: 7vw;
+  }
+  a.social {
+    font-size: 2vw;
+    margin: 0 2vw;
+  }
+}
+
+@media screen and (max-width: 750px) { /*750px*/
+  .profile-card {
+    width: 55vw;
+    height: 70vw;
+  }
+
+  .profile-card img {
+    width: 20vw;
+    height: 20vw;
+  }
+  .profile-card h3 {
+    font-size: 5vw;
+    height: 10vw;
+  }
+  .profile-card p {
+    font-size: 3.9vw;
+    height: 15vw;
+  }
+  a.social {
+    font-size: 4vw;
+    margin: 0 3.5vw;
+  }
+}
+
+@media screen and (max-width: 1400px ) and (min-width: 900px) {
+  .profile-card {
+    width: 18vw;
+    height: 23.5vw; 
+  }
+
+  .profile-card img {
+    width: 8vw;
+    height: 8vw;
+  }
+  .profile-card h3 {
+    font-size: 1.6vw;
+    height: 3vw;
+  }
+  .profile-card p {
+    font-size: 1.3vw;
+    height: 4vw;
+  }
+  a.social {
+    font-size: 1.4vw;
+    margin: 0 0.9vw;
+  }
+}
+
