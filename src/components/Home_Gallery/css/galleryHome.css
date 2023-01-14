@@ -7,108 +7,89 @@ sen
   box-sizing: border-box;
 }
 
-.gallery-out-box {
+.gallery-box {
   display: flex;
-  justify-content: center;
-  /* align-items: center; */
-  /* background-color: rgb(188, 118, 25); */
-  height: 817px;
+  padding-top: 10.3vw;
   width: 100%;
-  margin: 0 0;
-}
-.galler-box {
-  display: flex;
-  justify-content: space-between;
-  /* padding: 32px; */
-  /* height: 817px; */
-  width: 100%;
-  /* left: 80px; */
-  /* top: 928px; */
   border-radius: 5px;
   /* border: 1px solid rgba(109, 110, 118, 1); */
 }
 .gallery-left {
-  width: 58%;
-  padding: 20px;
-
-  /* border: 1px solid rgba(109, 110, 118, 1); */
+  padding: 0 20px 20px 20px;
+  /* height: auto; */
+  /* border: 1px solid rgb(216, 121, 12); */
 }
 .gallery-right {
-  width: 40%;
-  padding: 20px;
-  /* border: 1px solid rgba(109, 110, 118, 1); */
+  padding: 0 20px 20px 20px;
+  height: auto;
+  /* border: 1px solid rgb(6, 16, 95); */
 }
-.gallery-out-box h2 {
+.gallery-box h2 {
   font-family: "Sen";
   font-style: normal;
   font-weight: 700;
-  font-size: 36px;
-  line-height: 0;
+  font-size: 32px;
+  line-height: 48px;
   letter-spacing: -2px;
-
-  /* Black */
-
   color: #232536;
+  /* border: 1px solid rgb(6, 16, 95); */
 }
+/* margin-bottom: 2vw; */
 
 .gallery-left .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   box-sizing: border-box;
   margin: 0;
   padding: 4.8%;
-
-  height: calc(100% - 3.6em);
+  /* padding-bottom: 20px; */
+  /* height: calc(100% - 3.6em); */
   opacity: 0.9;
+  height: auto;
   /* Medium grey */
 
   border: 1px solid #6d6e76;
   border-radius: 5px;
 }
-.gallery-left .content > img {
+.gallery-left .content img {
+  border: 1px solid #04092c;
   width: 100%;
   height: auto;
+  /* margin-top: 7%; */
   /* margin: 5%; */
-  border-radius: 17px;
+  border-radius: 5px; 
   /* object-fit: cover; */
 }
 
 .gallery-left .content h4 {
   /* Festival for you, Tradition for us. */
-
-  /* Heading H4 */
-
   font-family: "Sen";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
   width: 100%;
-  /* or 133% */
-
   display: flex;
   align-items: center;
-  /* text-align: right; */
   margin-block-end: 0.5em;
   margin-block-start: 0em;
-
-  /* Black */
-
   color: #232536;
-
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
 }
 
 .gallery-left .content-text {
   height: auto;
 }
 
-.gallery-left .text {
+.gallery-left .gallery-text {
   width: 100%;
   /* height: 100%; */
   /* position: relative; */
   /* left: 6%; */
 
   /* Body 1 */
-
+  /* border: 2px solid red; */
   font-family: "Inter Tight";
   font-style: normal;
   font-weight: 400;
@@ -117,53 +98,43 @@ sen
   /* or 175% */
   margin: 8% 0;
   /* Medium grey */
+  /* cursor: pointer; */
 
   color: #6d6e76;
 }
-.gallery-out-box button {
+.gallery-box  button {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
   padding: 2% 5%;
   gap: 12px;
   border: 0;
-
   position: relative;
   width: 100%;
   height: 100%;
-  /* left: 69%;
-  bottom: 5.5%; */
   justify-content: center;
   align-items: center;
-
   background: #ffd050;
+  cursor: pointer;
 }
 
 label {
   /* ILLUMINATION l 2016 */
-
-  /* position: relative; */
   width: 151px;
   height: 20px;
-  /* left: 78.5%; */
-  /* top: -30px; */
-
-  /* Label 01 */
-
   font-family: "Inter Tight";
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
   text-align: right;
-  /* identical to box height, or 143% */
-
-  /* Dark Grey */
-
   color: #4c4c4c;
 }
-
-.gallery-out-box button > .text {
+.illu-text{
+  margin: 1%;
+}
+.gallery-text-button{
+  margin-left: 250%;
+}
+.gallery-box button > .gallery-text {
   /* Read More > */
   /* width: 120px; */
   height: 24px;
@@ -190,43 +161,42 @@ label {
   flex-grow: 0;
 }
 
-.gallery-right > .content {
+.gallery-right  .content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: calc(100% - 3.6em);
 }
-.gallery-right > .content > img {
+.gallery-right  .content  img {
   width: 100%;
-  height: auto;
-  /* padding: 10px 0; */
-  margin: 2px 0;
-  /* no stretch  */
-
-  border-radius: 10px;
+  /* height: 12.5vw; */
+  margin: 6px 0;
+  border-radius: 5px;
 }
 
 .right-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* border: 2px solid red; */
 }
 
-.right-top > .text {
+.right-top > .gallery-text {
   /* View All */
-
+  /* margin-bottom: 1vw; */
   /* position: absolute; */
-  width: 60px;
-  height: 28px;
+  /* width: 60px; */
+  /* height: 28px; */
   /* right: 80px;
   top: 939px; */
 
   /* Body 1 */
+  cursor: pointer;
 
   font-family: "Inter Tight";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 28px;
   /* identical to box height, or 175% */
 
@@ -234,38 +204,57 @@ label {
 
   color: #592ea9;
 }
-
+@media screen and (max-width: 1200px){
+  .gallery-text-button{
+    margin-left: 200%;
+  }
+}
 @media screen and (max-width: 900px) {
-  .gallery-out-box h2 {
+  .gallery-box  h2 {
     font-size: 30px;
   }
-
-  .gallery-left .content {
-    padding: 25px;
+  .gallery-text-button{
+    margin-left: 250%;
   }
-
+  .gallery-right > .content > img {
+    height: auto;
+  }
   .gallery-left .content h4 {
     font-size: 20px;
     line-height: 28px;
   }
 
-  .gallery-left .text {
-    
-    font-size: 12px;
+  .gallery-left .gallery-text {
+    font-size: 10px;
     line-height: 13px;
-    /* or 175% */
-   
   }
   
   label{
     font-size: 10px;
-    /* line-height: 13px; */
   }
 
-  .gallery-out-box button > .text {
-  /* Read More > */
-  /* width: 120px; */
-  font-size: 14px;
+  .gallery-box  button > .gallery-text {
+   font-size: 14px;
 }
 
 }
+
+@media screen and (max-width: 600px) {
+  .gallery-text-button{
+    margin-left: 200%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  .gallery-box  button > .gallery-text {
+   font-size: 12px;
+}
+.gallery-text-button{
+  margin-left: 0%;
+}
+.gallery-left .content {
+  padding: 5px;
+}
+}
+
