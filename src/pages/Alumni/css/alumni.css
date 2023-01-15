@@ -116,10 +116,7 @@
 }
 
 .alumnuscard{
-    margin: auto;
-    max-width: 400px;
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -139,11 +136,6 @@
     border-radius: 50%;
     margin-top: 10px;
     margin-bottom: 30px;
-}
-
-.namebatch{
-    display: flex;
-    flex-direction: column;
 }
 
 .name{
@@ -247,7 +239,9 @@
     }
 
     .alumnuscard{
-        height: calc(100vh - 200px);
+        /* height: calc(100vh - 200px); */
+        margin: auto;
+        max-width: 400px;
         max-height: 600px;
     }
 
