@@ -63,7 +63,7 @@ function Gallery() {
 
       <div className={`leftbox ${yearmenu ? "active" : ""}`}>
         <div className="box-header">
-          {event>0 && <FontAwesomeIcon onClick={() => handleEventClick(0)} icon={faSquareCaretLeft} className="back" />}
+          {event>0 && <FontAwesomeIcon onClick={() => handleEventClick(0)} icon={faSquareCaretLeft} className="backevent" />}
           <span>Gallery</span>
         </div>
         <div className="years">{yeargroup}</div>

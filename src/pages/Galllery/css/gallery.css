@@ -115,7 +115,7 @@
     justify-content: center;
 }
 
-.back{
+.backevent{
     position: absolute;
     left: 12px;
     margin-right: 10px;
@@ -238,7 +238,7 @@
 
 @media screen and (max-width:1200px) {
 
-    .back{
+    .backevent{
         position: static;
     }
 
