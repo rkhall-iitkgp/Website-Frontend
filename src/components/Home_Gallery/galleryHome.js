@@ -31,7 +31,7 @@ function galleryHome() {
         <div className="gallery-right">
           <div className="right-top">
             <h2>Featured Photos </h2>
-            <div className="text">View All</div>
+            <a href="/gallery" className="text">View All</a>
           </div>
           <div className="content">
             <img src={img1} alt="img" />
