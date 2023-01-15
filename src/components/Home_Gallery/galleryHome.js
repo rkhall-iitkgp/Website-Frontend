@@ -4,6 +4,7 @@ import img1 from "./1.jpeg";
 import img2 from "./2.jpeg";
 import img3 from "./3.jpeg";
 import img4 from "./4.jpeg";
+import { Link } from "react-router-dom";
 
 function galleryHome() {
   return (
@@ -31,7 +32,7 @@ function galleryHome() {
         <div className="gallery-right">
           <div className="right-top">
             <h2>Featured Photos </h2>
-            <a href="/gallery" className="text">View All</a>
+            <Link to={"./gallery"} className="text">View All</Link>
           </div>
           <div className="content">
             <img src={img1} alt="img" />
