@@ -66,7 +66,7 @@ function galleryHome() {
         <Grid item md={4.5} xs={12} className="gallery-right">
           <div className="right-top">
             <h2>Featured Photos </h2>
-            <div className="gallery-text">View All</div>
+            <a href="/gallery" className="text">View All</a>
           </div>
 
           <div className="content">
