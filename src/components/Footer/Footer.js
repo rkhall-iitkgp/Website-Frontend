@@ -16,13 +16,8 @@ import img from "./mailbox.png";
 
 function Footer() {
   return (
-<<<<<<< Updated upstream
     <footer>
-      <Box bgcolor="#8DD3BB" color="black" className="footer" id="jump-to-footer">
-=======
-    <footer id="jump-to-footer">
       <Box bgcolor="#8DD3BB" color="black" className="footer">
->>>>>>> Stashed changes
         <Grid container className="query">
           <Grid item xs={12} md={7} className="querytext">
             <div>
