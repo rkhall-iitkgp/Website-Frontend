@@ -14,26 +14,18 @@ const Testimonials = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
 
-  // if (!Array.isArray(data) || data.length <= 0) {
-  //   return null;
-  // }
-
   return (
     <div>
       <div className="testimonials">
         <div className="leftSide">
           <p className="title">Testimonials</p>
-
           <h2 className="nextHead">What people say</h2>
-
           <p className="text">
             RKites occupy some of the most important positions in industry and
             academics.
           </p>
         </div>
-
         <div className="border"></div>
-
         <div className="rightSide">
           {Data.map((slide, index) => {
             return (
@@ -45,7 +37,6 @@ const Testimonials = () => {
               </div>
             );
           })}
-
           <div className="rightLower">
             <div className="person">
               {Data.map((slide, index) => {
@@ -60,7 +51,6 @@ const Testimonials = () => {
                   </div>
                 );
               })}
-
               {Data.map((slide, index) => {
                 return (
                   <div
@@ -74,7 +64,6 @@ const Testimonials = () => {
                 );
               })}
             </div>
-
             <div className="buttons">
               <img
                 className="back"

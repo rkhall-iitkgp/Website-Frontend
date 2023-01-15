@@ -1,140 +1,120 @@
-/*
-sen
-*/
 @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;400&family=Sen:wght@400;700;800&display=swap");
 
-.gallery-out-box {
+* {
+  box-sizing: border-box;
+}
+
+.gallery-box {
   display: flex;
-  justify-content: center;
-  /* align-items: center; */
-  /* background-color: rgb(188, 118, 25); */
-  height: 817px;
+  padding-top: 10.3vw;
   width: 100%;
-  margin-top: 5%;
-  margin-bottom: 5%;
-}
-.galler-box {
-  display: flex;
-  justify-content: space-between;
-
-  width: px;
-  /* height: 817px; */
-  width: 90%;
-  /* left: 80px; */
-  /* top: 928px; */
   border-radius: 5px;
-  /* border: 1px solid rgba(109, 110, 118, 1); */
 }
-.gallery-left {
-  width: 58%;
 
-  /* border: 1px solid rgba(109, 110, 118, 1); */
+.gallery-left {
+  padding: 0 20px 20px 20px;
 }
+
 .gallery-right {
-  width: 40%;
-  /* border: 1px solid rgba(109, 110, 118, 1); */
+  padding: 0 20px 20px 20px;
+  height: auto;
 }
-.gallery-out-box h2 {
+
+.gallery-box h2 {
   font-family: "Sen";
   font-style: normal;
   font-weight: 700;
-  font-size: 36px;
-  line-height: 0;
+  font-size: 32px;
+  line-height: 48px;
   letter-spacing: -2px;
-  padding-bottom: 15px;
-
-  /* Black */
-
   color: #232536;
 }
 
-.gallery-left > .content {
+.gallery-left .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   box-sizing: border-box;
   margin: 0;
-  margin-top: 5%;
-  height: calc(100% - 3.6em);
+  padding: 4.8%;
   opacity: 0.9;
-  /* Medium grey */
-
-  border: 1px solid #a0a1a9;
+  height: auto;
+  border: 1px solid #6d6e76;
   border-radius: 5px;
 }
-.gallery-left > .content > img {
-  width: 90%;
-  height: 48%;
-  margin: 5%;
-  border-radius: 17px;
-  /* object-fit: cover; */
+
+.gallery-left .content img {
+  border: 1px solid #04092c;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
 
-.gallery-left > .content > h4 {
-  /* Festival for you, Tradition for us. */
-
-  /* Heading H4 */
-
+.gallery-left .content h4 {
   font-family: "Sen";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
-  width: 30%;
-  /* or 133% */
-
+  width: 100%;
   display: flex;
   align-items: center;
-  text-align: right;
   margin-block-end: 0.5em;
   margin-block-start: 0em;
-
-
-  /* Black */
-
   color: #232536;
-
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.gallery-left .text {
-  width: 52%;
-  height: 22.3%;
-  position: relative;
-  left: 6%;
+.gallery-left .content-text {
+  height: auto;
+}
 
-  /* Body 1 */
-
+.gallery-left .gallery-text {
+  width: 100%;
   font-family: "Inter Tight";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 28px;
-  /* or 175% */
-
-  /* Medium grey */
-
+  margin: 8% 0;
   color: #6d6e76;
 }
-.gallery-out-box button {
+
+.gallery-box button {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
   padding: 2% 5%;
   gap: 12px;
   border: 0;
-
   position: relative;
-  /* width: 204px; */
-  width: 26%;
-  height: 7.4%;
-  left: 69%;
-  bottom: 5.5%;
-
-  /* Yellow */
-
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
   background: #ffd050;
+  cursor: pointer;
 }
-.gallery-out-box button > .text {
-  /* Read More > */
-  width: 120px;
+
+label {
+  /* ILLUMINATION l 2016 */
+  width: 151px;
+  height: 20px;
+  font-family: "Inter Tight";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+  color: #4c4c4c;
+}
+
+.illu-text {
+  margin: 1%;
+}
+
+.gallery-text-button {
+  margin-left: 250%;
+}
+
+.gallery-box button>.gallery-text {
   height: 24px;
 
   font-family: "Sen";
@@ -142,37 +122,27 @@ sen
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
-  /* identical to box height, or 133% */
 
   display: flex;
+  justify-content: center;
   align-items: center;
-
-  /* Black */
-
   color: #232536;
-
-  /* Inside auto layout */
-
   flex: none;
   order: 0;
   flex-grow: 0;
 }
 
-.gallery-right > .content {
+.gallery-right .content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: calc(100% - 3.6em);
-  margin-top: 5%;
 }
-.gallery-right > .content > img {
-  width: 100%;
-  height: 180px;
-  /* padding: 10px 0; */
-  margin: 2px 0;
-  /* no stretch  */
 
-  border-radius: 10px;
+.gallery-right .content img {
+  width: 100%;
+  margin: 6px 0;
+  border-radius: 5px;
 }
 
 .right-top {
@@ -181,48 +151,70 @@ sen
   justify-content: space-between;
 }
 
-.right-top > .text {
-  /* View All */
-
-  /* position: absolute; */
-  width: 60px;
-  height: 28px;
-  /* right: 80px;
-  top: 939px; */
-
-  /* Body 1 */
-
+.right-top>.gallery-text {
+  cursor: pointer;
   font-family: "Inter Tight";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 28px;
-  /* identical to box height, or 175% */
-
-  /* Purple */
-
   color: #592ea9;
 }
 
-label {
-  /* ILLUMINATION l 2016 */
+@media screen and (max-width: 1200px) {
+  .gallery-text-button {
+    margin-left: 200%;
+  }
+}
 
-  position: relative;
-  width: 151px;
-  height: 20px;
-  left: 78.5%;
-  top: -30px;
+@media screen and (max-width: 900px) {
+  .gallery-box h2 {
+    font-size: 30px;
+  }
 
-  /* Label 01 */
+  .gallery-text-button {
+    margin-left: 250%;
+  }
 
-  font-family: "Inter Tight";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 20px;
-  /* identical to box height, or 143% */
+  .gallery-right>.content>img {
+    height: auto;
+  }
 
-  /* Dark Grey */
+  .gallery-left .content h4 {
+    font-size: 20px;
+    line-height: 28px;
+  }
 
-  color: #4c4c4c;
+  .gallery-left .gallery-text {
+    font-size: 10px;
+    line-height: 13px;
+  }
+
+  label {
+    font-size: 10px;
+  }
+
+  .gallery-box button>.gallery-text {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .gallery-text-button {
+    margin-left: 200%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .gallery-box button>.gallery-text {
+    font-size: 12px;
+  }
+
+  .gallery-text-button {
+    margin-left: 0%;
+  }
+
+  .gallery-left .content {
+    padding: 5px;
+  }
 }
