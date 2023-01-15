@@ -17,14 +17,10 @@ function galleryHome() {
         justifyContent="center"
       >
         <Grid container className="gallery-left" md={6.5} xs={12}>
-          {/* <Grid item xs={12}> */}
           <div className="left-top">
             <h2>Gallery </h2>
-            {/* <div className="gallery-text"></div> */}
           </div>
-          {/* </Grid> */}
           <div className="content">
-            {/* <Grid item xs={6}> */}
             <img src={illu} alt="img" />
             <Grid item xs={12} style={{ textAlign: "right" }}>
             <div className="illu-text"><label>ILLUMINATION l 2016</label></div>
@@ -33,9 +29,6 @@ function galleryHome() {
               container
               xs={12}
               justifyContent="space-between"
-              // sx={{
-              //   paddingBottom: { md: "100px", lg: "0" },
-              // }}
             >
               <Grid item xs={12} md={8}>
                 <h4>
@@ -61,7 +54,6 @@ function galleryHome() {
                 lg={3.5}
                 direction="column"
               >
-              {/* style={{ paddingLeft: "8%" }} */}
                 <Grid item>
                   <button className="gallery-text-button">
                     <div className="gallery-text">Read More {" >"}</div>
@@ -85,26 +77,6 @@ function galleryHome() {
           </div>
         </Grid>
       </Grid>
-
-      {/* <Grid container spacing={2}>
-        <Grid item xs={8} container>
-          <Grid item xs={6}>
-            dddddddddddddddd
-          </Grid>
-          <Grid item xs={6}>
-            dffddddddddddssssssssss
-          </Grid>
-        </Grid>
-        <Grid item xs={4}>
-          ddddddddddddd
-        </Grid>
-        <Grid item xs={4}>
-          dddddddddddddddd
-        </Grid>
-        <Grid item xs={8}>
-          dffddddddddddssssssssss
-        </Grid>
-      </Grid> */}
     </div>
   );
 }
