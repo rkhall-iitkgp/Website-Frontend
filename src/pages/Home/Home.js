@@ -19,7 +19,7 @@ function Home() {
             <AboutUs />
             <Testimonials />
             <div className='profile-container'>
-                <HeadProfileList profiles={headprofiles} />
+                    <HeadProfileList profiles={headprofiles} />
                 <GsecProfileList profiles={gsecprofiles} />
             </div>
             <Footer />
