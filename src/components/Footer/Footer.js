@@ -2,9 +2,9 @@ import "./css/css.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
-  faInstagram,
-  faTwitter,
   faYoutube,
+  faTwitter,
+  faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -24,18 +24,20 @@ function Footer() {
               <p>Any Queries?</p>
               <p>Don't worry, write to us!</p>
             </div>
-            <Box item className="emailsubmit">
-              <input
-                className="email"
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Your email address"
-              />
-              <button type="submit" className="submit">
-                Subscribe
-              </button>
-            </Box>
+            <form className="emailsubmit" action="https://formbold.com/s/6lDDe" method="POST">
+              {/* <form className="emailsubmit" action="https://formbold.com/s/6lDDe" method="POST"> */}
+                <input
+                  className="email"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Your email address"
+                />
+                <button type="submit" className="submit">
+                  Subscribe
+                </button>
+              {/* </form> */}
+            </form>
           </Grid>
 
           <Grid item className="image" xs={12} md={5}>
@@ -45,7 +47,7 @@ function Footer() {
 
         <Container maxwidth="lg" className="lowerfooter">
           <Grid container spacing={0}>
-            <Grid container xs={12} sm={3} className="logolinks">
+            <Grid container xs={12} sm={6} className="logolinks">
               <Grid item xs={12}>
                 <Box textAlign="center" className="logo">
                   RKH
@@ -53,7 +55,10 @@ function Footer() {
               </Grid>
               <div className="social-links">
                 <Grid xs={3}>
-                  <Link href="/">
+                  <Link
+                    target="_blank"
+                    href="https://www.facebook.com/groups/5971048020"
+                  >
                     <FontAwesomeIcon
                       icon={faFacebook}
                       className="social-icons"
@@ -61,15 +66,10 @@ function Footer() {
                   </Link>
                 </Grid>
                 <Grid xs={3}>
-                  <Link href="/">
-                    <FontAwesomeIcon
-                      icon={faInstagram}
-                      className="social-icons"
-                    />
-                  </Link>
-                </Grid>
-                <Grid xs={3}>
-                  <Link href="/">
+                  <Link
+                    target="_blank"
+                    href="https://www.youtube.com/@radhakrishnanhall10"
+                  >
                     <FontAwesomeIcon
                       icon={faYoutube}
                       className="social-icons"
@@ -77,7 +77,18 @@ function Footer() {
                   </Link>
                 </Grid>
                 <Grid xs={3}>
-                  <Link href="/">
+                  <Link
+                    target="_blank"
+                    href="https://www.linkedin.com/groups/4072350/"
+                  >
+                    <FontAwesomeIcon
+                      icon={faLinkedin}
+                      className="social-icons"
+                    />
+                  </Link>
+                </Grid>
+                <Grid xs={3}>
+                  <Link target="_blank" href="/">
                     <FontAwesomeIcon
                       icon={faTwitter}
                       className="social-icons"
@@ -86,7 +97,7 @@ function Footer() {
                 </Grid>
               </div>
             </Grid>
-            <Grid item xs={6} sm={3}>
+            <Grid item xs={12} sm={6}>
               <Box pb={1} className="footer-subhead">
                 Help
               </Box>
@@ -112,7 +123,7 @@ function Footer() {
               </Box>
             </Grid>
 
-            <Grid item xs={6} sm={3}>
+            {/* <Grid item xs={6} sm={3}>
               <Box pb={1} className="footer-subhead">
                 Help
               </Box>
@@ -162,7 +173,7 @@ function Footer() {
                   Hello
                 </Link>
               </Box>
-            </Grid>
+            </Grid>*/}
           </Grid>
         </Container>
       </Box>

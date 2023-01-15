@@ -1,43 +1,42 @@
-import { Modal } from "@material-ui/core";
-import React from "react";
-import imagedata from "./imagedata"
-import ModalImage from "./ModalImage";
+import React, { useState, useCallback } from "react";
+import Gallery from "react-photo-gallery";
+import Carousel, { Modal, ModalGateway } from "react-images";
+import { photos } from "./imagedata";
 
-const eventpics = (props) => {
-    const picslist = imagedata.map(x => <ModalImage url={x.url}/>);
-    console.log(picslist)
+function Eventpics(props) {
+  const [currentImage, setCurrentImage] = useState(0);
+  const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
-    const picslist1 = picslist.filter((x, i) => {
-      if(i%3===1) return true;
-      else return false;
-    })
+  const openLightbox = useCallback((event, { photo, index }) => {
+    setCurrentImage(index);
+    setViewerIsOpen(true);
+  }, []);
 
-    const picslist2 = picslist.filter((x, i) => {
-      if(i%3===0) return true;
-      else return false;
-    })
+  const closeLightbox = () => {
+    setCurrentImage(0);
+    setViewerIsOpen(false);
+  };
 
-    const picslist3 = picslist.filter((x, i) => {
-      if(i%3===2) return true;
-      else return false;
-    })
-
-    return (
+  return (
     <div className="gallery">
       <span className="eventtitle">{props.title}</span>
-      <div className="images">
-        <div className="column">
-          {picslist1}
-        </div>
-        <div className="column">
-          {picslist2}
-        </div>
-        <div className="column">
-          {picslist3}
-        </div>
-      </div>
+      <Gallery photos={photos} onClick={openLightbox} />
+      <ModalGateway>
+        {viewerIsOpen ? (
+          <Modal onClose={closeLightbox}>
+            <Carousel
+              currentIndex={currentImage}
+              views={photos.map((x) => ({
+                ...x,
+                srcset: x.srcSet,
+                caption: x.title,
+              }))}
+            />
+          </Modal>
+        ) : null}
+      </ModalGateway>
     </div>
   );
-};
+}
 
-export default eventpics;
+export default Eventpics;

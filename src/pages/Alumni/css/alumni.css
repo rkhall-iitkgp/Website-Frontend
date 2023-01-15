@@ -118,6 +118,7 @@
 .alumnuscard{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
     background-color: #faf7ea;
@@ -162,9 +163,9 @@
     display: flex;
     flex-direction: row;
     gap: 10px;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 20px;
+    /* position: absolute;
+    bottom: 0; */
+    margin-top: 20px;
 }
 
 .mobileyears{
@@ -180,12 +181,17 @@
     background-color: #232536;
 }
 
+.namebatch{
+    display: flex;
+    flex-direction: column;
+}
+
 @media screen and (max-width:1350px){
     
-    body{
+    /* body{
         overflow-y: hidden;
         overflow-x: hidden;
-    }
+    } */
 
     .year-box{
         display: none;
@@ -233,7 +239,9 @@
     }
 
     .alumnuscard{
-        height: calc(100vh - 200px);
+        /* height: calc(100vh - 200px); */
+        margin: auto;
+        max-width: 400px;
         max-height: 600px;
     }
 

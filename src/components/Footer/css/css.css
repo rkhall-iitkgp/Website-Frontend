@@ -132,7 +132,7 @@
 
 .image img {
   width: 325px;
-  margin: 20px 20px -4px 0;
+  margin: 20px 20px -5px 0;
 }
 
 .lowerfooter {
@@ -231,7 +231,7 @@
   .query img {
     width: 80%;
     max-width: 300px;
-    margin:  20px 20px -4px 20px;
+    margin:  20px 20px -6px 20px;
   }
 
   .submit{
