@@ -8,6 +8,9 @@
     background-size: cover;
     right: 0px;
     margin:0;
+
+    /* this much height is already covered by Navbar - same as Navbar's height*/
+    margin-top: 63px;
 }
 @media (max-aspect-ratio: 3/2) {
     .header{

@@ -1,3 +1,39 @@
+import React from "react";
+import styled from "styled-components";
+import Burger from "./Burger";
+import "./css/style.css";
+
+const Nav = styled.nav`
+  width: 100%;
+  height: 63px;
+  display: flex;
+  justify-content: space-between;
+  .logo {
+    padding: 0 0;
+  }
+`;
+
+const Navbar = () => {
+  return (
+    <Nav>
+      <div className="logo">
+        <a href="#" className="RKH">
+          {/* <img
+            src='#'
+            alt="logo"
+            width="100"
+            height="70"
+          /> */}
+          RKH
+        </a>
+      </div>
+      <Burger />
+    </Nav>
+  );
+};
+
+export default Navbar;
+
 // import * as React from 'react';
 // import AppBar from '@mui/material/AppBar';
 // import Box from '@mui/material/Box';
@@ -25,43 +61,3 @@
 //     </Box>
 //   );
 // }
-
-
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
-import React from 'react';
-import styled from 'styled-components';
-import Burger from './Burger';
-import './css/style.css'
-
-const Nav = styled.nav`
-  border-bottom: 20px solid #ffffff;
-  display: flex;
-  justify-content: space-between;
-  .logo {
-    padding: 15px 0;
-  }
-`
-
-const Navbar = () => {
-  return (
-    <Nav>
-      <div className="logo">
-        <a href="#" className="RKH">
-          {/* <img
-            src='#'
-            alt="logo"
-            width="100"
-            height="70"
-          /> */}
-          RKH
-        </a>
-      </div>
-      <Burger />
-    </Nav>
-  )
-}
-
-export default Navbar
