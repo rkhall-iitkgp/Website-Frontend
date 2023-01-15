@@ -18,6 +18,7 @@ function Eventpics(props) {
   };
 
   return (
+  return (
     <div className="gallery">
       <span className="eventtitle">{props.title}</span>
       <Gallery photos={photos} onClick={openLightbox} />
@@ -39,4 +40,5 @@ function Eventpics(props) {
   );
 }
 
+export default Eventpics;
 export default Eventpics;
