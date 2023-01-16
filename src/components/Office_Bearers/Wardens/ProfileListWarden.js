@@ -1,11 +1,14 @@
 import React from 'react';
-import ProfileCardHeads from './ProfileCardHeads';
-//import './css/style.css';
+import ProfileCardHeads from './ProfileCardWarden';
+import './css/style.css';
 
 
 function ProfileList(props) {
   return (
     <div className='profile-container'>
+      <div className='title'>
+        <h2>Current Office-Bearers</h2>
+      </div>
       <div className="profile-list">
         {props.profiles.map(profile => (
           <ProfileCardHeads
