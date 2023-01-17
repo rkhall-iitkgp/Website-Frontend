@@ -4,8 +4,8 @@ import img1 from "./1.jpeg";
 import img2 from "./2.jpeg";
 import img3 from "./3.jpeg";
 import img4 from "./4.jpeg";
-import * as React from "react";
-import Grid from "@mui/material/Grid";
+import { Link } from "react-router-dom";
+import { Grid } from "@mui/material";
 
 function galleryHome() {
   return (
@@ -66,7 +66,7 @@ function galleryHome() {
         <Grid item md={4.5} xs={12} className="gallery-right">
           <div className="right-top">
             <h2>Featured Photos </h2>
-            <a href="/gallery" className="text">View All</a>
+            <Link to={"./gallery"} className="text">View All</Link>
           </div>
 
           <div className="content">
