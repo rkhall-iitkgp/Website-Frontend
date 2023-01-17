@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Sen:wght@700&display=swap');
+
+.profile-card {
+    position: relative;
+    display: inline-block;
+    width: 22vw; 
+    height: 24vw;
+    vertical-align: top; /* align the profile cards to the top of the container */
+    align-items: center;
+    text-align: center;
+    margin: 20px 15px 0px 0;
+    padding-top: 10px;
+    background-color: #FBF6EA;
+  }
+
+
+/* profile card info */
+.profile-card_info {
+    padding: 0 20px 20px;
+  }
+  
+.profile-card img {
+    width: 14vw;
+    height: 14vw;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+.profile-card h3 {
+    font-family: 'Sen', sans-serif;
+    font-size: 1.4vw;
+    height: 1.3vw;
+    margin: 1.3rem 0;
+  }
+  
+.profile-card p {
+    font-size: 1vw;
+    color: #666;
+    font-family: 'Inter', sans-serif;
+    height: 2.5vw;
+  }
+
+.social-icons {
+    display: flex;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    padding-top: 0;
+    margin-left: 3.6vw;
+  }
+  
+a.social {
+    font-size: 1.3vw;
+    margin: 0 0.9vw;
+    color: #232536;
+  }
+
+a.social:hover {
+  color: #7e809681;
+  }
+
+@media screen and (max-width: 900px) and (min-width: 750px) { /*900px screen*/
+  .profile-card {
+    width: 30vw;
+    height: 34vw;
+  }
+
+  .profile-card img {
+    width: 19vw;
+    height: 19vw;
+  }
+  .profile-card h3 {
+    font-size: 1.83vw;
+    height: 1vw;
+  }
+  .profile-card p {
+    font-size: 1.3vw;
+    height: 3vw;
+  }
+  .social-icons {
+    margin-left: 3.05vw;
+  }
+  a.social {
+    font-size: 1.8vw;
+    margin: 0 1.5vw;
+  }
+}
+
+@media screen and (max-width: 750px) { /*750px*/
+  .profile-card {
+    width: 69vw;
+    height: 75vw;
+  }
+
+  .profile-card img {
+    width: 42vw;
+    height: 42vw;
+  }
+  .profile-card h3 {
+    font-size: 4.31vw;
+    height: 3.4vw;
+  }
+  .profile-card p {
+    font-size: 3.3vw;
+    height: 8vw;
+  }
+  .social-icons {
+    margin-left: 7vw;
+  }
+  a.social {
+    font-size: 4vw;
+    margin: 0 3.74vw;
+  }
+}
+
+@media screen and (max-width: 1400px ) and (min-width: 900px) {
+  .profile-card {
+    width: 23vw;
+    height: 26vw; 
+    margin: 20px 15px -0.5vw 0;
+  }
+
+  .profile-card img {
+    width: 14vw;
+    height: 14vw;
+  }
+  .profile-card h3 {
+    font-size: 1.41vw;
+    height: 1vw;
+  }
+  .profile-card p {
+    font-size: 1.06vw;
+    height: 2.7vw;
+  }
+  .social-icons {
+    margin-left: 3.2vw;
+  }
+  a.social {
+    font-size: 1.4vw;
+    margin: 0 0.9vw;
+  }
+}
+

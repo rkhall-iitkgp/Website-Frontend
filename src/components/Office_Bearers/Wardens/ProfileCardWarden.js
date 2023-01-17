@@ -1,5 +1,5 @@
 import React from 'react';
-//import './css/ProfileCardHeads.css';
+import './css/ProfileCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
