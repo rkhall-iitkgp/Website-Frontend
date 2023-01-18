@@ -56,12 +56,12 @@ a.social {
   }
 
 a.social:hover {
-  color: #7e809681;
+  color: #3f4157b1;
   }
 
 @media screen and (max-width: 900px) and (min-width: 750px) { /*900px screen*/
   .profile-card {
-    width: 30vw;
+    width: 30.5vw;
     height: 34vw;
   }
 
@@ -71,10 +71,10 @@ a.social:hover {
   }
   .profile-card h3 {
     font-size: 1.83vw;
-    height: 1vw;
+    height: 0.7vw;
   }
   .profile-card p {
-    font-size: 1.3vw;
+    font-size: 1.35vw;
     height: 3vw;
   }
   .social-icons {
@@ -88,8 +88,8 @@ a.social:hover {
 
 @media screen and (max-width: 750px) { /*750px*/
   .profile-card {
-    width: 73vw;
-    height: 77vw;
+    width: 73.5vw;
+    height: 77.4vw;
   }
 
   .profile-card img {
@@ -98,10 +98,10 @@ a.social:hover {
   }
   .profile-card h3 {
     font-size: 4.58vw;
-    height: 3.4vw;
+    height: 3vw;
   }
   .profile-card p {
-    font-size: 3.3vw;
+    font-size: 3.4vw;
     height: 8vw;
   }
   .social-icons {
@@ -115,7 +115,7 @@ a.social:hover {
 
 @media screen and (max-width: 1400px ) and (min-width: 900px) {
   .profile-card {
-    width: 23vw;
+    width: 24vw;
     height: 26vw; 
     margin: 20px 15px -0.5vw 0;
   }
@@ -125,11 +125,11 @@ a.social:hover {
     height: 14vw;
   }
   .profile-card h3 {
-    font-size: 1.41vw;
-    height: 1vw;
+    font-size: 1.45vw;
+    height: 0.7vw;
   }
   .profile-card p {
-    font-size: 1.06vw;
+    font-size: 1.1vw;
     height: 2.7vw;
   }
   .social-icons {
@@ -137,7 +137,7 @@ a.social:hover {
   }
   a.social {
     font-size: 1.4vw;
-    margin: 0 0.9vw;
+    margin: 0 1.03vw;
   }
 }
 
