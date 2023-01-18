@@ -20,7 +20,8 @@ export default function ButtonAppBar() {
           </Typography>
           <Button color="inherit" onClick={() => Navigate('/')}>Home</Button>
           <Button color="inherit" onClick={() => Navigate('/gallery')}>Gallery</Button>
-          <Button color="inherit" onClick={() => Navigate('/alumni')}>About Us</Button>
+          <Button color="inherit" onClick={() => Navigate('/alumni')}>Alumni</Button>
+          <Button color="inherit">About Us</Button>
           <Button color="inherit">Testimonials</Button>
           <Button color="inherit">Contact Us</Button>
         </Toolbar>
