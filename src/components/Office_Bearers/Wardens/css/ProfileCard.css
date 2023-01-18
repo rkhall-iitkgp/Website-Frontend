@@ -88,16 +88,16 @@ a.social:hover {
 
 @media screen and (max-width: 750px) { /*750px*/
   .profile-card {
-    width: 69vw;
-    height: 75vw;
+    width: 73vw;
+    height: 77vw;
   }
 
   .profile-card img {
-    width: 42vw;
-    height: 42vw;
+    width: 44vw;
+    height: 44vw;
   }
   .profile-card h3 {
-    font-size: 4.31vw;
+    font-size: 4.58vw;
     height: 3.4vw;
   }
   .profile-card p {
@@ -105,7 +105,7 @@ a.social:hover {
     height: 8vw;
   }
   .social-icons {
-    margin-left: 7vw;
+    margin-left: 8.3vw;
   }
   a.social {
     font-size: 4vw;
