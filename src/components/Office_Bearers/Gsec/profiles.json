@@ -1,0 +1,73 @@
+[
+    {
+      "id": 6,
+      "name": "Pratik Choudhary",
+      "position": "General Secretary Social and Cultural",
+      "imageUrl": "person.png",
+      "twitterUrl": "https://twitter.com/",
+      "facebookUrl": "https://facebook.com/",
+      "instagramUrl": "https://instagram.com",
+      "linkedinUrl": "https://linkedin.com/in/"
+    },
+    {
+      "id": 7,
+      "name": "Tej Pratap Kumar",
+      "position": "General Secretary Sports and Games",
+      "imageUrl": "person.png",
+      "twitterUrl": "https://twitter.com/",
+      "facebookUrl": "https://facebook.com/",
+      "instagramUrl": "https://instagram.com",
+      "linkedinUrl": "https://linkedin.com/in/"
+    },
+    {
+      "id": 8,
+      "name": "Zaid Irfan Ali",
+      "position": "General Secretary Technology",
+      "imageUrl": "person.png",
+      "twitterUrl": "https://twitter.com/",
+      "facebookUrl": "https://facebook.com/",
+      "instagramUrl": "https://instagram.com",
+      "linkedinUrl": "https://linkedin.com/in/"
+    },
+    {
+      "id": 9,
+      "name": "Spandan Sawadatkar", 
+      "position": "General Secretary Mess",
+      "imageUrl": "person.png",
+      "twitterUrl": "https://twitter.com/",
+      "facebookUrl": "https://facebook.com/",
+      "instagramUrl": "https://instagram.com",
+      "linkedinUrl": "https://linkedin.com/in/"
+    },
+    {
+      "id": 10,
+      "name": "Sohail Gouri",
+      "position": "General Secretary Maintenance",
+      "imageUrl": "person.png",
+      "twitterUrl": "https://twitter.com/",
+      "facebookUrl": "https://facebook.com/",
+      "instagramUrl": "https://instagram.com",
+      "linkedinUrl": "https://linkedin.com/in/"
+    },
+    {
+      "id": 11,
+      "name": "Biswa Ranjan Barik",
+      "position": "General Secretary Student Welfare",
+      "imageUrl": "person.png",
+      "twitterUrl": "https://twitter.com/",
+      "facebookUrl": "https://facebook.com/",
+      "instagramUrl": "https://instagram.com",
+      "linkedinUrl": "https://linkedin.com/in/"
+    },
+    {
+      "id": 12,
+      "name": "Tarole Vedant Purnaji",
+      "position": "General Secretary Alumni Affairs",
+      "imageUrl": "person.png",
+      "twitterUrl": "https://twitter.com/",
+      "facebookUrl": "https://facebook.com/",
+      "instagramUrl": "https://instagram.com",
+      "linkedinUrl": "https://linkedin.com/in/"
+    }
+  ]
+  

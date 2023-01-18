@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Margarine&family=Montserrat:wght@500;600;700&family=Sen:wght@700&display=swap');
+
+@font-face {
+  font-family: myFont;
+  src: url(./trade-gothic-lt-std-extended_JmcsL/myFont/Trade\ Gothic\ LT\ Std\ Extended.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.footer {
+  border-radius: 20px 20px 0 0;
+  /* position: absolute;
+  bottom: 0; */
+  width: 100%;
+  z-index: 1;
+
+  border-radius: 0;
+  margin-top: 185px;
+  /* margin-top: 5%; */
+}
+
+.query {
+  display: flex;
+  flex-direction: row;
+  /* gap: 1rem; */
+  margin: auto;
+  max-width: 860px;
+
+  justify-content: space-around;
+  align-items: center;
+  background-color: #CDEAE1;
+  border-radius: 18px;
+  position: relative;
+
+  transform: translateY(-50%);
+}
+
+.querytext {
+  display: flex;
+  flex-direction: column !important;
+  align-items: center;
+}
+
+.query .emailsubmit {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1rem;
+  justify-content: space-around;
+  padding: 25px;
+  max-width: 500px;
+}
+
+.query .email {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 10px;
+  height: 56px;
+  font-family: 'Montserrat', sans-serif;
+  background: #FFFFFF;
+  border-radius: 4px;
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+
+  border: none;
+  padding: 20px;
+}
+
+.query .submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 4px;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+
+  /* width: 104px; */
+  height: 56px;
+
+  background: #112211;
+  border-radius: 4px;
+  color: #FFFFFF;
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1;
+  transition: ease 0.3s;
+  border: 0px;
+}
+
+.query .submit:hover {
+  background-color: #204e3e;
+  transition: ease 0.3s;
+}
+
+.query p {
+  font-family: 'Sen', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -2px;
+  text-align: left;
+  margin: 15px;
+  text-align: center;
+  color: #112211;
+}
+
+
+.social-links {
+  padding: 1rem;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  gap: 12px;
+  max-width: 100%;
+}
+
+.social-icons {
+  width: 24px;
+  height: 24px;
+}
+
+.image img {
+  width: 325px;
+  margin: 20px 20px -5px 0;
+}
+
+.lowerfooter {
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: -145px;
+}
+
+.logo {
+  font-family: 'Margarine', cursive;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.social-icons {
+  color: black;
+  font-size: 24px;
+}
+
+.footer-subhead {
+  font-family: myfont;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.footer-sublink {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.footer-sublink a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-subhead,
+.footer-sublink {
+  text-align: center;
+}
+
+
+/* @media screen and (min-width: 900px) {
+  
+  .query {
+    transform: translateY(-50%);
+  }
+
+  .footer {
+    border-radius: 0;
+    margin-top: 185px;
+  }
+
+  .lowerfooter {
+    margin-top: -135px;
+  }
+} */
+
+
+@media screen and (max-width:900px) {
+  .footer {
+    margin-top: 300px;
+  }
+
+  .query {
+    width: 90% !important;
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  .query p {
+    font-size: 27px;
+    line-height: 30px;
+    letter-spacing: -2px;
+  }
+
+  .querytext {
+    margin-top: 10px !important;
+  }
+
+  .emailsubmit {
+    padding: 20px !important;
+  }
+
+  .lowerfooter {
+    margin-top: -220px;
+  }
+
+  .query img {
+    width: 80%;
+    max-width: 300px;
+    margin:  20px 20px -6px 20px;
+  }
+
+  .submit{
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .emailsubmit{
+    display: flex !important;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .submit{
+    width: 100%;
+  }
+
+  .query p{
+    font-size: 25px;
+  }
+}

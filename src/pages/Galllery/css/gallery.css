@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@700&family=Inter:wght@700&family=Manrope:wght@500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.leftbox {
+    margin-top: 64px;
+}
+
+.rightbox {
+    margin-top: 64px;
+}
+
+.leftbox {
+    top: 64px;
+    background-color: #222436;
+    /* max-width: 300px; */
+    padding: 30px 15px;
+    margin: 30px 15px;
+    border-radius: 12px;
+    height: calc(100vh - 124px);
+    overflow-y: auto;
+
+    position: fixed;
+    width: 400px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    /* display: none; */
+    width: 10px;
+}
+
+.gallery::-webkit-scrollbar{
+    display: none;
+    /* width: 0; */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.box-header {
+    display: flex;
+    align-items: center;
+    background-color: #fcfcfc;
+    padding: 7px 10px;
+    font-family: 'IBM Plex Sans Hebrew', sans-serif;
+    font-size: 26px;
+    color: #232536;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.yearbox {
+    padding: 10px;
+    background-color: #232536;
+    margin: 10px;
+    /* margin-bottom: 0; */
+    border-radius: 10px;
+    /* transition: 0.3s; */
+    text-align: center;
+}
+
+.yearbox:hover {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.yearbox:hover span {
+    transition: 0.3s;
+    color: #fed051;
+}
+
+.yearbox .icon {
+    width: 30px;
+    /* font-size: 24px; */
+    color: #fcfcfc;
+    margin-right: 5px;
+}
+
+.yearbox span {
+    font-family: 'Manrope', sans-serif;
+    color: #fcfcfc;
+    font-size: 18px;
+}
+
+.leftbox .active span {
+    color: #fed051;
+    font-weight: 700;
+}
+
+.box-header{
+    position: relative;
+    justify-content: center;
+}
+
+.backevent{
+    position: absolute;
+    left: 12px;
+    margin-right: 10px;
+    font-size: 30px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.rightbox.active {
+    display: none;
+}
+
+.rightbox {
+    margin-left: 430px;
+    padding: 20px;
+    padding-left: 0;
+    padding-bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.event {
+    margin: 10px;
+    background-size: cover;
+    background-position: center center;
+    height: calc(50vh - 72px);
+    border-radius: 8px;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    background-repeat: no-repeat;
+    background-position: center;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.event:hover {
+    background-color: rgba(0, 0, 0, 0.497);
+}
+
+
+
+.event img {
+
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.event span {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    position: absolute;
+    display: block;
+    font-size: 24px;
+    color: white;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.event:hover span {
+    font-size: 27px;
+}
+
+.dropdown {
+    display: none;
+}
+
+.mobileyears {
+    /* transition: 0.3s; */
+    /* display: none; */
+    /* height: 0; */
+}
+
+.mobileyears .yearbox {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    background-color: #232536;
+}
+
+
+.gallery {
+    margin-left: 430px;
+    margin-top: 94px;
+    margin-right: 15px;
+    height: calc(100vh - 120px);
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.eventtitle{
+    display: block;
+    padding: 7px 10px;
+    font-family: 'IBM Plex Sans Hebrew', sans-serif;
+    font-size: 26px;
+    color: #232536;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+} 
+
+
+@media only screen and (max-width: 700px) {
+    /* .modal-content {
+        width: 100%;
+    }
+
+    .images {
+        grid-template-columns: 1fr;
+    } */
+}
+
+@media screen and (max-width:1200px) {
+
+    .backevent{
+        position: static;
+    }
+
+    .yearbox {
+        display: none;
+    }
+
+    .yearbox.active {
+        display: block;
+        margin: auto;
+        padding: 12px 20px;
+    }
+
+    .yearbox.active .dropdown {
+        display: inline;
+        padding: 0px 3px;
+        color: #fed051;
+    }
+
+    .leftbox {
+        position: fixed;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        top: 64px;
+        margin: 20px;
+        padding: 15px;
+        width: calc(100% - 40px);
+        z-index: 20;
+    }
+
+    .leftbox.active {
+        border-bottom-right-radius: 0;
+    }
+
+    .rightbox {
+        margin-left: 10px;
+        margin-top: 175px;
+        gap: 20px;
+        padding: 10px;
+        /* padding-top: 20px; */
+        padding-bottom: 20px;
+        height: calc(100vh - 180px);
+        overflow: scroll;
+        overflow-x: hidden;
+        border-radius: 10px;
+    }
+
+    .event {
+        margin: 0;
+        height: calc(50vh - 110px);
+    }
+
+    .mobileyears.active {
+        display: grid;
+        position: absolute;
+        top: 0;
+        grid-template-columns: 1fr 1fr;
+        background-color: #232536;
+        z-index: 100;
+        top: 164px;
+        right: 20px;
+        border-radius: 0 0 20px 20px;
+
+        /* gap: 20px;
+        padding: 20px; */
+        /* transition: 0.3s; */
+    }
+
+    .mobileyears.active .yearbox {
+        height: 38px;
+        margin: 10px;
+        padding: 10px;
+        background-color: #232536;
+    }
+
+    .mobileyears .yearbox {
+        display: block;
+    }
+
+    .gallery {
+        margin-left: 10px;
+        margin-top: 185px;
+        padding: 10px;
+        padding-bottom: 20px;
+        height: calc(100vh - 180px);
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+}
+
+a{
+    text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+    .rightbox {
+        grid-template-columns: 1fr;
+    }
+}
