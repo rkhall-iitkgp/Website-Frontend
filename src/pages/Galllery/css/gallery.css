@@ -29,7 +29,6 @@
     margin: 30px 15px;
     border-radius: 12px;
     height: calc(100vh - 124px);
-    overflow-y: auto;
 
     position: fixed;
     width: 400px;
@@ -338,5 +337,26 @@ a{
 @media screen and (max-width: 600px) {
     .rightbox {
         grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .years{
+        overflow-y: auto;
+        height: calc(100vh - 224px);
+    }
+
+    .mobileyears{
+        height: 0;
+    }
+    
+    .years::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    .years::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 12px;
+        margin-top: 20px;
     }
 }

@@ -1,12 +1,46 @@
 import "./css/alumni.css";
+import React, { useEffect } from "react";
 import Yearbox from "./yearbox";
 import Navbar from "../../components/Navbar/Navbar";
 import Alumnus from "./Alumnus";
 import { useState } from "react";
+import axios from "axios";
 
 export function Alumni() {
   const [year, setYear] = useState(2022);
   const [yearmenu, setYearmenu] = useState(false);
+
+  const [alumni, setAlumni] = useState([]);
+
+  const url = "https://rk-backend.onrender.com/alum/data/";
+
+  useEffect(() => {
+    getAlumni();
+  }, [year]);
+
+  function getAlumni() {
+    axios
+      .get(`${url}${year}`)
+      .then((response) => {
+        const alumni = response.data;
+        console.log(alumni);
+        setAlumni(
+          alumni.map((obj) => (
+            <Alumnus
+              img={obj.photo}
+              name={obj.name}
+              desc={obj.bio}
+              linkedin={obj.link}
+              batch={year}
+            />
+          ))
+        );
+      })
+      .catch((error) => {
+        console.log(error)
+        setAlumni([<h1>No records found</h1>])
+      });
+  }
 
   function handleClick(year) {
     setYear(year);
@@ -33,17 +67,12 @@ export function Alumni() {
       <div className="navbar">
         <Navbar />
       </div>
-      <div className={`left-box ${yearmenu?"active":""}`}>
+      <div className={`left-box ${yearmenu ? "active" : ""}`}>
         <span className="boxheader">Our Alumni</span>
-        <div className="years">{yeargroup}</div>
+        <div className="years-alumni">{yeargroup}</div>
       </div>
 
-      <div className="right-box">
-        <Alumnus />
-        <Alumnus />
-        <Alumnus />
-        <Alumnus />
-      </div>
+      <div className="right-box">{alumni}</div>
 
       <div className={`years mobileyears ${yearmenu ? "active" : ""}`}>
         {mobileyeargroup}
