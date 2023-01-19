@@ -1,4 +1,5 @@
 import './css/headerContainer.css';
+import Button from '../../components/Button/Button'
 const Header = () => {
     return (
         <div class="header">
