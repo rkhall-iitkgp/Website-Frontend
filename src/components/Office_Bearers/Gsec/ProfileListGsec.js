@@ -1,6 +1,5 @@
 import React from 'react';
 import ProfileCardGsec from './ProfileCardGsec';
-// import './css/style.css';
 
 
 function ProfileList(props) {

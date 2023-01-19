@@ -1,6 +1,5 @@
 import React from 'react';
 import ProfileCardHeads from './ProfileCardHeads';
-//import './css/style.css';
 
 
 function ProfileList(props) {
