@@ -29,7 +29,7 @@
   margin: 5%;
 }
 .aboutUs_main {
-  margin: 1rem;
+  margin: 5%;
 }
 .aboutUs h2 {
   font-size: 2rem;
@@ -59,12 +59,12 @@
   font-size: 18px;
   line-height: 28px;
 }
-.aboutUs_moto {
+.aboutUs_moto p {
   font-size: 1.2rem;
   font-family: "Sen";
   font-weight: bold;
   text-align: end;
-  margin-top: 1rem;
+  margin: 2rem;
   text-transform: uppercase;
 }
 .aboutUs_more .gb_btn {

@@ -1,5 +1,4 @@
 import React from "react";
-// import "./css/css.css";
 import "./About.css";
 import Button from "../Button/Button";
 
