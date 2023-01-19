@@ -4,12 +4,11 @@
     position: relative;
     display: inline-block;
     width: 22vw; 
-    height: 24vw;
+    height: 31vw;
     vertical-align: top; /* align the profile cards to the top of the container */
     align-items: center;
     text-align: center;
     margin: 20px 15px 0px 0;
-    padding-top: 10px;
     background-color: #FBF6EA;
   }
 
@@ -20,9 +19,8 @@
   }
   
 .profile-card img {
-    width: 14vw;
-    height: 14vw;
-    border-radius: 50%;
+    width: 22vw;
+    height: 22vw;
     object-fit: cover;
   }
   
