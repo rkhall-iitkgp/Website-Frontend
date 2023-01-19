@@ -12,7 +12,7 @@ import img2 from "./gc.png";
 import img3 from "./teachersday.png";
 import img4 from "./janmashtami.png";
 
-function Gallery() {
+export function Gallery() {
   window.scrollTo(0, 0);
 
   const [year, setYear] = useState(2022);
