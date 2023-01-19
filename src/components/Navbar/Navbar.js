@@ -1,31 +1,27 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import Burger from "./Burger";
+import "./css/style.css";
 
-export default function ButtonAppBar() {
-    const Navigate = useNavigate(); 
-  
+const Nav = styled.nav`
+  width: 100%;
+  height: 60px;
+  padding: 0px 0px;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Navbar = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-        <CssBaseline/>
-      <AppBar position="static" style={{ background: '#232536' }}>
-        <Toolbar>
-          <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} >
-            R K H
-          </Typography>
-          <Button color="inherit" onClick={() => Navigate('/')}>Home</Button>
-          <Button color="inherit" onClick={() => Navigate('/gallery')}>Gallery</Button>
-          <Button color="inherit" onClick={() => Navigate('/alumni')}>Alumni</Button>
-          <Button color="inherit">About Us</Button>
-          <Button color="inherit">Testimonials</Button>
-          <Button color="inherit">Contact Us</Button>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <Nav>
+      <div className="logo">
+        <a className="RKH" href="#">
+          R K H
+        </a>
+      </div>
+      <Burger />
+    </Nav>
   );
-}
+};
+
+export default Navbar;
