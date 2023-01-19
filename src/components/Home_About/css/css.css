@@ -3,17 +3,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Sen&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Sen&display=swap');
 
-.aboutUs{
+.aboutUs {
     background: #F4F0F8;
     margin-left: 4%;
     margin-right: 4%;
 }
 
-.about_type3, .about_type2{
+.about_type3,
+.about_type2 {
     display: none;
 }
 
-.heading{
+.heading {
     /* Cap 1 */
     font-family: 'Inter';
     font-style: normal;
@@ -28,8 +29,8 @@
     text-align: left;
     margin: 5%;
     margin-top: 0;
-    padding-top: 4%;
-    margin-bottom: -4%;
+    padding-top: 5%;
+    margin-bottom: -2%;
 
     /* Black */
 
@@ -37,15 +38,16 @@
 }
 
 
-.content1{
+.content1 {
     width: 45%;
     margin: 5%;
     text-align: left;
     margin-right: 0;
     padding-right: 0;
-    margin-bottom: 0;
+    margin-bottom: 1.5%;
 }
-.content1 .part1{
+
+.content1 .part1 {
     font-family: 'Sen';
     font-style: normal;
     font-weight: 700;
@@ -61,13 +63,14 @@
     color: #232536;
 }
 
-.content2{
+.content2 {
     width: 50%;
     margin: 5%;
     text-align: left;
     margin-bottom: 0;
 }
-.content2 .part1{
+
+.content2 .part1 {
     font-family: 'Sen';
     font-style: normal;
     font-weight: 700;
@@ -81,12 +84,13 @@
     color: #232536;
 }
 
-.item1{
+.item1 {
     display: flex;
     padding-bottom: 0;
     margin-bottom: 0;
 }
-.item2{
+
+.item2 {
     display: flex;
     margin: 0;
     padding: 0;
@@ -137,28 +141,31 @@
     margin-bottom: 0;
     padding-bottom: 0;
 }
-.item2 .part2 p{
+
+.item2 .part2 p {
     margin: 5%;
     margin-top: 0;
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
-.more{
+.more {
     margin: 5%;
-    margin-top: 0;
+    margin-top: 2%;
     padding-top: 0;
     display: flex;
 }
 
-.more .link{
+.more .link {
     width: 50%
 }
-.more .text{
+
+.more .text {
     width: 50%;
+    margin-bottom: 2%;
 }
 
-.more a{
+.more a {
     font-family: 'Sen';
     font-style: normal;
     font-weight: 700;
@@ -172,7 +179,7 @@
     text-decoration: none;
 }
 
-.more p{
+.more p {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -189,29 +196,32 @@
     text-align: right;
 }
 
-.design{
+.design {
     display: flex;
     height: 2%;
     margin: 4%;
     margin-bottom: 0;
 }
-.design .d1{
+
+.design .d1 {
     background: #ffffff;
     color: #ffffff;
     width: 20%;
 }
-.design .d2{
+
+.design .d2 {
     background: #FFD050;
     width: 60%;
     color: #FFD050;
 }
-.design .d3{
+
+.design .d3 {
     background: #592EA9;
     color: #592EA9;
     width: 20%;
 }
 
-.design p{
+.design p {
     padding: 0.5%;
     margin: 0;
 }
@@ -223,17 +233,18 @@
     width: auto;
 } */
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 500px) {
     .aboutUs {
         margin-left: 0;
         margin-right: 0;
     }
+
     .design {
         margin: 0;
         margin-bottom: 0;
     }
 
-    .heading{
+    .heading {
         padding-top: 15%;
         padding-bottom: 5%;
         padding-left: 1%;
@@ -244,25 +255,29 @@
         color: #ffffff;
         width: 20%;
     }
+
     .design .d2 {
         background: #FFD050;
         width: 80%;
         color: #FFD050;
     }
+
     .design .d3 {
         background: #592EA9;
         color: #592EA9;
         width: 80%;
     }
 
-    .main-content{
+    .main-content {
         width: 100%;
     }
-    .content1{
+
+    .content1 {
         width: 100%;
         margin-right: 2%;
     }
-    .item2 .part1{
+
+    .item2 .part1 {
         width: 100%;
         margin-right: 2%;
     }
@@ -271,6 +286,7 @@
         width: 100%;
         margin-right: 2%;
     }
+
     .item2 .part2 {
         width: 100%;
         margin-right: 2%;
@@ -281,10 +297,12 @@
         margin-top: 0;
         padding-top: 0;
     }
+
     .more .text {
         width: 100%;
         margin-left: 0;
     }
+
     .more .link {
         width: 100%;
     }
@@ -292,10 +310,12 @@
     /* .content1, .content2, .item2 .part1 p, .item2 .part2 p, .more{
         margin-left: 5%;
     } */
-    .about_type1{
+    .about_type1 {
         display: none;
     }
-    .about_type2, .about_type3{
+
+    .about_type2,
+    .about_type3 {
         display: block;
     }
 }

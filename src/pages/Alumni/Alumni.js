@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Alumnus from "./Alumnus";
 import { useState } from "react";
 
-function Alumni() {
+export function Alumni() {
   const [year, setYear] = useState(2022);
   const [yearmenu, setYearmenu] = useState(false);
 

@@ -12,7 +12,7 @@ import wardenprofiles from '../../components/Office_Bearers/Wardens/profiles.jso
 import headprofiles from '../../components/Office_Bearers/Heads/profiles.json';
 import gsecprofiles from '../../components/Office_Bearers/Gsec/profiles.json'
 
-function Home() {
+export function Home() {
     return (
         <>
             <Navbar />
@@ -31,3 +31,4 @@ function Home() {
 }
 
 export default Home;
+
