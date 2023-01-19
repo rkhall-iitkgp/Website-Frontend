@@ -1,0 +1,16 @@
+.gb_btn {
+  text-align: center;
+  font-family: "Sen";
+  font-size: 2.5vh;
+  padding: 0.8rem 2rem;
+  background: #ffd050;
+  border: none;
+}
+.gb_btn a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.2rem;
+}
