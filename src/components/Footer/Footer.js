@@ -88,12 +88,12 @@ function Footer() {
                   </Link>
                 </Grid>
                 <Grid xs={3}>
-                  <Link target="_blank" href="/">
+                  <span >
                     <FontAwesomeIcon
                       icon={faTwitter}
                       className="social-icons"
                     />
-                  </Link>
+                  </span>
                 </Grid>
               </div>
             </Grid>

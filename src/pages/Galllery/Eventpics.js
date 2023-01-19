@@ -20,7 +20,7 @@ function Eventpics(props) {
   return (
     <div className="gallery">
       <span className="eventtitle">{props.title}</span>
-      <Gallery photos={photos} onClick={openLightbox} />
+      {/* <Gallery photos={photos} onClick={openLightbox} />
       <ModalGateway>
         {viewerIsOpen ? (
           <Modal onClose={closeLightbox}>
@@ -34,7 +34,8 @@ function Eventpics(props) {
             />
           </Modal>
         ) : null}
-      </ModalGateway>
+      </ModalGateway> */}
+      <h1>Imgaes uploading soon</h1>
     </div>
   );
 }

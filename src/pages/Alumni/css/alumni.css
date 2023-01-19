@@ -24,7 +24,6 @@
     margin: 30px 15px;
     border-radius: 12px;
     height: calc(100vh - 124px);
-    overflow-y: auto;
 
     position: fixed;
     width: 400px;
@@ -62,6 +61,8 @@
     border-radius: 10px;
     text-align: center;
 }
+
+
 
 .year-box {
     padding: 10px;
@@ -109,10 +110,10 @@
     margin-left: 450px;
     padding: 30px;
     padding-left: 0;
-    padding-bottom: 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
+    padding-bottom: 30px;
 }
 
 .alumnuscard{
@@ -124,9 +125,14 @@
     background-color: #faf7ea;
     border-radius: 10px;
     padding: 30px;
-    height: calc(100vh - 124px);
+    /* height: calc(100vh - 124px); */
     position: relative;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.175);
+
+    width: 100%;
+    height: 100%;
+    /* width: 305px; */
+    /* height: 496px; */
 }
 
 .headshot{
@@ -168,22 +174,43 @@
     margin-top: 20px;
 }
 
-.mobileyears{
-    /* transition: 0.3s; */
-    /* display: none; */
-    /* height: 0; */
+.alumnuscard .social-icons{
+    margin-left: 0;
 }
 
 .mobileyears .year-box{
     height: 0;
     margin: 0;
     padding: 0;
+    display: none;
     background-color: #232536;
 }
 
 .namebatch{
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (min-width:1350px){
+    .years-alumni{
+        overflow-y: auto;
+        height: calc(100vh - 224px);
+    }
+
+    
+    .mobileyears{
+        height: 0;
+    }
+    
+    .years-alumni::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    .years-alumni::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 12px;
+        margin-top: 20px;
+    }
 }
 
 @media screen and (max-width:1350px){
@@ -269,7 +296,7 @@
     }
 
     .mobileyears .year-box{
-        display: block;
+        display: block ;
     }
 }
 

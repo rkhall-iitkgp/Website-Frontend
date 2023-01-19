@@ -7,19 +7,17 @@ import {
   faTwitter,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
-const Alumnus = () => {
+const Alumnus = (props) => {
   return (
     <div className="alumnuscard">
-      <img src={image} className="headshot" />
+      <img src={props.img} className="headshot" />
       <div className="namebatch">
-        <span className="name">Melon Husk</span>
-        <span className="batch">Batch of 2023</span>
+        <span className="name">{props.name}</span>
+        <span className="batch">{`Batch of ${props.batch}`}</span>
       </div>
-      <p className="desc">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </p>
+      <p className="desc">{props.desc}</p>
       <div className="social">
         <a href="#">
           <FontAwesomeIcon icon={faFacebook} className="social-icons" />
@@ -30,7 +28,7 @@ const Alumnus = () => {
         <a href="#">
           <FontAwesomeIcon icon={faTwitter} className="social-icons" />
         </a>
-        <a href="#">
+        <a href={props.linkedin} target="_blank">
           <FontAwesomeIcon icon={faLinkedin} className="social-icons" />
         </a>
       </div>
