@@ -28,6 +28,8 @@
     font-size: 16px;
     line-height: 20px;
     letter-spacing: 3px;
+    padding-top: 6px;
+    padding-bottom: 8vw;
     text-transform: uppercase;
     text-align: left;
     color: #232536;
@@ -42,7 +44,7 @@
     letter-spacing: -2px;
     color: #232536;
     margin-top: 0;
-    margin-bottom: 18%;
+    margin-bottom: 5%;
 }
 
 .leftSide .text{

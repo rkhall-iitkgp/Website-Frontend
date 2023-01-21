@@ -6,7 +6,7 @@ import img3 from "./3.jpeg";
 import img4 from "./4.jpeg";
 import { Link } from "react-router-dom";
 import { Grid } from "@mui/material";
-
+import Button from "../Button/Button";
 function galleryHome() {
   return (
     <div>
@@ -29,13 +29,14 @@ function galleryHome() {
               container
               xs={12}
               justifyContent="space-between"
+              className="gallery-below"
             >
               <Grid item xs={12} md={8}>
                 <h4>
                   Festival for you,
                   <br /> Tradition for us.
                 </h4>
-                <div className="gallery-text">
+                <div className="gallery-text ">
                   The Illuminatinon (or ‘illu’) is the IIT Kharagpur way of
                   celebrating Diwali. This unique culture is celebrated by
                   students from different halls of residence, alumni, faculty,
@@ -58,6 +59,7 @@ function galleryHome() {
                   <button className="gallery-text-button">
                     <div className="gallery-text">Read More {" >"}</div>
                   </button>
+                  {/* <Button link="/" name="Read More &gt;"/> */}
                 </Grid>
               </Grid>
 

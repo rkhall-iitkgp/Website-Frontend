@@ -6,7 +6,7 @@
 
 .gallery-box {
   display: flex;
-  padding-top: 10.3vw;
+  padding-top: 5vw;
   width: 100%;
   border-radius: 5px;
 }
@@ -49,7 +49,9 @@
   height: auto;
   border-radius: 5px;
 }
-
+.right-top .text {
+  margin-top: 2%;
+}
 .gallery-left .content h4 {
   font-family: "Sen";
   font-style: normal;
@@ -85,14 +87,34 @@
   gap: 12px;
   border: 0;
   position: relative;
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
   justify-content: center;
   align-items: center;
   background: #ffd050;
   cursor: pointer;
+  /* padding: 0px;
+  flex-direction: row;
+  text-align: center;
+  font-size: 1rem;
+  position: absolute;
+  font-family: 'Sen';
+  max-height: 54px;
+  left: 8%;
+  top: 66vh;
+  height: 6vh;
+  font-size: 2.5vh;
+  width:20vw;
+  background: #FFD050;
+  border: none; */
 }
 
+.gallery-text-button {
+  margin-left: 140%;
+  height: 6vh;
+  font-size: 2.5vh;
+  width:20vw;
+}
 label {
   /* ILLUMINATION l 2016 */
   width: 151px;
@@ -110,9 +132,6 @@ label {
   margin: 1%;
 }
 
-.gallery-text-button {
-  margin-left: 250%;
-}
 
 .gallery-box button>.gallery-text {
   height: 24px;
@@ -163,7 +182,7 @@ label {
 
 @media screen and (max-width: 1200px) {
   .gallery-text-button {
-    margin-left: 200%;
+    margin-left: 128%;
   }
 }
 
@@ -181,17 +200,20 @@ label {
   }
 
   .gallery-left .content h4 {
-    font-size: 20px;
+    font-size: 30px;
     line-height: 28px;
   }
 
   .gallery-left .gallery-text {
-    font-size: 10px;
-    line-height: 13px;
+    font-size: 20px;
+    line-height: 20px;
   }
 
   label {
     font-size: 10px;
+  }
+  .gallery-left .content {
+    border: 0px solid red;
   }
 
   .gallery-box button>.gallery-text {
@@ -202,19 +224,32 @@ label {
 @media screen and (max-width: 600px) {
   .gallery-text-button {
     margin-left: 200%;
+    height: 4vh;
+  font-size: 2vh;
+  width:20vw;
   }
 }
-
+.gallery-below .gallery-text{
+  font-size: 16px;
+}
 @media screen and (max-width: 400px) {
-  .gallery-box button>.gallery-text {
-    font-size: 12px;
-  }
-
   .gallery-text-button {
-    margin-left: 0%;
+    margin-left: 40%;
+    height: 5vh;
+  width:50vw;
   }
-
+  .gallery-below .gallery-text{
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .gallery-box button>.gallery-text {
+    font-size: 1.8vh;
+  }
   .gallery-left .content {
+    border: 0px solid red;
     padding: 5px;
+  }
+  .gallery-left .content h4{
+    font-size: 30px;
   }
 }

@@ -35,7 +35,7 @@ function Eventpics(props) {
           </Modal>
         ) : null}
       </ModalGateway> */}
-      <h1>Imgaes uploading soon</h1>
+      <h3>Our gallery section is currently under construction, but we will be adding a showcase of our images shortly.</h3>
     </div>
   );
 }
