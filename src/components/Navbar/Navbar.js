@@ -15,8 +15,8 @@ import Logo from './rklogo_1.png';
 
 
 export default function ButtonAppBar() {
-    const Navigate = useNavigate(); 
-  
+    const Navigate = useNavigate();
+
       const theme = useTheme();
       const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -25,9 +25,9 @@ export default function ButtonAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
         <CssBaseline/>
-      <AppBar position="static" style={{ background: '#232536' }}>
+      <AppBar position="static" style={{ background: 'black' }}>
         <Toolbar>
-          
+
           <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} >
           <img src={Logo} alt="RKH" style={{maxWidth: 30, marginRight: '10px'}}/>
           </Typography>
