@@ -55,9 +55,9 @@ export function Gallery() {
 
   return (
     <div className="gallerypage">
-      <div className="navbar">
+      {/* <div className="navbar">
         <Navbar />
-      </div>
+      </div> */}
 
       <div className={`leftbox ${yearmenu ? "active" : ""}`}>
         <div className="box-header">
