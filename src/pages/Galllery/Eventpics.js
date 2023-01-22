@@ -5,6 +5,7 @@ import Imagedata from "./Imagedata";
 
 function Eventpics(props) {
   const photos = Imagedata(props.url, props.year);
+  console.log(photos)
 
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
@@ -37,7 +38,7 @@ function Eventpics(props) {
           </Modal>
         ) : null}
       </ModalGateway>
-      {/* <h1>Imgaes uploading soon</h1> */}
+      {photos.length===0 && <h1>Imgaes uploading soon</h1>}
     </div>
   );
 }
