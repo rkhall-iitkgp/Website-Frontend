@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
-import Imagedata from "./Imagedata";
+import Imagedata from "./imagedata";
 
 function Eventpics(props) {
   const photos = Imagedata(props.url, props.year);
