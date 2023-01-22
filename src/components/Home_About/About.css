@@ -1,0 +1,78 @@
+.about_design {
+  display: flex;
+  margin-bottom: 0;
+  display: flex;
+  height: 20px;
+}
+.about_design * {
+  padding: 0.5%;
+  margin: 0;
+}
+
+.about_design .d1 {
+  flex-grow: 1;
+  background: #ffffff;
+}
+
+.about_design .d2 {
+  flex-grow: 4;
+  background: #ffd050;
+}
+
+.about_design .d3 {
+  flex-grow: 1;
+  background: #592ea9;
+}
+.aboutUs {
+  background-color: #f4f0f8;
+  height: 2%;
+  margin: 5%;
+}
+.aboutUs_main {
+  margin: 5%;
+}
+.aboutUs h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: start;
+  margin-top: 0;
+  margin: 1rem;
+  color: #232536;
+  font-family: "Sen";
+}
+.aboutUs_content {
+  display: flex;
+}
+.aboutUs_content > div {
+  margin: 1rem;
+  margin-top: 0;
+  flex: 1;
+}
+.aboutUs_content h3 {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+.aboutUs_content p {
+  margin: 10px 0 0 0;
+  font-size: 18px;
+  line-height: 28px;
+}
+.aboutUs_moto p {
+  font-size: 1.2rem;
+  font-family: "Sen";
+  font-weight: bold;
+  text-align: end;
+  margin: 2rem;
+  text-transform: uppercase;
+}
+.aboutUs_more .gb_btn {
+  margin: 1rem;
+}
+
+@media screen and (max-width: 700px) {
+  .aboutUs_content {
+    flex-direction: column;
+  }
+}

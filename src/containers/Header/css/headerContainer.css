@@ -1,6 +1,6 @@
 .header{
     position: relative;
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(181, 181, 181, 0.3)), url("/public/header.png"); 
+    background-image: linear-gradient(6deg, rgba(0, 0, 0, 0.6), rgba(15, 14, 14, 0.82)), url("/public/header.png"); 
     height: 80vh;
     width:100%;
     background-repeat: no-repeat;
@@ -29,14 +29,14 @@
 position: absolute;
 width: 60vw;
 left: 8%;
-top: 7vh;
+top: 12vh;
 font-family: 'Sen';
 font-style: normal;
 font-weight: 700;
 font-size: 9.6vh;
 line-height: 0.9;
 letter-spacing: -2px;
-color: #6D6E76;
+color: white;
 }
 
 @media (max-aspect-ratio: 3/2) {
@@ -52,6 +52,12 @@ color: #6D6E76;
         font-size: 5vh;
     }
 }
+@media (max-width:1450px) and (min-width: 450px) {
+    .hallName{
+        left: 8%;
+        width: 70vw;
+    }
+}
 @media (max-width:450px) {
     .hallName{
         left: 5%;
@@ -65,13 +71,13 @@ color: #6D6E76;
 .hallDescription{
     position: absolute;
     left: 8%;
-    top: 44vh;
+    top: 38vh;
     font-family: 'Inika';
     font-style: normal;
     font-weight: 400;
-    font-size: 2.8vh;
+    font-size: 3.1vh;
     line-height: 1.2;
-    width:32vw;
+    width: 35vw;
     color: #FFFFFF;
     fill:#FFFFFF;
     -webkit-text-stroke: 0.1px #000000;
@@ -86,14 +92,14 @@ color: #6D6E76;
 @media (max-aspect-ratio: 1/1) {
     .hallDescription{
         top: 29vh;
-        width: 30vw;
-        font-size: 1.4vh;
+        width: 90vw;
+        font-size: 1.8vh;
     }
 }
 @media (max-width:450px) {
     .hallDescription{
         left: 6%;
-        font-size: 9px;
+        font-size: 16px;
     }
 }
 @media (max-width:350px) {
@@ -118,7 +124,7 @@ color: #6D6E76;
     font-family: 'Sen';
     max-height: 54px;
     left: 8%;
-    top: 70vh;
+    top: 66vh;
     height: 6vh;
     font-size: 2.5vh;
     width:20vw;
@@ -127,7 +133,7 @@ color: #6D6E76;
 }
 @media (max-width: 450px) {
     .headerReadMore{
-        left:5%;
+        left:28%;
     }
 }
 @media (max-width: 300px) {
@@ -145,10 +151,10 @@ color: #6D6E76;
 }
 @media (max-aspect-ratio: 1/1) {
     .headerReadMore{
-        top: 45.6vh;
-        height: 3.2vh;
-        font-size: 1.4vh;
-        width:15vh;
+        top: 43.5vh;
+        height: 4.26vh;
+        font-size: 1.8vh;
+        width:20vh;
     }
 }
 .headerReadMore:hover{
