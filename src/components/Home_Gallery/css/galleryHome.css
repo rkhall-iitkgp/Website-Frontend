@@ -83,7 +83,7 @@
 
 .gallery-box button {
   display: flex;
-  padding: 2% 5%;
+  padding: 0.8rem 2rem;
   gap: 12px;
   border: 0;
   position: relative;

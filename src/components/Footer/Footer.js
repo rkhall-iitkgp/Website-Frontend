@@ -31,10 +31,10 @@ function Footer() {
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="Your email address"
+                  placeholder="YWrite to Us"
                 />
                 <button type="submit" className="submit">
-                  Subscribe
+                  Submit
                 </button>
               {/* </form> */}
             </form>

@@ -56,10 +56,10 @@ function galleryHome() {
                 direction="column"
               >
                 <Grid item>
-                  <button className="gallery-text-button">
+                  {/* <button className="gallery-text-button">
                     <div className="gallery-text">Read More {" >"}</div>
-                  </button>
-                  {/* <Button link="/" name="Read More &gt;"/> */}
+                  </button> */}
+                  <Button name="Read More"/>
                 </Grid>
               </Grid>
 
