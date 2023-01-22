@@ -8,11 +8,12 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
+import { Audio } from 'react-loader-spinner';
 
 const Alumnus = (props) => {
   return (
     <div className="alumnuscard">
-      <img src={props.img} className="headshot" />
+    <img src={props.img} className="headshot" />
       <div className="namebatch">
         <span className="name">{props.name}</span>
         <span className="batch">{`Batch of ${props.batch}`}</span>
