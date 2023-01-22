@@ -1,9 +1,11 @@
 import React, { useState, useCallback } from "react";
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
-import { photos } from "./imagedata";
+import Imagedata from "./Imagedata";
 
 function Eventpics(props) {
+  const photos = Imagedata(props.url, props.year);
+
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
@@ -20,7 +22,7 @@ function Eventpics(props) {
   return (
     <div className="gallery">
       <span className="eventtitle">{props.title}</span>
-      {/* <Gallery photos={photos} onClick={openLightbox} />
+      <Gallery photos={photos} onClick={openLightbox} />
       <ModalGateway>
         {viewerIsOpen ? (
           <Modal onClose={closeLightbox}>
@@ -34,8 +36,8 @@ function Eventpics(props) {
             />
           </Modal>
         ) : null}
-      </ModalGateway> */}
-      <h1>Imgaes uploading soon</h1>
+      </ModalGateway>
+      {/* <h1>Imgaes uploading soon</h1> */}
     </div>
   );
 }
