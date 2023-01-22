@@ -16,7 +16,7 @@ const Testimonials = () => {
 
   return (
     <div>
-      <div className="testimonials">
+      <div className="testimonials" id="Testimonials">
         <div className="leftSide">
           <p className="title">Testimonials</p>
           <h2 className="nextHead">What people say</h2>

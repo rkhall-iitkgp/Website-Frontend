@@ -12,6 +12,7 @@ import {
   useTheme,
 } from "@material-ui/core";
 import Logo from './rklogo_1.png';
+import { HashLink } from 'react-router-hash-link';
 
 
 export default function ButtonAppBar() {
@@ -38,9 +39,9 @@ export default function ButtonAppBar() {
               <Button color="inherit" onClick={() => Navigate('/')}>Home</Button>
               <Button color="inherit" onClick={() => Navigate('/gallery')}>Gallery</Button>
               <Button color="inherit" onClick={() => Navigate('/alumni')}>Alumni</Button>
-              <Button color="inherit">About Us</Button>
-              <Button color="inherit">Testimonials</Button>
-              <Button color="inherit">Contact Us</Button>
+              <HashLink smooth to='/#AboutUs' style={{color:"white"}}><Button color="inherit">About Us</Button></HashLink>
+              <HashLink smooth to='/#Testimonials' style={{color:"white"}}><Button color="inherit">Testimonials</Button></HashLink>
+              <HashLink smooth to='/#footer' style={{color:"white"}}><Button color="inherit">Contact Us</Button></HashLink>
             </div>
           )}
         </Toolbar>
