@@ -16,7 +16,7 @@ import img from "./mailbox.png";
 
 function Footer() {
   return (
-    <footer>
+    <footer id="footer">
       <Box bgcolor="#8DD3BB" color="black" className="footer">
         <Grid container className="query">
           <Grid item xs={12} md={7} className="querytext">
