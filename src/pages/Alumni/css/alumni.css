@@ -80,7 +80,7 @@
 }
 
 .year-box:hover span {
-    transition: 0.3s;    
+    transition: 0.3s;
     color: #fed051;
 }
 
@@ -191,21 +191,21 @@
     flex-direction: column;
 }
 
-@media screen and (min-width:1350px){
+@media screen and (min-width:1200px){
     .years-alumni{
         overflow-y: auto;
         height: calc(100vh - 224px);
     }
 
-    
+
     .mobileyears{
         height: 0;
     }
-    
+
     .years-alumni::-webkit-scrollbar {
         width: 10px;
     }
-    
+
     .years-alumni::-webkit-scrollbar-track {
         background: #f1f1f1;
         border-radius: 12px;
@@ -213,8 +213,8 @@
     }
 }
 
-@media screen and (max-width:1350px){
-    
+@media screen and (max-width:1200px){
+
     /* body{
         overflow-y: hidden;
         overflow-x: hidden;
@@ -282,7 +282,7 @@
         top: 163px;
         right: 20px;
         border-radius: 0 0 20px 20px;
-        
+
         /* gap: 20px;
         padding: 20px; */
         /* transition: 0.3s; */
@@ -300,14 +300,14 @@
     }
 }
 
-@media screen and (max-width: 1200px){    
+@media screen and (max-width: 1200px){
     .right-box{
         grid-template-columns: 1fr 1fr;
         gap: 25px;
     }
 }
 
-@media screen and (max-width: 800px){    
+@media screen and (max-width: 800px){
     .right-box{
         grid-template-columns: 1fr;
     }

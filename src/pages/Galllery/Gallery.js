@@ -28,9 +28,7 @@ export function Gallery() {
 
   function handleEventClick(event) {
     setEvent(event);
-    console.log(999);
   }
-  console.log(event);
 
   const yeargroup = [...Array(15).keys()]
     .map((i) => 2022 - i)
@@ -57,9 +55,9 @@ export function Gallery() {
 
   return (
     <div className="gallerypage">
-      <div className="navbar">
+      {/* <div className="navbar">
         <Navbar />
-      </div>
+      </div> */}
 
       <div className={`leftbox ${yearmenu ? "active" : ""}`}>
         <div className="box-header">
@@ -102,11 +100,11 @@ export function Gallery() {
         />
       </div>
 
-      {event === 1 && <Eventpics title={"Illumination & Rangoli"} />}
-      {event === 2 && <Eventpics title={"General Championship"} />}
-      {event === 3 && <Eventpics title={"Teachers Day"} />}
-      {event === 4 && <Eventpics title={"Intra-hall Events"} />}
-      {event === 5 && <Eventpics title={"Other Events"} />}
+      {event === 1 && <Eventpics url="illu-rangoli" year={year} title={"Illumination & Rangoli"} />}
+      {event === 2 && <Eventpics url="gc" year={year} title={"General Championship"} />}
+      {event === 3 && <Eventpics url="teachers-day" year={year} title={"Teachers Day"} />}
+      {event === 4 && <Eventpics url="intra-hall" year={year} title={"Intra-hall Events"} />}
+      {event === 5 && <Eventpics url="others" year={year} title={"Other Events"} />}
 
       <div className={`years mobileyears ${yearmenu ? "active" : ""}`}>
         {mobileyeargroup}

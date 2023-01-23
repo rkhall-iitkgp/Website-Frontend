@@ -116,10 +116,10 @@ color: white;
     }
 }
 .headerReadMore{
-    padding: 0px;
+    padding: 0.8rem 2rem;
     flex-direction: row;
     text-align: center;
-    font-size: 1rem;
+    /* font-size: 1rem; */
     position: absolute;
     font-family: 'Sen';
     max-height: 54px;
@@ -127,7 +127,7 @@ color: white;
     top: 66vh;
     height: 6vh;
     font-size: 2.5vh;
-    width:20vw;
+    /* width:20vw; */
     background: #FFD050;
     border: none;
 }

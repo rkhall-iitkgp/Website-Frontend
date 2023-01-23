@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 
 function homeAbout() {
   return (
-    <div className="aboutUs">
+    <div className="aboutUs" id="AboutUs">
       <div className="about_design">
         <div className="d1"></div>
         <div className="d2"></div>
@@ -43,7 +43,7 @@ function homeAbout() {
           </div>
         </div>
         <div className="aboutUs_more">
-          <Button name="Read More" link="#" />
+          <Button name="Read More" />
 
           <div className="aboutUs_moto">
             <p>A great pLace to learn and live</p>
