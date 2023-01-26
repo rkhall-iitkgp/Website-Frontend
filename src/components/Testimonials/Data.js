@@ -1,8 +1,8 @@
 export const Data = [
   {
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. (1)",
-    name: "Vinod Gupta 1",
-    position: "Founder, InfoUSA 1",
+    text: "We did not come here to fear the future, we came here to shape it. #Bhar_denge",
+    name: "Apar Sharma",
+    position: "IIT Kgp '22",
   },
   {
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. (2)",
