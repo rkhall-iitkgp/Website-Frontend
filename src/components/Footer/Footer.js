@@ -10,8 +10,6 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
-// import Button from "@mui/material/Button";
-// import TextField from "@mui/material/TextField";
 import img from "./mailbox.png";
 
 function Footer() {
@@ -19,24 +17,26 @@ function Footer() {
     <footer id="footer">
       <Box bgcolor="#8DD3BB" color="black" className="footer">
         <Grid container className="query">
-          <Grid item xs={12} md={7} className="querytext">
+          <Grid item className="querytext">
             <div>
               <p>Any Queries?</p>
               <p>Don't worry, write to us!</p>
             </div>
-            <form className="emailsubmit" action="https://formbold.com/s/6lDDe" method="POST">
-              {/* <form className="emailsubmit" action="https://formbold.com/s/6lDDe" method="POST"> */}
-                <input
-                  className="email"
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="YWrite to Us"
-                />
-                <button type="submit" className="submit">
-                  Submit
-                </button>
-              {/* </form> */}
+            <form
+              className="emailsubmit"
+              action="https://formbold.com/s/6lDDe"
+              method="POST"
+            >
+              <input
+                className="email"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Write to Us"
+              />
+              <button type="submit" className="submit">
+                Submit
+              </button>
             </form>
           </Grid>
 
@@ -45,86 +45,39 @@ function Footer() {
           </Grid>
         </Grid>
 
-        <Container maxwidth="lg" className="lowerfooter">
-          <Grid container spacing={0}>
-            <Grid container xs={12} sm={6} className="logolinks">
-              <Grid item xs={12}>
-                <Box textAlign="center" className="logo">
-                  RKH
-                </Box>
-              </Grid>
-              <div className="social-links">
-                <Grid xs={3}>
-                  <Link
-                    target="_blank"
-                    href="https://www.facebook.com/groups/5971048020"
-                  >
-                    <FontAwesomeIcon
-                      icon={faFacebook}
-                      className="social-icons"
-                    />
-                  </Link>
-                </Grid>
-                <Grid xs={3}>
-                  <Link
-                    target="_blank"
-                    href="https://www.youtube.com/@radhakrishnanhall10"
-                  >
-                    <FontAwesomeIcon
-                      icon={faYoutube}
-                      className="social-icons"
-                    />
-                  </Link>
-                </Grid>
-                <Grid xs={3}>
-                  <Link
-                    target="_blank"
-                    href="https://www.linkedin.com/groups/4072350/"
-                  >
-                    <FontAwesomeIcon
-                      icon={faLinkedin}
-                      className="social-icons"
-                    />
-                  </Link>
-                </Grid>
-                <Grid xs={3}>
-                  <span >
-                    <FontAwesomeIcon
-                      icon={faTwitter}
-                      className="social-icons"
-                    />
-                  </span>
-                </Grid>
-              </div>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Box pb={1} className="footer-subhead">
-                Help
-              </Box>
-              <Box pb={1} className="footer-sublink">
-                <Link href="/" color="inherit">
-                  Contact
-                </Link>
-              </Box>
-              <Box pb={1} className="footer-sublink">
-                <Link href="/" color="inherit">
-                  Support
-                </Link>
-              </Box>
-              <Box pb={1} className="footer-sublink">
-                <Link href="/" color="inherit">
-                  Privacy
-                </Link>
-              </Box>
-              <Box pb={1} className="footer-sublink">
-                <Link href="/" color="inherit">
-                  Hello
-                </Link>
-              </Box>
-            </Grid>
-
-            
-          </Grid>
+        <Container maxwidth="lg" className="lowerFooter">
+          <div className="logoLinks">
+            <div className="logo">RKH</div>
+            <div className="socialLinks">
+              <Link
+                target="_blank"
+                href="https://www.facebook.com/groups/5971048020"
+              >
+                <FontAwesomeIcon icon={faFacebook} className="social-icons" />
+              </Link>
+            </div>
+            <div>
+              <Link
+                target="_blank"
+                href="https://www.youtube.com/@radhakrishnanhall10"
+              >
+                <FontAwesomeIcon icon={faYoutube} className="social-icons" />
+              </Link>
+            </div>
+            <div>
+              <Link
+                target="_blank"
+                href="https://www.linkedin.com/groups/4072350/"
+              >
+                <FontAwesomeIcon icon={faLinkedin} className="social-icons" />
+              </Link>
+            </div>
+            <div>
+              <span>
+                <FontAwesomeIcon icon={faTwitter} className="social-icons" />
+              </span>
+            </div>
+          </div>
         </Container>
       </Box>
     </footer>

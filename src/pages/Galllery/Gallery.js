@@ -13,7 +13,6 @@ import img3 from "./teachersday.png";
 import img4 from "./janmashtami.png";
 
 export function Gallery() {
-  window.scrollTo(0, 0);
 
   const [year, setYear] = useState(2022);
   const [yearmenu, setYearmenu] = useState(false);
@@ -45,20 +44,8 @@ export function Gallery() {
         )
     );
 
-  // const eventgroup = [
-  //   "Illumination & Rangoli",
-  //   "General Championship",
-  //   "Teachers Day",
-  //   "Intra-hall Events",
-  //   "Other Events",
-  // ].map((event) => <Event event={event} img={img1} />);
-
   return (
     <div className="gallerypage">
-      {/* <div className="navbar">
-        <Navbar />
-      </div> */}
-
       <div className={`leftbox ${yearmenu ? "active" : ""}`}>
         <div className="box-header">
           {event>0 && <FontAwesomeIcon onClick={() => handleEventClick(0)} icon={faSquareCaretLeft} className="backevent" />}
