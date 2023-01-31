@@ -13,22 +13,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 35px;
-    height: 80vh;
-    padding-left: 54px;
-    margin-top: 48px;
-}
-
-@media (max-aspect-ratio: 3/2) {
-    .header {
-        height: 66vh;
-        background-position: right 50% bottom 20%;
-    }
-}
-
-@media (max-aspect-ratio: 1/1) {
-    .header {
-        height: 50vh;
-    }
+    padding: 220px 0px 64px 54px;
 }
 
 .hallName {
@@ -40,59 +25,6 @@
     line-height: 0.9;
     letter-spacing: -2px;
     color: white;
-}
-
-@media (max-aspect-ratio: 3/2) {
-    .hallName {
-        top: 8vh;
-        width: 65vw;
-        font-size: 7.8vh;
-    }
-    .hallDescription {
-        top: 36vh;
-        width: 32vw;
-        font-size: 2vh;
-    }
-}
-
-@media (max-aspect-ratio: 1/1) {
-    .hallName {
-        top: 9vh;
-        font-size: 5vh;
-    }
-    .hallDescription {
-        top: 29vh;
-        width: 90vw;
-        font-size: 1.8vh;
-    }
-}
-
-@media (max-width:1450px) and (min-width: 450px) {
-    .hallName {
-        left: 8%;
-        width: 70vw;
-    }
-}
-
-@media (max-width:450px) {
-    .hallName {
-        left: 5%;
-    }
-    .hallDescription {
-        left: 6%;
-        font-size: 16px;
-    }
-}
-
-@media (max-width:300px) {
-    .hallName {
-        left: 2%;
-    }
-    .hallDescription {
-        left: 2%;
-        width: 34vw;
-        line-height: 1;
-    }
 }
 
 .hallDescription {
@@ -117,38 +49,45 @@
     font-size: 2.5vh;
     background: #FFD050;
     border: none;
-}
-
-@media (max-width: 450px) {
-    .headerReadMore {
-        left: 28%;
-    }
-}
-
-@media (max-width: 300px) {
-    .headerReadMore {
-        left: 2%;
-    }
-}
-
-@media (max-aspect-ratio: 3/2) {
-    .headerReadMore {
-        top: 60vh;
-        height: 4.6vh;
-        font-size: 2vh;
-        width: 20vw;
-    }
-}
-
-@media (max-aspect-ratio: 1/1) {
-    .headerReadMore {
-        top: 43.5vh;
-        height: 4.26vh;
-        font-size: 1.8vh;
-        width: 20vh;
-    }
+    margin-top: 24px;
+    transition: all .1s ease-in-out;
 }
 
 .headerReadMore:hover {
     cursor: pointer;
+    transform: scale(1.05);
+}
+
+@media (max-width:450px) {
+    .hallName {
+        font-size: 5vh;
+        line-height: 1.2;
+        color: white;
+    }
+    .header {
+        padding: 0px 20px;
+    }
+    .hallDescription {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        color: #FFFFFF;
+        width: 100%;
+        color: #FFFFFF;
+        fill: #FFFFFF;
+    }
+    .headerReadMore {
+        padding: 0.8rem 2rem;
+        flex-direction: row;
+        text-align: center;
+        font-family: 'Sen';
+        max-height: 54px;
+        height: 6vh;
+        font-size: 2.5vh;
+        background: #FFD050;
+        margin-top: 20px;
+        border: none;
+    }
 }

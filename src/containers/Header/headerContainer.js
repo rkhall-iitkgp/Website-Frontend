@@ -11,7 +11,11 @@ const Header = () => {
           served as the honored President of India from 1962 to 1967.
         </div>
         <div class="headerbutton">
-          <a href="/#">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://wiki.metakgp.org/w/Radha_Krishnan_Hall_of_Residence"
+          >
             <button class="headerReadMore">Read More &gt;</button>
           </a>
         </div>

@@ -48,34 +48,37 @@ function Footer() {
         <Container maxwidth="lg" className="lowerFooter">
           <div className="logoLinks">
             <div className="logo">RKH</div>
-            <div className="socialLinks">
-              <Link
-                target="_blank"
-                href="https://www.facebook.com/groups/5971048020"
-              >
-                <FontAwesomeIcon icon={faFacebook} className="social-icons" />
-              </Link>
-            </div>
-            <div>
-              <Link
-                target="_blank"
-                href="https://www.youtube.com/@radhakrishnanhall10"
-              >
-                <FontAwesomeIcon icon={faYoutube} className="social-icons" />
-              </Link>
-            </div>
-            <div>
-              <Link
-                target="_blank"
-                href="https://www.linkedin.com/groups/4072350/"
-              >
-                <FontAwesomeIcon icon={faLinkedin} className="social-icons" />
-              </Link>
-            </div>
-            <div>
-              <span>
-                <FontAwesomeIcon icon={faTwitter} className="social-icons" />
-              </span>
+            <div class="verticalDivider"></div>
+            <div className="socialLinksContainer">
+              <div className="socialLinks">
+                <Link
+                  target="_blank"
+                  href="https://www.facebook.com/groups/5971048020"
+                >
+                  <FontAwesomeIcon icon={faFacebook} className="social-icons" />
+                </Link>
+              </div>
+              <div>
+                <Link
+                  target="_blank"
+                  href="https://www.youtube.com/@radhakrishnanhall10"
+                >
+                  <FontAwesomeIcon icon={faYoutube} className="social-icons" />
+                </Link>
+              </div>
+              <div>
+                <Link
+                  target="_blank"
+                  href="https://www.linkedin.com/groups/4072350/"
+                >
+                  <FontAwesomeIcon icon={faLinkedin} className="social-icons" />
+                </Link>
+              </div>
+              <div>
+                <span>
+                  <FontAwesomeIcon icon={faTwitter} className="social-icons" />
+                </span>
+              </div>
             </div>
           </div>
         </Container>
