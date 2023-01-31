@@ -43,7 +43,7 @@ function homeAbout() {
           </div>
         </div>
         <div className="aboutUs_more">
-          <Button name="Read More" />
+          {/* <Button name="Read More" /> */}
 
           <div className="aboutUs_moto">
             <p>A great pLace to learn and live</p>
