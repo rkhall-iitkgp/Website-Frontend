@@ -1,0 +1,24 @@
+.logo-container {
+    width: 30px;
+    transition: all .05s ease-in-out;
+}
+
+.logo-container:hover {
+    transform: scale(1.15);
+}
+
+.menu-items {
+    display: flex;
+    gap: 8px;
+}
+
+.menu-item {
+    color: white;
+    transition: all .05s ease-in-out;
+}
+
+.menu-item:hover {
+    color: black !important;
+    background-color: #FFD050 !important;
+    transform: scale(1.1);
+}
