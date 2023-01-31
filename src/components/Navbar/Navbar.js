@@ -11,8 +11,9 @@ import { useMediaQuery } from "@material-ui/core";
 import { useTheme } from "@material-ui/core";
 import Logo from "./rklogo_1.png";
 import { HashLink } from "react-router-hash-link";
+import "./css/style.css";
 
-export default function ButtonAppBar() {
+export default function Navbar() {
   const Navigate = useNavigate();
 
   const theme = useTheme();
@@ -24,6 +25,7 @@ export default function ButtonAppBar() {
       <AppBar position="fixed" style={{ background: "black" }}>
         <Toolbar>
           <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+            <div className="logo-container">
             <a href="/">
               <img
                 src={Logo}
@@ -31,28 +33,47 @@ export default function ButtonAppBar() {
                 style={{ maxWidth: 30, marginRight: "10px" }}
               />
             </a>
+            </div>
           </Typography>
           {isMobile ? (
             <DrawerComp />
           ) : (
-            <div>
-              <Button color="inherit" onClick={() => Navigate("/")}>
+            <div className="menu-items">
+              <Button
+                className="menu-item"
+                color="inherit"
+                onClick={() => Navigate("/")}
+              >
                 Home
               </Button>
-              <Button color="inherit" onClick={() => Navigate("/gallery")}>
+              <Button
+                className="menu-item"
+                color="inherit"
+                onClick={() => Navigate("/gallery")}
+              >
                 Gallery
               </Button>
-              <Button color="inherit" onClick={() => Navigate("/alumni")}>
+              <Button
+                className="menu-item"
+                color="inherit"
+                onClick={() => Navigate("/alumni")}
+              >
                 Alumni
               </Button>
               <HashLink smooth to="/#AboutUs" style={{ color: "white" }}>
-                <Button color="inherit">About Us</Button>
+                <Button className="menu-item" color="inherit">
+                  About Us
+                </Button>
               </HashLink>
               <HashLink smooth to="/#Testimonials" style={{ color: "white" }}>
-                <Button color="inherit">Testimonials</Button>
+                <Button className="menu-item" color="inherit">
+                  Testimonials
+                </Button>
               </HashLink>
               <HashLink smooth to="/#footer" style={{ color: "white" }}>
-                <Button color="inherit">Contact Us</Button>
+                <Button className="menu-item" color="inherit">
+                  Contact Us
+                </Button>
               </HashLink>
             </div>
           )}
