@@ -66,6 +66,7 @@
     }
     .header {
         padding: 0px 20px;
+        min-height: 85vh;
     }
     .hallDescription {
         font-family: 'Inter';
