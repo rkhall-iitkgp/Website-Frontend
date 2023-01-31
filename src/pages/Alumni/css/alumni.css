@@ -6,114 +6,12 @@
     padding: 0;
 }
 
-.navbar{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
+.alumpage{
+    overflow: hidden;
 }
 
-.left-box, .right-box{
-    margin-top: 64px;
-}
-
-.left-box {
-    background-color: #222436;
-    /* max-width: 300px; */
-    padding: 30px 15px;
-    margin: 30px 15px;
-    border-radius: 12px;
-    height: calc(100vh - 124px);
-
-    position: fixed;
-    width: 400px;
-}
-
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 12px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 12px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-.boxheader {
-    display: block;
-    background-color: #fcfcfc;
-    padding: 7px 10px;
-    font-family: 'IBM Plex Sans Hebrew', sans-serif;
-    font-size: 26px;
-    color: #232536;
-    border-radius: 10px;
-    text-align: center;
-}
-
-
-
-.year-box {
-    padding: 10px;
-    background-color: #232536;
-    margin: 10px;
-    margin-bottom: 0;
-    border-radius: 10px;
-    transition: 0.3s;
-    text-align: center;
-}
-
-.year-box:hover {
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.year-box:hover span {
-    transition: 0.3s;
-    color: #fed051;
-}
-
-.year-box .icon {
-    width: 30px;
-    /* font-size: 24px; */
-    color: #fcfcfc;
-    margin-right: 5px;
-}
-
-.year-box span {
-    font-family: 'Manrope', sans-serif;
-    color: #fcfcfc;
-    font-size: 18px;
-}
-
-.left-box .active span {
-    color: #fed051;
-    font-weight: 700;
-}
-
-.dropdown{
-    margin: 0px 5px;
-}
-
-.right-box {
-    margin-left: 450px;
-    padding: 30px;
-    padding-left: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
-    padding-bottom: 30px;
+.alum {
+    margin: 0 10px;
 }
 
 .alumnuscard{
@@ -178,145 +76,21 @@
     margin-left: 0;
 }
 
-.mobileyears .year-box{
-    height: 0;
-    margin: 0;
-    padding: 0;
-    display: none;
-    background-color: #232536;
-}
-
 .namebatch{
     display: flex;
     flex-direction: column;
 }
 
-@media screen and (min-width:1200px){
-    .years-alumni{
-        overflow-y: auto;
-        height: calc(100vh - 224px);
-    }
-
-
-    .mobileyears{
-        height: 0;
-    }
-
-    .years-alumni::-webkit-scrollbar {
-        width: 10px;
-    }
-
-    .years-alumni::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 12px;
-        margin-top: 20px;
-    }
-}
-
 @media screen and (max-width:1200px){
-
-    /* body{
-        overflow-y: hidden;
-        overflow-x: hidden;
-    } */
-
-    .year-box{
-        display: none;
-    }
-    .year-box.active {
-        display: block;
-        margin: auto;
-        padding: 12px 20px;
-    }
-
-    .year-box.active .dropdown{
-        display: inline;
-        padding: 0px 3px;
-        color: #fed051;
-    }
-
-    .left-box{
-        position: fixed;
-        height: fit-content;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        top: 64px;
-        margin: 20px;
-        padding: 15px;
-        width: calc(100% - 40px);
-        z-index: 20;
-    }
-
-    .left-box.active{
-        border-bottom-right-radius: 0;
-    }
-
-    .right-box{
-        margin-left: 10px;
-        margin-top: 175px;
-        gap: 25px;
-        padding: 10px;
-        /* padding-top: 20px; */
-        padding-bottom: 20px;
-        height: calc(100vh - 180px);
-        overflow: scroll;
-        overflow-x: hidden;
-        border-radius: 10px;
-    }
-
     .alumnuscard{
         /* height: calc(100vh - 200px); */
         margin: auto;
         max-width: 400px;
         max-height: 600px;
     }
-
-    .mobileyears.active{
-        display: grid;
-        position: absolute;
-        top: 0;
-        grid-template-columns: 1fr 1fr;
-        background-color: #232536;
-        z-index: 100;
-        top: 163px;
-        right: 20px;
-        border-radius: 0 0 20px 20px;
-
-        /* gap: 20px;
-        padding: 20px; */
-        /* transition: 0.3s; */
-    }
-
-    .mobileyears.active .year-box{
-        height: 38px;
-        margin: 10px;
-        padding: 10px;
-        background-color: #232536;
-    }
-
-    .mobileyears .year-box{
-        display: block ;
-    }
-}
-
-@media screen and (max-width: 1200px){
-    .right-box{
-        grid-template-columns: 1fr 1fr;
-        gap: 25px;
-    }
 }
 
 @media screen and (max-width: 800px){
-    .right-box{
-        grid-template-columns: 1fr;
-    }
-
-    .boxheader{
-        font-size: 20px;
-        padding-top: 10px;
-    }
-
     .headshot{
         margin-bottom: 20px;
     }

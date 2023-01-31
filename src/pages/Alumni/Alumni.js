@@ -1,6 +1,7 @@
 import "./css/alumni.css";
+import "../Galllery/css/gallery.css";
 import React, { useEffect } from "react";
-import Yearbox from "./yearbox";
+import Yearbox from "../Galllery/yearbox";
 import Navbar from "../../components/Navbar/Navbar";
 import Alumnus from "./Alumnus";
 import { useState } from "react";
@@ -38,7 +39,7 @@ export function Alumni() {
                 })
                 .catch((error) => {
                     console.log(error)
-                    setAlumni([<h1>No records found</h1>])
+                    setAlumni([<h1 className="loader">No records found</h1>])
                 });
         }
         getAlumni();
@@ -70,23 +71,27 @@ export function Alumni() {
             <div className="navbar">
                 <Navbar />
             </div>
-            <div className={`left-box ${yearmenu ? "active" : ""}`}>
-                <span className="boxheader">Our Alumni</span>
-                <div className="years-alumni">{yeargroup}</div>
-            </div>
-            {
-                alumni ? <div className="right-box">{alumni}</div> : <Audio
-                    height="80"
-                    width="80"
-                    radius="9"
-                    color="#222436"
-                    ariaLabel="loading"
-                    wrapperStyle
-                    wrapperClass="right-box"
-                />
-            }
-            <div className={`years mobileyears ${yearmenu ? "active" : ""}`}>
-                {mobileyeargroup}
+            <div className="alumpage">
+                <div className={`leftbox ${yearmenu ? "active" : ""}`}>
+                    <span className="box-header">Our Alumni</span>
+                    <div className="years">{yeargroup}</div>
+                </div>
+                <div className={`years mobileyears ${yearmenu ? "active" : ""}`}>
+                    {mobileyeargroup}
+                </div>
+                <div className="alum">
+                {
+                    alumni ? <div className="rightbox">{alumni}</div> : <Audio
+                        height="80"
+                        width="80"
+                        radius="9"
+                        color="#222436"
+                        ariaLabel="loading"
+                        wrapperStyle
+                        wrapperClass="loader"
+                    />
+                }
+                </div>
             </div>
         </>
     );

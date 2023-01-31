@@ -80,7 +80,7 @@ export default function Imagedata(event, year) {
     setCurrentPage(currentPage + 1);
   }
 
-  return photos;
+  return [photos, isLoading];
 
   // return (
   //   <>
