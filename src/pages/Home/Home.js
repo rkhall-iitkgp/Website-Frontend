@@ -15,7 +15,7 @@ import gsecprofiles from '../../components/Office_Bearers/Gsec/profiles.json'
 export function Home() {
     return (
         <>
-            {/* <Navbar /> */}
+            <Navbar />
             <Header />
             <GalleryHome />
             <AboutUs />

@@ -13,7 +13,7 @@ import { HashLink } from 'react-router-hash-link';
 
 const useStyles = makeStyles(()=>({
     paper: {
-        background:"#232536",
+        background:"#000000",
     },
     menuPaper: {
         color:"white"

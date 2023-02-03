@@ -6,57 +6,8 @@
     padding: 0;
 }
 
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-}
-
-.leftbox {
-    margin-top: 64px;
-}
-
-.rightbox {
-    margin-top: 64px;
-}
-
-.leftbox {
-    top: 64px;
-    background-color: #222436;
-    /* max-width: 300px; */
-    padding: 30px 15px;
-    margin: 30px 15px;
-    border-radius: 12px;
-    height: calc(100vh - 124px);
-
-    position: fixed;
-    width: 400px;
-}
-
-/* width */
-::-webkit-scrollbar {
-    /* display: none; */
-    width: 10px;
-}
-
-.gallery::-webkit-scrollbar{
-    display: none;
-    /* width: 0; */
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 12px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 12px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
+.gallerypage {
+    overflow: hidden;
 }
 
 .box-header {
@@ -75,9 +26,7 @@
     padding: 10px;
     background-color: #232536;
     margin: 10px;
-    /* margin-bottom: 0; */
     border-radius: 10px;
-    /* transition: 0.3s; */
     text-align: center;
 }
 
@@ -93,7 +42,6 @@
 
 .yearbox .icon {
     width: 30px;
-    /* font-size: 24px; */
     color: #fcfcfc;
     margin-right: 5px;
 }
@@ -128,7 +76,6 @@
 }
 
 .rightbox {
-    margin-left: 430px;
     padding: 20px;
     padding-left: 0;
     padding-bottom: 0;
@@ -157,8 +104,6 @@
 .event:hover {
     background-color: rgba(0, 0, 0, 0.497);
 }
-
-
 
 .event img {
 
@@ -190,12 +135,6 @@
     display: none;
 }
 
-.mobileyears {
-    /* transition: 0.3s; */
-    /* display: none; */
-    /* height: 0; */
-}
-
 .mobileyears .yearbox {
     height: 0;
     margin: 0;
@@ -203,15 +142,6 @@
     background-color: #232536;
 }
 
-
-.gallery {
-    margin-left: 430px;
-    margin-top: 94px;
-    margin-right: 15px;
-    height: calc(100vh - 120px);
-    overflow: scroll;
-    overflow-x: hidden;
-}
 
 .eventtitle{
     display: block;
@@ -222,112 +152,88 @@
     border-radius: 10px;
     text-align: center;
     margin-bottom: 20px;
-} 
-
-
-@media only screen and (max-width: 700px) {
-    /* .modal-content {
-        width: 100%;
-    }
-
-    .images {
-        grid-template-columns: 1fr;
-    } */
 }
 
-@media screen and (max-width:1200px) {
+.backevent{
+    position: static;
+}
 
-    .backevent{
-        position: static;
-    }
+.yearbox {
+    display: none;
+}
 
-    .yearbox {
-        display: none;
-    }
+.yearbox.active {
+    display: block;
+    margin: auto;
+    padding: 12px 20px;
+}
 
-    .yearbox.active {
-        display: block;
-        margin: auto;
-        padding: 12px 20px;
-    }
+.yearbox.active .dropdown {
+    display: inline;
+    padding: 0px 3px;
+    color: #fed051;
+}
 
-    .yearbox.active .dropdown {
-        display: inline;
-        padding: 0px 3px;
-        color: #fed051;
-    }
+.leftbox {
+    background-color: #222436;
+    margin-top: 75px;
+    border-radius: 12px;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: calc(100% - 20px);
+    z-index: 20;
+}
 
-    .leftbox {
-        position: fixed;
-        height: fit-content;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        top: 64px;
-        margin: 20px;
-        padding: 15px;
-        width: calc(100% - 40px);
-        z-index: 20;
-    }
+.leftbox.active {
+    border-bottom-right-radius: 0;
+}
 
-    .leftbox.active {
-        border-bottom-right-radius: 0;
-    }
+.rightbox {
+    gap: 20px;
+    padding: 10px;
+    /* padding-top: 20px; */
+    padding-bottom: 20px;
+    overflow-x: hidden;
+    border-radius: 10px;
+}
 
-    .rightbox {
-        margin-left: 10px;
-        margin-top: 175px;
-        gap: 20px;
-        padding: 10px;
-        /* padding-top: 20px; */
-        padding-bottom: 20px;
-        height: calc(100vh - 180px);
-        overflow: scroll;
-        overflow-x: hidden;
-        border-radius: 10px;
-    }
+.event {
+    margin: 0;
+    height: calc(50vh - 110px);
+}
 
-    .event {
-        margin: 0;
-        height: calc(50vh - 110px);
-    }
+.mobileyears.active {
+    display: grid;
+    position: absolute;
+    grid-template-columns: 1fr 1fr;
+    background-color: #232536;
+    z-index: 100;
+    border-radius: 0 0 20px 20px;
+    right: 0;
+    margin-right: 10px;
+}
 
-    .mobileyears.active {
-        display: grid;
-        position: absolute;
-        top: 0;
-        grid-template-columns: 1fr 1fr;
-        background-color: #232536;
-        z-index: 100;
-        top: 164px;
-        right: 20px;
-        border-radius: 0 0 20px 20px;
+.mobileyears.active .yearbox {
+    height: 38px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #232536;
+}
 
-        /* gap: 20px;
-        padding: 20px; */
-        /* transition: 0.3s; */
-    }
+.mobileyears .yearbox {
+    display: block;
+}
 
-    .mobileyears.active .yearbox {
-        height: 38px;
-        margin: 10px;
-        padding: 10px;
-        background-color: #232536;
-    }
-
-    .mobileyears .yearbox {
-        display: block;
-    }
-
-    .gallery {
-        margin-left: 10px;
-        margin-top: 185px;
-        padding: 10px;
-        padding-bottom: 20px;
-        height: calc(100vh - 180px);
-        overflow: scroll;
-        overflow-x: hidden;
-    }
+.gallery {
+    margin-left: 10px;
+    padding: 10px;
+    padding-bottom: 20px;
+    overflow-x: hidden;
 }
 
 a{
@@ -338,25 +244,17 @@ a{
     .rightbox {
         grid-template-columns: 1fr;
     }
+    .leftbox {
+        margin-top: 67px;
+    }
 }
 
-@media screen and (min-width: 1200px){
-    .years{
-        overflow-y: auto;
-        height: calc(100vh - 224px);
-    }
-
-    .mobileyears{
-        height: 0;
-    }
-    
-    .years::-webkit-scrollbar {
-        width: 10px;
-    }
-    
-    .years::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 12px;
-        margin-top: 20px;
-    }
+.loader{
+    padding-top: 20px;
+ display: flex;
+  justify-content: center;
+    position: fixed;
+    width: 100%;
+    font-size: 1.5rem;
+    color: gray;
 }

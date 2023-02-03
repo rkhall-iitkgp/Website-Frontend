@@ -2,11 +2,18 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    /* margin-left: 3vw; */
   }
 
 .profile-list {
   margin-left: 0rem;
+}
+
+.title {
+  text-align: center;
+  font-family: 'Sen', sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  padding-bottom: 10px;
 }
 
 @media screen and (max-width: 900px) {
@@ -19,14 +26,6 @@
   .profile-list {
     margin-left: 1vw;
   }
-}
-  
-.title {
-    text-align: center;
-    font-family: 'Sen', sans-serif;
-    font-weight: 700;
-    font-size: 25px;
-    padding-bottom: 10px;
 }
 
 @media screen and (max-width: 750px) {
