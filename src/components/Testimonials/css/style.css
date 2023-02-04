@@ -178,7 +178,7 @@
     transform: translateY(-7px);
 }
 
-form {
+.form {
     width: 300px;
     padding: 10px 40px 10px 30px;
 }

@@ -24,14 +24,14 @@ function Footer() {
             </div>
             <form
               className="emailsubmit"
-              action="https://formbold.com/s/6lDDe"
+              action="https://formbold.com/s/xknaolej"
               method="POST"
             >
               <input
                 className="email"
-                type="email"
-                id="email"
-                name="email"
+                type="message"
+                id="message"
+                name="message"
                 placeholder="Write to Us"
               />
               <button type="submit" className="submit">
@@ -55,7 +55,7 @@ function Footer() {
                   target="_blank"
                   href="https://www.facebook.com/groups/5971048020"
                 >
-                  <FontAwesomeIcon icon={faFacebook} className="social-icons" />
+                  <FontAwesomeIcon icon={faFacebook} className="social-icons" style={{margin:"15px"}} />
                 </Link>
               </div>
               <div>
@@ -63,7 +63,7 @@ function Footer() {
                   target="_blank"
                   href="https://www.youtube.com/@radhakrishnanhall10"
                 >
-                  <FontAwesomeIcon icon={faYoutube} className="social-icons" />
+                  <FontAwesomeIcon icon={faYoutube} className="social-icons" style={{margin:"15px"}} />
                 </Link>
               </div>
               <div>
@@ -71,12 +71,12 @@ function Footer() {
                   target="_blank"
                   href="https://www.linkedin.com/groups/4072350/"
                 >
-                  <FontAwesomeIcon icon={faLinkedin} className="social-icons" />
+                  <FontAwesomeIcon icon={faLinkedin} className="social-icons" style={{margin:"15px"}} />
                 </Link>
               </div>
               <div>
                 <span>
-                  <FontAwesomeIcon icon={faTwitter} className="social-icons" />
+                  <FontAwesomeIcon icon={faTwitter} className="social-icons" style={{margin:"15px"}} />
                 </span>
               </div>
             </div>

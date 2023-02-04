@@ -70,7 +70,7 @@
   gap: 4px;
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
-  height: 56px;
+  /* height: 56px; */
   background: #112211;
   border-radius: 4px;
   color: #FFFFFF;
@@ -135,6 +135,7 @@
   border-right: 1px solid #16222c;
   height: 150px;
 }
+
 
 .socialLinksContainer {
   display: flex;
