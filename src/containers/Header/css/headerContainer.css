@@ -58,9 +58,28 @@
     transform: scale(1.05);
 }
 
-@media (max-width:450px) {
+@media (max-width:780px) {
     .hallName {
-        font-size: 5vh;
+        font-size: 8.4vh;
+    }
+    .hallDescription {
+        width: 50vw;
+    }
+}
+
+@media (max-width:660px) {
+    .hallName {
+        font-size: 6.2vh;
+        width: 88vw;
+    }
+    .hallDescription {
+        width: 60vw;
+    }
+}
+
+@media (max-width:500px) {
+    .hallName {
+        font-size: 4.8vh;
         line-height: 1.2;
         color: white;
     }
@@ -75,7 +94,7 @@
         font-size: 16px;
         line-height: 28px;
         color: #FFFFFF;
-        width: 100%;
+        width: 75vw;
         color: #FFFFFF;
         fill: #FFFFFF;
     }
