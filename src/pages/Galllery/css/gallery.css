@@ -80,7 +80,7 @@
     padding-left: 0;
     padding-bottom: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .event {
@@ -238,6 +238,12 @@
 
 a{
     text-decoration: none;
+}
+
+@media screen and (max-width: 1000px){
+    .rightbox {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media screen and (max-width: 600px) {
