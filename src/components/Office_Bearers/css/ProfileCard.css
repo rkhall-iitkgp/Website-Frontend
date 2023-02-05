@@ -127,9 +127,20 @@ a.social {
     margin-left: 8.3vw;
   }
 
+  /* .profile-social-icons {
+    padding-top:0px;
+    margin-bottom: 10px;
+  } */
+
   a.social {
     font-size: 4vw;
     margin: 0 3.74vw;
+  }
+}
+
+@media only screen and (max-width:450px) {
+  .profile-social-icons {
+    margin-top: -6px;
   }
 }
 

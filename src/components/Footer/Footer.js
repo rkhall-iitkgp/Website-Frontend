@@ -55,7 +55,7 @@ function Footer() {
                   target="_blank"
                   href="https://www.facebook.com/groups/5971048020"
                 >
-                  <FontAwesomeIcon icon={faFacebook} className="social-icons" style={{margin:"15px"}} />
+                  <FontAwesomeIcon icon={faFacebook} className="social-icons" />
                 </Link>
               </div>
               <div>
@@ -63,7 +63,7 @@ function Footer() {
                   target="_blank"
                   href="https://www.youtube.com/@radhakrishnanhall10"
                 >
-                  <FontAwesomeIcon icon={faYoutube} className="social-icons" style={{margin:"15px"}} />
+                  <FontAwesomeIcon icon={faYoutube} className="social-icons" />
                 </Link>
               </div>
               <div>
@@ -71,12 +71,12 @@ function Footer() {
                   target="_blank"
                   href="https://www.linkedin.com/groups/4072350/"
                 >
-                  <FontAwesomeIcon icon={faLinkedin} className="social-icons" style={{margin:"15px"}} />
+                  <FontAwesomeIcon icon={faLinkedin} className="social-icons" />
                 </Link>
               </div>
               <div>
                 <span>
-                  <FontAwesomeIcon icon={faTwitter} className="social-icons" style={{margin:"15px"}} />
+                  <FontAwesomeIcon icon={faTwitter} className="social-icons" />
                 </span>
               </div>
             </div>

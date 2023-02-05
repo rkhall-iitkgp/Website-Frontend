@@ -109,6 +109,7 @@
 .social-icons {
   width: 24px;
   height: 24px;
+  margin: 15px;
 }
 
 .image img {
@@ -209,7 +210,8 @@
   }
 
   .lowerFooter {
-    padding-bottom: 20px;
+    padding-top: 60px;
+    padding-bottom: 10px;
   }
 
   .submit {
@@ -237,8 +239,16 @@
   .socialLinksContainer {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 0px;
     justify-content: center;
     align-items: center;
+  }
+
+  .image img {
+    display: none;
+  }
+
+  .social-icons {
+    margin: 8px;
   }
 }
