@@ -40,13 +40,13 @@
 }
 
 .headerReadMore {
-    padding: 0.8rem 2rem;
+    padding: 1rem 2rem;
     flex-direction: row;
     text-align: center;
     font-family: 'Sen';
-    max-height: 54px;
-    height: 6vh;
-    font-size: 2.5vh;
+    /* max-height: 54px;
+    height: 6vh; */
+    font-size: 1.6rem;
     background: #FFD050;
     border: none;
     margin-top: 24px;
@@ -99,12 +99,12 @@
         fill: #FFFFFF;
     }
     .headerReadMore {
-        padding: 0.8rem 2rem;
+        padding: 1rem 2rem;
         flex-direction: row;
         text-align: center;
         font-family: 'Sen';
-        max-height: 54px;
-        height: 6vh;
+        /* max-height: 54px;
+        height: 6vh; */
         font-size: 1rem;
         background: #FFD050;
         margin-top: 20px;
