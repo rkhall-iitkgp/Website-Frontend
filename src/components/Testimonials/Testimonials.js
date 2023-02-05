@@ -23,7 +23,7 @@ const Testimonials = () => {
 
   const [state, handleSubmit] = useForm("xknaolej");
   if (state.succeeded) {
-    return <p>Your message was successfully sent. Please reload the page.</p>;
+    return window.location.reload();
   }
 
   const style = {

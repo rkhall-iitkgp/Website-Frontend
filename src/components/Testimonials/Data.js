@@ -1,9 +1,9 @@
 export const Data = [
-  {
-    text: "We did not come here to fear the future, we came here to shape it. #Bhar_denge",
-    name: "Apar Sharma",
-    position: "IIT Kgp '22",
-  },
+  // {
+  //   text: "We did not come here to fear the future, we came here to shape it. #Bhar_denge",
+  //   name: "Apar Sharma",
+  //   position: "IIT Kgp '22",
+  // },
   {
     text:"My stay at RK were the best years of my life. The years were full of personal freedom that I enjoyed-I loved my own space, and the time with fellow RK'ites. We had DC++ which felt like we were in the future with super fast content download across learning and entertainment. RK is more like a family and built priceless memories and relationships.",
     name: "Pawan Kumar Chandana",

@@ -21,7 +21,7 @@
     font-family: 'Sen';
     font-style: normal;
     font-weight: 700;
-    font-size: 9.6vh;
+    font-size: 5rem;
     line-height: 0.9;
     letter-spacing: -2px;
     color: white;
@@ -60,7 +60,7 @@
 
 @media (max-width:780px) {
     .hallName {
-        font-size: 8.4vh;
+        font-size: 4rem;
     }
     .hallDescription {
         width: 50vw;
@@ -69,7 +69,7 @@
 
 @media (max-width:660px) {
     .hallName {
-        font-size: 6.2vh;
+        font-size: 3rem;
         width: 88vw;
     }
     .hallDescription {
@@ -79,7 +79,7 @@
 
 @media (max-width:500px) {
     .hallName {
-        font-size: 4.8vh;
+        font-size: 2.5rem;
         line-height: 1.2;
         color: white;
     }
@@ -114,6 +114,6 @@
 
 @media (max-width:380px) {
     .hallName {
-        font-size: 4vh;
+        font-size: 2rem;
     }
 }

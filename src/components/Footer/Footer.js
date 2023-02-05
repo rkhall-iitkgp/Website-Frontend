@@ -11,8 +11,15 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import img from "./mailbox.png";
+import { useForm, ValidationError } from '@formspree/react';
 
 function Footer() {
+  
+const [state, handleSubmit] = useForm("xeqweyvv");
+if (state.succeeded) {
+  return window.location.reload();
+}
+
   return (
     <footer id="footer">
       <Box bgcolor="#8DD3BB" color="black" className="footer">
@@ -24,8 +31,7 @@ function Footer() {
             </div>
             <form
               className="emailsubmit"
-              action="https://formbold.com/s/xknaolej"
-              method="POST"
+              method="POST" onSubmit={handleSubmit}
             >
               <input
                 className="email"
@@ -34,7 +40,7 @@ function Footer() {
                 name="message"
                 placeholder="Write to Us"
               />
-              <button type="submit" className="submit">
+              <button type="submit" className="submit" disabled={state.submitting}>
                 Submit
               </button>
             </form>

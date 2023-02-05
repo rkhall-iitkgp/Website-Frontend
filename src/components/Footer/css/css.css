@@ -14,7 +14,7 @@
 .footer {
   border-radius: 20px 20px 0 0;
   width: 100%;
-  margin-top: 30vh;
+  margin-top: 26vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -163,7 +163,7 @@
 
 @media screen and (max-width:900px) {
   .footer {
-    margin-top: 300px;
+    margin-top: 280px;
   }
 
   .query {
@@ -204,6 +204,9 @@
 }
 
 @media screen and (max-width:450px) {
+  .footer {
+    margin-top: 200px;
+  }
   .emailsubmit {
     display: flex !important;
     flex-direction: column;
