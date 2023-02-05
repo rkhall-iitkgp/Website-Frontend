@@ -59,6 +59,7 @@
   flex-grow: 0;
   border: none;
   padding: 20px;
+  width: 100%;
 }
 
 .query .submit {
@@ -206,6 +207,7 @@
   .emailsubmit {
     display: flex !important;
     flex-direction: column;
+    max-width: 80vw !important;
     width: 100%;
   }
 

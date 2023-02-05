@@ -111,3 +111,9 @@
         border: none;
     }
 }
+
+@media (max-width:380px) {
+    .hallName {
+        font-size: 4vh;
+    }
+}
