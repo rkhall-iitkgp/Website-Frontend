@@ -95,3 +95,10 @@
         margin-bottom: 20px;
     }
 }
+.alumForm {
+    margin-top: 75px;
+}
+.alumFormButton {
+    display: flex;
+    justify-content: center;
+}
