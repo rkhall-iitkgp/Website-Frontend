@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Sen:wght@700&display=swap");
 
+/* .profile {
+  display: flex;
+  flex-direction: column;
+  flex: 4;
+  align-items: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
+} */
+
 .profile-card {
   position: relative;
   display: inline-block;
@@ -9,7 +18,7 @@
   /* align the profile cards to the top of the container */
   align-items: center;
   text-align: center;
-  margin: 20px 15px 0px 0;
+  margin: 20px 15px 0px 0px;
   padding: 20px 0px;
   border-radius: 10px;
   background-color: #fbf6ea;
@@ -105,7 +114,8 @@ a.social {
   /*750px*/
   .profile-card {
     width: 73.5vw;
-    height: 77.4vw;
+    height: auto;
+    margin: 20px 0px 0px 0px;
   }
 
   .profile-card img {
@@ -127,9 +137,24 @@ a.social {
     margin-left: 8.3vw;
   }
 
+  /* .profile-social-icons {
+    padding-top:0px;
+    margin-bottom: 10px;
+  } */
+
   a.social {
     font-size: 4vw;
     margin: 0 3.74vw;
+  }
+}
+
+@media only screen and (max-width:450px) {
+  .profile-social-icons {
+    margin-top: 0px;
+    padding-top: 15px;
+  }
+  .profile-card p {
+    padding-top: 10px;
   }
 }
 

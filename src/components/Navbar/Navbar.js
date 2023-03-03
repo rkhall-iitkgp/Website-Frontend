@@ -17,7 +17,9 @@ export default function Navbar() {
   const Navigate = useNavigate();
 
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  // const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
+  const isMobile = useMediaQuery("(max-width: 780px)");
+
 
   return (
     <Box sx={{ flexGrow: 1 }}>

@@ -21,7 +21,7 @@
     font-family: 'Sen';
     font-style: normal;
     font-weight: 700;
-    font-size: 9.6vh;
+    font-size: 5rem;
     line-height: 0.9;
     letter-spacing: -2px;
     color: white;
@@ -40,13 +40,13 @@
 }
 
 .headerReadMore {
-    padding: 0.8rem 2rem;
+    padding: 1rem 2rem;
     flex-direction: row;
     text-align: center;
     font-family: 'Sen';
-    max-height: 54px;
-    height: 6vh;
-    font-size: 2.5vh;
+    /* max-height: 54px;
+    height: 6vh; */
+    font-size: 1.6rem;
     background: #FFD050;
     border: none;
     margin-top: 24px;
@@ -58,9 +58,28 @@
     transform: scale(1.05);
 }
 
-@media (max-width:450px) {
+@media (max-width:780px) {
     .hallName {
-        font-size: 5vh;
+        font-size: 4rem;
+    }
+    .hallDescription {
+        width: 50vw;
+    }
+}
+
+@media (max-width:660px) {
+    .hallName {
+        font-size: 3rem;
+        width: 88vw;
+    }
+    .hallDescription {
+        width: 60vw;
+    }
+}
+
+@media (max-width:500px) {
+    .hallName {
+        font-size: 2.5rem;
         line-height: 1.2;
         color: white;
     }
@@ -75,20 +94,26 @@
         font-size: 16px;
         line-height: 28px;
         color: #FFFFFF;
-        width: 100%;
+        width: 75vw;
         color: #FFFFFF;
         fill: #FFFFFF;
     }
     .headerReadMore {
-        padding: 0.8rem 2rem;
+        padding: 1rem 2rem;
         flex-direction: row;
         text-align: center;
         font-family: 'Sen';
-        max-height: 54px;
-        height: 6vh;
-        font-size: 2.5vh;
+        /* max-height: 54px;
+        height: 6vh; */
+        font-size: 1rem;
         background: #FFD050;
         margin-top: 20px;
         border: none;
+    }
+}
+
+@media (max-width:380px) {
+    .hallName {
+        font-size: 2rem;
     }
 }
