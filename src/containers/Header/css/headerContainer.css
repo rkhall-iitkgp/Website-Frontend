@@ -48,8 +48,10 @@
     height: 6vh; */
     font-size: 1.6rem;
     background: #FFD050;
+    color: black;
     border: none;
     margin-top: 24px;
+    text-decoration: none;
     transition: all .1s ease-in-out;
 }
 
