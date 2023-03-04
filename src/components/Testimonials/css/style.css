@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap');
 
-.testimonials{
+
+.testimonials {
     background: #FBF6EA;
     margin-left: 4%;
     margin-right: 4%;
     display: flex;
 }
 
-.leftSide{
+.leftSide {
     margin: 8%;
     margin-top: 0;
     padding-top: 25px;
@@ -17,11 +18,11 @@
     margin-right: -3%;
 }
 
-.rightSide{
+.rightSide {
     width: 50%;
 }
 
-.leftSide .title{
+.leftSide .title {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -35,7 +36,7 @@
     color: #232536;
 }
 
-.leftSide .nextHead{
+.leftSide .nextHead {
     font-family: 'Sen';
     font-style: normal;
     font-weight: 700;
@@ -47,7 +48,7 @@
     margin-bottom: 5%;
 }
 
-.leftSide .text{
+.leftSide .text {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -56,19 +57,19 @@
     color: #232536;
 }
 
-.border{
+.border {
     opacity: 0.4;
     border: 0.01em solid #6D6E76;
     margin: 6%;
 }
 
-.rightSide{
+.rightSide {
     margin: 5%;
     margin-left: 0;
     margin-right: 0;
 }
 
-.rightSide .heading{
+.rightSide .heading {
     font-family: 'Sen';
     font-style: normal;
     font-weight: 700;
@@ -80,9 +81,13 @@
     letter-spacing: 0;
     word-spacing: 2px;
     margin-right: 30%;
+    min-height: 40vh;
+    height: 40vh;
+    width: 100%;
+    overflow-y: auto;
 }
 
-.rightLower .person .name{
+.rightLower .person .name {
     font-family: 'Sen';
     font-style: normal;
     font-weight: 700;
@@ -92,13 +97,13 @@
     margin-bottom: 0;
 }
 
-.rightLower{
-    margin-top: 20%;
+.rightLower {
+    margin-top: 5%;
     align-items: center;
     margin-left: 15%;
 }
 
-.rightLower .person .company{
+.rightLower .person .company {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -108,35 +113,99 @@
     margin-top: 0;
 }
 
-.rightLower{
+.rightLower {
     display: flex;
 }
 
-.rightLower .person{
+.rightLower .person {
     width: 280px;
     padding: 10px;
 }
 
-.rightLower .buttons{
+.rightLower .buttons {
     align-content: right;
     align-items: right;
     float: right;
     display: flex;
 }
 
-.rightLower .buttons:hover{
+.rightLower .buttons:hover {
     cursor: pointer;
 }
 
-.rightLower .buttons .back{
+.rightLower .buttons .back {
     margin-right: 20px;
     object-fit: cover;
     width: 62px;
 }
 
-.person .name, .heading, .person .company {
+.person .name,
+.heading,
+.person .company {
     animation-name: fade;
     animation-duration: 1.5s;
+}
+
+.pad-btn {
+    padding-top: 18vh;
+    padding-bottom: 10px;
+}
+
+.addbutton {
+    padding-right: 10px;
+    padding-left: 10px;
+    width: auto;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.addbutton.accept-btn:hover {
+    background-color: #000;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.form {
+    width: 300px;
+    padding: 10px 40px 10px 30px;
+}
+
+label {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input,
+textarea {
+    border: 1px solid #ccc;
+    color: #333;
+    width: calc(100% - 30px);
+}
+
+input,
+textarea {
+    border-radius: 4px;
+    padding: 8px 15px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    margin-top: 10px;
+    width: 300px;
 }
 
 @keyframes fade {
@@ -149,27 +218,41 @@
     }
 }
 
-@media only screen and (max-width: 640px){
-    .testimonials{
+@media only screen and (max-width: 886px) {
+    .pad-btn {
+        padding-top: 14vh;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .testimonials {
         display: block;
     }
-    .leftSide{
+
+    .pad-btn {
+        padding-top: 18px;
+        padding-bottom: 10px;
+    }
+
+    .leftSide {
         width: 80%;
         padding: 5%;
         padding-top: 8%;
     }
 
-    .rightSide{
+    .rightSide {
         width: 100%;
         padding-left: 13%;
         padding-right: 0;
     }
 
-    .rightLower{
+    .rightLower {
         margin-left: 0;
+        margin-top: 25px;
         margin-right: 10%;
     }
-    .rightLower .buttons{
+
+    .rightLower .buttons {
         margin-left: 0;
         padding-left: 0;
         margin-top: 0;

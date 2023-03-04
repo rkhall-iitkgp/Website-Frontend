@@ -23,7 +23,7 @@ function galleryHome() {
           <div className="content">
             <img src={illu} alt="img" />
             <Grid item xs={12} style={{ textAlign: "right" }}>
-            <div className="illu-text"><label>ILLUMINATION l 2016</label></div>
+              <div className="illu-text">ILLUMINATION l 2016</div>
             </Grid>
             <Grid
               container
@@ -31,12 +31,9 @@ function galleryHome() {
               justifyContent="space-between"
               className="gallery-below"
             >
-              <Grid item xs={12} md={8}>
-                <h4>
-                  Festival for you,
-                  <br /> Tradition for us.
-                </h4>
-                <div className="gallery-text ">
+              <Grid item>
+                <h4>Festival for you, Tradition for us.</h4>
+                <div className="gallery-text">
                   The Illuminatinon (or ‘illu’) is the IIT Kharagpur way of
                   celebrating Diwali. This unique culture is celebrated by
                   students from different halls of residence, alumni, faculty,
@@ -46,31 +43,26 @@ function galleryHome() {
                 </div>
               </Grid>
             </Grid>
-              <Grid
-                item
-                container
-                xs={4}
-                sm={3.5}
-                md={4}
-                lg={3.5}
-                direction="column"
-              >
-                <Grid item>
-                  <button className="gallery-text-button">
-                    <div className="gallery-text">Read More {" >"}</div>
-                  </button>
-                  {/* <Button link="/" name="Read More &gt;"/> */}
-                </Grid>
-              </Grid>
-
+            <Grid
+              item
+              container
+              xs={4}
+              sm={3.5}
+              md={4}
+              lg={3.5}
+              direction="column"
+            >
+              {/* <Grid item>
+                <Button name="Read More" />
+              </Grid> */}
+            </Grid>
           </div>
         </Grid>
         <Grid item md={4.5} xs={12} className="gallery-right">
-          <div className="right-top">
+          <div className="right-heading">
             <h2>Featured Photos </h2>
-            <Link to={"./gallery"} className="text">View All</Link>
+            <Link to={"./gallery"}>View All</Link>
           </div>
-
           <div className="content">
             <img src={img1} alt="img" />
             <img src={img2} alt="img" />

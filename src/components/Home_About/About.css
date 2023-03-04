@@ -7,6 +7,7 @@
   display: flex;
   height: 20px;
 }
+
 .about_design * {
   padding: 0.5%;
   margin: 0;
@@ -26,14 +27,17 @@
   flex-grow: 1;
   background: #592ea9;
 }
+
 .aboutUs {
   background-color: #f4f0f8;
   height: 2%;
   margin: 5%;
 }
+
 .aboutUs_main {
   margin: 5%;
 }
+
 .aboutUs h2 {
   font-size: 2rem;
   text-transform: uppercase;
@@ -43,37 +47,47 @@
   color: #232536;
   font-family: "Sen";
 }
+
 .aboutUs_content {
   display: flex;
 }
-.aboutUs_content > div {
+
+.aboutUs_content>div {
   margin: 1rem;
   margin-top: 0;
   flex: 1;
 }
+
 .aboutUs_content h3 {
   font-family: "Sen";
   font-size: 24px;
   padding-bottom: 10px;
   line-height: 30px;
   font-weight: 600;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
+
 .aboutUs_content p {
+  padding-top: 10px;
   font-family: 'Inter';
-  margin: 10px 0 0 0;
-  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 28px;
+  color: #6D6E76;
 }
+
 .aboutUs_moto p {
   font-size: 1.2rem;
   font-family: "Sen";
   font-weight: bold;
   text-align: end;
   margin: 1.5rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
   text-transform: uppercase;
 }
+
 .aboutUs_more .gb_btn {
   margin: 1rem;
 }

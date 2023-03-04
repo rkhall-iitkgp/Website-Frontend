@@ -1,17 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Sen:wght@700&display=swap");
 
+/* .profile {
+  display: flex;
+  flex-direction: column;
+  flex: 4;
+  align-items: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
+} */
+
 .profile-card {
   position: relative;
   display: inline-block;
   width: 22vw;
   height: 28vw;
-  vertical-align: top; /* align the profile cards to the top of the container */
+  vertical-align: top;
+  /* align the profile cards to the top of the container */
   align-items: center;
   text-align: center;
-  margin: 20px 15px 0px 0;
-  padding-top: 20px;
+  margin: 20px 15px 0px 0px;
+  padding: 20px 0px;
   border-radius: 10px;
   background-color: #fbf6ea;
+  transition: all .1s ease-in-out;
+}
+
+.profile-card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
 }
 
 /* profile card info */
@@ -40,13 +56,18 @@
   height: 2.5vw;
 }
 
-.social-icons {
+.profile-social-icons {
   display: flex;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   border-radius: 50%;
   padding-top: 0;
-  margin-left: 3.6vw;
+  transition: all .01s ease-in-out;
+}
+
+.profile-social-icons a:hover {
+  transform: scale(1.2);
 }
 
 a.social {
@@ -55,11 +76,8 @@ a.social {
   color: #232536;
 }
 
-a.social:hover {
-  color: #3f4157b1;
-}
-
 @media screen and (max-width: 900px) and (min-width: 750px) {
+
   /*900px screen*/
   .profile-card {
     width: 30.5vw;
@@ -70,17 +88,21 @@ a.social:hover {
     width: 19vw;
     height: 19vw;
   }
+
   .profile-card h3 {
     font-size: 1.83vw;
     height: 0.7vw;
   }
+
   .profile-card p {
     font-size: 1.35vw;
     height: 3vw;
   }
+
   .social-icons {
     margin-left: 3.05vw;
   }
+
   a.social {
     font-size: 1.8vw;
     margin: 0 1.5vw;
@@ -88,30 +110,51 @@ a.social:hover {
 }
 
 @media screen and (max-width: 750px) {
+
   /*750px*/
   .profile-card {
     width: 73.5vw;
-    height: 77.4vw;
+    height: auto;
+    margin: 20px 0px 0px 0px;
   }
 
   .profile-card img {
     width: 44vw;
     height: 44vw;
   }
+
   .profile-card h3 {
     font-size: 4.58vw;
     height: 3vw;
   }
+
   .profile-card p {
     font-size: 3.4vw;
     height: 8vw;
   }
+
   .social-icons {
     margin-left: 8.3vw;
   }
+
+  /* .profile-social-icons {
+    padding-top:0px;
+    margin-bottom: 10px;
+  } */
+
   a.social {
     font-size: 4vw;
     margin: 0 3.74vw;
+  }
+}
+
+@media only screen and (max-width:450px) {
+  .profile-social-icons {
+    margin-top: 0px;
+    padding-top: 15px;
+  }
+  .profile-card p {
+    padding-top: 10px;
   }
 }
 
@@ -126,17 +169,21 @@ a.social:hover {
     width: 14vw;
     height: 14vw;
   }
+
   .profile-card h3 {
     font-size: 1.45vw;
     height: 0.7vw;
   }
+
   .profile-card p {
     font-size: 1.1vw;
     height: 2.7vw;
   }
+
   .social-icons {
     margin-left: 3.2vw;
   }
+
   a.social {
     font-size: 1.4vw;
     margin: 0 1.03vw;

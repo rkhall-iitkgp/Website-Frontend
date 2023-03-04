@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import { Data } from "./Data";
 import "./css/style.css";
+import Backdrop from '@mui/material/Backdrop';
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import Fade from '@mui/material/Fade';
+import Typography from '@mui/material/Typography';
+import { useForm, ValidationError } from '@formspree/react';
 
 const Testimonials = () => {
   const [current, setCurrent] = useState(0);
   const length = Data.length;
+  const [open, setOpen] = useState(false);
 
   const prevData = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
@@ -14,9 +21,28 @@ const Testimonials = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
 
+  const [state, handleSubmit] = useForm("xknaolej");
+  if (state.succeeded) {
+    return window.location.reload();
+  }
+
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    boxShadow: 24,
+    p: 4,
+  };
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <div>
-      <div className="testimonials">
+      <div className="testimonials" id="Testimonials">
         <div className="leftSide">
           <p className="title">Testimonials</p>
           <h2 className="nextHead">What people say</h2>
@@ -24,6 +50,49 @@ const Testimonials = () => {
             RKites occupy some of the most important positions in industry and
             academics.
           </p>
+          <div className="pad-btn">
+            <button className="addbutton accept-btn" onClick={handleOpen}>
+              Add Testimonial
+            </button>
+            <Modal
+              aria-labelledby="transition-modal-title"
+              aria-describedby="transition-modal-description"
+              open={open}
+              onClose={handleClose}
+              closeAfterTransition
+              BackdropComponent={Backdrop}
+              BackdropProps={{
+                timeout: 500,
+              }}
+            >
+              <Fade in={open}>
+                <Box sx={style}>
+                  <form method="POST" onSubmit={handleSubmit}>
+                    <label htmlFor="name">Full Name</label>
+                    <input id="name" type="text" name="name" required />
+                    <ValidationError prefix="Name" field="name" errors={state.errors} />
+
+                    <label htmlFor="batch">Batch</label>
+                    <input id="batch" type="text" name="batch" required />
+                    <ValidationError prefix="Batch" field="batch" errors={state.errors} />
+
+                    <label htmlFor="email">Email Address</label>
+                    <input id="email" type="email" name="email" required />
+                    <ValidationError prefix="Email" field="email" errors={state.errors} />
+
+                    <label htmlFor="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <ValidationError prefix="Message" field="message" errors={state.errors} />
+
+                    <button className="addbutton" type="submit" disabled={state.submitting}>
+                      Submit
+                    </button>
+                    <ValidationError errors={state.errors} />
+                  </form>
+                </Box>
+              </Fade>
+            </Modal>
+          </div>
         </div>
         <div className="border"></div>
         <div className="rightSide">
