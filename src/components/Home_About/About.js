@@ -29,16 +29,15 @@ function homeAbout() {
           </div>
 
           <div className="aboutUs_left">
-            <h3>
+            <p>
               The unique culture of this Hall is woven around the principle of
               unity, especially its ‘Wing Culture’, where boarders of all years
               live together, in the same Wing.
-            </h3>
-            <p>
-              The gigantic messtop structure of "Geetopadesha" during Illu -
-              2002 in RK Hall is the tallest ever structure in the history of
-              IIT KGP. The panoramic view of that messtop is still fresh in the
-              memories of many RKiites around the globe.
+            </p>
+            <p className="music_room">
+            The Hall is also home to the RK Music Room, which is equipped with a wide range of musical instruments. 
+            It serves as a resource for RKites and students of the WTMS and ETMS to practice and prepare for events like the 
+            Inter IIT Cultural Meet, making it an ideal venue for fostering musical talent on campus.
             </p>
           </div>
         </div>
