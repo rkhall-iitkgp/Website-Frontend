@@ -39,9 +39,16 @@
     padding-left: 6vw;
 }
 
-.swiper-button-next, .swiper-button-prev{
-    width: 3vw !important;
+.swiper-button-prev, .swiper-button-next, .swiper-button-next::after, .swiper-button-prev::after{
+    /* width: 5vw !important; */
+    font-size: 4vmin !important;
     color: #FFD050 !important;
+}
+.swiper-button-next{
+    right: 4vmin !important;
+}
+.swiper-button-prev{
+    left: 4vmin !important;
 }
 
 .slide1{
@@ -127,6 +134,17 @@
     .slide .hallDescription{    
         padding-bottom: calc(29vh + 72px);
     }
+
+    .slide .hallName, .slide .hallDescription, .headerbutton{
+        padding-left: 9vw;
+    }
+
+    .swiper-button-next{
+        right: 3vmin !important;
+    }
+    .swiper-button-prev{
+        left: 3vmin !important;
+    }
 }
 
 @media (max-width:660px) {
@@ -161,7 +179,7 @@
         font-size: 16px;
         line-height: 28px;
         color: #FFFFFF;
-        width: 75vw;
+        width: 65vw;
         color: #FFFFFF;
         fill: #FFFFFF;
     }
@@ -176,6 +194,17 @@
         background: #FFD050;
         margin-top: 20px;
         border: none;
+    }
+
+    .swiper-button-next, .swiper-button-next::after{
+        display: none;
+    }
+    .swiper-button-prev, .swiper-button-prev::after{
+        display: none;
+    }
+
+    .slide .hallName, .slide .hallDescription, .headerbutton{
+        padding-left: 8vw;
     }
 }
 
