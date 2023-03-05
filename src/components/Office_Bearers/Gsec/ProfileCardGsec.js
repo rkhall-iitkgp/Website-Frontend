@@ -15,7 +15,7 @@ function ProfileCard(props) {
       <div className="profile-card_info">
         <h3>{props.name}</h3>
         <p>{props.position}</p>
-        <div className="profile-social-icons">
+        {/* <div className="profile-social-icons">
           <a
             rel="noreferrer"
             className="facebook social"
@@ -52,7 +52,7 @@ function ProfileCard(props) {
             {" "}
             <FontAwesomeIcon icon={faLinkedin} />{" "}
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );

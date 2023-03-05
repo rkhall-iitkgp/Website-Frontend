@@ -39,6 +39,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+console.log(12345);
+
 export default function Imagedata(event, year) {
   console.log(event);
   console.log(year);
@@ -60,13 +62,11 @@ export default function Imagedata(event, year) {
         const pics = response.data.phtoturls;
         console.log(pics);
         setPhotos(
-          pics.map((obj) => (
-            {
-              "src": obj.url,
-              "width": obj.width,
-              "height": obj.height
-            }
-          ))
+          pics.map((obj) => ({
+            src: obj.url,
+            width: obj.width,
+            height: obj.height,
+          }))
         );
         setIsLoading(false);
       })
