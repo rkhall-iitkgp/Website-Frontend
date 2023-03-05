@@ -10,13 +10,13 @@
     gap: 35px;
     height: 100vh;
     /* padding: 220px 0px 64px 54px; */
-    padding: 64px 0 0 0;
+    margin: 64px 0 0 0;
 }
 
 .carousel{
     height: 100%;
     width: 100%;
-    
+
 }
 
 .slide{
@@ -30,7 +30,7 @@
     background-size: cover;
 }
 
-.slide .hallDescription{    
+.slide .hallDescription{
     padding-bottom: calc(24vh + 72px);
     padding-left: 6vw;
 }
@@ -56,7 +56,7 @@
 }
 
 .slide2{
-    background-image: linear-gradient(6deg, rgba(0, 0, 0, 0.6), rgba(15, 14, 14, 0.82)), url("https://images.unsplash.com/34/BA1yLjNnQCI1yisIZGEi_2013-07-16_1922_IMG_9873.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80");
+    background-image: linear-gradient(6deg, rgba(0, 0, 0, 0.6), rgba(15, 14, 14, 0.82)), url("/public/header.png");
 }
 
 .slide3{
@@ -131,7 +131,7 @@
     .headerbutton{
         bottom: 25vh;
     }
-    .slide .hallDescription{    
+    .slide .hallDescription{
         padding-bottom: calc(29vh + 72px);
     }
 
@@ -164,7 +164,7 @@
 }
 
 @media (max-width:500px) {
-    .hallName { 
+    .hallName {
         font-size: 2.5rem;
         line-height: 1.2;
         color: white;
