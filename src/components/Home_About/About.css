@@ -92,8 +92,24 @@
   margin: 1rem;
 }
 
+.aboutUs_left {
+  padding-top: 12px;
+}
+
+.aboutUs_right p {
+  padding-top: 20px;
+}
+
 @media screen and (max-width: 700px) {
   .aboutUs_content {
     flex-direction: column;
+  }
+
+  .aboutUs_left {
+    padding-top: 0;
+  }
+
+  .aboutUs_left .music_room {
+    padding-top: 25px;
   }
 }
