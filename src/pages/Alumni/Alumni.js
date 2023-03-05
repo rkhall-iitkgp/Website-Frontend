@@ -7,6 +7,7 @@ import Alumnus from "./Alumnus";
 import { useState } from "react";
 import axios from "axios";
 import { Audio } from "react-loader-spinner";
+import Alumform from "./Alumform";
 
 export function Alumni() {
   const [year, setYear] = useState(2022);
@@ -77,6 +78,7 @@ export function Alumni() {
       <div className="navbar">
         <Navbar />
       </div>
+      <Alumform/>
       <div className="alumpage">
         <div className={`leftbox ${yearmenu ? "active" : ""}`}>
           <span className="box-header">Our Alumni</span>
