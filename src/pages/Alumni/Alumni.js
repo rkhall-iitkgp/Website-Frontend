@@ -78,7 +78,6 @@ export function Alumni() {
       <div className="navbar">
         <Navbar />
       </div>
-      <Alumform/>
       <div className="alumpage">
         <div className={`leftbox ${yearmenu ? "active" : ""}`}>
           <span className="box-header">Our Alumni</span>
