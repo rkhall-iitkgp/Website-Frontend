@@ -5,6 +5,7 @@ import { useState } from "react";
 import Yearbox from "./yearbox";
 import Event from "./Event";
 import Eventpics from "./Eventpics";
+import { useNavigate } from "react-router-dom";
 
 import img1 from "./illumination.png";
 import img2 from "./gc.png";
@@ -17,6 +18,7 @@ export function Gallery() {
     const [year, setYear] = useState(2022);
     const [yearmenu, setYearmenu] = useState(false);
     const [event, setEvent] = useState(0);
+    const Navigate = useNavigate();
 
     function handleClick(year) {
         setYear(year);
@@ -26,7 +28,7 @@ export function Gallery() {
     }
 
     function handleEventClick(event) {
-        setEvent(event);
+        Navigate(`/gallery/${year}/${event}`)
     }
 
     const yeargroup = [...Array(15).keys()]
@@ -60,43 +62,36 @@ export function Gallery() {
 
             <div className={`rightbox ${event > 0 ? "active" : ""}`}>
                 <Event
-                    id={1}
+                    id={"illu-rangoli"}
                     event="Illumination & Rangoli"
                     img={img1}
                     handleEventClick={handleEventClick}
                 />
                 <Event
-                    id={2}
+                    id={"gc"}
                     event="General Championship"
                     img={img2}
                     handleEventClick={handleEventClick}
                 />
                 <Event
-                    id={3}
+                    id={"teachers-day"}
                     event="Teachers Day"
                     img={img3}
                     handleEventClick={handleEventClick}
                 />
                 <Event
-                    id={4}
+                    id={"intra-hall"}
                     event="Intra-hall Events"
                     img={img4}
                     handleEventClick={handleEventClick}
                 />
                 <Event
-                    id={5}
+                    id={"others"}
                     event="Other Events"
                     img={img1}
                     handleEventClick={handleEventClick}
                 />
             </div>
-
-            {event === 1 && <Eventpics url="illu-rangoli" year={year} title={"Illumination & Rangoli"} />}
-            {event === 2 && <Eventpics url="gc" year={year} title={"General Championship"} />}
-            {event === 3 && <Eventpics url="teachers-day" year={year} title={"Teachers Day"} />}
-            {event === 4 && <Eventpics url="intra-hall" year={year} title={"Intra-hall Events"} />}
-            {event === 5 && <Eventpics url="others" year={year} title={"Other Events"} />}
-
         </div>
     );
 }
