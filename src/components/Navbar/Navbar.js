@@ -20,6 +20,20 @@ export default function Navbar() {
   // const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   const isMobile = useMediaQuery("(max-width: 780px)");
 
+  const handleHomeClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    Navigate("/");
+  };
+
+  const scrollWithOffset = (el, offset) => {
+    const elementPosition = el.offsetTop - offset;
+    window.scroll({
+      top: elementPosition,
+      left: 0,
+      behavior: "smooth"
+    })
+  };
+
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -27,14 +41,14 @@ export default function Navbar() {
       <AppBar position="fixed" style={{ background: "black" }}>
         <Toolbar>
           <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-            <div className="logo-container">
-            <a href="/">
-              <img
-                src={Logo}
-                alt="RKH"
-                style={{ maxWidth: 30, marginRight: "10px" }}
-              />
-            </a>
+            <div className="logo-container" id="hero">
+              <a href="/">
+                <img
+                  src={Logo}
+                  alt="RKH"
+                  style={{ maxWidth: 30, marginRight: "10px" }}
+                />
+              </a>
             </div>
           </Typography>
           {isMobile ? (
@@ -44,7 +58,7 @@ export default function Navbar() {
               <Button
                 className="menu-item"
                 color="inherit"
-                onClick={() => Navigate("/")}
+                onClick={handleHomeClick}
               >
                 Home
               </Button>
@@ -62,12 +76,12 @@ export default function Navbar() {
               >
                 Alumni
               </Button>
-              <HashLink smooth to="/#AboutUs" style={{ color: "white" }}>
+              <HashLink smooth to="/#AboutUs" scroll={el => scrollWithOffset(el, 100)} style={{ color: "white" }}>
                 <Button className="menu-item" color="inherit">
                   About Us
                 </Button>
               </HashLink>
-              <HashLink smooth to="/#Testimonials" style={{ color: "white" }}>
+              <HashLink smooth to="/#Testimonials" scroll={el => scrollWithOffset(el, 100)} style={{ color: "white" }}>
                 <Button className="menu-item" color="inherit">
                   Testimonials
                 </Button>

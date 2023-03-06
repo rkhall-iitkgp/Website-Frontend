@@ -35,9 +35,9 @@ function homeAbout() {
               live together, in the same Wing.
             </p>
             <p className="music_room">
-            The Hall is also home to the RK Music Room, which is equipped with a wide range of musical instruments. 
-            It serves as a resource for RKites and students of the WTMS and ETMS to practice and prepare for events like the 
-            Inter IIT Cultural Meet, making it an ideal venue for fostering musical talent on campus.
+              The Hall is also home to the RK Music Room, which is equipped with a wide range of musical instruments.
+              It serves as a resource for RKites and students of the WTMS and ETMS to practice and prepare for events like the
+              Inter IIT Cultural Meet, making it an ideal venue for fostering musical talent on campus.
             </p>
           </div>
         </div>
@@ -45,7 +45,7 @@ function homeAbout() {
           {/* <Button name="Read More" /> */}
 
           <div className="aboutUs_moto">
-            <p>A great pLace to learn and live</p>
+            <p>A great place to learn... and live</p>
           </div>
         </div>
       </div>
