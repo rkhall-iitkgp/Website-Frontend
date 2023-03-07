@@ -86,8 +86,8 @@ export function Gallery() {
                     handleEventClick={handleEventClick}
                 />
                 <Event
-                    id={"others"}
-                    event="Other Events"
+                    id={"random"}
+                    event="Random"
                     img={img1}
                     handleEventClick={handleEventClick}
                 />
