@@ -17,7 +17,7 @@ function Eventpics() {
         "gc": "General Championship",
         "teachers-day": "Teachers Day",
         "intra-hall": "Intra-hall Events",
-        "others": "Other Events"
+        "random": "random"
     }
 
     const [currentImage, setCurrentImage] = useState(0);
