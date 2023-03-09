@@ -33,7 +33,7 @@
 
 /* profile card info */
 .profile-card_info {
-  padding: 20px;
+  padding: 10px;
 }
 
 .profile-card img {
@@ -82,7 +82,11 @@ a.social {
   /*900px screen*/
   .profile-card {
     width: 30.5vw;
-    height: 34vw;
+    height: 30vw;
+  }
+
+  .profile-card_info {
+    padding: 0px;
   }
 
   .profile-card img {
@@ -93,6 +97,7 @@ a.social {
   .profile-card h3 {
     font-size: 1.83vw;
     height: 0.7vw;
+    margin-top: 0.6rem;
   }
 
   .profile-card p {
@@ -119,6 +124,10 @@ a.social {
     margin: 20px 0px 0px 0px;
   }
 
+  .profile-card_info {
+    padding: 0px;
+  }
+
   .profile-card img {
     width: 44vw;
     height: 44vw;
@@ -127,6 +136,7 @@ a.social {
   .profile-card h3 {
     font-size: 4.58vw;
     height: 3vw;
+    margin-top: 0.4rem;
   }
 
   .profile-card p {
@@ -155,14 +165,14 @@ a.social {
     padding-top: 15px;
   }
   .profile-card p {
-    padding-top: 10px;
+    padding-top: 0px;
   }
 }
 
 @media screen and (max-width: 1400px) and (min-width: 900px) {
   .profile-card {
     width: 24vw;
-    height: 26vw;
+    height: 25vw;
     margin: 20px 15px -0.5vw 0;
   }
 
