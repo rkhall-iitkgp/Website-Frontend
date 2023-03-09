@@ -118,7 +118,7 @@
 }
 
 .rightLower .person {
-    width: 280px;
+    width: 75%;
     padding: 10px;
 }
 
@@ -235,26 +235,71 @@ textarea {
     }
 
     .leftSide {
-        width: 80%;
+        width: 75%;
         padding: 5%;
         padding-top: 8%;
     }
 
     .rightSide {
-        width: 100%;
+        width: 75%;
         padding-left: 13%;
         padding-right: 0;
+    }
+
+    .rightSide .heading {
+        width: 75vw;
     }
 
     .rightLower {
         margin-left: 0;
         margin-top: 25px;
-        margin-right: 10%;
+        margin-right: 10px;
     }
 
     .rightLower .buttons {
         margin-left: 0;
         padding-left: 0;
         margin-top: 0;
+    }
+    .rightLower .buttons .back {
+        width: 40px;
+        height: 40px;
+    }
+    .rightLower .buttons .next {
+        width: 50px;
+        height: 50px;
+    }
+    .rightLower {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .rightSide .heading {
+        font-weight: 600;
+        font-size: 1.2rem;
+        line-height: 24px;
+        word-spacing: 2px;
+        margin-right: 10%;
+        min-height: 32vh;
+        height: 32vh;
+        width: 70vw;
+    }
+    .rightLower .person .name {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .rightLower .person .company {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .leftSide .nextHead{
+        font-size: 1.6rem;
+    }
+    .leftSide .text {
+        font-size: 1rem;
     }
 }

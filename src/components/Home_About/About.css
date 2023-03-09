@@ -112,4 +112,16 @@
   .aboutUs_left .music_room {
     padding-top: 25px;
   }
+
+  @media  screen and (max-width:360px){
+    .aboutUs h2 {
+      font-size: 1.5rem;
+    }
+    .aboutUs h3 {
+      font-size: 1.3rem;
+    }
+    .aboutUs_content p {
+      font-size: 1rem;
+    }
+  }
 }
