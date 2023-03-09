@@ -20,13 +20,13 @@ const Alumnus = (props) => {
       </div>
       <p className="desc">{props.desc}</p>
       <div className="social">
-        <a href="#">
+        <a href="javascript:void(0)">
           <FontAwesomeIcon icon={faFacebook} className="social-icons" />
         </a>
-        <a href="#">
+        <a href="javascript:void(0)">
           <FontAwesomeIcon icon={faInstagram} className="social-icons" />
         </a>
-        <a href="#">
+        <a href="javascript:void(0)">
           <FontAwesomeIcon icon={faTwitter} className="social-icons" />
         </a>
         <a href={props.linkedin} target="_blank">

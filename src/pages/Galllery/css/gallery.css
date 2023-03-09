@@ -257,10 +257,12 @@ a{
 
 .loader{
     padding-top: 20px;
- display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
     position: fixed;
     width: 100%;
     font-size: 1.5rem;
     color: gray;
+    margin-left: -10px;
 }

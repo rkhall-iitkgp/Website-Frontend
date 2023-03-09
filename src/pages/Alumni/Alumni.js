@@ -8,9 +8,11 @@ import { useState } from "react";
 import axios from "axios";
 import { Audio } from "react-loader-spinner";
 import Alumform from "./Alumform";
+import ScrollToTopButton from '../../components/ScrollToTop/ScrollToTopButton';
+
 
 export function Alumni() {
-  const [year, setYear] = useState(2022);
+  const [year, setYear] = useState(2019);
   const [yearmenu, setYearmenu] = useState(false);
 
   const [alumni, setAlumni] = useState(undefined);
@@ -78,6 +80,7 @@ export function Alumni() {
       <div className="navbar">
         <Navbar />
       </div>
+      <Alumform />
       <div className="alumpage">
         <div className={`leftbox ${yearmenu ? "active" : ""}`}>
           <span className="box-header">Our Alumni</span>
@@ -86,9 +89,12 @@ export function Alumni() {
         <div className={`years mobileyears ${yearmenu ? "active" : ""}`}>
           {mobileyeargroup}
         </div>
+        <ScrollToTopButton />
+
         <div className="alum">
           {alumni ? (
             <div className="rightbox">{alumni}</div>
+            
           ) : (
             <Audio
               height="80"

@@ -47,8 +47,7 @@ const Testimonials = () => {
           <p className="title">Testimonials</p>
           <h2 className="nextHead">What people say</h2>
           <p className="text">
-            RKites occupy some of the most important positions in industry and
-            academics.
+          RK hall of residence is home to a strong community of students and alumni who have achieved great success in various fields. Their stories and experiences serve as an inspiration to future generations of RKites, encouraging them to strive for excellence and make the most of their opportunities at IIT Kharagpur.
           </p>
           <div className="pad-btn">
             <button className="addbutton accept-btn" onClick={handleOpen}>

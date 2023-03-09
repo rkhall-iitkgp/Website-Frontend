@@ -6,6 +6,8 @@ import { Audio } from 'react-loader-spinner';
 import { useNavigate, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareCaretLeft } from "@fortawesome/free-solid-svg-icons";
+import ScrollToTopButton from '../../components/ScrollToTop/ScrollToTopButton';
+
 
 function Eventpics() {
     const { year, event } = useParams();
@@ -17,7 +19,7 @@ function Eventpics() {
         "gc": "General Championship",
         "teachers-day": "Teachers Day",
         "intra-hall": "Intra-hall Events",
-        "random": "random"
+        "random": "Randoms"
     }
 
     const [currentImage, setCurrentImage] = useState(0);
@@ -57,6 +59,8 @@ function Eventpics() {
                     </Modal>
                 ) : null}
             </ModalGateway>
+            <ScrollToTopButton />
+
             {isLoading ? <Audio
                 height="80"
                 width="80"

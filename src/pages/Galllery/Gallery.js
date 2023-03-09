@@ -87,7 +87,7 @@ export function Gallery() {
                 />
                 <Event
                     id={"random"}
-                    event="Random"
+                    event="Randoms"
                     img={img1}
                     handleEventClick={handleEventClick}
                 />
