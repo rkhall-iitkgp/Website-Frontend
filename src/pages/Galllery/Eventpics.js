@@ -3,10 +3,22 @@ import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import Imagedata from "./imagedata";
 import { Audio } from 'react-loader-spinner';
+import { useNavigate, useParams } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSquareCaretLeft } from "@fortawesome/free-solid-svg-icons";
 
-function Eventpics(props) {
-    const [photos, isLoading] = Imagedata(props.url, props.year);
-    console.log(photos)
+function Eventpics() {
+    const { year, event } = useParams();
+    const [photos, isLoading] = Imagedata(event, year);
+    const Navigate = useNavigate();
+
+    const titles = {
+        "illu-rangoli": "Illumination & Rangoli",
+        "gc": "General Championship",
+        "teachers-day": "Teachers Day",
+        "intra-hall": "Intra-hall Events",
+        "random": "random"
+    }
 
     const [currentImage, setCurrentImage] = useState(0);
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
@@ -23,7 +35,13 @@ function Eventpics(props) {
 
     return (
         <div className="gallery">
-            <span className="eventtitle">{props.title}</span>
+            <div className={`leftbox active`}>
+                <div className="box-header">
+                    <FontAwesomeIcon onClick={() => Navigate('/gallery')} icon={faSquareCaretLeft} className="backevent" />
+                    <span>Gallery</span>
+                </div>
+            </div>
+            <span className="eventtitle">{titles[event]}</span>
             <Gallery photos={photos} onClick={openLightbox} />
             <ModalGateway>
                 {viewerIsOpen ? (
@@ -39,7 +57,7 @@ function Eventpics(props) {
                     </Modal>
                 ) : null}
             </ModalGateway>
-            {isLoading  ? <Audio
+            {isLoading ? <Audio
                 height="80"
                 width="80"
                 radius="9"
@@ -47,7 +65,7 @@ function Eventpics(props) {
                 ariaLabel="loading"
                 wrapperStyle
                 wrapperClass="loader"
-            />: photos.length === 0 && <h1 className="loader">No records found</h1>}
+            /> : photos.length === 0 && <h1 className="loader">No records found</h1>}
         </div>
     );
 }

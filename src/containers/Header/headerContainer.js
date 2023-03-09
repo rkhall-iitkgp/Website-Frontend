@@ -18,6 +18,7 @@ const Header = () => {
                     pagination={{
                         clickable: true,
                     }}
+                    loop = {true}
                     navigation={true}
                     modules={[Autoplay, Pagination, Navigation]}
                     className="mySwiper carousel"
@@ -25,9 +26,9 @@ const Header = () => {
                     <SwiperSlide className="slide slide1">
                         <div class="hallName">RADHAKRISHNAN HALL OF RESIDENCE</div>
                         <div class="hallDescription">
-                            Radhakrishnan Hall of Residence, or the R.K. Hall, is named after
-                            the renowned scholar and statesman, Dr. Sarvapalli Radhakrishnan,
-                            who served as the honored President of India from 1962 to 1967.
+                        Radhakrishnan Hall of Residence is named after the distinguished scholar and statesman, Dr. Sarvepalli Radhakrishnan, who served as the President of India from 1962-1967.
+                        RK was established in 1957 and Its rich history boasts of a total of 45 General Championships, a testament to the hall's tradition of teamwork, discipline, and excellence.
+
                         </div>
                         <div class="headerbutton">
                             <a
@@ -42,7 +43,8 @@ const Header = () => {
                     <SwiperSlide className="slide slide2">
                         <div class="hallName">DEFENDING CHAMPIONS OF INTER HALL GC</div>
                         <div className="hallDescription">
-                            Our hall's unwavering dedication and hard work have led us to win the Inter Hall General Championship of Sports, along with a Bronze Medal in Socult and a Silver Medal in Tech.
+                        RK has established itself as a force to be reckoned with when it comes to the General Championships. Our hall's unwavering dedication and hard work have led us to victories in the Recent Inter hall gymkhana championship, which includes Gold in Sports, Silver in Tech and Bronze in SoCult.
+
                         </div>
                         <div class="headerbutton">
                             <a

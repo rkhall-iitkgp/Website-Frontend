@@ -17,27 +17,22 @@ function homeAbout() {
         <div className="aboutUs_content">
           <div className="aboutUs_right">
             <h3>
-              RK Hall has always stood as the foremost in the campus, be it
-              Sports, SoCult or the coveted Illumination.
+            RK stands at the forefront of excellence and achievement in the campus be it Sports, SoCult, Tech or the coveted Illumination.
+
             </h3>
             <p>
-              Its glorious history boasts of 21 Sports GCs (General
-              Championships) and 19 SoCult GCs, more than any other hall. The
-              Hall's strength in sports can be judged from the fact that even
-              the extra players in some teams are Inter-IIT players.
+            With a long and glorious history of 22 Sports GCs and 23 SoCult GCs, RK Hall has cemented its position as the leading hall on campus. In fact, our hall has won more GCs than any other hall in IIT Kharagpur!
             </p>
           </div>
 
           <div className="aboutUs_left">
             <p>
-              The unique culture of this Hall is woven around the principle of
-              unity, especially its ‘Wing Culture’, where boarders of all years
-              live together, in the same Wing.
+            At Radhakrishnan Hall, we take pride in our unique 'Wing Culture', where boarders of all years live together, fostering a strong sense of unity and camaraderie.
+
             </p>
             <p className="music_room">
-            The Hall is also home to the RK Music Room, which is equipped with a wide range of musical instruments. 
-            It serves as a resource for RKites and students of the WTMS and ETMS to practice and prepare for events like the 
-            Inter IIT Cultural Meet, making it an ideal venue for fostering musical talent on campus.
+            At RK, we believe that creativity and talent should have no boundaries. That's why we are proud to be the home of the RK Music Room, generously funded by the RK batch of 1992. Equipped with a wide range of musical instruments, this state-of-the-art infrastructure  is the perfect platform for unleashing your musical talent,which serves as a valuable resource for RKites and students of the WTMS and ETMS to hone their musical skills and prepare for events like the Inter IIT Cultural Meet.
+
             </p>
           </div>
         </div>
@@ -45,7 +40,7 @@ function homeAbout() {
           {/* <Button name="Read More" /> */}
 
           <div className="aboutUs_moto">
-            <p>A great pLace to learn and live</p>
+            <p>A great pLace to learn and...live</p>
           </div>
         </div>
       </div>

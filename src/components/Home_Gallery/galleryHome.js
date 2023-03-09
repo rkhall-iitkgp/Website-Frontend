@@ -32,14 +32,13 @@ function galleryHome() {
               className="gallery-below"
             >
               <Grid item>
-                <h4>Festival for you, Tradition for us.</h4>
+                <h4>Festival for you, Tradition for us!</h4>
                 <div className="gallery-text">
-                  The Illuminatinon (or ‘illu’) is the IIT Kharagpur way of
-                  celebrating Diwali. This unique culture is celebrated by
-                  students from different halls of residence, alumni, faculty,
-                  and even guests of honor from outside the institute. RK Hall
-                  has a glorious history of winning Gold in both, the Illu and
-                  the Rangoli for the past few years.
+                At Radhakrishnan Hall of Residence, we take great pride in celebrating Diwali with our unique and exciting tradition - the Illumination, or 'illu' for short. This celebration is a hallmark of IIT Kharagpur's culture, and it brings together students from different halls of residence, alumni, faculty, and guests of honor from outside the institute.
+                <br/>And at RK Hall, we've had a glorious history of winning Gold in both the illu and the Rangoli competitions for the past few years! These achievements are a testament to our team's enthusiasm, creativity, and dedication to upholding our tradition of excellence.
+                <br/>Come and witness an electrifying celebration of Diwali like never before! 
+                <br/>Experience the stunning lights, mesmerizing rangolis, and the contagious energy of the RK Hall community.
+
                 </div>
               </Grid>
             </Grid>
