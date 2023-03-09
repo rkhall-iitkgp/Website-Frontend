@@ -7,6 +7,7 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
 import { useForm, ValidationError } from '@formspree/react';
+import { useMediaQuery } from '@material-ui/core';
 
 const Testimonials = () => {
   const [current, setCurrent] = useState(0);
@@ -36,6 +37,12 @@ const Testimonials = () => {
     boxShadow: 24,
     p: 4,
   };
+
+  // const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+
+  // if (isSmallScreen) {
+  //   style.width = 300;
+  // }
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);

@@ -223,6 +223,12 @@ textarea {
     width: 300px;
 }
 
+@media only screen and (max-width: 440px) {
+    input, textarea {
+          width: 90%;
+      }
+  }
+
 @keyframes fade {
     from {
         opacity: .05
