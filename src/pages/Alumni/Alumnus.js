@@ -1,5 +1,4 @@
 import React from "react";
-import image from "./headshot.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -7,8 +6,6 @@ import {
   faTwitter,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
-import { Audio } from 'react-loader-spinner';
 
 const Alumnus = (props) => {
   return (
