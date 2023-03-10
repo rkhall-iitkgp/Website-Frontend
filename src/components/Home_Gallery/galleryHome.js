@@ -51,9 +51,6 @@ function galleryHome() {
               lg={3.5}
               direction="column"
             >
-              {/* <Grid item>
-                <Button name="Read More" />
-              </Grid> */}
             </Grid>
           </div>
         </Grid>
