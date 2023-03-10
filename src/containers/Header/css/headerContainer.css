@@ -19,7 +19,7 @@
 .slide {
     display: flex !important;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 4vh;
     background-repeat: no-repeat;
     /* background-position: right 50% bottom 30%; */
@@ -71,7 +71,7 @@
 
 .hallName {
     width: 60vw;
-    margin-top: 10px;
+    margin-top: 104px;
     padding-bottom: 10px;
     font-family: 'Sen';
     font-style: normal;
@@ -86,10 +86,9 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 28px;
+    font-size: 17px;
     color: #FFFFFF;
-    width: 35vw;
+    width: 55vw;
     color: #FFFFFF;
     fill: #FFFFFF;
 }
@@ -172,7 +171,7 @@
     }
 
     .hallDescription {
-        width: 60vw;
+        width: 80vw;
     }
 
     .header {

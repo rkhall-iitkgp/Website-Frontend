@@ -1,11 +1,12 @@
 import React from "react";
 import ProfileCardHeads from "./ProfileCardWarden";
+import './style.css'
 
 function ProfileList(props) {
   return (
     <div className="profile-container">
-      <div className="title">
-        <h2>Current Office-Bearers</h2>
+      <div className="office-bearers-title">
+        <div>Current Office-Bearers</div>
       </div>
       <div className="profile-list">
         {props.profiles.map((profile) => (
