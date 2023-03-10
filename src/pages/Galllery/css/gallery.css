@@ -266,3 +266,11 @@ a{
     color: gray;
     margin-left: -10px;
 }
+
+.loadtext {
+    font-size: 24px;
+    font-family: "Sen";
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
