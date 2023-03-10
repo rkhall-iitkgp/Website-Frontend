@@ -1,16 +1,24 @@
 import React, { useState } from "react";
 import "./css/alumni.css";
 import "../Galllery/css/gallery.css";
-import { Grid, Button, Card, CardContent, Dialog } from "@material-ui/core";
-import Backdrop from "@mui/material/Backdrop";
+import { Grid, Button, Card, CardContent } from "@material-ui/core";
 import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
+import Dialog from "@mui/material/Dialog";
+import TextField from "@material-ui/core/TextField";
+import FormControl from "@material-ui/core/FormControl";
+import IconButton from "@mui/material/IconButton";
+import PhotoCamera from "@mui/icons-material/PhotoCamera";
+import Stack from "@mui/material/Stack";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 
 export default function Alumform() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [open, setOpen] = useState(false);
+  const [sucessOpen, setSuccess] = useState(false);
+  const [failureOpen, setFailure] = useState(false);
 
   const [values, setValues] = useState({
     name: "",
@@ -40,9 +48,15 @@ export default function Alumform() {
         body: formData,
       }
     );
+    if (response.status === 200) {
+      setSuccess(true);
+    } else {
+      setFailure(true);
+    }
     const data = await response.json();
     console.log("Form submitted");
-    if (data.error) {
+
+    if (data.error || data.error !== {}) {
       console.log(data.error);
       return;
     }
@@ -51,20 +65,6 @@ export default function Alumform() {
   const handleOnChange = (e) => {
     const { name, value, files } = e.target;
     setValues({ ...values, [name]: files ? [...files] : value });
-  };
-
-  const labelStyle = {
-    padding: "20px",
-    fontSize: "16px",
-    marginBottom: "4px",
-    width: "40%",
-  };
-  const inputStyle = {
-    padding: "12px",
-    fontSize: "14px",
-    width: "55%",
-    marginBottom: "2px",
-    textTransform: "capitalize",
   };
 
   return (
@@ -84,6 +84,8 @@ export default function Alumform() {
           open={open}
           onClose={handleClose}
           closeAfterTransition
+          maxWidth="sm"
+          fullWidth
         >
           <Fade in={open}>
             <Box>
@@ -96,147 +98,148 @@ export default function Alumform() {
                         justifyContent: "center",
                         alignItems: "center",
                         width: "100%",
+                        overflowY: "auto",
                       }}
                     >
-                      <form
-                        onSubmit={handleSubmit}
-                        encType="multipart/form-data"
+                      <FormControl
                         style={{
-                          display: "flex",
-                          flexDirection: "column",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          padding: "24px",
+                          width: "90%",
                         }}
                       >
-                        <div className="form-row">
-                          <label
-                            htmlFor="name"
-                            className="form-label"
-                            style={labelStyle}
-                          >
-                            Name
-                          </label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            id="name"
-                            name="name"
-                            placeholder="Enter Your Name"
-                            style={inputStyle}
-                            value={values.name}
-                            onChange={handleOnChange}
-                          />
-                        </div>
-                        <div className="form-row">
-                          <label
-                            htmlFor="batch"
-                            className="form-label"
-                            style={labelStyle}
-                          >
-                            Batch
-                          </label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            id="batch"
-                            name="batch"
-                            placeholder="Enter your batch"
-                            style={inputStyle}
-                            value={values.batch}
-                            onChange={handleOnChange}
-                          />
-                        </div>
-                        <div className="form-row">
-                          <label
-                            htmlFor="topic"
-                            className="form-label"
-                            style={labelStyle}
-                          >
-                            Topic
-                          </label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            id="topic"
-                            name="topic"
-                            placeholder="Eg. Janamashtami 2001, Holi, Illumination"
-                            style={inputStyle}
-                            value={values.topic}
-                            onChange={handleOnChange}
-                          />
-                        </div>
-
-                        <div className="form-row">
-                          <label
-                            htmlFor="description"
-                            className="form-label"
-                            style={labelStyle}
-                          >
-                            Description
-                          </label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            id="description"
-                            name="description"
-                            placeholder="Share your memory/story here"
-                            style={inputStyle}
-                            value={values.description}
-                            onChange={handleOnChange}
-                          />
-                        </div>
-                        <div className="form-row">
-                          <label
-                            htmlFor="description"
-                            className="form-label"
-                            style={labelStyle}
-                          >
+                        <TextField
+                          autofocus
+                          required
+                          error={values.name === ""}
+                          helperText={
+                            values.name === "" ? "Name is required" : ""
+                          }
+                          id="name"
+                          name="name"
+                          label="Name"
+                          variant="outlined"
+                          margin="normal"
+                          onChange={handleOnChange}
+                          value={values.name}
+                        />
+                        <TextField
+                          required
+                          type="number"
+                          id="batch"
+                          error={values.batch === ""}
+                          helperText={
+                            values.batch === "" ? "Batch is required" : ""
+                          }
+                          name="batch"
+                          label="Batch"
+                          variant="outlined"
+                          margin="normal"
+                          onChange={handleOnChange}
+                          value={values.batch}
+                        />
+                        <TextField
+                          id="topic"
+                          label="Topic"
+                          name="topic"
+                          variant="outlined"
+                          margin="normal"
+                          onChange={handleOnChange}
+                          value={values.topic}
+                        />
+                        <TextField
+                          id="description"
+                          label="description"
+                          name="description"
+                          variant="outlined"
+                          margin="normal"
+                          onChange={handleOnChange}
+                          value={values.description}
+                        />
+                        <Stack
+                          direction="row"
+                          alignItems="center"
+                          spacing={2}
+                          sx={{
+                            marginTop: "16px",
+                            marginBottom: "8px",
+                          }}
+                        >
+                          <Button variant="contained" component="label">
                             Your Profile Image
-                          </label>
-                          <input
-                            type="file"
-                            className="form-control"
-                            id="profile"
-                            style={inputStyle}
-                            name="profile"
-                            onChange={(e) =>
-                              setValues({
-                                ...values,
-                                profile: e.target.files[0],
-                              })
-                            }
-                          />
-                        </div>
-
-                        <div className="form-row">
-                          <label
-                            htmlFor="description"
-                            className="form-label"
-                            style={labelStyle}
+                            <input
+                              hidden
+                              accept="image/*"
+                              multiple
+                              type="file"
+                            />
+                          </Button>
+                          <IconButton
+                            color="primary"
+                            aria-label="upload picture"
+                            component="label"
                           >
-                            Memories (pictures)
-                          </label>
-                          <input
-                            type="file"
-                            className="form-control"
-                            id="memory"
-                            name="memory"
-                            style={inputStyle}
-                            multiple
-                            onChange={(e) =>
-                              setValues({
-                                ...values,
-                                memory: [...e.target.files],
-                              })
-                            }
-                          />
-                        </div>
-
-                        <button type="submit" className="submitButton">
-                          Submit
-                        </button>
-                      </form>
+                            <input
+                              hidden
+                              accept="image/*"
+                              type="file"
+                              onChange={(e) =>
+                                setValues({
+                                  ...values,
+                                  profile: e.target.files[0],
+                                })
+                              }
+                            />
+                            <PhotoCamera />
+                          </IconButton>
+                        </Stack>
+                        <Stack
+                          direction="row"
+                          alignItems="center"
+                          spacing={2}
+                          sx={{
+                            marginTop: "16px",
+                            marginBottom: "8px",
+                          }}
+                        >
+                          <Button variant="contained" component="label">
+                            Memories (pictures){" "}
+                            <input
+                              hidden
+                              accept="image/*"
+                              multiple
+                              type="file"
+                            />
+                          </Button>
+                          <IconButton
+                            color="primary"
+                            aria-label="upload picture"
+                            component="label"
+                          >
+                            <input
+                              hidden
+                              accept="image/*"
+                              type="file"
+                              onChange={(e) =>
+                                setValues({
+                                  ...values,
+                                  memory: [...e.target.files],
+                                })
+                              }
+                            />
+                            <PhotoCamera />
+                          </IconButton>
+                        </Stack>
+                        <Box sx={{ mt: "16px", mb: "8px" }}>
+                          <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            color="primary"
+                            onClick={handleSubmit}
+                          >
+                            Submit
+                          </Button>
+                        </Box>
+                      </FormControl>
                     </CardContent>
                   </Card>
                 </Grid>
@@ -244,6 +247,32 @@ export default function Alumform() {
             </Box>
           </Fade>
         </Dialog>
+        <Snackbar
+          open={sucessOpen}
+          autoHideDuration={6000}
+          onClose={() => setSuccess(false)}
+        >
+          <Alert
+            onClose={() => setSuccess(false)}
+            severity="success"
+            sx={{ width: "100%" }}
+          >
+            Memory Archieved Successfully !!
+          </Alert>
+        </Snackbar>
+        <Snackbar
+          open={failureOpen}
+          autoHideDuration={6000}
+          onClose={() => setFailure(false)}
+        >
+          <Alert
+            onClose={() => setFailure(false)}
+            severity="error"
+            sx={{ width: "100%" }}
+          >
+            Cannot register Memory. Please try again after sometime.
+          </Alert>
+        </Snackbar>
       </div>
     </div>
   );

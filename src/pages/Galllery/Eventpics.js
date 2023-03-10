@@ -61,15 +61,18 @@ function Eventpics() {
             </ModalGateway>
             <ScrollToTopButton />
 
-            {isLoading ? <Audio
-                height="80"
-                width="80"
-                radius="9"
-                color="#222436"
-                ariaLabel="loading"
-                wrapperStyle
-                wrapperClass="loader"
-            /> : photos.length === 0 && <h1 className="loader">No records found</h1>}
+            {isLoading ? <div>
+                <Audio
+                    height="80"
+                    width="80"
+                    radius="9"
+                    color="#222436"
+                    ariaLabel="loading"
+                    wrapperStyle
+                    wrapperClass="loader"
+                />
+                <div className="loadtext">Rekindling Memories</div>
+            </div> : photos.length === 0 && <h1 className="loader">No memories documented yet</h1>}
         </div>
     );
 }
