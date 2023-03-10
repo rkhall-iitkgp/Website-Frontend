@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./css/alumni.css";
 import "../Galllery/css/gallery.css";
-import { Grid, Button, Card, CardContent } from "@material-ui/core";
+import { Grid, Button, Card, CardContent, Dialog } from "@material-ui/core";
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -78,16 +78,12 @@ export default function Alumform() {
         <button className="addbutton accept-btn" onClick={handleOpen}>
           Share Here
         </button>
-        <Modal
+        <Dialog
           aria-labelledby="transition-modal-title"
           aria-describedby="transition-modal-description"
           open={open}
           onClose={handleClose}
           closeAfterTransition
-          sx={{
-            width: "50%",
-            margin: "auto",
-          }}
         >
           <Fade in={open}>
             <Box>
@@ -219,7 +215,7 @@ export default function Alumform() {
                             className="form-label"
                             style={labelStyle}
                           >
-                            Memories (pictures) 
+                            Memories (pictures)
                           </label>
                           <input
                             type="file"
@@ -247,7 +243,7 @@ export default function Alumform() {
               </div>
             </Box>
           </Fade>
-        </Modal>
+        </Dialog>
       </div>
     </div>
   );

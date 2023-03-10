@@ -192,15 +192,10 @@ textarea {
 
 @media screen and (max-width:1200px) {
     .alumnuscard {
-        /* height: calc(100vh - 200px); */
         margin: auto;
         max-width: 400px;
         max-height: 600px;
     }
-}
-
-.alumForm {
-    margin-top: 75px;
 }
 
 .alumFormButton {
