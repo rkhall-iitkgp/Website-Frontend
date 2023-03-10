@@ -319,9 +319,15 @@ textarea {
 
     .leftSide .nextHead{
         font-size: 1.6rem;
+        width: 70vw;
     }
     .leftSide .text {
         font-size: 0.8rem;
-        width: 80vw;
+        width: 70vw;
+        text-align: start;
+    }
+    .testimonials{
+        margin-left: 2%;
+        margin-right: 3%;
     }
 }

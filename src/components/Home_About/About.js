@@ -40,7 +40,7 @@ function homeAbout() {
           {/* <Button name="Read More" /> */}
 
           <div className="aboutUs_moto">
-            <p>A great pLace to learn and...live</p>
+            <p>A great pLace to learn and live</p>
           </div>
         </div>
       </div>

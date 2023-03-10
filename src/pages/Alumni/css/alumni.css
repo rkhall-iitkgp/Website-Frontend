@@ -156,3 +156,12 @@ textarea {
     display: flex;
     justify-content: center;
 }
+
+@media screen and (max-width: 800px){
+    .memory{
+        margin-top: 20%;
+    }
+    .pad-btn{
+        text-align: center;
+    }
+}
