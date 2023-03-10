@@ -5,69 +5,100 @@ import {
   List,
   ListItem,
   ListItemText,
- makeStyles
+  makeStyles,
 } from "@material-ui/core";
+import "./css/style.css";
 import { Link } from "react-router-dom";
-import MenuIcon from '@mui/icons-material/Menu';
-import { HashLink } from 'react-router-hash-link';
+import MenuIcon from "@mui/icons-material/Menu";
+import { HashLink } from "react-router-hash-link";
 
-const useStyles = makeStyles(()=>({
-    paper: {
-        background:"#000000",
-    },
-    menuPaper: {
-        color:"white"
-    }
+const useStyles = makeStyles(() => ({
+  paper: {
+    background: "#000000",
+  },
+  menuPaper: {
+    color: "white",
+  },
 }));
 
 function DrawerComponent() {
-const classes = useStyles();
+  const classes = useStyles();
   const [openDrawer, setOpenDrawer] = useState(false);
   return (
     <>
       <Drawer
-        classes={{paper: classes.paper}}
+        classes={{ paper: classes.paper }}
         open={openDrawer}
         onClose={() => setOpenDrawer(false)}
       >
         <List>
-         <ListItem onClick={() => setOpenDrawer(false)}>
-            <ListItemText>
-              <Link style={{color: "white"}} to="/">Home</Link>
-            </ListItemText>
-          </ListItem>
-          <ListItem onClick={() => setOpenDrawer(false)}>
-            <ListItemText>
-              <Link style={{color: "white"}} to="/gallery">Gallery</Link>
-            </ListItemText>
-          </ListItem>
-          <ListItem onClick={() => setOpenDrawer(false)}>
-            <ListItemText>
-              <Link style={{color: "white"}} to="/alumni">Alumni</Link>
-            </ListItemText>
-          </ListItem>
-          <ListItem onClick={() => setOpenDrawer(false)}>
-            <ListItemText>
-              <Link><HashLink smooth to='/#AboutUs' style={{color:"white"}}>About Us</HashLink></Link>
-            </ListItemText>
-          </ListItem>
-          <ListItem onClick={() => setOpenDrawer(false)}>
-            <ListItemText>
-              <Link><HashLink smooth to='/#Testimonials' style={{color:"white"}}>Testimonials</HashLink></Link>
-            </ListItemText>
-          </ListItem>
-          <ListItem onClick={() => setOpenDrawer(false)}>
-            <ListItemText>
-              <Link><HashLink smooth to='/#footer' style={{color:"white"}}>Contact Us</HashLink></Link>
-            </ListItemText>
-          </ListItem>
+          <Link style={{ color: "white" }} to="/">
+            <ListItem
+              className="menu-item-drawer"
+              onClick={() => setOpenDrawer(false)}
+            >
+              <ListItemText>Home</ListItemText>
+            </ListItem>
+          </Link>
+          <Link style={{ color: "white" }} to="/gallery">
+            <ListItem
+              className="menu-item-drawer"
+              onClick={() => setOpenDrawer(false)}
+            >
+              <ListItemText>Gallery</ListItemText>
+            </ListItem>
+          </Link>
+          <Link style={{ color: "white" }} to="/alumni">
+            <ListItem
+              className="menu-item-drawer"
+              onClick={() => setOpenDrawer(false)}
+            >
+              <ListItemText>Alumni</ListItemText>
+            </ListItem>
+          </Link>
+          <Link style={{ color: "white" }}>
+            <ListItem
+              className="menu-item-drawer"
+              onClick={() => setOpenDrawer(false)}
+            >
+              <ListItemText>
+                <HashLink smooth to="/#AboutUs" style={{ color: "white" }}>
+                  About Us
+                </HashLink>
+              </ListItemText>
+            </ListItem>
+          </Link>
+          <Link style={{ color: "white" }}>
+            <ListItem
+              className="menu-item-drawer"
+              onClick={() => setOpenDrawer(false)}
+            >
+              <ListItemText>
+                <HashLink smooth to="/#Testimonials" style={{ color: "white" }}>
+                  Testimonials
+                </HashLink>
+              </ListItemText>
+            </ListItem>
+          </Link>
+          <Link style={{ color: "white" }}>
+            <ListItem
+              className="menu-item-drawer"
+              onClick={() => setOpenDrawer(false)}
+            >
+              <ListItemText>
+                <HashLink smooth to="/#footer" style={{ color: "white" }}>
+                  Contact Us
+                </HashLink>
+              </ListItemText>
+            </ListItem>
+          </Link>
         </List>
       </Drawer>
       <IconButton
-        style={{color: "white"}}
+        style={{ color: "white" }}
         onClick={() => setOpenDrawer(!openDrawer)}
       >
-        <MenuIcon/>
+        <MenuIcon />
       </IconButton>
     </>
   );
