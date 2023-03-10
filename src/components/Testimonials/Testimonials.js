@@ -80,7 +80,7 @@ const Testimonials = () => {
                       />
 
                       <label htmlFor="batch">Batch</label>
-                      <input id="batch" type="text" name="batch" required />
+                      <input id="batch" type="number" name="batch" required />
                       <ValidationError
                         prefix="Batch"
                         field="batch"
