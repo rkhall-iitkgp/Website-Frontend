@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Rubik:wght@300&family=Sen:wght@700&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;400&family=Sen:wght@400;700;800&display=swap");
 
 * {
     box-sizing: border-box;
@@ -13,59 +12,6 @@
 
 .alum {
     margin: 0 10px;
-}
-
-.memory {
-    margin-top: 7%;
-    margin-left: 10px !important;
-    background-color: #f4f0f8;
-    padding: 20px;
-}
-
-/* .form-label {
-    margin-right: 10px;
-} */
-
-/* .form-control {
-    margin-right: -10px;
-} */
-
-label {
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 0.03em;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-input,
-textarea {
-    border: 1px solid #ccc;
-    color: #333;
-    width: calc(100% - 30px);
-}
-
-input,
-textarea {
-    border-radius: 4px;
-    padding: 8px 15px;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 300;
-    margin-top: 10px;
-    width: 300px;
-}
-
-.memory_head {
-    font-size: 32px;
-    font-weight: 600;
-    font-family: "Sen";
-}
-
-.memory_title {
-    font-size: 20px;
-    padding-right: 10px;
-    font-family: "Sen";
-    padding-top:10px;
 }
 
 .alumnuscard{
@@ -151,17 +97,20 @@ textarea {
 }
 .alumForm {
     margin-top: 75px;
-}
-.alumFormButton {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    text-align: center;
 }
-
-@media screen and (max-width: 800px){
-    .memory{
-        margin-top: 20%;
-    }
-    .pad-btn{
-        text-align: center;
-    }
+.alumForm h2{
+    font-size: 1.5rem;
+    margin: 5px auto;
+    color: #232536;
+    font-family: 'IBM Plex Sans Hebrew', sans-serif;
+    padding: 0 10px;
+}
+.alum-form-label {
+    text-transform: capitalize;
+}
+.alumFormGrid {
+    text-align: center;
 }
