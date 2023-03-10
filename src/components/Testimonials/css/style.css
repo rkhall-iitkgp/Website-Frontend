@@ -111,13 +111,13 @@
     font-size: 20px;
     line-height: 32px;
     color: #232536;
-    margin-bottom: 0;
 }
 
 .rightLower {
-    margin-top: 5%;
+    margin: 24px 0px;
+    display: flex;
     align-items: center;
-    margin-left: 15%;
+    justify-content: space-between;
 }
 
 .rightLower .person .company {
@@ -127,12 +127,8 @@
     font-size: 16px;
     line-height: 28px;
     color: #6D6E76;
-    margin-top: 0;
 }
 
-.rightLower {
-    display: flex;
-}
 
 .rightLower .person {
     width: 75%;
@@ -140,9 +136,6 @@
 }
 
 .rightLower .buttons {
-    align-content: right;
-    align-items: right;
-    float: right;
     display: flex;
 }
 
@@ -151,7 +144,7 @@
 }
 
 .rightLower .buttons .back {
-    margin-right: 20px;
+    margin-right: 16px;
     object-fit: cover;
     width: 62px;
 }
@@ -304,7 +297,7 @@ textarea {
 
     .rightLower {
         margin-left: 0;
-        margin-top: 25px;
+        margin-top: 20px;
     }
 
     .rightLower .buttons {
@@ -321,10 +314,6 @@ textarea {
     .rightLower .buttons .next {
         width: 30px;
         height: 30px;
-    }
-
-    .rightLower {
-        width: 75%;
     }
 }
 

@@ -10,13 +10,13 @@
     margin: 32px 0 0 0;
 }
 
-.carousel{
+.carousel {
     height: 100%;
     width: 100%;
 
 }
 
-.slide{
+.slide {
     display: flex !important;
     flex-direction: column;
     justify-content: flex-end;
@@ -27,40 +27,45 @@
     background-size: cover;
 }
 
-.slide .hallDescription{
+.slide .hallDescription {
     padding-bottom: calc(24vh + 72px);
     padding-left: 6vw;
 }
 
-.slide .hallName{
+.slide .hallName {
     padding-left: 6vw;
 }
 
-.swiper-button-prev, .swiper-button-next, .swiper-button-next::after, .swiper-button-prev::after{
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-button-next::after,
+.swiper-button-prev::after {
     /* width: 5vw !important; */
     font-size: 4vmin !important;
     color: #FFD050 !important;
 }
-.swiper-button-next{
+
+.swiper-button-next {
     right: 4vmin !important;
 }
-.swiper-button-prev{
+
+.swiper-button-prev {
     left: 4vmin !important;
 }
 
-.slide1{
+.slide1 {
     background-image: linear-gradient(6deg, rgba(0, 0, 0, 0.6), rgba(15, 14, 14, 0.82)), url("/public/header.png");
 }
 
-.slide2{
+.slide2 {
     background-image: linear-gradient(6deg, rgba(0, 0, 0, 0.6), rgba(15, 14, 14, 0.82)), url("/public/header2.jpg");
 }
 
-.slide3{
+.slide3 {
     background-image: linear-gradient(6deg, rgba(0, 0, 0, 0.6), rgba(15, 14, 14, 0.82)), url("https://images.unsplash.com/photo-1476610182048-b716b8518aae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1259&q=80");
 }
 
-.slide4{
+.slide4 {
     background-image: linear-gradient(6deg, rgba(0, 0, 0, 0.6), rgba(15, 14, 14, 0.82)), url("https://images.unsplash.com/photo-1432958576632-8a39f6b97dc7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80");
 }
 
@@ -89,7 +94,7 @@
     fill: #FFFFFF;
 }
 
-.headerbutton{
+.headerbutton {
     position: absolute;
     bottom: 20vh;
     z-index: 10;
@@ -101,8 +106,6 @@
     flex-direction: row;
     text-align: center;
     font-family: 'Sen';
-    /* max-height: 54px;
-    height: 6vh; */
     font-size: 1.6rem;
     background: #FFD050;
     color: black;
@@ -122,9 +125,11 @@
         font-size: 4rem;
         padding-top: 0px;
     }
+
     .hallDescription {
         width: 50vw;
     }
+
     .header {
         height: 90vh;
         margin-top: 60px;
@@ -132,15 +137,18 @@
     }
 }
 
-@media (max-width: 900px) and (min-width: 600px){
-    .headerbutton{
+@media (max-width: 900px) and (min-width: 600px) {
+    .headerbutton {
         bottom: 25vh;
     }
-    .slide .hallDescription{
+
+    .slide .hallDescription {
         padding-bottom: calc(20vh + 72px);
     }
 
-    .slide .hallName, .slide .hallDescription, .headerbutton{
+    .slide .hallName,
+    .slide .hallDescription,
+    .headerbutton {
         padding-left: 9vw;
     }
 
@@ -148,10 +156,11 @@
         margin-bottom: -10vh;
     }
 
-    .swiper-button-next{
+    .swiper-button-next {
         right: 3vmin !important;
     }
-    .swiper-button-prev{
+
+    .swiper-button-prev {
         left: 3vmin !important;
     }
 }
@@ -161,15 +170,19 @@
         font-size: 3rem;
         width: 88vw;
     }
+
     .hallDescription {
         width: 60vw;
     }
+
     .header {
         margin-top: 10px;
     }
+
     .slide .hallDescription {
         padding-bottom: 20vh;
     }
+
     .slide .headerbutton {
         margin-bottom: -10vh;
     }
@@ -181,9 +194,11 @@
         line-height: 1.2;
         color: white;
     }
+
     .header {
         min-height: 85vh;
     }
+
     .hallDescription {
         font-family: 'Inter';
         font-style: normal;
@@ -195,6 +210,7 @@
         color: #FFFFFF;
         fill: #FFFFFF;
     }
+
     .headerReadMore {
         padding: 1rem 2rem;
         flex-direction: row;
@@ -208,14 +224,19 @@
         border: none;
     }
 
-    .swiper-button-next, .swiper-button-next::after{
-        display: none;
-    }
-    .swiper-button-prev, .swiper-button-prev::after{
+    .swiper-button-next,
+    .swiper-button-next::after {
         display: none;
     }
 
-    .slide .hallName, .slide .hallDescription, .headerbutton{
+    .swiper-button-prev,
+    .swiper-button-prev::after {
+        display: none;
+    }
+
+    .slide .hallName,
+    .slide .hallDescription,
+    .headerbutton {
         padding-left: 8vw;
     }
 }
@@ -224,18 +245,23 @@
     .hallName {
         font-size: 1.8rem;
     }
+
     .hallDescription {
         font-size: 14px;
     }
+
     .header {
         margin-top: 0px;
     }
+
     .slide .hallDescription {
         padding-bottom: 16vh;
     }
+
     .slide .headerbutton {
         margin-bottom: -14vh;
     }
+
     .header {
         max-height: 60vh;
     }
