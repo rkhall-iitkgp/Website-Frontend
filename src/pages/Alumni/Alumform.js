@@ -2,15 +2,12 @@ import React, { useState } from "react";
 import "./css/alumni.css";
 import "../Galllery/css/gallery.css";
 import { Grid, Button, Card, CardContent } from "@material-ui/core";
-import Backdrop from '@mui/material/Backdrop';
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
-import { Label } from "@mui/icons-material";
-
+import Backdrop from "@mui/material/Backdrop";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import Fade from "@mui/material/Fade";
 
 export default function Alumform() {
-
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [open, setOpen] = useState(false);
@@ -21,7 +18,7 @@ export default function Alumform() {
     topic: "",
     description: "",
     profile: null,
-    memory: []
+    memory: [],
   });
 
   const handleSubmit = async (e) => {
@@ -36,41 +33,47 @@ export default function Alumform() {
       formData.append("memory", values.memory[i]);
     }
 
-    const response = await fetch("https://rk-gallery-api.onrender.com/api/memory", {
-      method: "POST",
-      body: formData
-    });
+    const response = await fetch(
+      "https://rk-gallery-api.onrender.com/api/memory",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
     const data = await response.json();
     console.log("Form submitted");
     if (data.error) {
       console.log(data.error);
       return;
     }
-  }
-
+  };
 
   const handleOnChange = (e) => {
     const { name, value, files } = e.target;
     setValues({ ...values, [name]: files ? [...files] : value });
-  }
+  };
 
-  const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 600,
-    bgcolor: 'background.paper',
-    boxShadow: 24,
-    p: 4,
+  const labelStyle = {
+    padding: "20px",
+    fontSize: "16px",
+    marginBottom: "4px",
+    width: "40%",
+  };
+  const inputStyle = {
+    padding: "12px",
+    fontSize: "14px",
+    width: "55%",
+    marginBottom: "2px",
+    textTransform: "capitalize",
   };
 
   return (
     <div className="memory">
-      <div className="memory_head">
-        Memories
+      <div className="memory_head">Memories</div>
+      <div className="memory_title">
+        Take a trip down memory lane and share your favorite moments and stories
+        from your time at RK hall of residence
       </div>
-      <div className="memory_title">Take a trip down memory lane and share your favorite moments and stories from your time at RK hall of residence</div>
       <div className="pad-btn">
         <button className="addbutton accept-btn" onClick={handleOpen}>
           Share Here
@@ -81,20 +84,41 @@ export default function Alumform() {
           open={open}
           onClose={handleClose}
           closeAfterTransition
-          BackdropComponent={Backdrop}
-          BackdropProps={{
-            timeout: 500,
+          sx={{
+            width: "50%",
+            margin: "auto",
           }}
         >
           <Fade in={open}>
-            <Box sx={style}>
+            <Box>
               <div className="alumForm">
                 <Grid className="alumFormGrid">
-                  <Card style={{ maxWidth: 600, padding: "10px 5px", margin: "0 auto" }}>
-                    <CardContent>
-                      <form onSubmit={handleSubmit} encType="multipart/form-data">
-                        <div className="mb-3">
-                          <label htmlFor="name" className="form-label">
+                  <Card>
+                    <CardContent
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: "100%",
+                      }}
+                    >
+                      <form
+                        onSubmit={handleSubmit}
+                        encType="multipart/form-data"
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          padding: "24px",
+                        }}
+                      >
+                        <div className="form-row">
+                          <label
+                            htmlFor="name"
+                            className="form-label"
+                            style={labelStyle}
+                          >
                             Name
                           </label>
                           <input
@@ -102,13 +126,18 @@ export default function Alumform() {
                             className="form-control"
                             id="name"
                             name="name"
-                            placeholder="Enter your name"
+                            placeholder="Enter Your Name"
+                            style={inputStyle}
                             value={values.name}
                             onChange={handleOnChange}
                           />
                         </div>
-                        <div className="mb-3">
-                          <label htmlFor="batch" className="form-label">
+                        <div className="form-row">
+                          <label
+                            htmlFor="batch"
+                            className="form-label"
+                            style={labelStyle}
+                          >
                             Batch
                           </label>
                           <input
@@ -117,12 +146,17 @@ export default function Alumform() {
                             id="batch"
                             name="batch"
                             placeholder="Enter your batch"
+                            style={inputStyle}
                             value={values.batch}
                             onChange={handleOnChange}
                           />
                         </div>
-                        <div className="mb-3">
-                          <label htmlFor="topic" className="form-label">
+                        <div className="form-row">
+                          <label
+                            htmlFor="topic"
+                            className="form-label"
+                            style={labelStyle}
+                          >
                             Topic
                           </label>
                           <input
@@ -130,14 +164,19 @@ export default function Alumform() {
                             className="form-control"
                             id="topic"
                             name="topic"
-                            placeholder="Enter your topic"
+                            placeholder="Eg. Janamashtami 2001, Holi, Illumination"
+                            style={inputStyle}
                             value={values.topic}
                             onChange={handleOnChange}
                           />
                         </div>
 
-                        <div className="mb-3">
-                          <label htmlFor="description" className="form-label">
+                        <div className="form-row">
+                          <label
+                            htmlFor="description"
+                            className="form-label"
+                            style={labelStyle}
+                          >
                             Description
                           </label>
                           <input
@@ -145,43 +184,63 @@ export default function Alumform() {
                             className="form-control"
                             id="description"
                             name="description"
-                            placeholder="Enter your description"
+                            placeholder="Share your memory/story here"
+                            style={inputStyle}
                             value={values.description}
                             onChange={handleOnChange}
                           />
                         </div>
-                        <div className="mb-3">
-                          <label htmlFor="description" className="form-label">
-                            Profile
+                        <div className="form-row">
+                          <label
+                            htmlFor="description"
+                            className="form-label"
+                            style={labelStyle}
+                          >
+                            Your Profile Image
                           </label>
                           <input
                             type="file"
                             className="form-control"
                             id="profile"
+                            style={inputStyle}
                             name="profile"
-                            onChange={(e) => setValues({ ...values, profile: e.target.files[0] })}
+                            onChange={(e) =>
+                              setValues({
+                                ...values,
+                                profile: e.target.files[0],
+                              })
+                            }
                           />
                         </div>
 
-                        <div className="mb-3">
-                          <label htmlFor="description" className="form-label">
-                            Memories
+                        <div className="form-row">
+                          <label
+                            htmlFor="description"
+                            className="form-label"
+                            style={labelStyle}
+                          >
+                            Memories (pictures) 
                           </label>
                           <input
                             type="file"
                             className="form-control"
                             id="memory"
                             name="memory"
+                            style={inputStyle}
                             multiple
-                            onChange={(e) => setValues({ ...values, memory: [...e.target.files] })}
+                            onChange={(e) =>
+                              setValues({
+                                ...values,
+                                memory: [...e.target.files],
+                              })
+                            }
                           />
                         </div>
 
-                        <button type="submit" className="addbutton">
+                        <button type="submit" className="submitButton">
                           Submit
                         </button>
                       </form>
-
                     </CardContent>
                   </Card>
                 </Grid>

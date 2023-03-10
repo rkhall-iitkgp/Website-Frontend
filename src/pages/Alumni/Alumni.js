@@ -82,7 +82,7 @@ export function Alumni() {
       </div>
       <Alumform />
       <div className="alumpage">
-        <div className={`leftbox ${yearmenu ? "active" : ""}`}>
+        <div className={`leftboxAlumni ${yearmenu ? "active" : ""}`}>
           <span className="box-header">Our Alumni</span>
           <div className="years">{yeargroup}</div>
         </div>

@@ -7,8 +7,28 @@
     padding: 0;
 }
 
-.alumpage{
+.alumpage {
     overflow: hidden;
+}
+
+.submitButton {
+    margin-top: 20px;
+    width: 'auto';
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    padding: 12px 16px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
 }
 
 .alum {
@@ -16,10 +36,14 @@
 }
 
 .memory {
-    margin-top: 7%;
-    margin-left: 10px !important;
+    margin: 82px 10px 10px 0px;
     background-color: #f4f0f8;
     padding: 20px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 /* .form-label {
@@ -63,12 +87,12 @@ textarea {
 
 .memory_title {
     font-size: 20px;
-    padding-right: 10px;
+    padding-top: 12px;
     font-family: "Sen";
-    padding-top:10px;
+    padding-top: 12px;
 }
 
-.alumnuscard{
+.alumnuscard {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -87,7 +111,7 @@ textarea {
     /* height: 496px; */
 }
 
-.headshot{
+.headshot {
     width: 180px;
     height: 180px;
     object-fit: cover;
@@ -96,28 +120,28 @@ textarea {
     margin-bottom: 30px;
 }
 
-.name{
+.name {
     font-family: 'Sen', sans-serif;
     font-size: 28px;
     letter-spacing: -1px;
     font-weight: bold;
 }
 
-.batch{
+.batch {
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-weight: 400;
     color: #6D6E76;
 }
 
-.desc{
+.desc {
     font-family: 'Rubik', sans-serif;
     font-size: 16px;
     font-weight: 300;
     margin-top: 20px;
 }
 
-.social{
+.social {
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -126,17 +150,48 @@ textarea {
     margin-top: 20px;
 }
 
-.alumnuscard .social-icons{
+.alumnuscard .social-icons {
     margin-left: 0;
 }
 
-.namebatch{
+.leftboxAlumni {
+    background-color: #222436;
+    border-radius: 12px;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: calc(100% - 20px);
+    z-index: 20;
+}
+
+.leftboxAlumni .active span {
+    color: #fed051;
+    font-weight: 700;
+}
+
+.leftboxAlumni.active {
+    border-bottom-right-radius: 0;
+}
+
+.namebatch {
     display: flex;
     flex-direction: column;
 }
 
-@media screen and (max-width:1200px){
-    .alumnuscard{
+.form-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 48px;
+}
+
+@media screen and (max-width:1200px) {
+    .alumnuscard {
         /* height: calc(100vh - 200px); */
         margin: auto;
         max-width: 400px;
@@ -144,24 +199,42 @@ textarea {
     }
 }
 
-@media screen and (max-width: 800px){
-    .headshot{
-        margin-bottom: 20px;
-    }
-}
 .alumForm {
     margin-top: 75px;
 }
+
 .alumFormButton {
     display: flex;
     justify-content: center;
 }
 
-@media screen and (max-width: 800px){
-    .memory{
+@media screen and (max-width: 800px) {
+    .headshot {
+        margin-bottom: 20px;
+    }
+
+    .memory {
         margin-top: 20%;
     }
-    .pad-btn{
+
+    .pad-btn {
         text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .leftboxAlumni {
+        margin-top: 67px;
+    }
+}
+
+
+@media screen and (max-width: 440px) {
+    .form-row {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        gap: 4px;
     }
 }

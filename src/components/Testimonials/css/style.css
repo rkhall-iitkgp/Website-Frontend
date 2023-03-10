@@ -162,12 +162,11 @@
 }
 
 .addbutton {
-    padding-right: 10px;
-    padding-left: 10px;
-    width: auto;
+    width: 'auto';
     height: 45px;
     font-family: 'Roboto', sans-serif;
-    font-size: 11px;
+    font-size: 14px;
+    padding: 12px 16px;
     text-transform: uppercase;
     letter-spacing: 2.5px;
     font-weight: 500;
