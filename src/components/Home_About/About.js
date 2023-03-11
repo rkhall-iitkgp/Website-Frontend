@@ -44,9 +44,11 @@ function homeAbout() {
           <div className="aboutUs_moto">
             <p>A great pLace to learn and live</p>
           </div>
+          <div id="Testimonials"></div>
         </div>
       </div>
     </div>
+    
     </div>
   );
 }
