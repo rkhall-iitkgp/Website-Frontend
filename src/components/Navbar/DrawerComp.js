@@ -8,7 +8,7 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import "./css/style.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import { HashLink } from "react-router-hash-link";
 
@@ -22,6 +22,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 function DrawerComponent() {
+    const pathname = useLocation().pathname;
   const classes = useStyles();
   const [openDrawer, setOpenDrawer] = useState(false);
   return (
@@ -32,14 +33,28 @@ function DrawerComponent() {
         onClose={() => setOpenDrawer(false)}
       >
         <List>
-          <Link style={{ color: "white" }} to="/">
+          {pathname!=="/" && <Link style={{ color: "white" }} to="/">
             <ListItem
               className="menu-item-drawer"
               onClick={() => setOpenDrawer(false)}
             >
               <ListItemText>Home</ListItemText>
             </ListItem>
-          </Link>
+          </Link>}
+          {pathname === "/" && 
+            <Link style={{ color: "white" }}>
+            <ListItem
+            className="menu-item-drawer"
+            onClick={() => setOpenDrawer(false)}
+            >
+            <ListItemText>
+                <HashLink smooth to="/#home" style={{ color: "white" }}>
+                Home
+                </HashLink>
+            </ListItemText>
+            </ListItem>
+        </Link>
+          }
           <Link style={{ color: "white" }} to="/gallery">
             <ListItem
               className="menu-item-drawer"
