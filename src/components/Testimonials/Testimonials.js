@@ -32,21 +32,20 @@ const Testimonials = () => {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 400,
+    maxHeight: "80%",
     bgcolor: "background.paper",
     boxShadow: 24,
     p: 4,
   };
 
   const labelStyle = {
-    padding: "20px",
+    padding: "6px",
     fontSize: "16px",
     marginBottom: "4px",
-    width: "40%",
   };
   const inputStyle = {
-    padding: "12px",
+    padding: "8px",
     fontSize: "14px",
-    width: "55%",
     marginBottom: "2px",
     textTransform: "capitalize",
   };
@@ -134,6 +133,7 @@ const Testimonials = () => {
                           className="addbutton"
                           type="submit"
                           disabled={state.submitting}
+                          style={{marginTop:"10px"}}
                         >
                           Submit
                         </button>
