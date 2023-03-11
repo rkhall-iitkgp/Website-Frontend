@@ -12,8 +12,7 @@ import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
-import CircularProgress from '@mui/material/CircularProgress';
-
+import CircularProgress from "@mui/material/CircularProgress";
 
 export default function Alumform() {
   const handleOpen = () => setOpen(true);
@@ -22,7 +21,6 @@ export default function Alumform() {
   const [sucessOpen, setSuccess] = useState(false);
   const [failureOpen, setFailure] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-
 
   const [values, setValues] = useState({
     name: "",
@@ -46,8 +44,8 @@ export default function Alumform() {
     for (let i = 0; i < values.memory.length; i++) {
       formData.append("memory", values.memory[i]);
     }
-    if(values.memory.length === 0){
-        formData.append("memory", null);
+    if (values.memory.length === 0) {
+      formData.append("memory", null);
     }
     console.log(formData);
 
@@ -62,7 +60,7 @@ export default function Alumform() {
       setSuccess(true);
       setSubmitting(false);
     } else {
-        console.log("ERROR");
+      console.log("ERROR");
       setFailure(true);
       setSubmitting(false);
     }
@@ -119,17 +117,16 @@ export default function Alumform() {
                         }}
                       >
                         <TextField
+                          size = "medium"
                           autofocus
                           required
                           error={values.name === ""}
-                          helperText={
-                            values.name === "" ? "Name is required" : ""
-                          }
                           id="name"
                           name="name"
                           label="Name"
                           variant="outlined"
                           margin="normal"
+                          placeholder="Your Name"
                           onChange={handleOnChange}
                           value={values.name}
                         />
@@ -138,9 +135,6 @@ export default function Alumform() {
                           type="number"
                           id="batch"
                           error={values.batch === ""}
-                          helperText={
-                            values.batch === "" ? "Batch is required" : ""
-                          }
                           name="batch"
                           label="Batch"
                           variant="outlined"
@@ -149,12 +143,9 @@ export default function Alumform() {
                           value={values.batch}
                         />
                         <TextField
-                        required
+                          required
                           id="email"
                           error={values.batch === ""}
-                          helperText={
-                            values.batch === "" ? "Batch is required" : ""
-                          }
                           label="Email Address"
                           name="email"
                           type={"email"}
@@ -165,7 +156,8 @@ export default function Alumform() {
                         />
                         <TextField
                           id="topic"
-                          label="Topic"
+                          label="Topic/Memory"
+                          helperText="Holi 2001, Illumination 2017, A Night at Mess top"
                           name="topic"
                           variant="outlined"
                           margin="normal"
@@ -174,10 +166,11 @@ export default function Alumform() {
                         />
                         <TextField
                           id="description"
-                          label="description"
+                          label="Your story"
                           name="description"
                           variant="outlined"
                           margin="normal"
+                          helperText="Anything you want to share/anecdotes"
                           onChange={handleOnChange}
                           value={values.description}
                         />
@@ -196,7 +189,12 @@ export default function Alumform() {
                               hidden
                               accept="image/*"
                               type="file"
-                              onChange={(e) => setValues({ ...values, profile: e.target.files[0] })}
+                              onChange={(e) =>
+                                setValues({
+                                  ...values,
+                                  profile: e.target.files[0],
+                                })
+                              }
                             />
                           </Button>
                           <IconButton
@@ -234,7 +232,12 @@ export default function Alumform() {
                               accept="image/*"
                               multiple
                               type="file"
-                              onChange={(e) => setValues({ ...values, memory: [...e.target.files] })}
+                              onChange={(e) =>
+                                setValues({
+                                  ...values,
+                                  memory: [...e.target.files],
+                                })
+                              }
                             />
                           </Button>
                           <IconButton
@@ -256,15 +259,25 @@ export default function Alumform() {
                             <PhotoCamera />
                           </IconButton>
                         </Stack>
-                        <Box sx={{ mt: "16px", mb: "8px" }} style={{backgroundColor:"black", color:"black"}}>
+                        <Box
+                          sx={{ mt: "16px", mb: "8px" }}
+                          style={{ backgroundColor: "black", color: "black" }}
+                        >
                           <Button
                             type="submit"
                             fullWidth
                             variant="contained"
                             onClick={handleSubmit}
-                            style = {{color:"white", backgroundColor:"black"}}
+                            style={{ color: "white", backgroundColor: "black" }}
                           >
-                            {submitting ? <CircularProgress size={24} style={{color:"white"}}/> : 'Submit'}
+                            {submitting ? (
+                              <CircularProgress
+                                size={24}
+                                style={{ color: "white" }}
+                              />
+                            ) : (
+                              "Submit"
+                            )}
                           </Button>
                         </Box>
                       </FormControl>
