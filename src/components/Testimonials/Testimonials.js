@@ -42,8 +42,8 @@ const Testimonials = () => {
   const handleClose = () => setOpen(false);
 
   return (
-    <div>
-      <div className="testimonials" id="Testimonials">
+    <div id="Testimonials">
+      <div className="testimonials" >
         <p className="title">Testimonials</p>
         <div className="content-box">
           <div className="leftSide">

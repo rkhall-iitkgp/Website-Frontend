@@ -3,7 +3,10 @@ import "./About.css";
 
 function homeAbout() {
   return (
-    <div className="aboutUs" id="AboutUs">
+    <div id="AboutUs" >
+        <div style={{height:'10px'}}></div>
+
+    <div className="aboutUs" >
       <div className="about_design">
         <div className="d1"></div>
         <div className="d2"></div>
@@ -43,6 +46,7 @@ function homeAbout() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
