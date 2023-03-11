@@ -54,7 +54,6 @@ export default function Alumform() {
       setFailure(true);
     }
     const data = await response.json();
-    console.log("Form submitted");
 
     if (data.error || data.error !== {}) {
       console.log(data.error);
@@ -168,8 +167,8 @@ export default function Alumform() {
                             <input
                               hidden
                               accept="image/*"
-                              multiple
                               type="file"
+                              onChange={(e) => setValues({ ...values, profile: e.target.files[0] })}
                             />
                           </Button>
                           <IconButton
@@ -207,6 +206,7 @@ export default function Alumform() {
                               accept="image/*"
                               multiple
                               type="file"
+                              onChange={(e) => setValues({ ...values, memory: [...e.target.files] })}
                             />
                           </Button>
                           <IconButton
