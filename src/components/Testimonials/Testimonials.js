@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import { useForm, ValidationError } from "@formspree/react";
-import { CardContent } from "@material-ui/core";
+import { CardContent, Dialog } from "@material-ui/core";
 
 const Testimonials = () => {
   const [current, setCurrent] = useState(0);
@@ -25,18 +25,6 @@ const Testimonials = () => {
   if (state.succeeded) {
     return window.location.reload();
   }
-
-  const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 400,
-    maxHeight: "80%",
-    bgcolor: "background.paper",
-    boxShadow: 24,
-    p: 4,
-  };
 
   const labelStyle = {
     padding: "6px",
@@ -71,58 +59,91 @@ const Testimonials = () => {
               <button className="addbutton accept-btn" onClick={handleOpen}>
                 Add Testimonial
               </button>
-              <Modal
+              <Dialog
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
                 open={open}
                 onClose={handleClose}
                 closeAfterTransition
-                BackdropComponent={Backdrop}
-                BackdropProps={{
-                  timeout: 500,
-                }}
               >
                 <Fade in={open}>
-                  <Box sx={style}>
-                    <CardContent style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      width: "100%",
-                    }}>
-                      <form method="POST" onSubmit={handleSubmit} style={{
+                  <Box>
+                    <CardContent
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: "100%",
+                      }}
+                    >
+                      <form
+                        method="POST"
+                        onSubmit={handleSubmit}
+                        style={{
                           display: "flex",
                           flexDirection: "column",
                           justifyContent: "center",
                           alignItems: "center",
                           padding: "24px",
-                        }}>
-                        <label htmlFor="name"                             style={labelStyle}>Full Name</label>
-                        <input id="name" type="text" name="name" required                             style={inputStyle}/>
+                        }}
+                      >
+                        <label htmlFor="name" style={labelStyle}>
+                          Full Name
+                        </label>
+                        <input
+                          id="name"
+                          type="text"
+                          name="name"
+                          required
+                          style={inputStyle}
+                        />
                         <ValidationError
                           prefix="Name"
                           field="name"
                           errors={state.errors}
                         />
 
-                        <label htmlFor="batch"                             style={labelStyle}>Batch</label>
-                        <input                             style={inputStyle} id="batch" type="number" name="batch" required />
+                        <label htmlFor="batch" style={labelStyle}>
+                          Batch
+                        </label>
+                        <input
+                          style={inputStyle}
+                          id="batch"
+                          type="number"
+                          name="batch"
+                          required
+                        />
                         <ValidationError
                           prefix="Batch"
                           field="batch"
                           errors={state.errors}
                         />
 
-                        <label                             style={labelStyle} htmlFor="email">Email Address</label>
-                        <input                             style={inputStyle} id="email" type="email" name="email" required />
+                        <label style={labelStyle} htmlFor="email">
+                          Email Address
+                        </label>
+                        <input
+                          style={inputStyle}
+                          id="email"
+                          type="email"
+                          name="email"
+                          required
+                        />
                         <ValidationError
                           prefix="Email"
                           field="email"
                           errors={state.errors}
                         />
 
-                        <label                             style={labelStyle} htmlFor="message">Message</label>
-                        <textarea                             style={inputStyle} id="message" name="message" required></textarea>
+                        <label style={labelStyle} htmlFor="message">
+                          Message
+                        </label>
+                        <textarea
+                          style={inputStyle}
+                          id="message"
+                          name="message"
+                          required
+                        ></textarea>
                         <ValidationError
                           prefix="Message"
                           field="message"
@@ -133,7 +154,7 @@ const Testimonials = () => {
                           className="addbutton"
                           type="submit"
                           disabled={state.submitting}
-                          style={{marginTop:"10px"}}
+                          style={{ marginTop: "10px" }}
                         >
                           Submit
                         </button>
@@ -142,7 +163,7 @@ const Testimonials = () => {
                     </CardContent>
                   </Box>
                 </Fade>
-              </Modal>
+              </Dialog>
             </div>
           </div>
           <div className="border"></div>
