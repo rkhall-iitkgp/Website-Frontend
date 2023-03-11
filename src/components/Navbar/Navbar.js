@@ -5,7 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import DrawerComp from "./DrawerComp";
 import { useMediaQuery } from "@material-ui/core";
 import { useTheme } from "@material-ui/core";
@@ -15,6 +15,7 @@ import "./css/style.css";
 
 export default function Navbar() {
   const Navigate = useNavigate();
+  const pathname = useLocation().pathname;
 
   const theme = useTheme();
   // const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
@@ -41,13 +42,20 @@ export default function Navbar() {
             <DrawerComp />
           ) : (
             <div className="menu-items">
-              <Button
+             {pathname!=='/' && <Button
                 className="menu-item"
                 color="inherit"
                 onClick={() => Navigate("/")}
               >
                 Home
-              </Button>
+              </Button>}
+              {pathname==='/'  && 
+                <HashLink smooth to="/#home" style={{ color: "white" }}>
+                <Button className="menu-item" color="inherit">
+                  Home
+                </Button>
+              </HashLink>
+              }
               <Button
                 className="menu-item"
                 color="inherit"

@@ -7,7 +7,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 const Header = () => {
     return (
         <div class="container">
-            <div class="header">
+            <div class="header" id="home">
                 <Swiper
                     spaceBetween={30}
                     centeredSlides={true}
