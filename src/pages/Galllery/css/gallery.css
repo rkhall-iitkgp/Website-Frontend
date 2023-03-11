@@ -145,14 +145,12 @@
 
 .eventtitle{
     display: block;
-    padding: 7px 10px;
+    margin: 12px;
     font-family: 'IBM Plex Sans Hebrew', sans-serif;
     font-size: 26px;
     color: #232536;
     border-radius: 10px;
     text-align: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
 }
 
 .backevent{
@@ -260,10 +258,13 @@ a{
     padding-top: 20px;
     text-align: center;
     display: block;
-    width: 100%;
+    width: 60px;
     font-size: 1.5rem;
     color: gray;
-    margin-left: -10px;
+    margin: 40px auto;
+}
+.loadtext{
+    font-size: 16px !important;
 }
 
 .noloader{
