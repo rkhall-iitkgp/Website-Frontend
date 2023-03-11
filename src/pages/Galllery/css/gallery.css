@@ -267,6 +267,10 @@ a{
     font-size: 16px !important;
 }
 
+label {
+    text-transform: none !important;
+}
+
 .noloader{
     padding-top: 20px;
     text-align: center;

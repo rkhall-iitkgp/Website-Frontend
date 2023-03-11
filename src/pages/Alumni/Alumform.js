@@ -13,6 +13,7 @@ import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import CircularProgress from "@mui/material/CircularProgress";
+import TextareaAutosize from '@mui/base/TextareaAutosize';
 
 export default function Alumform() {
   const handleOpen = () => setOpen(true);
@@ -164,15 +165,18 @@ export default function Alumform() {
                           onChange={handleOnChange}
                           value={values.topic}
                         />
-                        <TextField
+                        <TextareaAutosize
                           id="description"
-                          label="Your story"
+                          label="Your Story"
+                          placeholder="Your Story"
                           name="description"
                           variant="outlined"
                           margin="normal"
                           helperText="Anything you want to share/anecdotes"
                           onChange={handleOnChange}
                           value={values.description}
+                          style={{width:"100%"}}
+                          minRows={3}
                         />
                         <Stack
                           direction="row"
