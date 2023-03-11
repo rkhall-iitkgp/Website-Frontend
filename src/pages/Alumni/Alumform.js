@@ -12,6 +12,8 @@ import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
+import CircularProgress from '@mui/material/CircularProgress';
+
 
 export default function Alumform() {
   const handleOpen = () => setOpen(true);
@@ -19,6 +21,8 @@ export default function Alumform() {
   const [open, setOpen] = useState(false);
   const [sucessOpen, setSuccess] = useState(false);
   const [failureOpen, setFailure] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
 
   const [values, setValues] = useState({
     name: "",
@@ -31,6 +35,7 @@ export default function Alumform() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitting(true);
     const formData = new FormData();
     formData.append("name", values.name);
     formData.append("batch", values.batch);
@@ -55,9 +60,11 @@ export default function Alumform() {
     );
     if (response.status === 200) {
       setSuccess(true);
+      setSubmitting(false);
     } else {
         console.log("ERROR");
       setFailure(true);
+      setSubmitting(false);
     }
     const data = await response.json();
 
@@ -249,15 +256,15 @@ export default function Alumform() {
                             <PhotoCamera />
                           </IconButton>
                         </Stack>
-                        <Box sx={{ mt: "16px", mb: "8px" }}>
+                        <Box sx={{ mt: "16px", mb: "8px" }} style={{backgroundColor:"black", color:"black"}}>
                           <Button
                             type="submit"
                             fullWidth
                             variant="contained"
-                            color="primary"
                             onClick={handleSubmit}
+                            style = {{color:"white", backgroundColor:"black"}}
                           >
-                            Submit
+                            {submitting ? <CircularProgress size={24} style={{color:"white"}}/> : 'Submit'}
                           </Button>
                         </Box>
                       </FormControl>

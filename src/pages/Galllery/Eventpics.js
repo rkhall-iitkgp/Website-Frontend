@@ -72,7 +72,7 @@ function Eventpics() {
                     wrapperClass="loader"
                 />
                 <div className="loadtext">Rekindling Memories</div>
-            </div> : photos.length === 0 && <h1 className="loader">No memories documented yet</h1>}
+            </div> : photos.length === 0 && <h1 className="noloader">No memories documented yet</h1>}
         </div>
     );
 }
