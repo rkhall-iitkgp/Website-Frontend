@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import { useForm, ValidationError } from "@formspree/react";
+import { CardContent } from "@material-ui/core";
 
 const Testimonials = () => {
   const [current, setCurrent] = useState(0);
@@ -34,6 +35,20 @@ const Testimonials = () => {
     bgcolor: "background.paper",
     boxShadow: 24,
     p: 4,
+  };
+
+  const labelStyle = {
+    padding: "20px",
+    fontSize: "16px",
+    marginBottom: "4px",
+    width: "40%",
+  };
+  const inputStyle = {
+    padding: "12px",
+    fontSize: "14px",
+    width: "55%",
+    marginBottom: "2px",
+    textTransform: "capitalize",
   };
 
   const handleOpen = () => setOpen(true);
@@ -70,48 +85,61 @@ const Testimonials = () => {
               >
                 <Fade in={open}>
                   <Box sx={style}>
-                    <form method="POST" onSubmit={handleSubmit}>
-                      <label htmlFor="name">Full Name</label>
-                      <input id="name" type="text" name="name" required />
-                      <ValidationError
-                        prefix="Name"
-                        field="name"
-                        errors={state.errors}
-                      />
+                    <CardContent style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      width: "100%",
+                    }}>
+                      <form method="POST" onSubmit={handleSubmit} style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          padding: "24px",
+                        }}>
+                        <label htmlFor="name"                             style={labelStyle}>Full Name</label>
+                        <input id="name" type="text" name="name" required                             style={inputStyle}/>
+                        <ValidationError
+                          prefix="Name"
+                          field="name"
+                          errors={state.errors}
+                        />
 
-                      <label htmlFor="batch">Batch</label>
-                      <input id="batch" type="number" name="batch" required />
-                      <ValidationError
-                        prefix="Batch"
-                        field="batch"
-                        errors={state.errors}
-                      />
+                        <label htmlFor="batch"                             style={labelStyle}>Batch</label>
+                        <input                             style={inputStyle} id="batch" type="number" name="batch" required />
+                        <ValidationError
+                          prefix="Batch"
+                          field="batch"
+                          errors={state.errors}
+                        />
 
-                      <label htmlFor="email">Email Address</label>
-                      <input id="email" type="email" name="email" required />
-                      <ValidationError
-                        prefix="Email"
-                        field="email"
-                        errors={state.errors}
-                      />
+                        <label                             style={labelStyle} htmlFor="email">Email Address</label>
+                        <input                             style={inputStyle} id="email" type="email" name="email" required />
+                        <ValidationError
+                          prefix="Email"
+                          field="email"
+                          errors={state.errors}
+                        />
 
-                      <label htmlFor="message">Message</label>
-                      <textarea id="message" name="message" required></textarea>
-                      <ValidationError
-                        prefix="Message"
-                        field="message"
-                        errors={state.errors}
-                      />
+                        <label                             style={labelStyle} htmlFor="message">Message</label>
+                        <textarea                             style={inputStyle} id="message" name="message" required></textarea>
+                        <ValidationError
+                          prefix="Message"
+                          field="message"
+                          errors={state.errors}
+                        />
 
-                      <button
-                        className="addbutton"
-                        type="submit"
-                        disabled={state.submitting}
-                      >
-                        Submit
-                      </button>
-                      <ValidationError errors={state.errors} />
-                    </form>
+                        <button
+                          className="addbutton"
+                          type="submit"
+                          disabled={state.submitting}
+                        >
+                          Submit
+                        </button>
+                        <ValidationError errors={state.errors} />
+                      </form>
+                    </CardContent>
                   </Box>
                 </Fade>
               </Modal>
