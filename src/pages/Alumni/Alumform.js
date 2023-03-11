@@ -175,8 +175,8 @@ export default function Alumform() {
                           helperText="Anything you want to share/anecdotes"
                           onChange={handleOnChange}
                           value={values.description}
-                          style={{width:"100%"}}
-                          minRows={3}
+                          style={{width:"100%", font:"inherit", fontSize:"1rem"}}
+                          minRows={2}
                         />
                         <Stack
                           direction="row"

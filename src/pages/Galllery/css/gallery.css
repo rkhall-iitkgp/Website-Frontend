@@ -269,6 +269,7 @@ a{
 
 label {
     text-transform: none !important;
+    font: inherit;
 }
 
 .noloader{
