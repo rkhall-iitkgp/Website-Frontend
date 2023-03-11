@@ -34,12 +34,17 @@ export default function Alumform() {
     const formData = new FormData();
     formData.append("name", values.name);
     formData.append("batch", values.batch);
+    formData.append("email", values.email);
     formData.append("topic", values.topic);
     formData.append("description", values.description);
     formData.append("profile", values.profile);
     for (let i = 0; i < values.memory.length; i++) {
       formData.append("memory", values.memory[i]);
     }
+    if(values.memory.length === 0){
+        formData.append("memory", null);
+    }
+    console.log(formData);
 
     const response = await fetch(
       "https://rk-gallery-api.onrender.com/api/memory",
@@ -51,6 +56,7 @@ export default function Alumform() {
     if (response.status === 200) {
       setSuccess(true);
     } else {
+        console.log("ERROR");
       setFailure(true);
     }
     const data = await response.json();
@@ -134,6 +140,21 @@ export default function Alumform() {
                           margin="normal"
                           onChange={handleOnChange}
                           value={values.batch}
+                        />
+                        <TextField
+                        required
+                          id="email"
+                          error={values.batch === ""}
+                          helperText={
+                            values.batch === "" ? "Batch is required" : ""
+                          }
+                          label="Email Address"
+                          name="email"
+                          type={"email"}
+                          variant="outlined"
+                          margin="normal"
+                          onChange={handleOnChange}
+                          value={values.email}
                         />
                         <TextField
                           id="topic"
