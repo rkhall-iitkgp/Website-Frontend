@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./css/alumni.css";
-import "../Galllery/css/gallery.css";
+import styles from "./css/alumni.module.css";
+// import "../Galllery/css/gallery.css";
 import { Grid, Button, Card, CardContent } from "@material-ui/core";
 import Box from "@mui/material/Box";
 import Fade from "@mui/material/Fade";
@@ -79,13 +79,13 @@ export default function Alumform() {
   };
 
   return (
-    <div className="memory">
-      <div className="memory_head">Memories</div>
-      <div className="memory_title">
+    <div className={styles.memory}>
+      <div className={styles.memoryHead}>Memories</div>
+      <div className={styles.memoryTitle}>
         Take a trip down memory lane and share your favorite moments and stories
         from your time at RK hall of residence
       </div>
-      <div className="pad-btn">
+      <div className={styles.padBtn}>
         <button className="addbutton accept-btn" onClick={handleOpen}>
           Share Here
         </button>

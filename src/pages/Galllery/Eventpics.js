@@ -6,7 +6,7 @@ import { Audio } from "react-loader-spinner";
 import { useNavigate, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareCaretLeft } from "@fortawesome/free-solid-svg-icons";
-import "./css/gallery.css";
+import styles from "./css/gallery.module.css";
 import ScrollToTopButton from "../../components/ScrollToTop/ScrollToTopButton";
 
 function Eventpics() {
@@ -36,18 +36,18 @@ function Eventpics() {
   };
 
   return (
-    <div className="gallery">
-      <div className={`leftbox active`}>
-        <div className="box-header">
+    <div className={styles.gallery}>
+      <div className={`${styles.leftbox} ${styles.active}`}>
+        <div className={styles.boxHeader}>
           <FontAwesomeIcon
             onClick={() => Navigate("/gallery")}
             icon={faSquareCaretLeft}
-            className="backevent"
+            className={styles.backevent}
           />
           <span>Gallery</span>
         </div>
       </div>
-      <span className="eventtitle">{titles[event]}</span>
+      <span className={styles.eventtitle}>{titles[event]}</span>
       <Gallery photos={photos} onClick={openLightbox} />
       <ModalGateway>
         {viewerIsOpen ? (
@@ -76,11 +76,11 @@ function Eventpics() {
             wrapperStyle
             wrapperClass="loader"
           />
-          <div className="loadtext">Rekindling Memories</div>
+          <div className={styles.loadtext}>Rekindling Memories</div>
         </div>
       ) : (
         photos.length === 0 && (
-          <h1 className="noloader">No memories documented yet</h1>
+          <h1 className={styles.noloader}>No memories documented yet</h1>
         )
       )}
     </div>

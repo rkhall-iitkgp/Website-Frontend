@@ -1,9 +1,4 @@
 import React from "react";
-
-
-
-
-
 const ModalImage = (props) => {
   const [modal, setModal] = React.useState(false);
 

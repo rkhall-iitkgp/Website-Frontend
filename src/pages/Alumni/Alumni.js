@@ -1,5 +1,6 @@
-import "./css/alumni.css";
-import "../Galllery/css/gallery.css";
+
+import styles from "./css/alumni.module.css";
+import styleGal from "../Galllery/css/gallery.module.css";
 import React, { useEffect } from "react";
 import Yearbox from "../Galllery/yearbox";
 import Navbar from "../../components/Navbar/Navbar";
@@ -49,7 +50,7 @@ export function Alumni() {
         })
         .catch((error) => {
           console.log(error);
-          setAlumni([<h1 className="loader">No records found</h1>]);
+          setAlumni([<h1 className={styleGal.loader}>No records found</h1>]);
         });
     }
     getAlumni();
@@ -81,19 +82,19 @@ export function Alumni() {
         <Navbar />
       </div>
       <Alumform />
-      <div className="alumpage">
-        <div className={`leftboxAlumni ${yearmenu ? "active" : ""}`}>
-          <span className="box-header">Our Alumni</span>
+      <div className={styles.alumpage}>
+        <div className={`${styles.leftboxAlumni} ${yearmenu ? `${styleGal.active}` : ""}`}>
+          <span className={styleGal.boxHeader}>Our Alumni</span>
           <div className="years">{yeargroup}</div>
         </div>
-        <div className={`years mobileyears ${yearmenu ? "active" : ""}`}>
+        <div className={`years ${styleGal.mobileyears} ${yearmenu ? `${styleGal.active}` : ""}`}>
           {mobileyeargroup}
         </div>
         <ScrollToTopButton />
 
-        <div className="alum">
+        <div className={styles.alum}>
           {alumni ? (
-            <div className="rightbox">{alumni}</div>
+            <div className={styleGal.rightbox}>{alumni}</div>
             
           ) : (
             <Audio
