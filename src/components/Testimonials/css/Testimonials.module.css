@@ -156,7 +156,7 @@
     animation-duration: 1.5s;
 }
 
-.pad-btn {
+.padBtn {
     padding-top: 4vh;
     padding-bottom: 10px;
 }
@@ -180,7 +180,7 @@
     outline: none;
 }
 
-.addbutton.accept-btn:hover {
+.addbutton.acceptBtn:hover {
     background-color: #000;
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
     color: #fff;
