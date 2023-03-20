@@ -10,7 +10,7 @@
     overflow: hidden;
 }
 
-.box-header {
+.boxHeader {
     display: flex;
     align-items: center;
     background-color: #fcfcfc;
@@ -57,7 +57,7 @@
     font-weight: 700;
 }
 
-.box-header{
+.boxHeader{
     position: relative;
     justify-content: center;
 }

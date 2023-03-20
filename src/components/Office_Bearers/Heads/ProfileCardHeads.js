@@ -1,13 +1,13 @@
 import React from 'react';
-import "../css/ProfileCard.css";
+import styles from "../css/ProfileCard.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 function ProfileCard(props) {
     return (
-        <div className="profile-card">
+        <div className={styles.profileCard}>
             <img src={props.imageUrl} alt={props.name} />
-            <div className='profile-card_info'>
+            <div className={styles.profileCardInfo}>
                 <h3>{props.name}</h3>
                 <p>{props.position}</p>
                 {/* <div className="profile-social-icons"> 

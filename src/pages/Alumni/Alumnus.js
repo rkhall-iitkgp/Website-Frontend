@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./css/alumni.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -9,25 +10,25 @@ import {
 
 const Alumnus = (props) => {
   return (
-    <div className="alumnuscard">
-    <img src={props.img} className="headshot" />
-      <div className="namebatch">
-        <span className="name">{props.name}</span>
-        <span className="batch">{`Batch of ${props.batch}`}</span>
+    <div className={styles.alumnuscard}>
+    <img src={props.img} className={styles.headshot} />
+      <div className={styles.namebatch}>
+        <span className={styles.name}>{props.name}</span>
+        <span className={styles.batch}>{`Batch of ${props.batch}`}</span>
       </div>
-      <p className="desc">{props.desc}</p>
-      <div className="social">
+      <p className={styles.desc}>{props.desc}</p>
+      <div className={styles.social}>
         <a href="javascript:void(0)">
-          <FontAwesomeIcon icon={faFacebook} className="social-icons" />
+          <FontAwesomeIcon icon={faFacebook} className={styles.socialIcons} />
         </a>
         <a href="javascript:void(0)">
-          <FontAwesomeIcon icon={faInstagram} className="social-icons" />
+          <FontAwesomeIcon icon={faInstagram} className={styles.socialIcons} />
         </a>
         <a href="javascript:void(0)">
-          <FontAwesomeIcon icon={faTwitter} className="social-icons" />
+          <FontAwesomeIcon icon={faTwitter} className={styles.socialIcons} />
         </a>
         <a href={props.linkedin} target="_blank">
-          <FontAwesomeIcon icon={faLinkedin} className="social-icons" />
+          <FontAwesomeIcon icon={faLinkedin} className={styles.socialIcons} />
         </a>
       </div>
     </div>

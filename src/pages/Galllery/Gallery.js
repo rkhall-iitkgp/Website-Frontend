@@ -1,4 +1,4 @@
-import "./css/gallery.css";
+import styles from "./css/gallery.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareCaretLeft } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
@@ -47,26 +47,30 @@ export function Gallery() {
     );
 
   return (
-    <div className="gallerypage">
-      <div className={`leftbox ${yearmenu ? "active" : ""}`}>
-        <div className="box-header">
+    <div className={styles.gallerypage}>
+      <div className={`${styles.leftbox} ${yearmenu ? `${styles.active}` : ""}`}>
+        <div className={styles.boxHeader}>
           {event > 0 && (
             <FontAwesomeIcon
               onClick={() => handleEventClick(0)}
               icon={faSquareCaretLeft}
-              className="backevent"
+              className={styles.backevent}
             />
           )}
           <span>Gallery</span>
         </div>
-        <div className="years">{yeargroup}</div>
+        <div 
+        // className="years"
+        >{yeargroup}</div>
       </div>
 
-      <div className={`years mobileyears ${yearmenu ? "active" : ""}`}>
+      {/* years  */}
+      <div className={`
+      ${styles.mobileyears} ${yearmenu ? `${styles.active}` : ""}`}>
         {mobileyeargroup}
       </div>
 
-      <div className={`rightbox ${event > 0 ? "active" : ""}`}>
+      <div className={`${styles.rightbox} ${event > 0 ? `${styles.active}` : ""}`}>
         <Event
           id={"illu-rangoli"}
           event="Illumination & Rangoli"

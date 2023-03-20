@@ -1,11 +1,10 @@
 import React from 'react';
 import ProfileCardHeads from './ProfileCardHeads';
-
+import styles from "../css/ProfileCard.module.css";
 
 function ProfileList(props) {
   return (
-    <div className='profile-container'>
-      <div className="profile-list">
+    <div className={styles.profileContainer}>
         {props.profiles.map(profile => (
           <ProfileCardHeads
             key={profile.id}
@@ -20,7 +19,6 @@ function ProfileList(props) {
           />
         ))}
       </div>
-    </div>
   );
 }
 

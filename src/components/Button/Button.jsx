@@ -1,10 +1,10 @@
 import React from "react";
-import "./Button.css";
+import styles from "./Button.module.css";
 
 const Button = (props) => {
   const { link, name } = props;
   return (
-    <button className="gb_btn">
+    <button className={styles.gb_btn}>
       <a href={link}>{name} {">"}</a>
     </button>
   );

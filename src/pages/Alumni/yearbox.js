@@ -1,4 +1,5 @@
 import React from 'react'
+import styleGal from "../Galllery/css/gallery.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faCaretDown
@@ -7,9 +8,9 @@ import {
 
 const Yearbox = (props) => {
     return (
-        <div className={`year-box ${props.selected === true ? "active" : ""}`} onClick={() => props.handleClick(props.year)}>
+        <div className={`${styleGal.yearBox} ${props.selected === true ? `${styleGal.active}` : ""}`} onClick={() => props.handleClick(props.year)}>
             <span >{props.year}</span>
-            <FontAwesomeIcon icon={faCaretDown} className="dropdown" />
+            <FontAwesomeIcon icon={faCaretDown} className={styleGal.dropdown} />
         </div>
 
     )
