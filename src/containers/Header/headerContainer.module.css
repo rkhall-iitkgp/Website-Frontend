@@ -36,20 +36,20 @@
     padding-left: 6vw;
 }
 
-.swiper-button-prev,
-.swiper-button-next,
-.swiper-button-next::after,
-.swiper-button-prev::after {
+:global(.swiper-button-prev),
+:global(.swiper-button-next),
+:global(.swiper-button-next)::after,
+:global(.swiper-button-prev)::after {
     /* width: 5vw !important; */
     font-size: 4vmin !important;
     color: #FFD050 !important;
 }
 
-.swiper-button-next {
+:global(.swiper-button-next) {
     right: 4vmin !important;
 }
 
-.swiper-button-prev {
+:global(.swiper-button-prev) {
     left: 4vmin !important;
 }
 
