@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Data } from "./Data";
-import "./css/Testimonials.module.css";
+import styles from "./css/Testimonials.module.css";
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -43,20 +43,20 @@ const Testimonials = () => {
 
   return (
     <div id="Testimonials">
-      <div className="testimonials" >
-        <p className="title">Testimonials</p>
-        <div className="content-box">
-          <div className="leftSide">
-            <h2 className="nextHead">What people say...</h2>
-            <p className="text">
+      <div className={styles.testimonials} >
+        <p className={styles.title}>Testimonials</p>
+        <div className={styles.contentBox}>
+          <div className={styles.leftSide}>
+            <h2 className={styles.nextHead}>What people say...</h2>
+            <p className={styles.text}>
               RK hall of residence is home to a strong community of students and
               alumni who have achieved great success in various fields. Their
               stories and experiences serve as an inspiration to future
               generations of RKites, encouraging them to strive for excellence
               and make the most of their opportunities at IIT Kharagpur.
             </p>
-            <div className="pad-btn">
-              <button className="addbutton accept-btn" onClick={handleOpen}>
+            <div className={styles.padBtn}>
+              <button className={`${styles.addbutton} ${styles.acceptBtn}`} onClick={handleOpen}>
                 Add Testimonial
               </button>
               <Dialog
@@ -151,7 +151,7 @@ const Testimonials = () => {
                         />
 
                         <button
-                          className="addbutton"
+                          className={styles.addbutton}
                           type="submit"
                           disabled={state.submitting}
                           style={{ marginTop: "10px" }}
@@ -166,30 +166,30 @@ const Testimonials = () => {
               </Dialog>
             </div>
           </div>
-          <div className="border"></div>
-          <div className="rightSide">
+          <div className={styles.border}></div>
+          <div className={styles.rightSide}>
             {Data.map((slide, index) => {
               return (
                 <div
-                  className={index === current ? "slide active" : "slide"}
+                  className={`${styles.slide} ${index === current ? styles.active : ''}`}
                   key={index}
                 >
                   {index === current && (
-                    <h4 className="heading">{slide.text}</h4>
+                    <h4 className={styles.heading}>{slide.text}</h4>
                   )}
                 </div>
               );
             })}
-            <div className="rightLower">
-              <div className="person">
+            <div className={styles.rightLower}>
+              <div className={styles.person}>
                 {Data.map((slide, index) => {
                   return (
                     <div
-                      className={index === current ? "slide active" : "slide"}
+                      className={`${styles.slide} ${index === current ? styles.active : ''}`}
                       key={index}
                     >
                       {index === current && (
-                        <h4 className="name">{slide.name}</h4>
+                        <h4 className={styles.name}>{slide.name}</h4>
                       )}
                     </div>
                   );
@@ -197,25 +197,25 @@ const Testimonials = () => {
                 {Data.map((slide, index) => {
                   return (
                     <div
-                      className={index === current ? "slide active" : "slide"}
+                      className={`${styles.slide} ${index === current ? styles.active : ''}`}
                       key={index}
                     >
                       {index === current && (
-                        <p className="company">{slide.position}</p>
+                        <p className={styles.company}>{slide.position}</p>
                       )}
                     </div>
                   );
                 })}
               </div>
-              <div className="buttons">
+              <div className={styles.buttons}>
                 <img
-                  className="back"
+                  className={styles.back}
                   src={require("./Images/Back button.png")}
                   alt="back"
                   onClick={prevData}
                 />
                 <img
-                  className="next"
+                  className={styles.next}
                   src={require("./Images/Next Button.png")}
                   alt="next"
                   onClick={nextData}
