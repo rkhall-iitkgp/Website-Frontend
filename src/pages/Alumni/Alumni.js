@@ -81,7 +81,7 @@ export function Alumni() {
       <div className="navbar">
         <Navbar />
       </div>
-      <Alumform />
+      {/* <Alumform /> */}
       <div className={styles.alumpage}>
         <div className={`${styles.leftboxAlumni} ${yearmenu ? `${styleGal.active}` : ""}`}>
           <span className={styleGal.boxHeader}>Our Alumni</span>

@@ -5,6 +5,7 @@ import {
   faYoutube,
   faTwitter,
   faLinkedin,
+  faInstagram
 } from "@fortawesome/free-brands-svg-icons";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -21,7 +22,7 @@ if (state.succeeded) {
 }
 
   return (
-    <footer id={styles.footer}>
+    <footer id="footer" >
       <Box bgcolor="#8DD3BB" color="black" className={styles.footer}>
         <Grid container className={styles.query}>
           <Grid item className={styles.querytext}>
@@ -53,7 +54,7 @@ if (state.succeeded) {
 
         <Container maxwidth="lg" className={styles.lowerFooter}>
           <div className={styles.logoLinks}>
-            <div className={styles.logo}>RKH</div>
+          <a target="_blank" href="https://www.geocities.ws/rkhall_iitkgp/index.htm" style={{color:"black"}}><div className={styles.logo}>RKH</div></a>
             <div className={styles.verticalDivider}></div>
             <div className={styles.socialLinksContainer}>
               <div className={styles.socialLinks}>
@@ -81,9 +82,12 @@ if (state.succeeded) {
                 </Link>
               </div>
               <div>
-                <span>
-                  <FontAwesomeIcon icon={faTwitter} className={styles.socialIcons}/>
-                </span>
+              <Link
+                  target="_blank"
+                  href="https://www.instagram.com/rkh.iitkgp/"
+                >
+                  <FontAwesomeIcon icon={faInstagram} className={styles.socialIcons}/>
+                </Link>
               </div>
             </div>
           </div>

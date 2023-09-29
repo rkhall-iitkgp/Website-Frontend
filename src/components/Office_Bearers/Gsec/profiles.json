@@ -1,7 +1,7 @@
 [
     {
       "id": 6,
-      "name": "Pratik Choudhary",
+      "name": "Abhinav Singh Meena",
       "position": "General Secretary Social and Cultural",
       "imageUrl": "office-bearers-images/GsecSocult.jpg",
       "twitterUrl": "",
@@ -11,7 +11,7 @@
     },
     {
       "id": 7,
-      "name": "Tej Pratap Kumar",
+      "name": "Shrish Srivastava",
       "position": "General Secretary Sports and Games",
       "imageUrl": "office-bearers-images/GsecSports.jpg",
       "twitterUrl": "",
@@ -21,7 +21,7 @@
     },
     {
       "id": 8,
-      "name": "Zaid Irfan Ali",
+      "name": "Sandeep Patel",
       "position": "General Secretary Technology",
       "imageUrl": "office-bearers-images/GsecTech.jpg",
       "twitterUrl": "",
@@ -31,7 +31,7 @@
     },
     {
       "id": 10,
-      "name": "Sohail Gouri",
+      "name": "Sumali Shahab",
       "position": "General Secretary Maintenance",
       "imageUrl": "office-bearers-images/GsecMaintenance.jpg",
       "twitterUrl": "",
@@ -41,9 +41,9 @@
     },
     {
       "id": 11,
-      "name": "Biswa Ranjan Barik",
+      "name": "Praveen Kumar Sahu",
       "position": "General Secretary Student Welfare",
-      "imageUrl": "office-bearers-images/GSecStudWelfare.jpg",
+      "imageUrl": "office-bearers-images/GsecStudWelfare.jpg",
       "twitterUrl": "",
       "facebookUrl": "",
       "instagramUrl": "",
@@ -51,9 +51,19 @@
     },
     {
       "id": 12,
-      "name": "Tarole Vedant Purnaji",
+      "name": "Sanyam Jhuria",
       "position": "General Secretary Alumni Affairs",
       "imageUrl": "office-bearers-images/GsecAlumni.jpg",
+      "twitterUrl": "",
+      "facebookUrl": "",
+      "instagramUrl": "",
+      "linkedinUrl": ""
+    },
+    {
+      "id": 13,
+      "name": "Sharansh Vardhan",
+      "position": "General Secretary Mess",
+      "imageUrl": "office-bearers-images/GsecMess.jpg",
       "twitterUrl": "",
       "facebookUrl": "",
       "instagramUrl": "",

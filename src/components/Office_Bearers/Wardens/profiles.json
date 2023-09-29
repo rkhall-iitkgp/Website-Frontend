@@ -1,7 +1,7 @@
 [
     {
       "id": 1,
-      "name": "Shailendra Kumar Varshney",
+      "name": "Prof. Bharath Haridas Aithal",
       "position": "Warden",
       "imageUrl": "office-bearers-images/Warden.jpg",
       "twitterUrl": "",
@@ -11,9 +11,9 @@
     },
     {
       "id": 2,
-      "name": "Md. Saud Afzal",
+      "name": "Prof. Manish Kaushal",
       "position": "Assistant Warden (Maintenance)",
-      "imageUrl": "office-bearers-images/AssWardenMaintainence.png",
+      "imageUrl": "office-bearers-images/AssWardenMaintainence.jpg",
       "twitterUrl": "",
       "facebookUrl": "",
       "instagramUrl": "",
@@ -21,7 +21,7 @@
     },
     {
       "id": 3,
-      "name": "Manish Kaushal",
+      "name": "Prof. Sushil Punia",
       "position": "Assistant Warden (Mess)",
       "imageUrl": "office-bearers-images/AssWardenMess.jpg",
       "twitterUrl": "",

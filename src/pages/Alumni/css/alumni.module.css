@@ -190,6 +190,7 @@ textarea {
     margin-left: 10px;
     width: calc(100% - 20px);
     z-index: 20;
+    margin-top: 75px;
 }
 
 .leftboxAlumni .active span {

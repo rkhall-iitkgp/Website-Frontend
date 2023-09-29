@@ -162,6 +162,7 @@
 }
 
 .addbutton {
+    margin-top: 12px;
     width: 'auto';
     height: 45px;
     font-family: 'Roboto', sans-serif;
