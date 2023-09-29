@@ -15,7 +15,7 @@ import img from "./mailbox.png";
 import { useForm, ValidationError } from '@formspree/react';
 
 function Footer() {
-  
+  // fa
 const [state, handleSubmit] = useForm("xeqweyvv");
 if (state.succeeded) {
   return window.location.reload();
