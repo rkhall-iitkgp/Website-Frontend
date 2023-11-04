@@ -56,8 +56,8 @@ function Eventpics() {
               currentIndex={currentImage}
               views={photos.map((x) => ({
                 ...x,
-                srcset: x.srcSet,
-                caption: x.title,
+                srcset: x?.srcSet,
+                caption: x?.title,
               }))}
             />
           </Modal>

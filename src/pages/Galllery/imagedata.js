@@ -1,45 +1,7 @@
-// import React, { useEffect } from "react";
-// import { useState } from "react";
-// import axios from "axios";
-
-// export default function Imagedata(event, year) {
-//   console.log(event);
-//   console.log(year);
-//   const [photos, setPhotos] = useState([]);
-//   const url = `https://rk-gallery-api.onrender.com/api/${year}/${event}`;
-
-//   useEffect(() => {
-//     getPics();
-//   }, [url]);
-
-//   function getPics() {
-//     axios
-//       .get(`${url}`)
-//       .then((response) => {
-//         const pics = response.data.phtoturls;
-//         console.log(pics);
-//         setPhotos(
-//           pics.map((obj) => (
-//             {
-//               "src": obj.url,
-//               "width": obj.width,
-//               "height": obj.height
-//             }
-//           ))
-//         );
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//   }
-
-//   return photos;
-// }
-
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-console.log(12345);
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 export default function Imagedata(event, year) {
   console.log(event);
@@ -48,7 +10,7 @@ export default function Imagedata(event, year) {
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const imagesPerPage = 30;
-  const url = `https://rk-gallery-api.onrender.com/api/${year}/${event}`;
+  const url = `${BACKEND_URL}/api/${year}/${event}`;
 
   useEffect(() => {
     getPics();
@@ -57,16 +19,18 @@ export default function Imagedata(event, year) {
   function getPics() {
     setIsLoading(true);
     axios
-      .get(`${url}?page=${currentPage}&per_page=${imagesPerPage}`)
+      .get(`${url}`)
       .then((response) => {
-        const pics = response.data.phtoturls;
+        const pics = response.data.photoURLs;
         console.log(pics);
         setPhotos(
-          pics.map((obj) => ({
-            src: obj.url,
-            width: obj.width,
-            height: obj.height,
-          }))
+          pics.map((imageUrl) => {
+            return {
+              src: imageUrl,
+              width: 4,
+              height: 3,
+            };
+          })
         );
         setIsLoading(false);
       })
