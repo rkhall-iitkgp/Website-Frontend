@@ -21,7 +21,7 @@ if (state.succeeded) {
 }
 
   return (
-    <footer id={styles.footer}>
+    <footer id="footer">
       <Box bgcolor="#8DD3BB" color="black" className={styles.footer}>
         <Grid container className={styles.query}>
           <Grid item className={styles.querytext}>
