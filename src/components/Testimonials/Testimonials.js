@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { Data } from "./Data";
-import "./css/Testimonials.module.css";
-import Backdrop from "@mui/material/Backdrop";
+import "./css/Testimonials.css";
 import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import { useForm, ValidationError } from "@formspree/react";
 import { CardContent, Dialog } from "@material-ui/core";
@@ -34,8 +32,7 @@ const Testimonials = () => {
   const inputStyle = {
     padding: "8px",
     fontSize: "14px",
-    marginBottom: "2px",
-    textTransform: "capitalize",
+    marginBottom: "2px"
   };
 
   const handleOpen = () => setOpen(true);
