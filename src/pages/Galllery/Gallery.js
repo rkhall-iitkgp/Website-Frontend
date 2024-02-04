@@ -37,7 +37,7 @@ export function Gallery() {
       <Yearbox year={i} selected={year === i} handleClick={handleClick} />
     ));
 
-  const mobileyeargroup = [...Array(5).keys()]
+  const mobileyeargroup = [...Array(1).keys()]
     .map((i) => 2022 - i)
     .map(
       (i) =>
@@ -48,7 +48,9 @@ export function Gallery() {
 
   return (
     <div className={styles.gallerypage}>
-      <div className={`${styles.leftbox} ${yearmenu ? `${styles.active}` : ""}`}>
+      <div
+        className={`${styles.leftbox} ${yearmenu ? `${styles.active}` : ""}`}
+      >
         <div className={styles.boxHeader}>
           {event > 0 && (
             <FontAwesomeIcon
@@ -59,18 +61,24 @@ export function Gallery() {
           )}
           <span>Gallery</span>
         </div>
-        <div 
+        <div
         // className="years"
-        >{yeargroup}</div>
+        >
+          {yeargroup}
+        </div>
       </div>
 
       {/* years  */}
-      <div className={`
-      ${styles.mobileyears} ${yearmenu ? `${styles.active}` : ""}`}>
+      <div
+        className={`
+      ${styles.mobileyears} ${yearmenu ? `${styles.active}` : ""}`}
+      >
         {mobileyeargroup}
       </div>
 
-      <div className={`${styles.rightbox} ${event > 0 ? `${styles.active}` : ""}`}>
+      <div
+        className={`${styles.rightbox} ${event > 0 ? `${styles.active}` : ""}`}
+      >
         <Event
           id={"illu-rangoli"}
           event="Illumination & Rangoli"

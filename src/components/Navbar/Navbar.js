@@ -21,7 +21,6 @@ export default function Navbar() {
   // const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   const isMobile = useMediaQuery("(max-width: 780px)");
 
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <CssBaseline />
@@ -29,33 +28,35 @@ export default function Navbar() {
         <Toolbar>
           <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
             <div className="logo-container">
-            <a href="/">
-              <img
-                src={Logo}
-                alt="RKH"
-                style={{ maxWidth: 30, marginRight: "10px" }}
-              />
-            </a>
+              <a href="/">
+                <img
+                  src={Logo}
+                  alt="RKH"
+                  style={{ maxWidth: 30, marginRight: "10px" }}
+                />
+              </a>
             </div>
           </Typography>
           {isMobile ? (
             <DrawerComp />
           ) : (
             <div className="menu-items">
-             {pathname!=='/' && <Button
-                className="menu-item"
-                color="inherit"
-                onClick={() => Navigate("/")}
-              >
-                Home
-              </Button>}
-              {pathname==='/'  && 
-                <HashLink smooth to="/#home" style={{ color: "white" }}>
-                <Button className="menu-item" color="inherit">
+              {pathname !== "/" && (
+                <Button
+                  className="menu-item"
+                  color="inherit"
+                  onClick={() => Navigate("/")}
+                >
                   Home
                 </Button>
-              </HashLink>
-              }
+              )}
+              {pathname === "/" && (
+                <HashLink smooth to="/#home" style={{ color: "white" }}>
+                  <Button className="menu-item" color="inherit">
+                    Home
+                  </Button>
+                </HashLink>
+              )}
               <Button
                 className="menu-item"
                 color="inherit"
@@ -63,13 +64,13 @@ export default function Navbar() {
               >
                 Gallery
               </Button>
-              <Button
+              {/* <Button
                 className="menu-item"
                 color="inherit"
                 onClick={() => Navigate("/alumni")}
               >
                 Alumni
-              </Button>
+              </Button> */}
               <HashLink smooth to="/#AboutUs" style={{ color: "white" }}>
                 <Button className="menu-item" color="inherit">
                   About Us

@@ -22,7 +22,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 function DrawerComponent() {
-    const pathname = useLocation().pathname;
+  const pathname = useLocation().pathname;
   const classes = useStyles();
   const [openDrawer, setOpenDrawer] = useState(false);
   return (
@@ -33,28 +33,30 @@ function DrawerComponent() {
         onClose={() => setOpenDrawer(false)}
       >
         <List>
-          {pathname!=="/" && <Link style={{ color: "white" }} to="/">
-            <ListItem
-              className="menu-item-drawer"
-              onClick={() => setOpenDrawer(false)}
-            >
-              <ListItemText>Home</ListItemText>
-            </ListItem>
-          </Link>}
-          {pathname === "/" && 
+          {pathname !== "/" && (
+            <Link style={{ color: "white" }} to="/">
+              <ListItem
+                className="menu-item-drawer"
+                onClick={() => setOpenDrawer(false)}
+              >
+                <ListItemText>Home</ListItemText>
+              </ListItem>
+            </Link>
+          )}
+          {pathname === "/" && (
             <Link style={{ color: "white" }}>
-            <ListItem
-            className="menu-item-drawer"
-            onClick={() => setOpenDrawer(false)}
-            >
-            <ListItemText>
-                <HashLink smooth to="/#home" style={{ color: "white" }}>
-                Home
-                </HashLink>
-            </ListItemText>
-            </ListItem>
-        </Link>
-          }
+              <ListItem
+                className="menu-item-drawer"
+                onClick={() => setOpenDrawer(false)}
+              >
+                <ListItemText>
+                  <HashLink smooth to="/#home" style={{ color: "white" }}>
+                    Home
+                  </HashLink>
+                </ListItemText>
+              </ListItem>
+            </Link>
+          )}
           <Link style={{ color: "white" }} to="/gallery">
             <ListItem
               className="menu-item-drawer"
@@ -63,14 +65,14 @@ function DrawerComponent() {
               <ListItemText>Gallery</ListItemText>
             </ListItem>
           </Link>
-          <Link style={{ color: "white" }} to="/alumni">
+          {/* <Link style={{ color: "white" }} to="/alumni">
             <ListItem
               className="menu-item-drawer"
               onClick={() => setOpenDrawer(false)}
             >
               <ListItemText>Alumni</ListItemText>
             </ListItem>
-          </Link>
+          </Link> */}
           <Link style={{ color: "white" }}>
             <ListItem
               className="menu-item-drawer"
