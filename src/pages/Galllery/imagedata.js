@@ -9,7 +9,7 @@ export default function Imagedata(event, year) {
   const [photos, setPhotos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const imagesPerPage = 30;
+  // const imagesPerPage = 30;
   const url = `${BACKEND_URL}/api/${year}/${event}`;
 
   useEffect(() => {
@@ -40,9 +40,9 @@ export default function Imagedata(event, year) {
       });
   }
 
-  function handleLoadMore() {
-    setCurrentPage(currentPage + 1);
-  }
+  // function handleLoadMore() {
+  //   setCurrentPage(currentPage + 1);
+  // }
 
   return [photos, isLoading];
 

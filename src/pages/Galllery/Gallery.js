@@ -4,7 +4,7 @@ import { faSquareCaretLeft } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import Yearbox from "./yearbox";
 import Event from "./Event";
-import Eventpics from "./Eventpics";
+// import Eventpics from "./Eventpics";
 import { useNavigate } from "react-router-dom";
 
 import img1 from "./illumination.png";

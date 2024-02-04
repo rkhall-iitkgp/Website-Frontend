@@ -8,7 +8,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { useLocation, useNavigate } from "react-router-dom";
 import DrawerComp from "./DrawerComp";
 import { useMediaQuery } from "@material-ui/core";
-import { useTheme } from "@material-ui/core";
+// import { useTheme } from "@material-ui/core";
 import Logo from "./rklogo_1.png";
 import { HashLink } from "react-router-hash-link";
 import "./css/style.css";
@@ -17,7 +17,7 @@ export default function Navbar() {
   const Navigate = useNavigate();
   const pathname = useLocation().pathname;
 
-  const theme = useTheme();
+  // const theme = useTheme();
   // const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   const isMobile = useMediaQuery("(max-width: 780px)");
 

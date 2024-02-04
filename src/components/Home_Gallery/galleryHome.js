@@ -6,7 +6,7 @@ import img3 from "./3.jpeg";
 import img4 from "./4.jpeg";
 import { Link } from "react-router-dom";
 import { Grid } from "@mui/material";
-import Button from "../Button/Button";
+// import Button from "../Button/Button";
 function galleryHome() {
   return (
     <div>

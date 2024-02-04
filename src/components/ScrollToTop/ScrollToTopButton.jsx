@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { Fab } from '@material-ui/core';
 import { KeyboardArrowUp } from '@material-ui/icons';
-import { faBlackTie } from '@fortawesome/free-brands-svg-icons';
+// import { faBlackTie } from '@fortawesome/free-brands-svg-icons';
 
 const handleScrollToTop = () => {
     window.scrollTo({

@@ -11,7 +11,7 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import img from "./mailbox.png";
-import { useForm, ValidationError } from '@formspree/react';
+import { useForm } from '@formspree/react';
 
 function Footer() {
   
