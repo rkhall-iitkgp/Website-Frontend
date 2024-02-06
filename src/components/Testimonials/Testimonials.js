@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Data } from "./Data";
-import styles from "./css/Testimonials.module.css";
+import styles from "./css/Testimonials.css";
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
