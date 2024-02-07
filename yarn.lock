@@ -8497,17 +8497,10 @@ react-remove-scroll@^2.5.5:
     use-callback-ref "^1.3.0"
     use-sidecar "^1.1.2"
 
-<<<<<<< HEAD
-react-router-dom@^6.6.2, react-router-dom@>=4:
-  version "6.7.0"
-  resolved "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.7.0.tgz"
-  integrity sha512-jQtXUJyhso3kFw430+0SPCbmCmY1/kJv8iRffGHwHy3CkoomGxeYzMkmeSPYo6Egzh3FKJZRAL22yg5p2tXtfg==
-=======
 react-router-dom@^6.22.0, react-router-dom@>=4:
   version "6.22.0"
   resolved "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.22.0.tgz"
   integrity sha512-z2w+M4tH5wlcLmH3BMMOMdrtrJ9T3oJJNsAlBJbwk+8Syxd5WFJ7J5dxMEW0/GEXD1BBis4uXRrNIz3mORr0ag==
->>>>>>> 931f7b7ad279f2ba2e2d57acb7ab9416b08cbbdd
   dependencies:
     "@remix-run/router" "1.15.0"
     react-router "6.22.0"
