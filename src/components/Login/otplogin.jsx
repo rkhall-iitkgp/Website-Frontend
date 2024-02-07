@@ -10,13 +10,18 @@ import { useMediaQuery } from '@material-ui/core';
 import { Divider, Box } from '@mui/material';
 import { Padding } from '@mui/icons-material';
 import { MuiOtpInput } from 'mui-one-time-password-input'
+import { useNavigate } from 'react-router-dom';
 
 const Otplogin = () => {
+    const navigate=useNavigate()
     const [otp, setOtp] = React.useState('')
 
     const handleChange = (newValue) => {
         setOtp(newValue)
         console.log(otp);
+    }
+    const passwordlogin=()=>{
+        navigate('/loginpassword')
     }
 
 
@@ -27,30 +32,26 @@ const Otplogin = () => {
     const [password, setPassword] = useState('');
 
     const isMobile = useMediaQuery("(max-width: 920px)");
-    const divStyle = {
+    const divStyle = !isMobile ? {
         backgroundImage: "url('/bg_img.png')",
         backgroundSize: 'cover',
-
         backgroundRepeat: 'no-repeat',
-
-        height: '100vh',
-    };
+        height: '100vh'
+    } : {};
     return (
         <form className='login_form' action='submit' onSubmit={submithandler}>
             <div style={divStyle}>
-                <div id='login_main' style={{ marginTop: '0rem', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div id='login_main' style={{ marginTop: '0rem', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 
-                    <Card sx={{ marginTop: '7rem', width: '70vw', height: '75vh', boxShadow: "inherit" }}>
-                        <div className='login_main' style={{ display: 'flex' }}>
+                <Card sx={!isMobile?{ marginTop: '7rem', width: '70vw', height: '75vh', boxShadow: "inherit" }:{ marginTop: '4rem',width: '100vw', height: '100vh'}}>
+                <div className='login_main' style={!isMobile?{ display: 'flex' }:{display:'flex',flexDirection:'column'}}>
+                           <div className='left'>
 
-                            {!isMobile && <div className='left'>
-
-                                <img style={{ width: '35vw', height: '75vh' }} className='left_image' src={Login_image} alt="" />
-
-                            </div>}
+                            <img style={!isMobile?{ width: '35vw', height: '75vh' }:{width:'100vw',height:'35vh'}} className='left_image' src={Login_image} alt="" />
+                            </div>
 
                             <div style={!isMobile ? { marginLeft: '2rem', display: 'flex', flexDirection: 'column' } : { marginLeft: '1rem', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-                                <h1 style={{ fontSize: '3rem', fontWeight: '800', fontFamily: 'sans-serif', marginTop: '2.5rem' }} className='right_heading'>Login</h1>
+                                <h1 style={!isMobile?{ fontSize: '3rem', fontWeight: '800', fontFamily: 'sans-serif', marginTop: '2.5rem' }:{fontSize:'2rem', fontWeight: '750', fontFamily: 'sans-serif', marginTop: '0.5rem'}} className='right_heading'>Login</h1>
 
                                 <MuiOtpInput value={otp} onChange={handleChange} style={{ marginTop: '0.8rem', maxWidth: '15rem', gap: '10px' }} />
 
@@ -69,7 +70,7 @@ const Otplogin = () => {
                                     </Divider>
                                 </Box>
 
-                                <Button type='submit' sx={{ marginTop: '1.5rem', background: '#FBF6EA', color: 'black', width: '28vmax', '&:hover': { background: '#FFD050' } }} variant='contained'>Login With OTP</Button>
+                                <Button onClick={passwordlogin} type='submit' sx={{ marginTop: '1.5rem', background: '#FBF6EA', color: 'black', width: '28vmax', '&:hover': { background: '#FFD050' } }} variant='contained'>Login With Password</Button>
 
 
                                 <Typography sx={{ marginTop: '1.5rem' }} >Don't have an account?

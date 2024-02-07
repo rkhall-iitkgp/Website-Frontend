@@ -27,38 +27,37 @@ const ForgetPassword = () => {
     const [password, setPassword] = useState('');
     const [showOTP, setShowOTP] = useState(false);
     const isMobile = useMediaQuery("(max-width: 920px)");
-    const divStyle = {
+    const divStyle = !isMobile ? {
         backgroundImage: "url('/bg_img.png')",
         backgroundSize: 'cover',
-
         backgroundRepeat: 'no-repeat',
-
-        height: '100vh',
-    };
+        height: '100vh'
+    } : {};
     return (
         <form className='login_form' action='submit' onSubmit={submithandler}>
             <div style={divStyle}>
-                <div id='login_main' style={{ marginTop: '0rem', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div id='login_main' style={{ marginTop: '0rem', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 
-                    <Card sx={{ marginTop: '7rem', width: '70vw', height: '75vh', boxShadow: "inherit" }}>
-                        <div className='login_main' style={{ display: 'flex' }}>
+            <Card sx={!isMobile?{ marginTop: '7rem', width: '70vw', height: '75vh', boxShadow: "inherit" }:{ marginTop: '4rem',width: '100vw', height: '100vh'}}>
+                        <div className='login_main' style={!isMobile?{ display: 'flex' }:{display:'flex',flexDirection:'column'}}>
 
-                            {!isMobile && <div className='left'>
+                   <div className='left'>
 
-                                <img style={{ width: '35vw', height: '75vh' }} className='left_image' src={Login_image} alt="" />
+                                <img style={!isMobile?{ width: '35vw', height: '75vh' }:{width:'100vw',height:'35vh'}} className='left_image' src={Login_image} alt="" />
 
-                            </div>}
+                            </div>
 
+                            
                             <div style={!isMobile ? { marginLeft: '2rem', display: 'flex', flexDirection: 'column' } : { marginLeft: '1rem', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-                                <h1 style={{ fontSize: '3rem', fontWeight: '800', fontFamily: 'sans-serif', marginTop: '2.5rem' }} className='right_heading'>Reset Password</h1>
+                                <h1 style={!isMobile?{ fontSize: '3rem', fontWeight: '800', fontFamily: 'sans-serif', marginTop: '2.5rem' }:{fontSize:'2rem', fontWeight: '750', fontFamily: 'sans-serif', marginTop: '0.5rem'}} className='right_heading'>Login</h1>
                                 <TextField value={email} onChange={(e) => { setEmail(e.target.value); }} sx={{ marginTop: '1.5rem', width: '28vmax' }} label="Email" variant="filled" />
 
-                                <Link sx={{ marginTop: '1.5rem', fontSize: '1rem' }} onClick={() => {
+                                <Link sx={{ marginTop: '1.5rem', fontSize: '1rem',cursor:'pointer' }} onClick={() => {
                                     setShowOTP(true);
                                 }} >SEND OTP/RESEND OTP</Link>
 
 
-                                {showOTP && <Typography sx={{ marginTop: '1.5rem', maxWidth: '25rem' }} >An OTP has been sent to your registered email adddress .Please enter it below!
+                                {showOTP && <Typography sx={{ marginTop: '1.5rem', maxWidth: '25rem',font:"sans-serif" , fontWeight:'400' }} >An OTP has been sent to your registered email adddress .Please enter it below!
                                 </Typography>}
                                 {/* <Typography sx={{ marginTop: '1.5rem', maxWidth: '25rem' }} >An OTP has been sent to your registered email adddress .Please enter it below!
                                 </Typography> */}
