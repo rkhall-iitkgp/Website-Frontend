@@ -5,7 +5,7 @@ import Gallery from "./pages/Galllery/Gallery";
 // import Alumni from "./pages/Alumni/Alumni";
 import Home from "./pages/Home/Home";
 import Eventpics from "./pages/Galllery/Eventpics";
-import Login from "./components/Login/Login";
+import Login from "./components/Login/Loginlanding";
 
 function App() {
   return (
