@@ -6,7 +6,7 @@ import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Button from '@mui/material/Button';
 import { Link, Typography, colors } from '@mui/material';
-import { useMediaQuery } from '@material-ui/core';
+import { useMediaQuery } from '@mui/material';
 import { Divider, Box } from '@mui/material';
 import { Padding } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';

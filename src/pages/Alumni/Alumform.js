@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import styles from "./css/alumni.module.css";
 import styleTes from "./../../components/Testimonials/css/Testimonials.module.css";
 // import "../Galllery/css/gallery.css";
-import { Grid, Button, Card, CardContent } from "@material-ui/core";
+import { Grid, Button, Card, CardContent } from "@mui/material";
 import Box from "@mui/material/Box";
 import Fade from "@mui/material/Fade";
 import Dialog from "@mui/material/Dialog";
-import TextField from "@material-ui/core/TextField";
-import FormControl from "@material-ui/core/FormControl";
+import TextField from "@mui/material/TextField";
+import FormControl from "@mui/material/FormControl";
 import IconButton from "@mui/material/IconButton";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import Stack from "@mui/material/Stack";
@@ -206,7 +206,7 @@ export default function Alumform() {
                             color="primary"
                             aria-label="upload picture"
                             component="label"
-                          >
+                            size="large">
                             <input
                               hidden
                               accept="image/*"
@@ -249,7 +249,7 @@ export default function Alumform() {
                             color="primary"
                             aria-label="upload picture"
                             component="label"
-                          >
+                            size="large">
                             <input
                               hidden
                               accept="image/*"

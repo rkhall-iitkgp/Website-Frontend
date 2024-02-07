@@ -7,9 +7,13 @@ import Home from "./pages/Home/Home";
 import Eventpics from "./pages/Galllery/Eventpics";
 import Login from "./components/Login/Loginlanding";
 
+import { ThemeProvider, StyledEngineProvider, createTheme } from '@mui/material/styles';
+const theme = createTheme(); 
 function App() {
   return (
-    <BrowserRouter>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+      <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -19,6 +23,9 @@ function App() {
         <Route path="/Login" element={<Login />}></Route>
       </Routes>
     </BrowserRouter>
+      </ThemeProvider>
+    </StyledEngineProvider>
+
   );
 }
 

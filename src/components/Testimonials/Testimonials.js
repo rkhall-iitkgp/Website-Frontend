@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import { useForm, ValidationError } from "@formspree/react";
-import { CardContent, Dialog } from "@material-ui/core";
+import { CardContent, Dialog } from "@mui/material";
 
 const Testimonials = () => {
   const [current, setCurrent] = useState(0);
