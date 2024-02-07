@@ -155,7 +155,7 @@ const Register = () => {
         shrink: true,
     }}
     InputProps={{
-        style: { color: '#726c6f' },
+        style: { color: 'black' },
         placeholder: '',
     }}/>
                                 <TextField 
