@@ -56,6 +56,8 @@ const Register = () => {
 
     const[regPageCount, setRegPageCount] = useState(1);
 
+    const [isActive, setIsActive] = useState(false);
+
     function handleNext(){
         setRegPageCount(regPageCount+1);
     }
@@ -112,6 +114,7 @@ const Register = () => {
 
         height: '100%',
     };
+    
     return (
         <form className='register_form' action='submit' onSubmit={submithandler}>
             <div style={divStyle}>
@@ -151,12 +154,13 @@ const Register = () => {
                           {/* page 2 */}
                            {regPageCount===2 && ( <div className='regPage2'> <TextField type="email" value={email} onChange={(e) => setEmail(e.target.value)} sx={{ marginTop: '1rem', width: '28vmax' }} label="Email Id" variant="outlined" />
                                 <TextField type="email" value={instiEmail} onChange={(e) => setInstiEmail(e.target.value)} sx={{ marginTop: '1rem', width: '28vmax' }} label="Institute Email Id" variant="outlined" />
-                                <TextField value={dob} defaultValue="" type="date" onChange={(e) => setDob(e.target.value)} sx={{ marginTop: '1rem', width: '28vmax' }} label="Date of Birth" variant="outlined" InputLabelProps={{
+                                <TextField  value={dob} defaultValue="" type="date" onChange={(e) => setDob(e.target.value)} sx={{ marginTop: '1rem', width: '28vmax' }} label="Date of Birth" variant="outlined" InputLabelProps={{
         shrink: true,
     }}
     InputProps={{
-        style: { color: 'black' },
-        placeholder: '',
+        style: { color: isActive ? 'black' : '#666666' },
+        onFocus: () => setIsActive(true),
+        onBlur: () => setIsActive(false),
     }}/>
                                 <TextField 
                          value={depart} onChange={(e) => setDepart(e.target.value)} sx={{ marginTop: '1rem', width: '28vmax' }} label="Department" variant="outlined" >
