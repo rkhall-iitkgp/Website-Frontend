@@ -4,16 +4,16 @@ import Login from './Login';
 import Otplogin from './otplogin';
 import ForgetPassword from './forgetpassword';
 
-
-
-
 const Landing = () => {
+    const [page, setPage] = useState('login');
+    const [email, setEmail] = useState('');
+
     return (
         <div>
-            <Login></Login>
-            {/* <PasswordLogin></PasswordLogin> */}
-            {/* <Otplogin></Otplogin> */}
-            {/* <ForgetPassword></ForgetPassword> */}
+            {page === 'login' && <Login setPage={setPage} email={email} setEmail={setEmail} />}
+            {page === 'plogin' && <PasswordLogin setPage={setPage} email={email} setEmail={setEmail} />}
+            {page === 'ologin' && <Otplogin setPage={setPage} />}
+            {page === 'flogin' && <ForgetPassword setPage={setPage} email={email} setEmail={setEmail} />}
         </div>
     );
 }
