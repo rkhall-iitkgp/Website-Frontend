@@ -11,8 +11,9 @@ import { Divider, Box } from '@mui/material';
 import { Padding } from '@mui/icons-material';
 import { MuiOtpInput } from 'mui-one-time-password-input'
 import { useNavigate } from 'react-router-dom';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
-const Otplogin = ({ setPage }) => {
+const Otplogin = ({ setPage, backpage, setBackPage }) => {
     const navigate = useNavigate()
     const [otp, setOtp] = React.useState('')
 
@@ -49,6 +50,8 @@ const Otplogin = ({ setPage }) => {
                             <div style={!isMobile ? { marginLeft: '2rem', display: 'flex', flexDirection: 'column' } : { marginLeft: '1rem', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
                                 <h1 style={!isMobile ? { fontSize: '3rem', fontWeight: '800', fontFamily: 'sans-serif', marginTop: '2.5rem' } : { fontSize: '2rem', fontWeight: '750', fontFamily: 'sans-serif', marginTop: '0.5rem' }} className='right_heading'>Login</h1>
 
+                                {(<ArrowBackIosNewIcon style={{ fontSize: "large", cursor: "pointer" }} onClick={() => setPage(backpage)} />)}
+
                                 <MuiOtpInput value={otp} onChange={handleChange} style={{ marginTop: '0.8rem', maxWidth: '15rem', gap: '10px' }} />
 
 
@@ -66,7 +69,7 @@ const Otplogin = ({ setPage }) => {
                                     </Divider>
                                 </Box>
 
-                                <Button onClick={() => setPage('plogin')} type='submit' sx={{ marginTop: '1.5rem', background: '#FBF6EA', color: 'black', width: '28vmax', '&:hover': { background: '#FFD050' } }} variant='contained'>Login With Password</Button>
+                                <Button onClick={() => { setPage('plogin'); setBackPage('ologin') }} type='submit' sx={{ marginTop: '1.5rem', background: '#FBF6EA', color: 'black', width: '28vmax', '&:hover': { background: '#FFD050' } }} variant='contained'>Login With Password</Button>
 
 
                                 <Typography sx={{ marginTop: '1.5rem' }} >Don't have an account?

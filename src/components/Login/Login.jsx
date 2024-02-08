@@ -15,7 +15,7 @@ import { Divider, Box } from '@mui/material';
 import { Padding } from '@mui/icons-material';
 
 
-const Login = ({ setPage, email, setEmail }) => {
+const Login = ({ setPage, email, setEmail, backpage, setBackPage }) => {
 
 
     const submithandler = () => {
@@ -48,11 +48,13 @@ const Login = ({ setPage, email, setEmail }) => {
                             <div style={!isMobile ? { marginLeft: '2rem', display: 'flex', flexDirection: 'column' } : { marginLeft: '1rem', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
                                 <h1 style={!isMobile ? { fontSize: '3rem', fontWeight: '800', fontFamily: 'sans-serif', marginTop: '2.5rem' } : { fontSize: '2rem', fontWeight: '750', fontFamily: 'sans-serif', marginTop: '0.5rem' }} className='right_heading'>Login</h1>
 
+
+
                                 <TextField value={email} onChange={(e) => { setEmail(e.target.value); }} sx={{ marginTop: '1.5rem', width: '28vmax' }} label="Email" variant="filled" />
 
                                 {/* <TextField value={password} onChange={(e) => setPassword(e.target.value)} sx={{ marginTop: '1.5rem', width: '28vmax' }} label="Password" variant="filled" /> */}
 
-                                <Button onClick={() => setPage('plogin')} type='submit' sx={{ marginTop: '1.5rem', background: 'black', padding: '0.8rem', width: '28vmax', '&:hover': { background: 'gray' } }} variant='contained'>Login With Password</Button>
+                                <Button onClick={() => { setPage('plogin'); setBackPage('login') }} type='submit' sx={{ marginTop: '1.5rem', background: 'black', padding: '0.8rem', width: '28vmax', '&:hover': { background: 'gray' } }} variant='contained'>Login With Password</Button>
 
                                 <Box display="flex" alignItems="center" justifyContent="center" flexDirection="column" style={{ marginTop: '0.8rem' }}>
 
@@ -65,7 +67,7 @@ const Login = ({ setPage, email, setEmail }) => {
 
 
 
-                                <Button sx={{ marginTop: '1.5rem', background: '#FBF6EA', color: 'black', width: '28vmax', '&:hover': { background: '#FFD050' } }} onClick={() => setPage('ologin')} variant='contained'>Login With OTP</Button>
+                                <Button sx={{ marginTop: '1.5rem', background: '#FBF6EA', color: 'black', width: '28vmax', '&:hover': { background: '#FFD050' } }} onClick={() => { setPage('ologin'); setBackPage('login') }} variant='contained'>Login With OTP</Button>
 
 
                                 <Typography sx={{ marginTop: '1.5rem' }} >Don't have an account?

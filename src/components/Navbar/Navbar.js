@@ -86,6 +86,11 @@ export default function Navbar() {
                   Contact Us
                 </Button>
               </HashLink>
+              <HashLink smooth to="/Login" style={{ color: "white" }}>
+                <Button className="menu-item" color="inherit">
+                  Login
+                </Button>
+              </HashLink>
             </div>
           )}
         </Toolbar>

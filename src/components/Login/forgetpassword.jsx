@@ -10,8 +10,10 @@ import { useMediaQuery } from '@mui/material';
 import { Divider, Box } from '@mui/material';
 import { Padding } from '@mui/icons-material';
 import { MuiOtpInput } from 'mui-one-time-password-input'
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
-const ForgetPassword = ({ setPage, email, setEmail }) => {
+
+const ForgetPassword = ({ setPage, email, setEmail, backpage, setBackPage }) => {
     const [otp, setOtp] = React.useState('')
 
     const handleChange = (newValue) => {
@@ -49,6 +51,9 @@ const ForgetPassword = ({ setPage, email, setEmail }) => {
 
                             <div style={!isMobile ? { marginLeft: '2rem', display: 'flex', flexDirection: 'column' } : { marginLeft: '1rem', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
                                 <h1 style={!isMobile ? { fontSize: '3rem', fontWeight: '800', fontFamily: 'sans-serif', marginTop: '2.5rem' } : { fontSize: '2rem', fontWeight: '750', fontFamily: 'sans-serif', marginTop: '0.5rem' }} className='right_heading'>Login</h1>
+
+                                {(<ArrowBackIosNewIcon style={{ fontSize: "large", cursor: "pointer" }} onClick={() => { setPage(backpage) }} />)}
+
                                 <TextField value={email} onChange={(e) => { setEmail(e.target.value); }} sx={{ marginTop: '1.5rem', width: '28vmax' }} label="Email" variant="filled" />
 
                                 <Link sx={{ marginTop: '1.5rem', fontSize: '1rem', cursor: 'pointer' }} onClick={() => {

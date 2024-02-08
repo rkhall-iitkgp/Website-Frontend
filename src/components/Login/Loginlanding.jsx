@@ -7,13 +7,14 @@ import ForgetPassword from './forgetpassword';
 const Landing = () => {
     const [page, setPage] = useState('login');
     const [email, setEmail] = useState('');
+    const [backpage, setBackPage] = useState('login');
 
     return (
         <div>
-            {page === 'login' && <Login setPage={setPage} email={email} setEmail={setEmail} />}
-            {page === 'plogin' && <PasswordLogin setPage={setPage} email={email} setEmail={setEmail} />}
-            {page === 'ologin' && <Otplogin setPage={setPage} />}
-            {page === 'flogin' && <ForgetPassword setPage={setPage} email={email} setEmail={setEmail} />}
+            {page === 'login' && <Login setPage={setPage} email={email} setEmail={setEmail} backpage={backpage} setBackPage={setBackPage} />}
+            {page === 'plogin' && <PasswordLogin setPage={setPage} email={email} setEmail={setEmail} backpage={backpage} setBackPage={setBackPage} />}
+            {page === 'ologin' && <Otplogin setPage={setPage} backpage={backpage} setBackPage={setBackPage} />}
+            {page === 'flogin' && <ForgetPassword setPage={setPage} email={email} setEmail={setEmail} backpage={backpage} setBackPage={setBackPage} />}
         </div>
     );
 }
