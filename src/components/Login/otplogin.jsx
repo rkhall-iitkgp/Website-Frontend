@@ -12,8 +12,15 @@ import { Padding } from '@mui/icons-material';
 import { MuiOtpInput } from 'mui-one-time-password-input'
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import { useFormik } from 'formik';
+import * as yup from 'yup';
+
+
 
 const Otplogin = ({ setPage, backpage, setBackPage }) => {
+
+
+
     const navigate = useNavigate()
     const [otp, setOtp] = React.useState('')
 
@@ -50,7 +57,7 @@ const Otplogin = ({ setPage, backpage, setBackPage }) => {
                             <div style={!isMobile ? { marginLeft: '2rem', display: 'flex', flexDirection: 'column' } : { marginLeft: '1rem', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
                                 <h1 style={!isMobile ? { fontSize: '3rem', fontWeight: '800', fontFamily: 'sans-serif', marginTop: '2.5rem' } : { fontSize: '2rem', fontWeight: '750', fontFamily: 'sans-serif', marginTop: '0.5rem' }} className='right_heading'>Login</h1>
 
-                                {(<ArrowBackIosNewIcon style={{ fontSize: "large", cursor: "pointer" }} onClick={() => setPage(backpage)} />)}
+                                {(<ArrowBackIosNewIcon style={{ fontSize: "large", cursor: "pointer" }} onClick={() => { setPage(backpage); setBackPage('ologin') }} />)}
 
                                 <MuiOtpInput value={otp} onChange={handleChange} style={{ marginTop: '0.8rem', maxWidth: '15rem', gap: '10px' }} />
 
