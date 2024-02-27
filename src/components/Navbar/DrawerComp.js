@@ -6,7 +6,7 @@ import {
   ListItem,
   ListItemText,
 } from "@mui/material";
-import {makeStyles } from '@mui/styles';
+import { makeStyles } from '@mui/styles';
 import "./css/style.css";
 import { Link, useLocation } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -104,6 +104,11 @@ function DrawerComponent() {
             <ListItemText>
               <HashLink smooth to="/#footer" style={{ color: "white" }}>
                 Contact Us
+              </HashLink>
+            </ListItemText>
+            <ListItemText>
+              <HashLink smooth to="/login" style={{ color: "white" }}>
+                Login
               </HashLink>
             </ListItemText>
           </ListItem>

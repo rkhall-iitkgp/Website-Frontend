@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap');
 
-
 .testimonials {
     background: #FBF6EA;
     margin: 5%;
@@ -25,21 +24,21 @@
     color: #232536;
 }
 
-.content-box {
+.testimonials .content-box {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.leftSide {
+.testimonials .leftSide {
     width: 30%;
 }
 
-.rightSide {
+.testimonials .rightSide {
     width: 50%;
 }
 
-.nextHead {
+.testimonials .nextHead {
     font-family: 'Sen';
     font-style: normal;
     font-weight: 700;
@@ -51,7 +50,7 @@
     margin-bottom: 5%;
 }
 
-.leftSide .text {
+.testimonials .leftSide .text {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -60,18 +59,18 @@
     color: #232536;
 }
 
-.border {
+.testimonials .border {
     opacity: 0.4;
     border: 0.05em solid #6D6E76;
     margin: 6%;
     height: 400px;
 }
 
-.rightSide {
+.testimonials .rightSide {
     margin: 0px;
 }
 
-.rightSide .heading {
+.testimonials .rightSide .heading {
     font-family: 'Sen';
     font-style: normal;
     font-weight: 700;
@@ -89,22 +88,22 @@
     min-height: 200px;
 }
 
-.heading::-webkit-scrollbar {
+.testimonials .heading::-webkit-scrollbar {
     width: 4px;
 }
 
 /* Track */
-.heading::-webkit-scrollbar-track {
+.testimonials .heading::-webkit-scrollbar-track {
     box-shadow: inset 0 0 2px #FFE9C3;
 }
 
 /* Handle */
-.heading::-webkit-scrollbar-thumb {
+.testimonials .heading::-webkit-scrollbar-thumb {
     background: #000;
     border-radius: 10px;
 }
 
-.rightLower .person .name {
+.testimonials .rightLower .person .name {
     font-family: 'Sen';
     font-style: normal;
     font-weight: 700;
@@ -113,14 +112,14 @@
     color: #232536;
 }
 
-.rightLower {
+.testimonials .rightLower {
     margin: 24px 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.rightLower .person .company {
+.testimonials .rightLower .person .company {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -130,38 +129,38 @@
 }
 
 
-.rightLower .person {
+.testimonials .rightLower .person {
     width: 75%;
     padding: 10px;
 }
 
-.rightLower .buttons {
+.testimonials .rightLower .buttons {
     display: flex;
 }
 
-.rightLower .buttons:hover {
+.testimonials .rightLower .buttons:hover {
     cursor: pointer;
 }
 
-.rightLower .buttons .back {
+.testimonials .rightLower .buttons .back {
     margin-right: 16px;
     object-fit: cover;
     width: 62px;
 }
 
-.person .name,
-.heading,
-.person .company {
+.testimonials .person .name,
+.testimonials .heading,
+.testimonials .person .company {
     animation-name: fade;
     animation-duration: 1.5s;
 }
 
-.padBtn {
+.testimonials .padBtn {
     padding-top: 4vh;
     padding-bottom: 10px;
 }
 
-.addbutton {
+.testimonials .addbutton {
     margin-top: 12px;
     width: 'auto';
     height: 45px;
@@ -181,19 +180,19 @@
     outline: none;
 }
 
-.addbutton.acceptBtn:hover {
+.testimonials .addbutton.acceptBtn:hover {
     background-color: #000;
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
     color: #fff;
     transform: translateY(-7px);
 }
 
-.form {
+.testimonials .form {
     width: 300px;
     padding: 10px 40px 10px 30px;
 }
 
-label {
+.testimonials label {
     text-transform: none;
     font-size: 14px;
     letter-spacing: 0.03em;
@@ -201,15 +200,15 @@ label {
     margin-top: 10px;
 }
 
-input,
-textarea {
+.testimonials input,
+.testimonials textarea {
     border: 1px solid #ccc;
     color: #333;
     width: calc(100% - 30px);
 }
 
-input,
-textarea {
+.testimonials input,
+.testimonials textarea {
     border-radius: 4px;
     padding: 8px 15px;
     font-family: 'Work Sans', sans-serif;
@@ -221,7 +220,7 @@ textarea {
 @media only screen and (max-width: 440px) {
 
     input,
-    textarea {
+    .testimonials textarea {
         width: 90%;
     }
 
@@ -230,11 +229,11 @@ textarea {
         align-items: flex-start;
     }
 
-    .content-box {
+    .testimonials .content-box {
         flex-direction: column;
     }
 
-    .border {
+    .testimonials .border {
         opacity: 0.4;
         border: 0.05em solid #6D6E76;
         margin: 6%;
@@ -265,7 +264,7 @@ textarea {
 }
 
 @media only screen and (max-width: 886px) {
-    .pad-btn {
+    .testimonials .pad-btn {
         padding-top: 14vh;
     }
 }
@@ -275,50 +274,49 @@ textarea {
         display: block;
     }
 
-    .pad-btn {
+    .testimonials .pad-btn {
         padding-top: 18px;
         padding-bottom: 10px;
     }
 
-    .leftSide {
+    .testimonials .leftSide {
         width: 90%;
         padding: 5%;
         padding-top: 8%;
     }
 
-    .rightSide {
+    .testimonials .rightSide {
         width: 75%;
         padding-right: 0;
     }
 
-    .rightSide .heading {
+    .testimonials .rightSide .heading {
         width: 75vw;
     }
 
-    .rightLower {
+    .testimonials .rightLower {
         margin-left: 0;
         margin-top: 20px;
     }
 
-    .rightLower .buttons {
+    .testimonials .rightLower .buttons {
         margin-left: 0;
         padding-left: 0;
         margin-top: 0;
     }
 
-    .rightLower .buttons .back {
+    .testimonials .rightLower .buttons .back {
         width: 30px;
         height: 30px;
     }
 
-    .rightLower .buttons .next {
+    .testimonials .rightLower .buttons .next {
         width: 30px;
         height: 30px;
     }
 }
 
 @media only screen and (max-width: 320px) {
-
     .testimonials .title {
         font-family: 'Inter';
         font-style: normal;
@@ -329,7 +327,7 @@ textarea {
         padding-top: 24px;
     }
 
-    .rightSide .heading {
+    .testimonials .rightSide .heading {
         font-weight: 600;
         font-size: 1rem;
         line-height: 24px;
@@ -338,24 +336,24 @@ textarea {
         height: 32vh;
     }
 
-    .rightLower .person .name {
+    .testimonials .rightLower .person .name {
         font-weight: 600;
         font-size: 16px;
         line-height: 20px;
     }
 
-    .rightLower .person .company {
+    .testimonials .rightLower .person .company {
         font-weight: 400;
         font-size: 12px;
         line-height: 20px;
     }
 
-    .leftSide .nextHead {
+    .testimonials .leftSide .nextHead {
         font-size: 1.6rem;
         width: 70vw;
     }
 
-    .leftSide .text {
+    .testimonials .leftSide .text {
         font-size: 0.8rem;
         width: 70vw;
         text-align: start;

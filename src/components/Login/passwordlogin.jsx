@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Card from '@mui/material/Card';
 import Login_image from './Computer login-bro.svg'
 import TextField from '@mui/material/TextField';
@@ -11,13 +11,72 @@ import { Divider, Box } from '@mui/material';
 import { Padding } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import { useFormik } from 'formik';
+import * as yup from 'yup';
+
+const validationSchema = yup.object({
+    email: yup
+        .string('Enter your email')
+        .email('Enter a valid email')
+        .required('Email is required'),
+    password: yup
+        .string('Enter your password')
+        .min(8, 'Password should be of minimum 8 characters length')
+        .required('Password is required'),
+});
+
 
 
 const PasswordLogin = ({ setPage, email, setEmail, backpage, setBackPage }) => {
-    const submithandler = () => {
-        //After submitting form what to be done
-    }
+
+
+
     const [password, setPassword] = useState('');
+    const [details, setDetails] = useState({
+        'email': '',
+        'password': '',
+    })
+    useEffect(() => {
+        setDetails({ email, password });
+    }, [email, password]);
+
+    const formik = useFormik({
+        initialValues: {
+            email: email || '',
+            password: password || '',
+        },
+        validationSchema: validationSchema,
+        onSubmit: (values) => {
+            alert(JSON.stringify(values, null, 2));
+        },
+    });
+
+    const handleLogin = async () => {
+        console.log("details", details)
+        // try {
+        //     const response = await fetch('https://backend-service-woeb.onrender.com/login/password', {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/json',
+        //         },
+        //         body: JSON.stringify(details),
+        //     });
+        //     if (!response.ok) {
+        //         const errorData = await response.json();
+        //         throw new Error(errorData.message || 'Login failed');
+        //     }
+        //     const data = await response.json();
+        //     const token = data.jwt;
+        //     console.log('Login successful! Token:', token, typeof (token));
+        //     console.log(data);
+        //     localStorage.setItem('Token', token);
+        // } catch (error) {
+        //     console.error('Login failed:', error);
+        // }
+    };
+
+
+
 
     const isMobile = useMediaQuery("(max-width: 920px)");
     const divStyle = !isMobile ? {
@@ -27,7 +86,7 @@ const PasswordLogin = ({ setPage, email, setEmail, backpage, setBackPage }) => {
         height: '100vh'
     } : {};
     return (
-        <form className='login_form' action='submit' onSubmit={submithandler}>
+        <form className='login_form' >
             <div style={divStyle}>
                 <div id='login_main' style={{ marginTop: '0rem', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 
@@ -43,17 +102,41 @@ const PasswordLogin = ({ setPage, email, setEmail, backpage, setBackPage }) => {
                             <div style={!isMobile ? { marginLeft: '2rem', display: 'flex', flexDirection: 'column' } : { marginLeft: '1rem', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
                                 <h1 style={!isMobile ? { fontSize: '3rem', fontWeight: '800', fontFamily: 'sans-serif', marginTop: '2.0rem' } : { fontSize: '2rem', fontWeight: '750', fontFamily: 'sans-serif', marginTop: '0.5rem' }} className='right_heading'>Login</h1>
 
-                                {(<ArrowBackIosNewIcon style={{ fontSize: "large", cursor: "pointer" }} onClick={() => { setPage(backpage) }} />)}
+                                {(<ArrowBackIosNewIcon style={{ fontSize: "large", cursor: "pointer" }} onClick={() => { setPage(backpage); setBackPage('plogin') }} />)}
 
-                                <TextField value={email} onChange={(e) => { setEmail(e.target.value); }} sx={{ marginTop: '1rem', width: '28vmax' }} label="Email" variant="filled" />
-                                <TextField value={password} type='password' onChange={(e) => setPassword(e.target.value)} sx={{ marginTop: '1.5rem', width: '28vmax' }} label="Password" variant="filled" />
+                                <TextField id='email' name='email'
+                                    label="Email"
+                                    value={formik.values.email}
+                                    onChange={(e) => {
+                                        formik.handleChange(e);
+                                        setEmail(e.target.value); // Update the email state
+                                    }}
+                                    onBlur={formik.handleBlur}
+                                    error={formik.touched.email && Boolean(formik.errors.email)}
+                                    helperText={formik.touched.email && formik.errors.email}
+                                    sx={{ marginTop: '1rem', width: '28vmax' }} size='small' variant="filled" />
+
+                                <TextField
+                                    id="password"
+                                    name="password"
+                                    type="password"
+                                    value={formik.values.password}
+                                    onChange={(e) => {
+                                        formik.handleChange(e);
+                                        setPassword(e.target.value); // Update the email state
+                                    }}
+                                    onBlur={formik.handleBlur}
+                                    error={formik.touched.password && Boolean(formik.errors.password)}
+                                    helperText={formik.touched.password && formik.errors.password}
+
+                                    sx={{ marginTop: '1.5rem', width: '28vmax' }} label="Password" variant="filled" />
 
                                 {/* <Link variant="p" sx={{ marginTop: '1rem' }}>Forget Password </Link> */}
                                 <Link onClick={() => { setPage('flogin'); setBackPage('plogin'); }} sx={{ marginTop: '1.5rem', fontSize: '1rem', cursor: 'pointer' }} >Forget Password</Link>
 
                                 <FormControlLabel sx={{ marginTop: '0.5rem' }} control={<Checkbox />} label="Remember Me" />
 
-                                <Button type='submit' sx={{ marginTop: '0.5rem', background: 'black', padding: '0.8rem', width: '28vmax', '&:hover': { background: 'gray' } }} variant='contained'>Login</Button>
+                                <Button onClick={handleLogin} sx={{ marginTop: '0.5rem', background: 'black', padding: '0.8rem', width: '28vmax', '&:hover': { background: 'gray' } }} variant='contained'>Login</Button>
 
                                 <Box display="flex" alignItems="center" justifyContent="center" flexDirection="column" style={{ marginTop: '0.8rem' }}>
 
