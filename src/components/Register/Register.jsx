@@ -16,7 +16,9 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 //
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-
+import { useFormik } from "formik";
+import * as Yup from "yup";
+// import "yup-phone";
 
 import TextField from '@mui/material/TextField';
 import Checkbox from '@mui/material/Checkbox';
@@ -31,7 +33,7 @@ const Register = () => {
     const submithandler = () => {
         //After submitting form what to be done
     }
-
+    const [errors, setErrors] = useState({});
 
     const [showPassword, setShowPassword] = React.useState(false);
 
@@ -41,22 +43,62 @@ const Register = () => {
         event.preventDefault();
     };
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [instiEmail, setInstiEmail] = useState("");
-    const [confPass, setConfPass] = useState('');
-    const [roomNo, setRoomNo] = useState("");
-    const [dob, setDob] = useState('');
-    const [depart, setDepart] = useState("");
-    const [emergencyPhone, setEmergencyPhone] = useState('');
-    const [name, setName] = useState("");
-    const [rollNo, setRollNo] = useState("");
-    const [phone, setPhone] = useState("");
-    const [yearOfPass, setYearOfPass] = useState("");
+    const [showConfPassword, setShowConfPassword] = React.useState(false);
 
+    const handleClickShowConfPassword = () => setShowConfPassword((show) => !show);
+
+    const handleMouseDownConfPassword = (event) => {
+        event.preventDefault();
+    };
+
+ 
     const [regPageCount, setRegPageCount] = useState(1);
-
     const [isActive, setIsActive] = useState(false);
+
+    const phoneRegExp = /^[0-9]{10}$/;
+
+    const formik = useFormik({
+        initialValues: {
+          name: "",
+          email: "",
+          dob: "",
+          yearOfPass: "",
+          phone: "",
+          instiEmail:"",
+          emergencyPhone:"",    
+          rollNo:"",
+          depart:"",
+          roomNo:"",
+          password: "",
+          confirmPass: "",
+        },
+        validationSchema: Yup.object({
+          name: Yup.string().required("Required!"),
+          email: Yup.string().email("Invalid email address").required("Required!"),
+          phone: Yup.string().matches(phoneRegExp, "Invalid Phone Number!")
+            .required("Required!"), 
+
+            emergencyPhone: Yup.string().matches(phoneRegExp, "Invalid Phone Number!")
+            .required("Required!"), 
+         
+          dob: Yup.string().required("Required!"),
+          depart: Yup.string().required("Required!"),
+          rollNo: Yup.string().required("Required!"),
+          yearOfPass: Yup.string().required("Required!"),
+          roomNo: Yup.string().required("Required!"),
+          instiEmail: Yup.string().email("Invalid email address").required("Required!"),
+          password: Yup.string().min(8, "Must be atleast 8 characters long!")
+            .required("Required!"),
+          confirmPass: Yup.string()
+            .min(8, "Must be atleast 8 characters long")
+            .oneOf([Yup.ref("password")], "Password does not match!")
+            .required("Required!"),
+        }),
+        
+        onSubmit: (values) => {
+          console.log("the value is", values);
+        },
+      });
 
     function handleNext() {
         setRegPageCount(regPageCount + 1);
@@ -135,46 +177,243 @@ const Register = () => {
 
                                 {/* page 1 */}
                                 {regPageCount === 1 && (
-                                    <div className='regPage1'> <TextField value={name} onChange={(e) => setName(e.target.value)} sx={{ marginTop: '1rem', width: '28vmax' }} label="Name" variant="outlined" />
-                                        <TextField value={rollNo} onChange={(e) => setRollNo(e.target.value)} sx={{ marginTop: '1rem', width: '28vmax' }} label="Institute Roll No." variant="outlined" />
-                                        <TextField value={phone} type="number" onChange={(e) => setPhone(e.target.value)} sx={{ marginTop: '1rem', width: '28vmax' }} label="Mobile No." variant="outlined" />
-                                        <TextField select
+                                    <div className='regPage1'><TextField  id="name" value={formik.values.name} onChange={formik.handleChange} onBlur={formik.handleBlur} sx={{ marginTop: '1rem', width: '28vmax' }} label="Name" variant="outlined" />
+                                     {formik.errors.name && formik.touched.name ? (
+              <p
+                style={{
+                  color: "red",
+                  fontSize: "11px",
+                  textAlign: "right",
+                  marginRight:"13%",
+                  position:"absolute",
+                  width:"28%",
 
+                }}
+              >
+                {formik.errors.name}
+              </p>
+            ) : null}
+            {errors.name && <div className="error">{errors.name[0]}</div>}
+          
+                                        <TextField id="rollNo" value={formik.values.rollNo} 
+                                        
+                                         onBlur={formik.handleBlur}
+                                        onChange={
+                                            formik.handleChange} 
+                                        
+                                        sx={{ marginTop: '1rem', width: '28vmax' }} label="Institute Roll No." variant="outlined" />
+                                         {formik.errors.rollNo && formik.touched.rollNo ? (
+              <p
+                style={{
+                  color: "red",
+                  fontSize: "11px",
+                  textAlign: "right",
+                  marginTop: "0px",
+                  marginRight:"13%",
+                  position:"absolute",
+                  width:"28%"
+                 
+                }}
+              >
+                {formik.errors.rollNo}
+              </p>
+            ) : null}
+            {errors.rollNo && <div className="error">{errors.rollNo[0]}</div>}
+                                        <TextField id="phone" value={formik.values.phone} onBlur={formik.handleBlur} type="number" onChange={ formik.handleChange} sx={{ marginTop: '1rem', width: '28vmax' }} label="Mobile No." variant="outlined" />
+                                       
+                                        {formik.errors.phone && formik.touched.phone ? (
+              <p
+                style={{
+                  color: "red",
+                  fontSize: "11px",
+                  textAlign: "right",
+                  marginTop: "0px",
+                  marginRight:"13%",
+                  position:"absolute",
+                  width:"28%",
+                  
+                }}
+              >
+                {formik.errors.phone}
+              </p>
+            ) : null}
+            {errors.phone && <div className="error">{errors.phone[0]}</div>}
+                                        <TextField 
+                                           id="yearOfPass"
+                                           select
+                                           
+                                            onBlur={formik.handleBlur}
                                             defaultValue="XXXX"
-                                            value={yearOfPass} onChange={(e) => setYearOfPass(e.target.value)} sx={{ marginTop: '1rem', width: '28vmax' }} label="Year of Passing" variant="outlined" >
+                                            value={formik.values.yearOfPass} onChange={ formik.handleChange} sx={{ marginTop: '1rem', width: '28vmax' }} label="Year of Passing" variant="outlined" >
                                             {years.map((option) => (
                                                 <MenuItem key={option.value} value={option.value}>
                                                     {option.label}
                                                 </MenuItem>
                                             ))}
-                                        </TextField></div>
+                                        </TextField>
+                                        {formik.errors.yearOfPass && formik.touched.yearOfPass ? (
+              <p
+                style={{
+                  color: "red",
+                  fontSize: "11px",
+                  textAlign: "right",
+                  marginTop: "0px",
+                  marginRight:"13%",
+                  position:"absolute",
+                  width:"28%",
+                  
+                }}
+              >
+                {formik.errors.yearOfPass}
+              </p>
+            ) : null}
+            {errors.yearOfPass && <div className="error">{errors.yearOfPass[0]}</div>}
+                                        
+                                        </div>
                                 )}
 
 
                                 {/* page 2 */}
-                                {regPageCount === 2 && (<div className='regPage2'> <TextField type="email" value={email} onChange={(e) => setEmail(e.target.value)} sx={{ marginTop: '1rem', width: '28vmax' }} label="Email Id" variant="outlined" />
-                                    <TextField type="email" value={instiEmail} onChange={(e) => setInstiEmail(e.target.value)} sx={{ marginTop: '1rem', width: '28vmax' }} label="Institute Email Id" variant="outlined" />
-                                    <TextField value={dob} defaultValue="" type="date" onChange={(e) => setDob(e.target.value)} sx={{ marginTop: '1rem', width: '28vmax' }} label="Date of Birth" variant="outlined" InputLabelProps={{
+                                {regPageCount === 2 && (<div className='regPage2'> <TextField id="email"
+          name="email"
+           type="email" value={formik.values.email} onBlur={formik.handleBlur} onChange={formik.handleChange} sx={{ marginTop: '1rem', width: '28vmax' }} label="Email Id" variant="outlined" />
+                                      {formik.errors.email && formik.touched.email ? (
+              <p
+                style={{
+                  color: "red",
+                  fontSize: "11px",
+                  textAlign: "right",
+                  marginTop: "0px",
+                  marginRight:"13%",
+                  position:"absolute",
+                  width:"28%",
+                  
+                }}
+              >
+                {formik.errors.email}
+              </p>
+            ) : null}
+            {errors.email && <div className="error">{errors.email[0]}</div>}  
+            <TextField id="instiEmail"
+                                    onBlur={formik.handleBlur}
+                                    type="email" value={formik.values.instiEmail} onChange={ formik.handleChange} sx={{ marginTop: '1rem', width: '28vmax' }} label="Institute Email Id" variant="outlined" />
+                                      {formik.errors.instiEmail && formik.touched.instiEmail ? (
+                                            <p
+                                              style={{
+                                                color: "red",
+                                                fontSize: "11px",
+                                                textAlign: "right",
+                                                marginTop: "0px",
+                                                marginRight:"13%",
+                                                position:"absolute",
+                                                width:"28%",
+                                                
+                                              }}
+                                            >
+                                              {formik.errors.instiEmail}
+                                            </p>
+                                          ) : null}
+                                          {errors.instiEmail && <div className="error">{errors.instiEmail[0]}</div>}
+                                    <TextField 
+                                    id="dob"
+                                     onBlur={formik.handleBlur} value={formik.values.dob} defaultValue="" type="date" onChange={ formik.handleChange} sx={{ marginTop: '1rem', width: '28vmax' }} label="Date of Birth" variant="outlined" InputLabelProps={{
                                         shrink: true,
                                     }}
                                         InputProps={{
                                             style: { color: isActive ? 'black' : '#666666' },
                                             onFocus: () => setIsActive(true),
                                             onBlur: () => setIsActive(false),
-                                        }} />
+                                        }} />  
+                                          {formik.errors.dob && formik.touched.dob ? (
+                                            <p
+                                              style={{
+                                                color: "red",
+                                                fontSize: "11px",
+                                                textAlign: "right",
+                                                marginTop: "0px",
+                                                marginRight:"13%",
+                                                position:"absolute",
+                                                width:"28%",
+                                                
+                                              }}
+                                            >
+                                              {formik.errors.dob}
+                                            </p>
+                                          ) : null}
+                                          {errors.dob && <div className="error">{errors.dob[0]}</div>}
                                     <TextField
-                                        value={depart} onChange={(e) => setDepart(e.target.value)} sx={{ marginTop: '1rem', width: '28vmax' }} label="Department" variant="outlined" >
+                                    id="depart"
+                                    onBlur={formik.handleBlur}
+                                         value={formik.values.depart} onChange={ formik.handleChange} sx={{ marginTop: '1rem', width: '28vmax' }} label="Department" variant="outlined" >
 
-                                    </TextField></div>)}
+                                    </TextField>
+                                    {formik.errors.depart && formik.touched.depart ? (
+                                            <p
+                                              style={{
+                                                color: "red",
+                                                fontSize: "11px",
+                                                textAlign: "right",
+                                                marginTop: "0px",
+                                                marginRight:"13%",
+                                                position:"absolute",
+                                                width:"28%",
+                                                
+                                              }}
+                                            >
+                                              {formik.errors.depart}
+                                            </p>
+                                          ) : null}
+                                          {errors.depart && <div className="error">{errors.depart[0]}</div>}</div>)}
 
                                 {/* page 3 */}
-                                {regPageCount === 3 && (<div className='regPage3'> <TextField type="number" value={emergencyPhone} onChange={(e) => setEmergencyPhone(e.target.value)} sx={{ marginTop: '1rem', width: '28vmax' }} label="Emergency Mobile No." variant="outlined" />
-                                    <TextField value={roomNo} onChange={(e) => setRoomNo(e.target.value)} sx={{ marginTop: '1rem', width: '28vmax' }} label="Room No." variant="outlined" />
+                                {regPageCount === 3 && (<div className='regPage3'>
+                                     <TextField id="emergencyPhone" type="number" value={formik.values.emergencyPhone} onChange={formik.handleChange} sx={{ marginTop: '1rem', width: '28vmax' }} label="Emergency Mobile No." variant="outlined" />
+                               
+                                {formik.errors.emergencyPhone && formik.touched.emergencyPhone ? (
+                                            <p
+                                              style={{
+                                                color: "red",
+                                                fontSize: "11px",
+                                                textAlign: "right",
+                                                marginTop: "0px",
+                                                marginRight:"13%",
+                                                position:"absolute",
+                                                width:"28%",
+                                                
+                                              }}
+                                            >
+                                              {formik.errors.emergencyPhone}
+                                            </p>
+                                          ) : null}
+                                          {errors.emergencyPhone && <div className="error">{errors.emergencyPhone[0]}</div>}
 
+                                    <TextField id="roomNo" onBlur={formik.handleBlur} value={formik.values.roomNo} onChange={formik.handleChange} sx={{ marginTop: '1rem', width: '28vmax' }} label="Room No." variant="outlined" />
+
+                                    {formik.errors.roomNo && formik.touched.roomNo ? (
+                                            <p
+                                              style={{
+                                                color: "red",
+                                                fontSize: "11px",
+                                                textAlign: "right",
+                                                marginTop: "0px",
+                                                marginRight:"13%",
+                                                position:"absolute",
+                                                width:"28%",
+                                                
+                                              }}
+                                            >
+                                              {formik.errors.roomNo}
+                                            </p>
+                                          ) : null}
+                                          {errors.roomNo && <div className="error">{errors.roomNo[0]}</div>}
                                     <FormControl sx={{ marginTop: "1rem", width: '28vmax' }} variant="outlined">
                                         <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                                         <OutlinedInput
-                                            id="outlined-adornment-password"
+                                        
+                                        onBlur={formik.handleBlur}
+                                            required value={formik.values.password}
+                                            onChange={(e) => { formik.handleChange(e);}}
+                                               id="password"
                                             type={showPassword ? 'text' : 'password'}
                                             endAdornment={
                                                 <InputAdornment position="end">
@@ -191,27 +430,64 @@ const Register = () => {
                                             label="Password"
                                         />
                                     </FormControl>
+                                    {formik.errors.password && formik.touched.password ? (
+                                            <p
+                                              style={{
+                                                color: "red",
+                                                fontSize: "11px",
+                                                textAlign: "right",
+                                                marginTop: "0px",
+                                                marginRight:"13%",
+                                                position:"absolute",
+                                                width:"28%",
+                                                
+                                              }}
+                                            >
+                                              {formik.errors.password}
+                                            </p>
+                                          ) : null}
+                                          {errors.password && <div className="error">{errors.password[0]}</div>}
 
                                     <FormControl sx={{ marginTop: "1rem", width: '28vmax' }} variant="outlined">
                                         <InputLabel htmlFor="outlined-adornment-password">Confirm Password</InputLabel>
                                         <OutlinedInput
-                                            id="outlined-adornment-password"
-                                            type={showPassword ? 'text' : 'password'}
+                                        required onBlur={formik.handleBlur}
+                                        value={formik.values.confirmPass}
+                                            id="confirmPass"
+                                            onChange={(e) => { formik.handleChange(e);  }}
+                                            type={showConfPassword ? 'text' : 'password'}
                                             endAdornment={
                                                 <InputAdornment position="end">
                                                     <IconButton
                                                         aria-label="toggle password visibility"
-                                                        onClick={handleClickShowPassword}
-                                                        onMouseDown={handleMouseDownPassword}
+                                                        onClick={handleClickShowConfPassword}
+                                                        onMouseDown={handleMouseDownConfPassword}
                                                         edge="end"
                                                         size="large">
-                                                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                                                        {showConfPassword ? <VisibilityOff /> : <Visibility />}
                                                     </IconButton>
                                                 </InputAdornment>
                                             }
                                             label="Password"
                                         />
                                     </FormControl>
+                                    {formik.errors.confirmPass && formik.touched.confirmPass ? (
+                                            <p
+                                              style={{
+                                                color: "red",
+                                                fontSize: "11px",
+                                                textAlign: "right",
+                                                marginTop: "0px",
+                                                marginRight:"13%",
+                                                position:"absolute",
+                                                width:"28%",
+                                                
+                                              }}
+                                            >
+                                              {formik.errors.confirmPass}
+                                            </p>
+                                          ) : null}
+                                          {errors.confirmPass && <div className="error">{errors.confirmPass[0]}</div>}
 
 
 
