@@ -177,7 +177,8 @@ const Register = () => {
 
                                 {/* page 1 */}
                                 {regPageCount === 1 && (
-                                    <div className='regPage1'><TextField  id="name" value={formik.values.name} onChange={formik.handleChange} onBlur={formik.handleBlur} sx={{ marginTop: '1rem', width: '28vmax' }} label="Name" variant="outlined" />
+                                    <div className='regPage1'>
+                                        <TextField  id="name" value={formik.values.name} onChange={formik.handleChange} onBlur={formik.handleBlur} sx={{ marginTop: '1rem', width: '28vmax' }} label="Name" variant="outlined" />
                                      {formik.errors.name && formik.touched.name ? (
               <p
                 style={{
@@ -241,8 +242,7 @@ const Register = () => {
                                         <TextField 
                                            id="yearOfPass"
                                            select
-                                           
-                                            onBlur={formik.handleBlur}
+                                           onBlur={formik.handleBlur}
                                             defaultValue="XXXX"
                                             value={formik.values.yearOfPass} onChange={ formik.handleChange} sx={{ marginTop: '1rem', width: '28vmax' }} label="Year of Passing" variant="outlined" >
                                             {years.map((option) => (
@@ -268,6 +268,7 @@ const Register = () => {
               </p>
             ) : null}
             {errors.yearOfPass && <div className="error">{errors.yearOfPass[0]}</div>}
+                                       
                                         
                                         </div>
                                 )}
