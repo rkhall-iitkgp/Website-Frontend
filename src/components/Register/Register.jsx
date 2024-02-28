@@ -346,12 +346,13 @@ const Register = () => {
             {errors.phone && <div className="error">{errors.phone[0]}</div>}
                                         <TextField 
                                            id="yearOfPass"
+                                           name="yearOfPass"
                                            select
                                            onBlur={formik.handleBlur}
                                             defaultValue="XXXX"
                                             value={formik.values.yearOfPass} onChange={ formik.handleChange} sx={{ marginTop: '1rem', width: '28vmax' }} label="Year of Passing" variant="outlined" >
                                             {years.map((option) => (
-                                                <MenuItem key={option.value} value={option.value}>
+                                                <MenuItem key={option.value} value={option.label}>
                                                     {option.label}
                                                 </MenuItem>
                                             ))}
