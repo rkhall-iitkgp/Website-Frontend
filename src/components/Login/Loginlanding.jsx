@@ -3,8 +3,13 @@ import PasswordLogin from './passwordlogin';
 import Login from './Login';
 import Otplogin from './otplogin';
 import ForgetPassword from './forgetpassword';
+import { useNavigate } from 'react-router-dom';
 
 const Landing = () => {
+    const navigate = useNavigate()
+    if (localStorage.getItem("token")) {
+        navigate("/dashboard")
+    }
     const [page, setPage] = useState('login');
     const [email, setEmail] = useState('');
     const [backpage, setBackPage] = useState('login');
