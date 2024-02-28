@@ -10,6 +10,8 @@ import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
+import axios from "axios";
+// import createToast from "../utils/createToast.js";
 //
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -53,7 +55,7 @@ const Register = () => {
 
  
     const [regPageCount, setRegPageCount] = useState(1);
-    const [isActive, setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState(false);    
 
     const phoneRegExp = /^[0-9]{10}$/;
 
@@ -108,6 +110,109 @@ const Register = () => {
         setRegPageCount(regPageCount - 1);
     }
 
+    //
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        if (formik.isValid && formik.dirty) {
+          try {
+            const response = await axios.post(
+                //api link 
+              "",
+              {
+                name: formik.values.name,
+                email: formik.values.email,
+                password: formik.values.password,
+                security_qn: formik.values.security_Qn,
+                security_ans: formik.values.security_Ans,
+                dob: formik.values.dob,
+                gender: formik.values.gender,
+                college: formik.values.college,
+                yop: formik.values.yop,
+                mobile: formik.values.mobile,
+                city: formik.values.city,
+                state: formik.values.state,
+               
+              }
+            );
+    // //_______________
+    //         if (response.data.code === 0) {
+    //           console.log("the data is", response.data);
+    //           setSignupdata(response.data);
+    //           setIsLoggedIn(true);
+    //           createToast("Signup Successful", "success");
+    //           ReactGA.event({
+    //             category: "User",
+    //             action: "User Signed Up",
+    //             label: "User Signed up 2D",
+    //           });
+    //           onClose();
+    //           closeLoginModal();
+    //           setUser(response.data.message);
+             
+    //           try { const response2 = await axios.post(
+    //                 "",
+    //                 {
+    //                     email: formik.values.email,
+    //                     password: formik.values.password,
+    //                 }
+    //             );
+    //             if (response2.data.code === 0) {
+    //                 ReactGA.event({
+    //                     category: "User",
+    //                     action: "User Logged In",
+    //                     label: "User Logged In in 2D",
+    //                 });                    
+    //                 setSignupdata(response2.data);
+    //                 setIsLoggedIn(true);
+    //                 setUser(response2.data.message);
+    //                 // createToast("Reftching", "success");
+    
+    //                 localStorage.setItem(
+    //                     "userData",
+    //                     JSON.stringify(response2.data.message)
+    //                 );
+    
+    //             } else {}
+    //         } catch (error) {}
+              
+    
+    
+    //         } else {
+    //           console.error("Signup failed:", response.data.message);
+    //           for(let key in response.data.message)
+    //           {
+    //             console.log("signup error", response.data.message[key][0]);
+    //             createToast(response.data.message[key][0], "error");
+    //           }
+    //           // createToast("", "error");
+    //           setErrors({ server: ["Signup failed. Please try again."] });
+    //         }
+    //         //______
+          } catch (error) {
+            console.error("Error during signup:", error);
+            // createToast( error.message, "error");
+            setErrors({
+              server: ["An unexpected error occurred. Please try again."],
+            });
+          }
+        } else {
+          // Set formik errors to display any validation errors
+          formik.setTouched({
+            name: true,
+            email: true,
+            security_Qn: true,
+            security_Ans: true,
+            dob: true,
+            gender: true,
+            college: true,
+            yop: true,
+            mobile: true,
+            city: true,
+            state: true,
+          });
+        }
+      };
 
     const years = [
 
