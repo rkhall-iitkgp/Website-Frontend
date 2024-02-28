@@ -7,6 +7,7 @@ import Home from "./pages/Home/Home";
 import Eventpics from "./pages/Galllery/Eventpics";
 import Login from "./components/Login/Loginlanding";
 import Register from "./components/Register/Register";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 import { ThemeProvider, StyledEngineProvider, createTheme } from '@mui/material/styles';
 const theme = createTheme();
@@ -23,6 +24,7 @@ function App() {
             <Route path="/gallery/:year/:event" element={<Eventpics />}></Route>
             <Route path="/Login" element={<Login />}></Route>
             <Route path="/Register" element={<Register />}></Route>
+            <Route path="/Dashboard" element={<Dashboard />}></Route>
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
