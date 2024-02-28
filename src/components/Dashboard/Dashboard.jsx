@@ -6,7 +6,7 @@ const Dashboard = () => {
     return (
         <>
         <Stack spacing={0} direction="row">
-            <div style={{backgroundColor: 'yellow'}}></div>
+            <div style={{backgroundColor: 'yellow',height: "100vh", width: "20vw"}}></div>
             <Stack spacing={2} direction="row">
                 <div>Image</div>
                 <Stack spacing={1} direction="column">
