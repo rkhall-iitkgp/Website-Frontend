@@ -7,8 +7,13 @@ import Home from "./pages/Home/Home";
 import Eventpics from "./pages/Galllery/Eventpics";
 import Login from "./components/Login/Loginlanding";
 import Register from "./components/Register/Register";
+import {
+  ThemeProvider,
+  StyledEngineProvider,
+  createTheme,
+} from "@mui/material/styles";
 
-import { ThemeProvider, StyledEngineProvider, createTheme } from '@mui/material/styles';
+
 const theme = createTheme();
 function App() {
   return (
@@ -27,7 +32,6 @@ function App() {
         </BrowserRouter>
       </ThemeProvider>
     </StyledEngineProvider>
-
   );
 }
 
