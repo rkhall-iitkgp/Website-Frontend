@@ -10,15 +10,15 @@ import InputLabel from "@mui/material/InputLabel";
 import InputAdornment from "@mui/material/InputAdornment";
 import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl";
-//
+import axios from "axios";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-//
+
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-// import "yup-phone";
+// import "yup-phoneNo";
 
 import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
@@ -37,35 +37,67 @@ const Register = () => {
   //   setDetails({ email, password });
   // }, [email, password]);
 
+  // const submithandler = async (event) => {
+  //   event.preventDefault(); // Prevent the default form submission behavior
+
+  //   try {
+  //     console.log(formik.values);
+  //     // Make an HTTP POST request to the /register route
+  //     const response = await axios(
+  //       process.env.REACT_APP_BACKEND_URL + "/register",
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json", // Specify the content type as JSON
+  //         },
+  //         body: JSON.stringify(formik.values), // Send the formik values as the request body
+  //       }
+  //     );
+  //     // Check if the response is successful
+  //     if (response.ok) {
+  //       // If successful, you can handle the response as needed
+  //       const data = await response.json();
+  //       console.log("Registration successful:", data);
+  //     } else {
+  //       // If not successful, handle the error
+  //       console.error("Registration failed:", response.statusText);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error registering:", error);
+  //   }
+  // };
   const submithandler = async (event) => {
     event.preventDefault(); // Prevent the default form submission behavior
-
+    const { confirmPass, ...requestData } = formik.values;
+    let d = requestData.dateOfBirth.split("-")
+    requestData.dateOfBirth = `${d[2]}-${d[1]}-${d[0]}`
+    console.log(requestData); 
     try {
-      console.log(formik.values);
+      console.log("requstData", requestData);
       // Make an HTTP POST request to the /register route
-      // const response = await fetch(
-      //   process.env.REACT_APP_BACKEND_URL + "/register",
-      //   {
-      //     method: "POST",
-      //     headers: {
-      //       "Content-Type": "application/json", // Specify the content type as JSON
-      //     },
-      //     body: JSON.stringify(formik.values), // Send the formik values as the request body
-      //   }
-      // );
-      // // Check if the response is successful
-      // if (response.ok) {
-      //   // If successful, you can handle the response as needed
-      //   const data = await response.json();
-      //   console.log("Registration successful:", data);
-      // } else {
-      //   // If not successful, handle the error
-      //   console.error("Registration failed:", response.statusText);
-      // }
+      const response = await axios.post(
+        process.env.REACT_APP_BACKEND_URL + "/register",
+        requestData,
+        {
+          headers: {
+            "Content-Type": "application/json", // Specify the content type as JSON
+          },
+        }
+      );
+      console.log("payload", response.config.data);
+      // Check if the response is successful
+      if (response.status === 200) {
+        // If successful, you can handle the response as needed
+        console.log("Registration successful:", response.data);
+      } else {
+        // If not successful, handle the error
+        console.error("Registration failed:", response.statusText);
+      }
     } catch (error) {
       console.error("Error registering:", error);
     }
   };
+
   const [errors, setErrors] = useState({});
 
   const [showPassword, setShowPassword] = React.useState(false);
@@ -93,33 +125,35 @@ const Register = () => {
   const formik = useFormik({
     initialValues: {
       name: "",
-      email: "",
-      dob: "",
-      yearOfPass: "",
-      phone: "",
+      personalEmail: "",
+      dateOfBirth: "",
+      yearOfPassing: "",
+      phoneNo: "",
       instiEmail: "",
-      emergencyPhone: "",
+      emergencyPhoneNo: "",
       rollNo: "",
-      depart: "",
+      department: "",
       roomNo: "",
       password: "",
       confirmPass: "",
     },
     validationSchema: Yup.object({
       name: Yup.string().required("Required!"),
-      email: Yup.string().email("Invalid email address").required("Required!"),
-      phone: Yup.string()
+      personalEmail: Yup.string()
+        .email("Invalid email address")
+        .required("Required!"),
+      phoneNo: Yup.string()
         .matches(phoneRegExp, "Invalid Phone Number!")
         .required("Required!"),
 
-      emergencyPhone: Yup.string()
+      emergencyPhoneNo: Yup.string()
         .matches(phoneRegExp, "Invalid Phone Number!")
         .required("Required!"),
 
-      dob: Yup.string().required("Required!"),
-      depart: Yup.string().required("Required!"),
+      dateOfBirth: Yup.string().required("Required!"),
+      department: Yup.string().required("Required!"),
       rollNo: Yup.string().required("Required!"),
-      yearOfPass: Yup.string().required("Required!"),
+      yearOfPassing: Yup.string().required("Required!"),
       roomNo: Yup.string().required("Required!"),
       instiEmail: Yup.string()
         .email("Invalid email address")
@@ -324,8 +358,8 @@ const Register = () => {
                       <div className="error">{errors.rollNo[0]}</div>
                     )}
                     <TextField
-                      id="phone"
-                      value={formik.values.phone}
+                      id="phoneNo"
+                      value={formik.values.phoneNo}
                       onBlur={formik.handleBlur}
                       type="number"
                       onChange={formik.handleChange}
@@ -334,7 +368,7 @@ const Register = () => {
                       variant="outlined"
                     />
 
-                    {formik.errors.phone && formik.touched.phone ? (
+                    {formik.errors.phoneNo && formik.touched.phoneNo ? (
                       <p
                         style={{
                           color: "red",
@@ -346,19 +380,19 @@ const Register = () => {
                           width: "28%",
                         }}
                       >
-                        {formik.errors.phone}
+                        {formik.errors.phoneNo}
                       </p>
                     ) : null}
-                    {errors.phone && (
-                      <div className="error">{errors.phone[0]}</div>
+                    {errors.phoneNo && (
+                      <div className="error">{errors.phoneNo[0]}</div>
                     )}
                     <TextField
-                      id="yearOfPass"
-                      name="yearOfPass"
+                      id="yearOfPassing"
+                      name="yearOfPassing"
                       select
                       onBlur={formik.handleBlur}
                       defaultValue="XXXX"
-                      value={formik.values.yearOfPass}
+                      value={formik.values.yearOfPassing}
                       onChange={formik.handleChange}
                       sx={{ marginTop: "1rem", width: "28vmax" }}
                       label="Year of Passing"
@@ -370,7 +404,8 @@ const Register = () => {
                         </MenuItem>
                       ))}
                     </TextField>
-                    {formik.errors.yearOfPass && formik.touched.yearOfPass ? (
+                    {formik.errors.yearOfPassing &&
+                    formik.touched.yearOfPassing ? (
                       <p
                         style={{
                           color: "red",
@@ -382,11 +417,11 @@ const Register = () => {
                           width: "28%",
                         }}
                       >
-                        {formik.errors.yearOfPass}
+                        {formik.errors.yearOfPassing}
                       </p>
                     ) : null}
-                    {errors.yearOfPass && (
-                      <div className="error">{errors.yearOfPass[0]}</div>
+                    {errors.yearOfPassing && (
+                      <div className="error">{errors.yearOfPassing[0]}</div>
                     )}
                   </div>
                 )}
@@ -396,17 +431,18 @@ const Register = () => {
                   <div className="regPage2">
                     {" "}
                     <TextField
-                      id="email"
-                      name="email"
+                      id="personalEmail"
+                      name="personalEmail"
                       type="email"
-                      value={formik.values.email}
+                      value={formik.values.personalEmail}
                       onBlur={formik.handleBlur}
                       onChange={formik.handleChange}
                       sx={{ marginTop: "1rem", width: "28vmax" }}
                       label="Email Id"
                       variant="outlined"
                     />
-                    {formik.errors.email && formik.touched.email ? (
+                    {formik.errors.personalEmail &&
+                    formik.touched.personalEmail ? (
                       <p
                         style={{
                           color: "red",
@@ -418,11 +454,11 @@ const Register = () => {
                           width: "28%",
                         }}
                       >
-                        {formik.errors.email}
+                        {formik.errors.personalEmail}
                       </p>
                     ) : null}
-                    {errors.email && (
-                      <div className="error">{errors.email[0]}</div>
+                    {errors.personalEmail && (
+                      <div className="error">{errors.personalEmail[0]}</div>
                     )}
                     <TextField
                       id="instiEmail"
@@ -453,9 +489,9 @@ const Register = () => {
                       <div className="error">{errors.instiEmail[0]}</div>
                     )}
                     <TextField
-                      id="dob"
+                      id="dateOfBirth"
                       onBlur={formik.handleBlur}
-                      value={formik.values.dob}
+                      value={formik.values.dateOfBirth}
                       defaultValue=""
                       type="date"
                       onChange={formik.handleChange}
@@ -471,7 +507,7 @@ const Register = () => {
                         onBlur: () => setIsActive(false),
                       }}
                     />
-                    {formik.errors.dob && formik.touched.dob ? (
+                    {formik.errors.dateOfBirth && formik.touched.dateOfBirth ? (
                       <p
                         style={{
                           color: "red",
@@ -483,20 +519,22 @@ const Register = () => {
                           width: "28%",
                         }}
                       >
-                        {formik.errors.dob}
+                        {formik.errors.dateOfBirth}
                       </p>
                     ) : null}
-                    {errors.dob && <div className="error">{errors.dob[0]}</div>}
+                    {errors.dateOfBirth && (
+                      <div className="error">{errors.dateOfBirth[0]}</div>
+                    )}
                     <TextField
-                      id="depart"
+                      id="department"
                       onBlur={formik.handleBlur}
-                      value={formik.values.depart}
+                      value={formik.values.department}
                       onChange={formik.handleChange}
                       sx={{ marginTop: "1rem", width: "28vmax" }}
                       label="Department"
                       variant="outlined"
                     ></TextField>
-                    {formik.errors.depart && formik.touched.depart ? (
+                    {formik.errors.department && formik.touched.department ? (
                       <p
                         style={{
                           color: "red",
@@ -508,11 +546,11 @@ const Register = () => {
                           width: "28%",
                         }}
                       >
-                        {formik.errors.depart}
+                        {formik.errors.department}
                       </p>
                     ) : null}
-                    {errors.depart && (
-                      <div className="error">{errors.depart[0]}</div>
+                    {errors.department && (
+                      <div className="error">{errors.department[0]}</div>
                     )}
                   </div>
                 )}
@@ -521,17 +559,17 @@ const Register = () => {
                 {regPageCount === 3 && (
                   <div className="regPage3">
                     <TextField
-                      id="emergencyPhone"
+                      id="emergencyPhoneNo"
                       type="number"
-                      value={formik.values.emergencyPhone}
+                      value={formik.values.emergencyPhoneNo}
                       onChange={formik.handleChange}
                       sx={{ marginTop: "1rem", width: "28vmax" }}
                       label="Emergency Mobile No."
                       variant="outlined"
                     />
 
-                    {formik.errors.emergencyPhone &&
-                    formik.touched.emergencyPhone ? (
+                    {formik.errors.emergencyPhoneNo &&
+                    formik.touched.emergencyPhoneNo ? (
                       <p
                         style={{
                           color: "red",
@@ -543,11 +581,11 @@ const Register = () => {
                           width: "28%",
                         }}
                       >
-                        {formik.errors.emergencyPhone}
+                        {formik.errors.emergencyPhoneNo}
                       </p>
                     ) : null}
-                    {errors.emergencyPhone && (
-                      <div className="error">{errors.emergencyPhone[0]}</div>
+                    {errors.emergencyPhoneNo && (
+                      <div className="error">{errors.emergencyPhoneNo[0]}</div>
                     )}
 
                     <TextField
