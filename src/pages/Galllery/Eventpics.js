@@ -66,7 +66,7 @@ function Eventpics() {
       <ScrollToTopButton />
 
       {isLoading ? (
-        <div>
+        <div className={styles.loadingAudio}>
           <Audio
             height="80"
             width="80"

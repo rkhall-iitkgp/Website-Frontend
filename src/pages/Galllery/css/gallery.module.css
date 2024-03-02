@@ -289,3 +289,10 @@ label {
     text-align: center;
     margin-top: 20px;
 }
+
+.loadingAudio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
