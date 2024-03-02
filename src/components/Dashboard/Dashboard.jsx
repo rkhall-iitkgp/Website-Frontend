@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Stack from "@mui/material/Stack"
-
+import Experience from "./Experience"
 
 const Dashboard = () => {
     return (
@@ -14,6 +14,7 @@ const Dashboard = () => {
                         <div>Role</div>
                     </Stack>
                 </Stack>
+                <Experience />
             </Stack>
         </>
 
