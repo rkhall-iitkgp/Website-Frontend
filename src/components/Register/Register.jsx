@@ -137,9 +137,22 @@ const Register = () => {
       console.log("the value is", values);
     },
   });
-
   function handleNext() {
-    setRegPageCount(regPageCount + 1);
+    if((formik.errors.name && formik.touched || formik.errors.rollNo && formik.touched || formik.errors.phone && formik.touched || formik.errors.yearOfPass && formik.touched)&&regPageCount===1){
+      // setRegPageCount(regPageCount);
+      alert("Please fill out the required fields!");
+    }
+     else if((formik.errors.email && formik.touched || formik.errors.instiEmail && formik.touched || formik.errors.dob && formik.touched || formik.errors.depart && formik.touched)&&regPageCount===2){
+      // setRegPageCount(regPageCount);
+      alert("Please fill out the required fields!");
+    }
+     else if((formik.errors.emergencyPhone && formik.touched || formik.errors.roomNo && formik.touched || formik.errors.password && formik.touched || formik.errors.confirmPass && formik.touched)&&regPageCount===3){
+      // setRegPageCount(regPageCount);
+      alert("Please fill out the required fields!");
+    }
+    else{setRegPageCount(regPageCount + 1);}
+    
+
   }
 
   function handleBack() {
