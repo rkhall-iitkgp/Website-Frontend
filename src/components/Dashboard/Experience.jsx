@@ -1,4 +1,6 @@
 import * as React from 'react';
+import Grid from '@mui/material/Grid'
+import Stack from '@mui/material/Stack'
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -15,9 +17,9 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 
 export default function FolderList() {
 	return (
-	<>
-		<div>
-			<h4>Experience :</h4>
+	<Stack direction='column' sx={{width: '100%'}} justifyContent="flex-start" alignItems="stretch">
+		<Grid container spacing= {2}>
+			<h3>Experience :</h3>
 			<IconButton aria-label="add" sx={{ 
 				backgroundColor: '#FFD050',
 				'&:hover': {
@@ -34,7 +36,7 @@ export default function FolderList() {
 				}}>
 				<EditOutlinedIcon />
 			</IconButton>
-		</div>
+		</Grid>
 		<List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
 			<ListItem alignItems='flex-start'>
 				<ListItemAvatar sx={{ minWidth: 40 }}>
@@ -64,6 +66,6 @@ export default function FolderList() {
 			</ListItem>
 			<Divider />
 		</List>
-	</>
+	</Stack>
 	);
 }
