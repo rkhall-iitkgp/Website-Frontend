@@ -16,6 +16,8 @@ import MailIcon from '@mui/icons-material/Mail';
 import Experience from './Experience'
 import Profile from './Profile';
 import { Button } from '@mui/material';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { useState } from 'react';
 
 const drawerWidth = '18rem';
 
@@ -25,6 +27,19 @@ const Dashboard = () => {
     const toggleDrawer = (newOpen) => () => {
         setOpen(newOpen);
     };
+
+    const [details, setDetails] = useState({
+        name: 'Anmol',
+        rollNo: '22MA10005',
+        email: 'abc@gmail.com',
+        instiEmail: 'abc@gmail.com',
+        department: 'Mathematics',
+        dob: '05/03/2004',
+        mobileNo: '7863535468',
+        passingYear: '2026',
+        roomNo: 'E316',
+        emergencyContact: '7534685586',
+    });
 
     return (
 
@@ -42,7 +57,11 @@ const Dashboard = () => {
                 }}
             >
                 {/* <Toolbar /> */}
-                <Box sx={{ display: 'flex', flexDirection: 'column', backgroundColor: '#FFD050', height: '100vh', padding: '20px', justifyContent: 'flex-end', alignItems: 'center' }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', backgroundColor: '#FFD050', height: '100vh', padding: '20px', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'row', marginRight: '1.5rem' }}>
+                        <AccountCircleIcon sx={{ marginRight: '1.5rem' }} />
+                        <h3>Profile</h3>
+                    </Box>
                     <Box sx={{ display: 'flex', flexDirection: 'column', marginBottom: '1.5rem' }}>
                         <Button sx={{
                             height: '4rem',
@@ -81,7 +100,7 @@ const Dashboard = () => {
                 </Box>
             </Drawer >
             <Box component="main" sx={{ flexGrow: 1, p: 3, marginTop: '2.8rem' }}>
-                <Profile />
+                <Profile details={details} setDetails={setDetails} />
                 <Experience />
             </Box>
         </Box >
