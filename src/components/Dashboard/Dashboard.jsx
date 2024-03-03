@@ -17,7 +17,7 @@ import Experience from './Experience'
 import Profile from './Profile';
 import { Button } from '@mui/material';
 
-const drawerWidth = '20rem';
+const drawerWidth = '18rem';
 
 const Dashboard = () => {
     const [open, setOpen] = React.useState(true);
@@ -42,18 +42,45 @@ const Dashboard = () => {
                 }}
             >
                 {/* <Toolbar /> */}
-                <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', backgroundColor: '#FFD050', height: '100vh', padding: '20px' }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', backgroundColor: '#FFD050', height: '100vh', padding: '20px', justifyContent: 'flex-end', alignItems: 'center' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', marginBottom: '1.5rem' }}>
+                        <Button sx={{
+                            height: '4rem',
+                            width: '20rem',
+                            backgroundColor: 'black',
+                            padding: '1rem',
+                            color: 'white',
+                            borderRadius: '0rem',
+                            transition: 'font-size 0.3s',
+                            '&:hover': {
+                                backgroundColor: 'black',
+                                fontSize: '1.1rem',
 
-                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
-                        <Button sx={{ color: 'black', height: '5rem', width: '20rem' }}>LOGOUT</Button>
-                        <Button sx={{ color: 'black', height: '5rem', width: '20rem' }}>LOGOUT</Button>
-                        <Button sx={{ color: 'black', height: '5rem', width: '20rem' }}>LOGOUT</Button>
-                        <Button sx={{ color: 'black', height: '5rem', width: '20rem' }}>LOGOUT</Button>
+                            },
+                        }}>
+                            Log Out
+                        </Button>
+
+                        <Button sx={{
+                            height: '4rem',
+                            width: '20rem',
+                            padding: '1rem',
+                            backgroundColor: 'black',
+                            color: 'white',
+                            borderRadius: '0rem',
+                            transition: 'font-size 0.3s',
+                            '&:hover': {
+                                backgroundColor: 'black',
+                                fontSize: '1.1rem',
+                            },
+                        }}>
+                            Change Password
+                        </Button>
+
                     </Box>
                 </Box>
             </Drawer >
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-                <Toolbar />
+            <Box component="main" sx={{ flexGrow: 1, p: 3, marginTop: '2.8rem' }}>
                 <Profile />
                 <Experience />
             </Box>
