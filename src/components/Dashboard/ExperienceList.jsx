@@ -5,7 +5,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
-import TextField from '@mui/material/TextField';
+import styles from './css/Experience.module.css'
 
 export default function ExperienceList({
     experiences,
@@ -14,7 +14,7 @@ export default function ExperienceList({
     isEditing,
     saveMode
 }) {
-    const [changes, setChanges] = React.useState(experiences);
+	const [changes, setChanges] = React.useState(experiences);
 
     const updateChanges = (updatedExperience) => {
         const updatedChanges = changes.map(ele => ele._id === updatedExperience._id ? updatedExperience : ele);
@@ -39,7 +39,6 @@ export default function ExperienceList({
                     experience={experience}
                     onDelete={onDeleteExperience}
                     isEditing={isEditing}
-                    changes={changes}
                     updateChanges={updateChanges}
                 />
 				<Divider />
@@ -49,7 +48,7 @@ export default function ExperienceList({
   );
 }
 
-function ExperienceItem({ experience, onDelete, isEditing, changes, updateChanges }) {
+function ExperienceItem({ experience, onDelete, isEditing, updateChanges }) {
     const [exp, dispatch] = React.useReducer(reducer, { ...experience });
 
     function reducer (state, action) {
@@ -75,10 +74,10 @@ function ExperienceItem({ experience, onDelete, isEditing, changes, updateChange
     if (isEditing) {
     content = (
       <>
-        <ListItemText
-            primary=<TextField value={exp.name} onChange={(e) => { dispatch({ type: 'primary', newName: e.target.value}); updateChanges(exp) }}/>
-            secondary=<TextField value={exp.role} onChange={(e) => { dispatch({ type: 'secondary', newRole: e.target.value}); updateChanges(exp) }}/>
-        />
+		<ListItemText
+			primary=<input className={styles['primary']} value={exp.name} onChange={(e) => { dispatch({ type: 'primary', newName: e.target.value}); updateChanges({ ...exp, name: e.target.value }) }} />
+			secondary=<input className={styles['secondary']} value={exp.role} onChange={(e) => { dispatch({ type: 'secondary', newRole: e.target.value}); updateChanges({ ...exp, role: e.target.value }) }} />
+		/>
         {/* <input
           value={todo.title}
           onChange={e => {
@@ -99,11 +98,11 @@ function ExperienceItem({ experience, onDelete, isEditing, changes, updateChange
   }
   return (
     <ListItem alignItems='flex-start'>
-		{/* <ListItemAvatar sx={{ minWidth: 40 }}>
+		<ListItemAvatar sx={{ minWidth: 40 }}>
 			<Avatar sx={{ width: 30, height: 30 }}>
 				{experience.image}
 			</Avatar>
-		</ListItemAvatar> */}
+		</ListItemAvatar>
 		{content}
 	</ListItem>
     // <label>
