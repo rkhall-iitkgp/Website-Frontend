@@ -79,10 +79,10 @@ const Profile = ({ details, setDetails }) => {
         setHedit(hedit ^ 1);
     }
     return (
-        <container  >
+        <Box>
             {/* <Box sx={{ flexGrow: 1, maxWidth: '20rem', justifyContent: 'space-between', backgroundColor: 'red' }}>
             </Box> */}
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', }}>
                 <IconButton sx={{
                     position: 'relative', top: '2.6rem', left: '23rem', backgroundColor: '#FFD050',
                     '&:hover': {
@@ -173,7 +173,7 @@ const Profile = ({ details, setDetails }) => {
 
                 </Grid>
             </Box>
-        </container>
+        </Box>
     );
 }
 
