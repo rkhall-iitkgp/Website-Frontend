@@ -17,35 +17,33 @@ import Experience from './Experience'
 import Profile from './Profile';
 import { Button } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { useMediaQuery } from '@mui/material';
 import { useState } from 'react';
 
 const drawerWidth = '18rem';
 
 const Dashboard = () => {
-    const [open, setOpen] = React.useState(true);
-
-    const toggleDrawer = (newOpen) => () => {
-        setOpen(newOpen);
-    };
+    // const [open, setOpen] = React.useState(true);
 
     const [details, setDetails] = useState({
-        name: 'Anmol',
-        rollNo: '22MA10005',
+        name: 'Tyrant',
+        rollNo: '22XX1000X',
         email: 'abc@gmail.com',
         instiEmail: 'abc@gmail.com',
         department: 'Mathematics',
-        dob: '05/03/2004',
+        dob: '01/01/2001',
         mobileNo: '7863535468',
         passingYear: '2026',
         roomNo: 'E316',
         emergencyContact: '7534685586',
     });
 
+    const isMobile = useMediaQuery("(max-width: 920px)");
     return (
 
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <Drawer
+            {!isMobile ? (<Drawer
                 variant="permanent"
                 sx={{
                     width: drawerWidth,
@@ -62,13 +60,14 @@ const Dashboard = () => {
                         <AccountCircleIcon sx={{ marginRight: '1.5rem' }} />
                         <h3>Profile</h3>
                     </Box>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', marginBottom: '1.5rem' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', marginBottom: '1.3rem' }}>
                         <Button sx={{
                             height: '4rem',
                             width: '20rem',
                             backgroundColor: 'black',
                             padding: '1rem',
                             color: 'white',
+                            borderBottom: '1px solid white',
                             borderRadius: '0rem',
                             transition: 'font-size 0.3s',
                             '&:hover': {
@@ -98,10 +97,10 @@ const Dashboard = () => {
 
                     </Box>
                 </Box>
-            </Drawer >
+            </Drawer >) : (null)}
             <Box component="main" sx={{ flexGrow: 1, p: 3, marginTop: '2.8rem' }}>
                 <Profile details={details} setDetails={setDetails} />
-                <Experience />
+                {/* <Experience /> */}
             </Box>
         </Box >
 
