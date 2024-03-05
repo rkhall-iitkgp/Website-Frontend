@@ -5,7 +5,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import Avatar from '@mui/material/Avatar';
 import { Box, height } from '@mui/system';
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
-import CameraAltIcon from '@mui/icons-material/CameraAlt';
+import CameraAltOutlinedIcon from '@mui/icons-material/CameraAltOutlined';
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import { Typography, colors } from '@mui/material';
@@ -114,7 +114,7 @@ const Profile = ({ details, setDetails }) => {
                             border: '2px solid black',
                             borderRadius: '50%'
                         }} >
-                            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" sx={{ top: '0.43rem', left: '0.5rem', width: '11rem', height: '11rem', marginBottom: '0.5rem' }} />
+                            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" sx={{ top: '0.63rem', left: '0.63rem', width: '10.5rem', height: '10.5rem', marginBottom: '0.5rem' }} />
                         </Box>
                         <Box sx={{ position: 'absolute', bottom: '0', right: '0', marginRight: '0.3rem', marginBottom: '1.1rem' }}>
                             <Box sx={{
@@ -122,7 +122,7 @@ const Profile = ({ details, setDetails }) => {
                                     backgroundColor: "#FFDA50",
                                 }
                             }}>
-                                <CameraAltIcon sx={{
+                                <CameraAltOutlinedIcon sx={{
                                     '&:hover': {
                                         backgroundColor: "#FFDA50",
                                         borderRadius: '50%'
