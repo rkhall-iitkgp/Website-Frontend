@@ -90,10 +90,8 @@ const Profile = ({ details, setDetails }) => {
     } : { height: '5vh', width: '9vh' };
 
     const editButttonStyle = !isMobile ? {
-        position: 'relative',
-        top: ' 7vh',
-        right: '-45vh',
-    } : { position: 'absolute', top: '8.5vh', left: '82vw' };
+        marginLeft: 'calc(10rem - 40px)'
+    } : { marginLeft: 'calc(9vh - 40px)' };
     return (
         <Box sx={{ marginTop: '1.5rem' }}>
             {/* <Box sx={{ flexGrow: 1, maxWidth: '20rem', justifyContent: 'space-between', backgroundColor: 'red' }}>
@@ -178,6 +176,7 @@ const Profile = ({ details, setDetails }) => {
                     )}
                 </Box>
                 <IconButton sx={{
+                    ...editButttonStyle,
                     backgroundColor: '#FFD050',
                     '&:hover': {
                         backgroundColor: "#FFDA50"
