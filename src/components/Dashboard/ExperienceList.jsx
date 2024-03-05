@@ -32,7 +32,7 @@ export default function ExperienceList({
     }, [experiences])
 
     return (
-    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+    <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
 		{Object.values(experiences).map((experience, index) => 
 			<React.Fragment key={index}>
 				<ExperienceItem 
@@ -41,7 +41,7 @@ export default function ExperienceList({
                     isEditing={isEditing}
                     updateChanges={updateChanges}
                 />
-				<Divider />
+				<Divider sx={{ bgcolor: "black" }}/>
 			</React.Fragment>
 		)}
 	</List>

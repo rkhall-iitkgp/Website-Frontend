@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Grid from '@mui/material/Grid'
 import Stack from '@mui/material/Stack'
+import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ImageIcon from '@mui/icons-material/Image';
 import WorkIcon from '@mui/icons-material/Work';
@@ -10,6 +11,7 @@ import IconButton from '@mui/material/IconButton';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import SaveOutlinedIcon from '@mui/icons-material/SaveOutlined';
 import ExperienceList from './ExperienceList';
+import Typography from '@mui/material/Typography'
 
 export default function FolderList() {
 	const [experiences, setExperiences] = React.useState([]);
@@ -63,18 +65,11 @@ export default function FolderList() {
 		setExperiences(data);
 	}, [])
 	return (
-	<Stack direction='column' sx={{width: '80%'}} justifyContent="flex-start" alignItems="center">
-		<Grid
-			container
-			direction="row"
-			justifyContent="space-between"
-			alignItems="center"
-		>
-			<Grid item xs={11}>
-				<h3>Experience :</h3>
-			</Grid>
-			<Grid item xs={1}>
-				<Stack direction='row' spacing={2}>
+	<container>
+		<Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+			<Stack direction='row' justifyContent="space-between" alignItems="center" sx={{ width: '100%'}}>
+				<Typography variant='h5' sx={{ position: 'relative', fontWeight: 'bold', color: 'black'}}>Experience: </Typography>
+				<Stack direction='row' justifyContent="space-between" alignItems="center" sx={{ width: 90}}>
 					<IconButton onClick={() => {editMode === 'exp-add'? addNewExperience() : handleAddExperience()}} aria-label="add" sx={{ 
 						backgroundColor: '#FFD050',
 						'&:hover': {
@@ -83,7 +78,7 @@ export default function FolderList() {
 						}}>
 						{editMode === 'exp-add' ? <SaveOutlinedIcon /> : <AddIcon />}
 					</IconButton>
-					<IconButton onClick={() => { editMode === 'exp-edit'? setSaveMode('save-edit') : handleEditExperience()}} aria-label="edit" sx={{ 
+					<IconButton onClick={() => { editMode === 'exp-edit'? setSaveMode('save-edit') : setEditMode('exp-edit')}} aria-label="edit" sx={{ 
 						backgroundColor: '#FFD050',
 						'&:hover': {
 							backgroundColor: "#FFDA50"
@@ -92,9 +87,7 @@ export default function FolderList() {
 						{ editMode === 'exp-edit' ? <SaveOutlinedIcon /> : <EditOutlinedIcon />}
 					</IconButton>
 				</Stack>
-			</Grid>
-		</Grid>
-		<List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+			</Stack>
 			<ExperienceList 
 				experiences={experiences}
 				saveExperience={saveExperience}
@@ -102,20 +95,7 @@ export default function FolderList() {
 				isEditing={editMode === 'exp-edit'}
 				saveMode={saveMode}
 			/>
-			{/* {Object.values(experiences).map((ele, index) => 
-				<React.Fragment key={index}>
-					<ListItem alignItems='flex-start'>
-						<ListItemAvatar sx={{ minWidth: 40 }}>
-							<Avatar sx={{ width: 30, height: 30 }}>
-								{ele.image}
-							</Avatar>
-						</ListItemAvatar>
-						<ListItemText primary={ele.name} secondary={ele.role} />
-					</ListItem>
-					<Divider />
-				</React.Fragment>
-			)} */}
-		</List>
-	</Stack>
+		</Box>
+	</container>
 	);
 }

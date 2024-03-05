@@ -18,6 +18,8 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import SaveOutlinedIcon from '@mui/icons-material/SaveOutlined';
 import Button from '@mui/material/Button';
 import { useMediaQuery } from '@mui/material';
+import Stack from '@mui/material/Stack'
+
 
 
 
@@ -84,10 +86,7 @@ const Profile = ({ details, setDetails }) => {
     const privateButttonStyle = !isMobile ? {
         height: '3rem',
         width: '10rem',
-        position: 'relative',
-        top: '3vh',
-        left: '-40vh',
-    } : { position: 'absolute', height: '5vh', width: '9vh', top: '8.5vh', left: '2vw' };
+    } : { height: '5vh', width: '9vh' };
 
     const editButttonStyle = !isMobile ? {
         position: 'relative',
@@ -98,16 +97,7 @@ const Profile = ({ details, setDetails }) => {
         <Box>
             {/* <Box sx={{ flexGrow: 1, maxWidth: '20rem', justifyContent: 'space-between', backgroundColor: 'red' }}>
             </Box> */}
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', }}>
-                <IconButton sx={{
-                    ...editButttonStyle,
-                    backgroundColor: '#FFD050',
-                    '&:hover': {
-                        backgroundColor: "#FFDA50"
-                    }
-                }} onClick={handletoggle} >
-                    {hedit === 1 ? <SaveOutlinedIcon /> : <EditOutlinedIcon />}
-                </IconButton>
+            <Stack direction='row' justifyContent="space-between" alignItems="flex-start">
                 <Button sx={{
                     ...privateButttonStyle,
                     border: '2px solid black',
@@ -154,7 +144,6 @@ const Profile = ({ details, setDetails }) => {
                                     textAlign: 'center'
                                 },
                             }}
-                            sx={{ width: '80%' }}
                             onChange={handleChange}
                             fullWidth
                         />
@@ -162,33 +151,39 @@ const Profile = ({ details, setDetails }) => {
                         <Typography variant="p" value={details.rollNo} align="center" gutterBottom >{details.rollNo}</Typography>
                     )}
                 </Box>
+                <IconButton sx={{
+                    backgroundColor: '#FFD050',
+                    '&:hover': {
+                        backgroundColor: "#FFDA50"
+                    }
+                }} onClick={handletoggle} >
+                    {hedit === 1 ? <SaveOutlinedIcon /> : <EditOutlinedIcon />}
+                </IconButton>
+            </Stack>
 
-
-                <Grid container spacing={2} sx={{ maxWidth: '100vh', height: 'auto', marginTop: '0rem' }}>
-                    <Grid container item spacing={1} sx={{ borderBottom: '1px solid black' }}>
-                        <FormRow details={details} hedit={hedit} setDetails={setDetails} field="Email" name="email" data={details.email} />
-                    </Grid>
-                    <Grid container item spacing={1} sx={{ borderBottom: '1px solid black' }}>
-                        <FormRow details={details} hedit={hedit} setDetails={setDetails} field="Institute Email" name="instiEmail" data={details.instiEmail} />
-                    </Grid>
-                    <Grid container item spacing={1} sx={{ borderBottom: '1px solid black' }}>
-                        <FormRow details={details} hedit={hedit} setDetails={setDetails} field="Department" name="department" data={details.department} />
-                    </Grid>
-                    <Grid container item spacing={1} sx={{ borderBottom: '1px solid black' }}>
-                        <FormRow details={details} hedit={hedit} setDetails={setDetails} field="Date of Birth" name="dob" data={details.dob} />
-                    </Grid>
-                    <Grid container item spacing={1} sx={{ borderBottom: '1px solid black' }}>
-                        <FormRow details={details} hedit={hedit} setDetails={setDetails} field="Mobile Number" name="mobileNo" data={details.mobileNo} />
-                    </Grid>
-                    <Grid container item spacing={1} sx={{ borderBottom: '1px solid black' }}>
-                        <FormRow details={details} hedit={hedit} setDetails={setDetails} field="Room Number" name="roomNo" data={details.roomNo} />
-                    </Grid>
-                    <Grid container item spacing={1} sx={{ borderBottom: '1px solid black' }}>
-                        <FormRow details={details} hedit={hedit} setDetails={setDetails} field="Emergency Contact Number" name="emergencyContact" data={details.emergencyContact} />
-                    </Grid>
-
+            <Stack spacing={2} sx={{ width: '100%', marginTop: '0rem' }}>
+                <Grid container spacing={1} sx={{ borderBottom: '1px solid black' }}>
+                    <FormRow details={details} hedit={hedit} setDetails={setDetails} field="Email" name="email" data={details.email} />
                 </Grid>
-            </Box>
+                <Grid container spacing={1} sx={{ borderBottom: '1px solid black' }}>
+                    <FormRow details={details} hedit={hedit} setDetails={setDetails} field="Institute Email" name="instiEmail" data={details.instiEmail} />
+                </Grid>
+                <Grid container spacing={1} sx={{ borderBottom: '1px solid black' }}>
+                    <FormRow details={details} hedit={hedit} setDetails={setDetails} field="Department" name="department" data={details.department} />
+                </Grid>
+                <Grid container spacing={1} sx={{ borderBottom: '1px solid black' }}>
+                    <FormRow details={details} hedit={hedit} setDetails={setDetails} field="Date of Birth" name="dob" data={details.dob} />
+                </Grid>
+                <Grid container spacing={1} sx={{ borderBottom: '1px solid black' }}>
+                    <FormRow details={details} hedit={hedit} setDetails={setDetails} field="Mobile Number" name="mobileNo" data={details.mobileNo} />
+                </Grid>
+                <Grid container spacing={1} sx={{ borderBottom: '1px solid black' }}>
+                    <FormRow details={details} hedit={hedit} setDetails={setDetails} field="Room Number" name="roomNo" data={details.roomNo} />
+                </Grid>
+                <Grid container spacing={1} sx={{ borderBottom: '1px solid black' }}>
+                    <FormRow details={details} hedit={hedit} setDetails={setDetails} field="Emergency Contact Number" name="emergencyContact" data={details.emergencyContact} />
+                </Grid>
+            </Stack>
         </Box>
     );
 }
