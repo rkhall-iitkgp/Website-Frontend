@@ -13,13 +13,13 @@ import { Button } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useState } from 'react';
 
-const drawerWidth = '18rem';
+const drawerWidth = '20rem';
 
 const Dashboard = () => {
     // const [open, setOpen] = React.useState(true);
 
     const [details, setDetails] = useState({
-        name: 'Tyrant',
+        name: 'MEOW',
         rollNo: '22XX1000X',
         email: 'abc@gmail.com',
         instiEmail: 'abc@gmail.com',
@@ -91,7 +91,7 @@ const Dashboard = () => {
                     </Box>
                 </Box>
             </Drawer >) : (null)}
-            <Box component="main" sx={{ flexGrow: 1, p: 3, marginTop: '2.8rem', maxWidth: '50rem', width: '80%'}}>
+            <Box component="main" sx={{ flexGrow: 1, p: 3, marginTop: '2.8rem', maxWidth: '50rem', width: '80%' }}>
                 <Profile details={details} setDetails={setDetails} />
                 <br />
                 <Experience />

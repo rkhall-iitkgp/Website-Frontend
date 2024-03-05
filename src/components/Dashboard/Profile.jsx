@@ -4,7 +4,8 @@ import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
 import Avatar from '@mui/material/Avatar';
 import { Box, height } from '@mui/system';
-import CameraAltOutlinedIcon from '@mui/icons-material/CameraAltOutlined';
+import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
+import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import { Typography, colors } from '@mui/material';
@@ -94,7 +95,7 @@ const Profile = ({ details, setDetails }) => {
         right: '-45vh',
     } : { position: 'absolute', top: '8.5vh', left: '82vw' };
     return (
-        <Box>
+        <Box sx={{ marginTop: '1.5rem' }}>
             {/* <Box sx={{ flexGrow: 1, maxWidth: '20rem', justifyContent: 'space-between', backgroundColor: 'red' }}>
             </Box> */}
             <Stack direction='row' justifyContent="space-between" alignItems="flex-start">
@@ -104,8 +105,32 @@ const Profile = ({ details, setDetails }) => {
                     fontWeight: 'bold',
                     color: 'black'
                 }}>Private</Button>
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" sx={{ width: '9rem', height: '9rem', marginBottom: '0.5rem' }} />
+                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginRight: '0.7rem', }}>
+                    <Box sx={{ position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+                        {/* <CameraAltIcon /> */}
+                        <Box sx={{
+                            height: '12rem',
+                            width: '12rem',
+                            border: '2px solid black',
+                            borderRadius: '50%'
+                        }} >
+                            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" sx={{ top: '0.43rem', left: '0.5rem', width: '11rem', height: '11rem', marginBottom: '0.5rem' }} />
+                        </Box>
+                        <Box sx={{ position: 'absolute', bottom: '0', right: '0', marginRight: '0.3rem', marginBottom: '1.1rem' }}>
+                            <Box sx={{
+                                backgroundColor: '#FFD050', borderRadius: '50%', height: '2.5rem', width: '2.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', '&:hover': {
+                                    backgroundColor: "#FFDA50",
+                                }
+                            }}>
+                                <CameraAltIcon sx={{
+                                    '&:hover': {
+                                        backgroundColor: "#FFDA50",
+                                        borderRadius: '50%'
+                                    }
+                                }} onClick={() => alert("hi")} />
+                            </Box>
+                        </Box>
+                    </Box>
                     {hedit ? (
                         <TextField
                             id="filled-basic"
@@ -121,7 +146,7 @@ const Profile = ({ details, setDetails }) => {
                                     fontSize: '1.4rem'
                                 },
                             }}
-                            sx={{ width: '80%' }}
+                            sx={{ width: '80%', marginTop: '-1rem' }}
                             onChange={handleChange}
                             fullWidth
                         />
@@ -144,6 +169,7 @@ const Profile = ({ details, setDetails }) => {
                                     textAlign: 'center'
                                 },
                             }}
+                            sx={{ width: '80%', marginTop: '-1rem' }}
                             onChange={handleChange}
                             fullWidth
                         />
