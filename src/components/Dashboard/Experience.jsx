@@ -17,10 +17,15 @@ export default function FolderList() {
 	const [experiences, setExperiences] = React.useState([]);
 	const [editMode, setEditMode] = React.useState('')
 	const [saveMode, setSaveMode] = React.useState('')
-	// test code
+	
 	const handleAddExperience = () => {
-		setEditMode('exp-add')
-		;
+		setEditMode('exp-add');
+		setExperiences([...experiences, {
+			_id: Math.floor(Math.random()*1000),
+			name: 'Soc/Cell Name',
+			role: 'Role',
+			image: getRandImage()
+		}]);
 	}
 	const handleEditExperience = () => {
 		setEditMode('exp-edit');
@@ -32,18 +37,18 @@ export default function FolderList() {
 	}
 	const addNewExperience = () => {
 		setEditMode('')
-		setExperiences([...experiences, {
-			_id: experiences.length++,
-			name: 'Soc/Cell Name',
-			role: 'Role',
-			image: getRandImage()
-		}])
 	}
 
+	const deleteExperience = (_id) => {
+		setExperiences(experiences.filter(e => e._id !== _id));
+	}
+
+	// test code
 	const getRandImage = () => [<ImageIcon />, <WorkIcon />, <BeachAccessIcon />][Math.floor(Math.random()*3)];
 	
 	React.useEffect(() => {
 		// const data = 'fetch data somehow ig'
+		// try to make _ids unique
 		const data = [{
 			_id: 1,
 			name: 'Soc/Cell Name',
@@ -65,7 +70,6 @@ export default function FolderList() {
 		setExperiences(data);
 	}, [])
 	return (
-	<container>
 		<Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
 			<Stack direction='row' justifyContent="space-between" alignItems="center" sx={{ width: '100%'}}>
 				<Typography variant='h5' sx={{ position: 'relative', fontWeight: 'bold', color: 'black'}}>Experience: </Typography>
@@ -91,11 +95,10 @@ export default function FolderList() {
 			<ExperienceList 
 				experiences={experiences}
 				saveExperience={saveExperience}
-				onDeleteExperience={''}
+				deleteExperience={deleteExperience}
 				isEditing={editMode === 'exp-edit'}
 				saveMode={saveMode}
 			/>
 		</Box>
-	</container>
 	);
 }

@@ -1,16 +1,20 @@
 import * as React from 'react';
+import Stack from '@mui/material/Stack'
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+
 import styles from './css/Experience.module.css'
 
 export default function ExperienceList({
 	experiences,
 	saveExperience,
-	onDeleteExperience,
+	deleteExperience,
 	isEditing,
 	saveMode
 }) {
@@ -35,12 +39,17 @@ export default function ExperienceList({
 	<List sx={{ width: '100%', bgcolor: 'background.paper' }}>
 		{Object.values(experiences).map((experience, index) => 
 			<React.Fragment key={index}>
-				<ExperienceItem 
-					experience={experience}
-					onDelete={onDeleteExperience}
-					isEditing={isEditing}
-					updateChanges={updateChanges}
-				/>
+				<Stack direction='row' justifyContent="space-between" alignItems="center">
+					<ExperienceItem 
+						experience={experience}
+						isEditing={isEditing}
+						updateChanges={updateChanges}
+					/>
+					{ isEditing ?
+					<IconButton onClick={() => deleteExperience(experience._id)} aria-label="detete">
+						<DeleteOutlinedIcon />
+					</IconButton> : null}
+				</Stack>
 				<Divider sx={{ bgcolor: "black" }}/>
 			</React.Fragment>
 		)}
@@ -48,7 +57,7 @@ export default function ExperienceList({
   );
 }
 
-function ExperienceItem({ experience, onDelete, isEditing, updateChanges }) {
+function ExperienceItem({ experience, isEditing, updateChanges }) {
 	const [exp, dispatch] = React.useReducer(reducer, { ...experience });
 
 	function reducer (state, action) {
@@ -78,17 +87,6 @@ function ExperienceItem({ experience, onDelete, isEditing, updateChanges }) {
 			primary=<input className={styles['primary']} value={exp.name} onChange={(e) => { dispatch({ type: 'primary', newName: e.target.value}); updateChanges({ ...exp, name: e.target.value }) }} />
 			secondary=<input className={styles['secondary']} value={exp.role} onChange={(e) => { dispatch({ type: 'secondary', newRole: e.target.value}); updateChanges({ ...exp, role: e.target.value }) }} />
 		/>
-		{/* <input
-		  value={todo.title}
-		  onChange={e => {
-			onChange({
-			  ...todo,
-			  title: e.target.value
-			});
-		  }} />
-		<button onClick={() => setIsEditing(false)}>
-		  Save
-		</button> */}
 	  </>
 	);
 	} else {
@@ -105,21 +103,5 @@ function ExperienceItem({ experience, onDelete, isEditing, updateChanges }) {
 		</ListItemAvatar>
 		{content}
 	</ListItem>
-	// <label>
-	//   <input
-	//	 type="checkbox"
-	//	 checked={todo.done}
-	//	 onChange={e => {
-	//	   onChange({
-	//		 ...todo,
-	//		 done: e.target.checked
-	//	   });
-	//	 }}
-	//   />
-	//   {todoContent}
-	//   <button onClick={() => onDelete(todo.id)}>
-	//	 Delete
-	//   </button>
-	// </label>
   );
 }
