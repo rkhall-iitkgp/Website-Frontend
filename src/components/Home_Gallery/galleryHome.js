@@ -1,6 +1,7 @@
 import "./css/galleryHome.css";
 import illu from "./illu.jpeg";
 import img1 from "./1.jpeg";
+import illu23 from './illu23.jpg';
 import img2 from "./2.jpeg";
 import img3 from "./3.jpeg";
 import img4 from "./4.jpeg";
@@ -18,12 +19,12 @@ function galleryHome() {
       >
         <Grid container className="gallery-left" md={6.5} xs={12}>
           <div className="left-top">
-            <h2>Gallery </h2>
+            <h2>Gallery</h2>
           </div>
           <div className="content">
-            <img src={illu} alt="img" />
+            <img src={illu23} alt="img" />
             <Grid item xs={12} style={{ textAlign: "right" }}>
-              <div className="illu-text">ILLUMINATION l 2016</div>
+              <div className="illu-text">ILLUMINATION l 2023</div>
             </Grid>
             <Grid
               container
@@ -34,7 +35,7 @@ function galleryHome() {
               <Grid item>
                 <h4>Festival for you, Tradition for us!</h4>
                 <div className="gallery-text">
-                At Radhakrishnan Hall of Residence, we take great pride in celebrating Diwali with our unique and exciting tradition - the Illumination, or 'illu' for short. This celebration is a hallmark of IIT Kharagpur's culture, and it brings together students from different halls of residence, alumni, faculty, and guests of honor from outside the institute.
+                At Radhakrishnan Hall of Residence, we take great pride in celebrating Diwali with our unique and exciting tradition - the Illumination, or 'Illu' for short. This celebration is a hallmark of IIT Kharagpur's culture, and it brings together students from different halls of residence, alumni, faculty, and guests of honor from outside the institute.
                 <br/>And at RK Hall, we've had a glorious history of winning Gold in both the illu and the Rangoli competitions for the past few years! These achievements are a testament to our team's enthusiasm, creativity, and dedication to upholding our tradition of excellence.
                 <br/>Come and witness an electrifying celebration of Diwali like never before! 
                 <br/>Experience the stunning lights, mesmerizing rangolis, and the contagious energy of the RK Hall community.
