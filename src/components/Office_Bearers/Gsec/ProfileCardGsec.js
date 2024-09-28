@@ -15,7 +15,12 @@ function ProfileCard(props) {
       <div className={styles.profileCardInfo}>
         <h3>{props.name}</h3>
         <p>{props.position}</p>
-        {/* <div className="profile-social-icons">
+        {/* <div style={{display:"flex", justifyContent:"center", gap: "20px" ,
+        paddingBottom:"-10px", 
+
+        }} 
+        
+        className="profile-social-icons">
           <a
             rel="noreferrer"
             className="facebook social"
@@ -25,15 +30,7 @@ function ProfileCard(props) {
             {" "}
             <FontAwesomeIcon icon={faFacebook} />{" "}
           </a>
-          <a
-            rel="noreferrer"
-            className="twitter social"
-            href={props.twitterUrl}
-            target="_blank"
-          >
-            {" "}
-            <FontAwesomeIcon icon={faTwitter} />{" "}
-          </a>
+          
           <a
             rel="noreferrer"
             className="instagram social"
