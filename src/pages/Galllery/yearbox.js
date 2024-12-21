@@ -12,8 +12,8 @@ const Yearbox = (props) => {
         onClick={() => props.handleClick(props.year)}
         className={`${styles.yearbox} ${props.selected === true ? `${styles.active}` : ""}`}
       >
-        <span>{props.year}</span>
-        <FontAwesomeIcon icon={faCaretDown} className={styles.dropdown} />
+        {/* <span>{props.year}</span>
+        <FontAwesomeIcon icon={faCaretDown} className={styles.dropdown} /> */}
       </div>
     </>
   );
