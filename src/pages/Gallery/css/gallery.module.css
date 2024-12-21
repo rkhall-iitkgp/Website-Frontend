@@ -22,18 +22,6 @@
     text-align: center;
 }
 
-.yearbox {
-    padding: 10px;
-    background-color: #232536;
-    margin: 10px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.yearbox:hover {
-    cursor: pointer;
-    transition: 0.3s;
-}
 
 .yearbox:hover span {
     transition: 0.3s;
