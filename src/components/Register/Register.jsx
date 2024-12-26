@@ -640,8 +640,28 @@ const Register = () => {
                     </Button>
                   )}
                   {regPageCount === 3 && (
+
                     <Button
                       type="submit"
+                      onClick={async ()=>{
+                        const fieldsToValidate = pageFields[regPageCount];
+                        await formik.validateForm(); // Validate all fields
+                        const errors = formik.errors;
+                        
+                        // Check for errors in the current page's fields
+                        const hasErrors = fieldsToValidate.some((field) => errors[field]);
+                        const hasEmptyFields = fieldsToValidate.some(
+                          (field) => formik.values[field] === ''
+                        );
+
+                        if (!hasErrors && !hasEmptyFields) {
+                          handleNext(); // Proceed to the next page
+                        } else {
+                          fieldsToValidate.forEach((field) => {
+                            formik.setFieldTouched(field, true, true); // Mark fields as touched to show errors
+                          });
+                        }
+                        }}
                       sx={{
                         marginTop: "1.5rem",
                         background: "black",
