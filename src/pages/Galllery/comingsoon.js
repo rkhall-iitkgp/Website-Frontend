@@ -1,19 +1,9 @@
 import React from "react";
+import styles from "./css/gallery.module.css";
 
 export function ComingSoon() {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-        backgroundColor: "#f7f7f7",
-        color: "#333",
-        textAlign: "center",
-      }}
-    >
+    <div className={styles.comingsoon}>
       <h1 style={{ fontSize: "3em", fontWeight: "bold", marginBottom: "20px" }}>
         Coming Soon
       </h1>
