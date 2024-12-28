@@ -11,7 +11,7 @@ import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material";
 import Logo from "./rklogo_1.png";
 import { HashLink } from "react-router-hash-link";
-import "./css/style.css";
+import "./css/style.module.css";
 
 export default function Navbar() {
   const Navigate = useNavigate();

@@ -16,18 +16,7 @@ const useStyles = makeStyles({
   drawerPaper: {
     backgroundColor: "#000000 !important", // Ensure black background
     color: "white", // Ensure white text color
-  },
-  menuItemDrawer: {
-    color: "white",
-    textAlign: "center !important",
-    borderBottom: "1px solid grey",
-  },
-  menuItemDrawerHover: {
-    "&:hover": {
-      color: "black !important",
-      backgroundColor: "#FFD050 !important",
-    },
-  },
+  }
 });
 
 function DrawerComponent() {
@@ -46,7 +35,7 @@ function DrawerComponent() {
           {pathname !== "/" && (
             <Link style={{ color: "white" }} to="/">
               <ListItem
-                className={`${classes.menuItemDrawer} ${classes.menuItemDrawerHover}`}
+                className="menu-item-drawer"
                 onClick={() => setOpenDrawer(false)}
               >
                 <ListItemText>Home</ListItemText>
@@ -56,7 +45,7 @@ function DrawerComponent() {
           {pathname === "/" && (
             <Link style={{ color: "white" }}>
               <ListItem
-                className={`${classes.menuItemDrawer} ${classes.menuItemDrawerHover}`}
+                className="menu-item-drawer"
                 onClick={() => setOpenDrawer(false)}
               >
                 <ListItemText>
@@ -69,7 +58,7 @@ function DrawerComponent() {
           )}
           <Link style={{ color: "white" }} to="/gallery">
             <ListItem
-              className={`${classes.menuItemDrawer} ${classes.menuItemDrawerHover}`}
+              className="menu-item-drawer"
               onClick={() => setOpenDrawer(false)}
             >
               <ListItemText>Gallery</ListItemText>
@@ -77,7 +66,7 @@ function DrawerComponent() {
           </Link>
           <Link style={{ color: "white" }}>
             <ListItem
-              className={`${classes.menuItemDrawer} ${classes.menuItemDrawerHover}`}
+              className="menu-item-drawer"
               onClick={() => setOpenDrawer(false)}
             >
               <ListItemText>
@@ -89,7 +78,7 @@ function DrawerComponent() {
           </Link>
           <Link style={{ color: "white" }}>
             <ListItem
-              className={`${classes.menuItemDrawer} ${classes.menuItemDrawerHover}`}
+              className="menu-item-drawer"
               onClick={() => setOpenDrawer(false)}
             >
               <ListItemText>
@@ -101,7 +90,7 @@ function DrawerComponent() {
           </Link>
           <Link style={{ color: "white" }}>
             <ListItem
-              className={`${classes.menuItemDrawer} ${classes.menuItemDrawerHover}`}
+              className="menu-item-drawer"
               onClick={() => setOpenDrawer(false)}
             >
               <ListItemText>
@@ -114,7 +103,7 @@ function DrawerComponent() {
           {/* Login Menu Item */}
           <Link style={{ color: "white" }} to="/login">
             <ListItem
-              className={`${classes.menuItemDrawer} ${classes.menuItemDrawerHover}`}
+              className="menu-item-drawer"
               onClick={() => setOpenDrawer(false)}
             >
               <ListItemText>Login</ListItemText>

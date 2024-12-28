@@ -22,3 +22,14 @@
     background-color: #FFD050 !important;
     transform: scale(1.1);
 }
+
+.menu-item-drawer {
+    color: white;
+    text-align: center !important;
+    border-bottom: 1px solid grey;
+}
+
+.menu-item-drawer:hover {
+    color: black !important;
+    background-color: #FFD050 !important;
+}
