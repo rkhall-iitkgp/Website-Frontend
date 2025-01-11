@@ -1,0 +1,22 @@
+.comingsoon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f7f7;
+  color: #333;
+  text-align: center;
+}
+
+.heading {
+  font-size: 3rem;
+  margin-bottom: "20px";
+  font-weight: bold;
+}
+
+.text {
+  font-size: 1.5em;
+  max-width: 600px;
+  line-height: 1.6;
+}
