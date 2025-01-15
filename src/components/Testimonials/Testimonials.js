@@ -40,6 +40,8 @@ const Testimonials = () => {
   };
 
   const submitStyle = {
+    fontFamily: 'Sen',
+    fontStyle: 'normal',
     marginTop: "20px",
     padding: "12px 20px",
     backgroundColor: "black",
@@ -152,6 +154,8 @@ const Testimonials = () => {
       method="POST"
       onSubmit={handleSubmit}
       style={{
+        fontFamily: 'Sen',
+    fontStyle: 'normal',
         display: "flex",
         flexDirection: "column",
         gap: "12px", // Responsive spacing
