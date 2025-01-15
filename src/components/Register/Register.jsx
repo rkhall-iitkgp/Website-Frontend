@@ -124,59 +124,70 @@ const Register = () => {
 
   const [regPageCount, setRegPageCount] = useState(1);
   const [isActive, setIsActive] = useState(false);
+ 
+
+ 
+
 
   const phoneRegExp = /^[0-9]{10}$/;
+  const rollNoRegExp = /^(1[0-9]|2[0-9])(AE|AG|AR|BT|CE|CH|CS|CY|EE|EC|EX|GG|HS|IM|MA|ME|MI|MT|NA|PH)[0-9]{5}$/;
 
-  const formik = useFormik({
-    initialValues: {
-      name: "",
-      personalEmail: "",
-      dateOfBirth: "",
-      yearOfPassing: "",
-      phoneNo: "",
-      instiEmail: "",
-      emergencyPhoneNo: "",
-      rollNo: "",
-      department: "",
-      roomNo: "",
-      password: "",
-      confirmPass: "",
-    },
-    validationSchema: Yup.object({
-      name: Yup.string().required("Required!"),
-      personalEmail: Yup.string()
-        .email("Invalid email address")
-        .required("Required!"),
-      phoneNo: Yup.string()
-        .matches(phoneRegExp, "Invalid Phone Number!")
-        .required("Required!"),
+const roomNoRegExp = /^[A-E]-[1-4][0-9]{2}$/;
+const instiEmailRegExp = /^[a-zA-Z0-9._%+-]+@kgpian\.iitkgp\.in$/;
 
-      emergencyPhoneNo: Yup.string()
-        .matches(phoneRegExp, "Invalid Phone Number!")
-        .required("Required!"),
+const formik = useFormik({
+  initialValues: {
+    name: "",
+    personalEmail: "",
+    dateOfBirth: "",
+    yearOfPassing: "",
+    phoneNo: "",
+    instiEmail: "",
+    emergencyPhoneNo: "",
+    rollNo: "",
+    department: "",
+    roomNo: "",
+    password: "",
+    confirmPass: "",
+  },
+  validationSchema: Yup.object({
+    name: Yup.string().required("Required!"),
+    personalEmail: Yup.string()
+      .email("Invalid email address")
+      .required("Required!"),
+    phoneNo: Yup.string()
+      .matches(phoneRegExp, "Invalid Phone Number!")
+      .required("Required!"),
+    emergencyPhoneNo: Yup.string()
+      .matches(phoneRegExp, "Invalid Phone Number!")
+      .required("Required!"),
+    dateOfBirth: Yup.string().required("Required!"),
+    department: Yup.string().required("Required!"),
+    rollNo: Yup.string()
+      .matches(rollNoRegExp, "Invalid Roll Number! Format: 23AE30023")
+      .required("Required!"),
+    yearOfPassing: Yup.string().required("Required!"),
+    roomNo: Yup.string()
+      .matches(roomNoRegExp, "Invalid Room Number! Format: [A-E]-[100-499]")
+      .required("Required!"),
+    instiEmail: Yup.string()
+      .matches(instiEmailRegExp, "Invalid Institute Email! Must contain '@kgpian.iitkgp.in'")
+      .required("Required!"),
+    password: Yup.string()
+      .min(8, "Must be at least 8 characters long!")
+      .required("Required!"),
+    confirmPass: Yup.string()
+      .min(8, "Must be at least 8 characters long")
+      .oneOf([Yup.ref("password")], "Passwords do not match!")
+      .required("Required!"),
+  }),
 
-      dateOfBirth: Yup.string().required("Required!"),
-      department: Yup.string().required("Required!"),
-      rollNo: Yup.string().required("Required!"),
-      yearOfPassing: Yup.string().required("Required!"),
-      roomNo: Yup.string().required("Required!"),
-      instiEmail: Yup.string()
-        .email("Invalid email address")
-        .required("Required!"),
-      password: Yup.string()
-        .min(8, "Must be atleast 8 characters long!")
-        .required("Required!"),
-      confirmPass: Yup.string()
-        .min(8, "Must be atleast 8 characters long")
-        .oneOf([Yup.ref("password")], "Password does not match!")
-        .required("Required!"),
-    }),
+  onSubmit: (values) => {
+    alert(JSON.stringify(values, null, 2));
+    console.log("The values are:", values);
+  },
+});
 
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-      console.log("the value is", values);
-    },
-  });
   function handleNext() {
     if((formik.errors.name && formik.touched || formik.errors.rollNo && formik.touched || formik.errors.phone && formik.touched || formik.errors.yearOfPass && formik.touched)&&regPageCount===1){
       // setRegPageCount(regPageCount);
@@ -199,8 +210,22 @@ const Register = () => {
     2: ['personalEmail', 'instiEmail', 'dateOfBirth', 'department'],
     3: ['emergencyPhoneNo', 'roomNo', 'password', 'confirmPass'],
   };
-  
+  const totalSteps = Object.keys(pageFields).length;
+  const progressPercentage = (regPageCount / totalSteps) * 100;
+  const progressBarStyle = {
+    height: '10px',
+    width: `${progressPercentage}%`,
+    backgroundColor: '#ffd050',
+    transition: 'width 0.3s ease-in-out',
+  };
 
+  const containerStyle = {
+    width: '85%',
+    backgroundColor: '#e0e0e0',
+    borderRadius: '5px',
+    overflow: 'hidden',
+    margin: '20px 0',
+  };
   function handleBack() {
     setRegPageCount(regPageCount - 1);
   }
@@ -327,7 +352,9 @@ const Register = () => {
                       style={{ fontSize: "large", cursor: "pointer" }}
                     />
                   )}
-
+        <div style={containerStyle}>
+        <div style={progressBarStyle}></div>
+      </div>
                   {/* page 1 */}
                   {regPageCount === 1 && (
                     <div className="regPage1">
