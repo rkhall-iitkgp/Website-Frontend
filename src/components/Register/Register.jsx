@@ -124,58 +124,70 @@ const Register = () => {
 
   const [regPageCount, setRegPageCount] = useState(1);
   const [isActive, setIsActive] = useState(false);
+ 
+
+ 
+
 
   const phoneRegExp = /^[0-9]{10}$/;
+  const rollNoRegExp = /^(1[0-9]|2[0-9])(AE|AG|AR|BT|CE|CH|CS|CY|EE|EC|EX|GG|HS|IM|MA|ME|MI|MT|NA|PH)[0-9]{5}$/;
 
-  const formik = useFormik({
-    initialValues: {
-      name: "",
-      personalEmail: "",
-      dateOfBirth: "",
-      yearOfPassing: "",
-      phoneNo: "",
-      instiEmail: "",
-      emergencyPhoneNo: "",
-      rollNo: "",
-      department: "",
-      roomNo: "",
-      password: "",
-      confirmPass: "",
-    },
-    validationSchema: Yup.object({
-      name: Yup.string().required("Required!"),
-      personalEmail: Yup.string()
-        .email("Invalid email address")
-        .required("Required!"),
-      phoneNo: Yup.string()
-        .matches(phoneRegExp, "Invalid Phone Number!")
-        .required("Required!"),
+const roomNoRegExp = /^[A-E]-[1-4][0-9]{2}$/;
+const instiEmailRegExp = /^[a-zA-Z0-9._%+-]+@kgpian\.iitkgp\.in$/;
 
-      emergencyPhoneNo: Yup.string()
-        .matches(phoneRegExp, "Invalid Phone Number!")
-        .required("Required!"),
+const formik = useFormik({
+  initialValues: {
+    name: "",
+    personalEmail: "",
+    dateOfBirth: "",
+    yearOfPassing: "",
+    phoneNo: "",
+    instiEmail: "",
+    emergencyPhoneNo: "",
+    rollNo: "",
+    department: "",
+    roomNo: "",
+    password: "",
+    confirmPass: "",
+  },
+  validationSchema: Yup.object({
+    name: Yup.string().required("Required!"),
+    personalEmail: Yup.string()
+      .email("Invalid email address")
+      .required("Required!"),
+    phoneNo: Yup.string()
+      .matches(phoneRegExp, "Invalid Phone Number!")
+      .required("Required!"),
+    emergencyPhoneNo: Yup.string()
+      .matches(phoneRegExp, "Invalid Phone Number!")
+      .required("Required!"),
+    dateOfBirth: Yup.string().required("Required!"),
+    department: Yup.string().required("Required!"),
+    rollNo: Yup.string()
+      .matches(rollNoRegExp, "Invalid Roll Number! Format: 23AE30023")
+      .required("Required!"),
+    yearOfPassing: Yup.string().required("Required!"),
+    roomNo: Yup.string()
+      .matches(roomNoRegExp, "Invalid Room Number! Format: [A-E]-[100-499]")
+      .required("Required!"),
+    instiEmail: Yup.string()
+      .matches(instiEmailRegExp, "Invalid Institute Email! Must contain '@kgpian.iitkgp.in'")
+      .required("Required!"),
+    password: Yup.string()
+      .min(8, "Must be at least 8 characters long!")
+      .required("Required!"),
+    confirmPass: Yup.string()
+      .min(8, "Must be at least 8 characters long")
+      .oneOf([Yup.ref("password")], "Passwords do not match!")
+      .required("Required!"),
+  }),
 
-      dateOfBirth: Yup.string().required("Required!"),
-      department: Yup.string().required("Required!"),
-      rollNo: Yup.string().required("Required!"),
-      yearOfPassing: Yup.string().required("Required!"),
-      roomNo: Yup.string().required("Required!"),
-      instiEmail: Yup.string()
-        .email("Invalid email address")
-        .required("Required!"),
-      password: Yup.string()
-        .min(8, "Must be atleast 8 characters long!")
-        .required("Required!"),
-      confirmPass: Yup.string()
-        .min(8, "Must be atleast 8 characters long")
-        .oneOf([Yup.ref("password")], "Password does not match!")
-        .required("Required!"),
-    }),
+  onSubmit: (values) => {
+    alert(JSON.stringify(values, null, 2));
+    console.log("The values are:", values);
+  },
+});
 
-    onSubmit: (values) => {
-      console.log("the value is", values);
-    },
-  });
   function handleNext() {
     if((formik.errors.name && formik.touched || formik.errors.rollNo && formik.touched || formik.errors.phone && formik.touched || formik.errors.yearOfPass && formik.touched)&&regPageCount===1){
       // setRegPageCount(regPageCount);
@@ -193,7 +205,27 @@ const Register = () => {
     
 
   }
+  const pageFields = {
+    1: ['name', 'rollNo', 'phoneNo', 'yearOfPassing'],
+    2: ['personalEmail', 'instiEmail', 'dateOfBirth', 'department'],
+    3: ['emergencyPhoneNo', 'roomNo', 'password', 'confirmPass'],
+  };
+  const totalSteps = Object.keys(pageFields).length;
+  const progressPercentage = (regPageCount / totalSteps) * 100;
+  const progressBarStyle = {
+    height: '10px',
+    width: `${progressPercentage}%`,
+    backgroundColor: '#ffd050',
+    transition: 'width 0.3s ease-in-out',
+  };
 
+  const containerStyle = {
+    width: '85%',
+    backgroundColor: '#e0e0e0',
+    borderRadius: '5px',
+    overflow: 'hidden',
+    margin: '20px 0',
+  };
   function handleBack() {
     setRegPageCount(regPageCount - 1);
   }
@@ -315,11 +347,14 @@ const Register = () => {
                   </h1>
                   {regPageCount > 1 && (
                     <ArrowBackIosNewIcon
+                    
                       onClick={handleBack}
                       style={{ fontSize: "large", cursor: "pointer" }}
                     />
                   )}
-
+        <div style={containerStyle}>
+        <div style={progressBarStyle}></div>
+      </div>
                   {/* page 1 */}
                   {regPageCount === 1 && (
                     <div className="regPage1">
@@ -331,24 +366,10 @@ const Register = () => {
                         sx={{ marginTop: "1rem", width: "28vmax" }}
                         label="Name"
                         variant="outlined"
+                        error={formik.touched.name && Boolean(formik.errors.name)}
+                  helperText={formik.touched.name && formik.errors.name}
                       />
-                      {formik.errors.name && formik.touched.name ? (
-                        <p
-                          style={{
-                            color: "red",
-                            fontSize: "11px",
-                            textAlign: "right",
-                            marginRight: "13%",
-                            position: "absolute",
-                            width: "28%",
-                          }}
-                        >
-                          {formik.errors.name}
-                        </p>
-                      ) : null}
-                      {errors.name && (
-                        <div className="error">{errors.name[0]}</div>
-                      )}
+                      
 
                       <TextField
                         id="rollNo"
@@ -358,25 +379,10 @@ const Register = () => {
                         sx={{ marginTop: "1rem", width: "28vmax" }}
                         label="Institute Roll No."
                         variant="outlined"
+                        error={formik.touched.rollNo && Boolean(formik.errors.rollNo)}
+                  helperText={formik.touched.rollNo && formik.errors.rollNo}
                       />
-                      {formik.errors.rollNo && formik.touched.rollNo ? (
-                        <p
-                          style={{
-                            color: "red",
-                            fontSize: "11px",
-                            textAlign: "right",
-                            marginTop: "0px",
-                            marginRight: "13%",
-                            position: "absolute",
-                            width: "28%",
-                          }}
-                        >
-                          {formik.errors.rollNo}
-                        </p>
-                      ) : null}
-                      {errors.rollNo && (
-                        <div className="error">{errors.rollNo[0]}</div>
-                      )}
+                      
                       <TextField
                         id="phoneNo"
                         value={formik.values.phoneNo}
@@ -386,26 +392,11 @@ const Register = () => {
                         sx={{ marginTop: "1rem", width: "28vmax" }}
                         label="Mobile No."
                         variant="outlined"
+                        error={formik.touched.phoneNo && Boolean(formik.errors.phoneNo)}
+                  helperText={formik.touched.phoneNo && formik.errors.phoneNo}
                       />
 
-                      {formik.errors.phoneNo && formik.touched.phoneNo ? (
-                        <p
-                          style={{
-                            color: "red",
-                            fontSize: "11px",
-                            textAlign: "right",
-                            marginTop: "0px",
-                            marginRight: "13%",
-                            position: "absolute",
-                            width: "28%",
-                          }}
-                        >
-                          {formik.errors.phoneNo}
-                        </p>
-                      ) : null}
-                      {errors.phoneNo && (
-                        <div className="error">{errors.phoneNo[0]}</div>
-                      )}
+                      
                       <TextField
                         id="yearOfPassing"
                         name="yearOfPassing"
@@ -417,6 +408,8 @@ const Register = () => {
                         sx={{ marginTop: "1rem", width: "28vmax" }}
                         label="Year of Passing"
                         variant="outlined"
+                        error={formik.touched.yearOfPassing && Boolean(formik.errors.yearOfPassing)}
+                  helperText={formik.touched.yearOfPassing && formik.errors.yearOfPassing}
                       >
                         {years.map((option) => (
                           <MenuItem key={option.value} value={option.value}>
@@ -424,27 +417,9 @@ const Register = () => {
                           </MenuItem>
                         ))}
                       </TextField>
-                      {formik.errors.yearOfPassing &&
-                      formik.touched.yearOfPassing ? (
-                        <p
-                          style={{
-                            color: "red",
-                            fontSize: "11px",
-                            textAlign: "right",
-                            marginTop: "0px",
-                            marginRight: "13%",
-                            position: "absolute",
-                            width: "28%",
-                          }}
-                        >
-                          {formik.errors.yearOfPassing}
-                        </p>
-                      ) : null}
-                      {errors.yearOfPassing && (
-                        <div className="error">{errors.yearOfPassing[0]}</div>
-                      )}
-                    </div>
-                  )}
+                      </div>)}
+                      
+                    
 
                   {/* page 2 */}
                   {regPageCount === 2 && (
@@ -460,26 +435,10 @@ const Register = () => {
                         sx={{ marginTop: "1rem", width: "28vmax" }}
                         label="Email Id"
                         variant="outlined"
+                        error={formik.touched.personalEmail && Boolean(formik.errors.personalEmail)}
+                  helperText={formik.touched.personalEmail && formik.errors.personalEmail}
                       />
-                      {formik.errors.personalEmail &&
-                      formik.touched.personalEmail ? (
-                        <p
-                          style={{
-                            color: "red",
-                            fontSize: "11px",
-                            textAlign: "right",
-                            marginTop: "0px",
-                            marginRight: "13%",
-                            position: "absolute",
-                            width: "28%",
-                          }}
-                        >
-                          {formik.errors.personalEmail}
-                        </p>
-                      ) : null}
-                      {errors.personalEmail && (
-                        <div className="error">{errors.personalEmail[0]}</div>
-                      )}
+                      
                       <TextField
                         id="instiEmail"
                         onBlur={formik.handleBlur}
@@ -489,25 +448,9 @@ const Register = () => {
                         sx={{ marginTop: "1rem", width: "28vmax" }}
                         label="Institute Email Id"
                         variant="outlined"
+                        error={formik.touched.instiEmail && Boolean(formik.errors.instiEmail)}
+                  helperText={formik.touched.instiEmail && formik.errors.instiEmail}
                       />
-                      {formik.errors.instiEmail && formik.touched.instiEmail ? (
-                        <p
-                          style={{
-                            color: "red",
-                            fontSize: "11px",
-                            textAlign: "right",
-                            marginTop: "0px",
-                            marginRight: "13%",
-                            position: "absolute",
-                            width: "28%",
-                          }}
-                        >
-                          {formik.errors.instiEmail}
-                        </p>
-                      ) : null}
-                      {errors.instiEmail && (
-                        <div className="error">{errors.instiEmail[0]}</div>
-                      )}
                       <TextField
                         id="dateOfBirth"
                         onBlur={formik.handleBlur}
@@ -526,26 +469,10 @@ const Register = () => {
                           onFocus: () => setIsActive(true),
                           onBlur: () => setIsActive(false),
                         }}
+                        error={formik.touched.dateOfBirth && Boolean(formik.errors.dateOfBirth)}
+                  helperText={formik.touched.dateOfBirth && formik.errors.dateOfBirth}
                       />
-                      {formik.errors.dateOfBirth &&
-                      formik.touched.dateOfBirth ? (
-                        <p
-                          style={{
-                            color: "red",
-                            fontSize: "11px",
-                            textAlign: "right",
-                            marginTop: "0px",
-                            marginRight: "13%",
-                            position: "absolute",
-                            width: "28%",
-                          }}
-                        >
-                          {formik.errors.dateOfBirth}
-                        </p>
-                      ) : null}
-                      {errors.dateOfBirth && (
-                        <div className="error">{errors.dateOfBirth[0]}</div>
-                      )}
+                      
                       <TextField
                         id="department"
                         onBlur={formik.handleBlur}
@@ -554,27 +481,11 @@ const Register = () => {
                         sx={{ marginTop: "1rem", width: "28vmax" }}
                         label="Department"
                         variant="outlined"
+                        error={formik.touched.department && Boolean(formik.errors.department)}
+                  helperText={formik.touched.department && formik.errors.department}
                       ></TextField>
-                      {formik.errors.department && formik.touched.department ? (
-                        <p
-                          style={{
-                            color: "red",
-                            fontSize: "11px",
-                            textAlign: "right",
-                            marginTop: "0px",
-                            marginRight: "13%",
-                            position: "absolute",
-                            width: "28%",
-                          }}
-                        >
-                          {formik.errors.department}
-                        </p>
-                      ) : null}
-                      {errors.department && (
-                        <div className="error">{errors.department[0]}</div>
-                      )}
-                    </div>
-                  )}
+                      </div>)}
+                      
 
                   {/* page 3 */}
                   {regPageCount === 3 && (
@@ -587,29 +498,11 @@ const Register = () => {
                         sx={{ marginTop: "1rem", width: "28vmax" }}
                         label="Emergency Mobile No."
                         variant="outlined"
+                        error={formik.touched.emergencyPhoneNo && Boolean(formik.errors.emergencyPhoneNo)}
+                  helperText={formik.touched.emergencyPhoneNo && formik.errors.emergencyPhoneNo}
                       />
 
-                      {formik.errors.emergencyPhoneNo &&
-                      formik.touched.emergencyPhoneNo ? (
-                        <p
-                          style={{
-                            color: "red",
-                            fontSize: "11px",
-                            textAlign: "right",
-                            marginTop: "0px",
-                            marginRight: "13%",
-                            position: "absolute",
-                            width: "28%",
-                          }}
-                        >
-                          {formik.errors.emergencyPhoneNo}
-                        </p>
-                      ) : null}
-                      {errors.emergencyPhoneNo && (
-                        <div className="error">
-                          {errors.emergencyPhoneNo[0]}
-                        </div>
-                      )}
+                      
 
                       <TextField
                         id="roomNo"
@@ -619,26 +512,11 @@ const Register = () => {
                         sx={{ marginTop: "1rem", width: "28vmax" }}
                         label="Room No."
                         variant="outlined"
+                        error={formik.touched.roomNo && Boolean(formik.errors.roomNo)}
+                  helperText={formik.touched.roomNo && formik.errors.roomNo}
                       />
 
-                      {formik.errors.roomNo && formik.touched.roomNo ? (
-                        <p
-                          style={{
-                            color: "red",
-                            fontSize: "11px",
-                            textAlign: "right",
-                            marginTop: "0px",
-                            marginRight: "13%",
-                            position: "absolute",
-                            width: "28%",
-                          }}
-                        >
-                          {formik.errors.roomNo}
-                        </p>
-                      ) : null}
-                      {errors.roomNo && (
-                        <div className="error">{errors.roomNo[0]}</div>
-                      )}
+                      
                       <FormControl
                         sx={{ marginTop: "1rem", width: "28vmax" }}
                         variant="outlined"
@@ -751,12 +629,31 @@ const Register = () => {
                       )}
                     </div>
                   )}
+                  
 
                   {/* <TextField value={email} onChange={(e) => setEmail(e.target.value)} sx={{ marginTop: '1.5rem', width: '28vmax' }} label="Email" size='small' variant="filled" /> */}
                   {/* <TextField value={password} onChange={(e) => setPassword(e.target.value)} sx={{ marginTop: '1.5rem', width: '28vmax' }} label="Password" variant="filled" /> */}
                   {regPageCount <= 2 && (
                     <Button
-                      onClick={handleNext}
+                      onClick={async ()=>{
+                        const fieldsToValidate = pageFields[regPageCount];
+                        await formik.validateForm(); // Validate all fields
+                        const errors = formik.errors;
+                        
+                        // Check for errors in the current page's fields
+                        const hasErrors = fieldsToValidate.some((field) => errors[field]);
+                        const hasEmptyFields = fieldsToValidate.some(
+                          (field) => formik.values[field] === ''
+                        );
+
+                        if (!hasErrors && !hasEmptyFields) {
+                          handleNext(); // Proceed to the next page
+                        } else {
+                          fieldsToValidate.forEach((field) => {
+                            formik.setFieldTouched(field, true, true); // Mark fields as touched to show errors
+                          });
+                        }
+                        }}
                       sx={{
                         marginTop: "1.5rem",
                         background: "black",
@@ -770,8 +667,28 @@ const Register = () => {
                     </Button>
                   )}
                   {regPageCount === 3 && (
+
                     <Button
                       type="submit"
+                      onClick={async ()=>{
+                        const fieldsToValidate = pageFields[regPageCount];
+                        await formik.validateForm(); // Validate all fields
+                        const errors = formik.errors;
+                        
+                        // Check for errors in the current page's fields
+                        const hasErrors = fieldsToValidate.some((field) => errors[field]);
+                        const hasEmptyFields = fieldsToValidate.some(
+                          (field) => formik.values[field] === ''
+                        );
+
+                        if (!hasErrors && !hasEmptyFields) {
+                          handleNext(); // Proceed to the next page
+                        } else {
+                          fieldsToValidate.forEach((field) => {
+                            formik.setFieldTouched(field, true, true); // Mark fields as touched to show errors
+                          });
+                        }
+                        }}
                       sx={{
                         marginTop: "1.5rem",
                         background: "black",

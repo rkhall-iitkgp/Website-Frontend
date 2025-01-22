@@ -21,6 +21,9 @@ const validationSchema = yup.object({
 
 const Login = ({ setPage, email, setEmail, backpage, setBackPage }) => {
   // const [email, setEmail] = useState('');
+  const pageFields = {
+    0: ['email'],
+  };
 
   const isMobile = useMediaQuery("(max-width: 920px)");
   const divStyle = !isMobile
@@ -143,9 +146,16 @@ const Login = ({ setPage, email, setEmail, backpage, setBackPage }) => {
                 />
 
                 <Button
-                  onClick={() => {
-                    setPage("plogin");
-                    setBackPage("login");
+                  onClick={async () => {
+                    await formik.validateForm(); 
+                    const hasErrors = Object.keys(formik.errors).length > 0; 
+                   const hasEmptyFields = Object.values(formik.values).some(value => value === '');
+                    if (formik.isValid&& !hasErrors && !hasEmptyFields) { 
+
+   
+                      setPage("ologin");
+                      setBackPage("login");
+                      }
                   }}
                   sx={{
                     marginTop: "1.5rem",
@@ -181,9 +191,20 @@ const Login = ({ setPage, email, setEmail, backpage, setBackPage }) => {
                     width: "28vmax",
                     "&:hover": { background: "#FFD050" },
                   }}
-                  onClick={() => {
-                    setPage("ologin");
-                    setBackPage("login");
+                  onClick={async() => {
+                    const fieldsToValidate = pageFields[0];
+                    await formik.validateForm(); 
+
+                    const hasErrors = Object.keys(formik.errors).length > 0; 
+                   const hasEmptyFields = Object.values(formik.values).some(value => value === '');
+                    if (formik.isValid&& !hasErrors && !hasEmptyFields) { 
+                        setPage("ologin"); 
+                        setBackPage("login"); }
+                        else {
+                          fieldsToValidate.forEach((field) => {
+                            formik.setFieldTouched(field, true, true); // Mark fields as touched to show errors
+                          });
+                        }
                   }}
                   variant="contained"
                 >
