@@ -69,39 +69,47 @@ const Register = () => {
   //   }
   // };
   const submithandler = async (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
-    const { confirmPass, ...requestData } = formik.values;
-    let d = requestData.dateOfBirth.split("-");
-    requestData.dateOfBirth = `${d[2]}-${d[1]}-${d[0]}`;
-    console.log(requestData);
+    event.preventDefault(); // Prevent default form submission
+  
+    // Remove confirm password field before sending
+    const requestData = {
+      name: formik.values.name,
+      rollNumber: formik.values.rollNo,
+      phoneNumber: String(formik.values.phoneNo),
+      yearOfPassing: parseInt(formik.values.yearOfPassing), 
+      emailId: formik.values.personalEmail,
+      instituteEmailId: formik.values.instiEmail,
+      dateOfBirth: formik.values.dateOfBirth,
+      emergencyMobileNumber: String(formik.values.emergencyPhoneNo),
+      roomNumber: formik.values.roomNo,
+      password: formik.values.password,
+    };
+  
+    console.log("Final requestData:", requestData);
+  
     try {
-      console.log("requstData", requestData);
-      // Make an HTTP POST request to the /register route
+      // Ensure backend URL is correctly set
+      console.log("Backend URL:", process.env.REACT_APP_BACKEND_URL);
+  
       const response = await axios.post(
-        process.env.REACT_APP_BACKEND_URL + "/register",
+        `${process.env.REACT_APP_BACKEND_URL}/register`,
         requestData,
-        {
-          headers: {
-            "Content-Type": "application/json", // Specify the content type as JSON
-          },
-        }
+        { headers: { "Content-Type": "application/json" } }
       );
-      console.log("payload", response.config.data);
-      // Check if the response is successful
+  
       if (response.status === 200) {
-        // If successful, you can handle the response as needed
         console.log("Registration successful:", response.data);
-        toast.success("Registrastion Successful");
+        toast.success("Registration Successful");
       } else {
-        // If not successful, handle the error
         console.error("Registration failed:", response.statusText);
-        toast.error("Registration Failed! ");
+        toast.error("Registration Failed!");
       }
     } catch (error) {
-      toast.error(error.message);
       console.error("Error registering:", error);
+      toast.error(error.response?.data?.message || "Network Error! Try again.");
     }
   };
+  
 
   const [errors, setErrors] = useState({});
 
@@ -183,7 +191,6 @@ const formik = useFormik({
   }),
 
   onSubmit: (values) => {
-    alert(JSON.stringify(values, null, 2));
     console.log("The values are:", values);
   },
 });
@@ -682,7 +689,7 @@ const formik = useFormik({
                         );
 
                         if (!hasErrors && !hasEmptyFields) {
-                          handleNext(); // Proceed to the next page
+                          formik.handleSubmit();
                         } else {
                           fieldsToValidate.forEach((field) => {
                             formik.setFieldTouched(field, true, true); // Mark fields as touched to show errors

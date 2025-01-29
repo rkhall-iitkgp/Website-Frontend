@@ -50,15 +50,19 @@ const PasswordLogin = ({ setPage, email, setEmail, backpage, setBackPage }) => {
 
   const handleLogin = async () => {
     console.log("details", details);
+    const requetData = {
+      emailId: details.email,
+      password: details.password,
+    };
     try {
       const response = await fetch(
-        process.env.REACT_APP_BACKEND_URL + "login/password",
+        process.env.REACT_APP_BACKEND_URL + "/login",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(details),
+          body: JSON.stringify(requetData),
         }
       );
       if (!response.ok) {
