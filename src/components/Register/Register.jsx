@@ -29,7 +29,6 @@ import { useMediaQuery } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 const Register = () => {
   // const [details, setDetails] = useState({
   //   email: "",
@@ -141,7 +140,7 @@ const Register = () => {
   const rollNoRegExp = /^(1[0-9]|2[0-9])(AE|AG|AR|BT|CE|CH|CS|CY|EE|EC|EX|GG|HS|IM|MA|ME|MI|MT|NA|PH)[0-9]{5}$/;
 
 const roomNoRegExp = /^[A-E]-[1-4][0-9]{2}$/;
-const instiEmailRegExp = /^[a-zA-Z0-9._%+-]+@kgpian\.iitkgp\.in$/;
+const instiEmailRegExp = /^[a-zA-Z0-9._%+-]+@kgpian\.iitkgp\.ac.in$/;
 
 const formik = useFormik({
   initialValues: {
@@ -179,7 +178,7 @@ const formik = useFormik({
       .matches(roomNoRegExp, "Invalid Room Number! Format: [A-E]-[100-499]")
       .required("Required!"),
     instiEmail: Yup.string()
-      .matches(instiEmailRegExp, "Invalid Institute Email! Must contain '@kgpian.iitkgp.in'")
+      .matches(instiEmailRegExp, "Invalid Institute Email! Must contain '@kgpian.iitkgp.ac.in'")
       .required("Required!"),
     password: Yup.string()
       .min(8, "Must be at least 8 characters long!")
