@@ -2,97 +2,97 @@ import styles from "./css/Footer.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
+  faInstagram,
   faYoutube,
-  faTwitter,
   faLinkedin,
-  faInstagram
 } from "@fortawesome/free-brands-svg-icons";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
-import img from "./mailbox.png";
-import { useForm, ValidationError } from '@formspree/react';
 
 function Footer() {
-  // fa
-const [state, handleSubmit] = useForm("xeqweyvv");
-if (state.succeeded) {
-  return window.location.reload();
-}
-
   return (
-    <footer id="footer" >
-      <Box bgcolor="#8DD3BB" color="black" className={styles.footer}>
-        <Grid container className={styles.query}>
-          <Grid item className={styles.querytext}>
-            <div>
-              <p>Any Queries?</p>
-              <p>Don't worry, write to us!</p>
-            </div>
-            <form
-              className={styles.emailsubmit}
-              method="POST" onSubmit={handleSubmit}
-            >
-              <input
-                className={styles.email}
-                type="message"
-                id="message"
-                name="message"
-                placeholder="Write to Us"
+    <footer className={styles.footer}>
+      <Container maxWidth="lg" className={styles.footerContent}>
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={4}>
+            <div className={styles.logoSection}>
+              <img
+                src="https://www.rkhall.in/static/media/rklogo_1.90345b10f462fbbf0d72.png"
+                alt="Radhakrishnan Hall Logo"
+                className={styles.logoImage}
               />
-              <button type="submit" className={styles.submit} disabled={state.submitting}>
-                Submit
-              </button>
-            </form>
+              <div>
+                <div className={styles.logo}>Radhakrishnan Hall</div>
+                <p className={styles.description}>
+                  Indian Institute of Technology, Kharagpur
+                </p>
+              </div>
+            </div>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <div className={styles.contactUs}>
+              <h4>Contact Us</h4>
+              <p>
+                <strong>Email:</strong> rk.iitkgp@gmail.com
+              </p>
+              <p>
+                <strong>Phone:</strong> 988-580-7077
+              </p>
+              <p>
+                <strong>Phone:</strong> 887-382-5020
+              </p>
+            </div>
           </Grid>
 
-          <Grid item className={styles.image} xs={12} md={5}>
-            <img src={img} alt="subs" />
-          </Grid>
-        </Grid>
-
-        <Container maxwidth="lg" className={styles.lowerFooter}>
-          <div className={styles.logoLinks}>
-          <a target="_blank" href="https://www.geocities.ws/rkhall_iitkgp/index.htm" style={{color:"black"}}><div className={styles.logo}>RKH</div></a>
-            <div className={styles.verticalDivider}></div>
-            <div className={styles.socialLinksContainer}>
-              <div className={styles.socialLinks}>
+          {/* Social Media */}
+          <Grid item xs={12} md={4}>
+            <div className={styles.socialLinks}>
+              <h4>Follow Us</h4>
+              <p>Stay connected on our social platforms:</p>
+              <div className={styles.icons}>
                 <Link
                   target="_blank"
                   href="https://www.facebook.com/groups/5971048020"
+                  className={styles.socialLink}
                 >
-                  <FontAwesomeIcon icon={faFacebook} className={styles.socialIcons} />
+                  <FontAwesomeIcon icon={faFacebook} className={styles.icon} />
+                  {/* <span>Facebook</span> */}
                 </Link>
-              </div>
-              <div>
                 <Link
                   target="_blank"
                   href="https://www.youtube.com/@radhakrishnanhall10"
+                  className={styles.socialLink}
                 >
-                  <FontAwesomeIcon icon={faYoutube} className={styles.socialIcons} />
+                  <FontAwesomeIcon icon={faYoutube} className={styles.icon} />
+                  {/* <span>YouTube</span> */}
                 </Link>
-              </div>
-              <div>
+                <Link
+                  target="_blank"
+                  href="https://www.instagram.com/rkh.iitkgp/"
+                  className={styles.socialLink}
+                >
+                  <FontAwesomeIcon icon={faInstagram} className={styles.icon} />
+                  {/* <span>Instagram</span> */}
+                </Link>
                 <Link
                   target="_blank"
                   href="https://www.linkedin.com/groups/4072350/"
+                  className={styles.socialLink}
                 >
-                  <FontAwesomeIcon icon={faLinkedin} className={styles.socialIcons} />
-                </Link>
-              </div>
-              <div>
-              <Link
-                  target="_blank"
-                  href="https://www.instagram.com/rkh.iitkgp/"
-                >
-                  <FontAwesomeIcon icon={faInstagram} className={styles.socialIcons}/>
+                  <FontAwesomeIcon icon={faLinkedin} className={styles.icon} />
+                  {/* <span>LinkedIn</span> */}
                 </Link>
               </div>
             </div>
-          </div>
-        </Container>
-      </Box>
+          </Grid>
+        </Grid>
+      </Container>
+
+      {/* Footer Bottom */}
+      <div className={styles.footerBottom}>
+        <p>&copy; 2024 Radhakrishnan Hall. All Rights Reserved.</p>
+      </div>
     </footer>
   );
 }
