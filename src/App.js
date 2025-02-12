@@ -11,6 +11,8 @@ import ForgetPassword from "./components/Login/forgetpassword";
 import PasswordLogin from "./components/Login/passwordlogin";
 import Register from "./components/Register/Register";
 import ComingSoon from "./pages/Galllery/comingsoon";
+import DashboardUI from "./pages/Profile/dashboard";
+
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
         <Route path="/forgetpassword" element={<ForgetPassword />}></Route>
         <Route path="/loginpassword" element={<PasswordLogin />}></Route>
         <Route path="/Register" element={<Register />}></Route>
+        <Route path="/dashboard" element={<DashboardUI/>}></Route>
         <Route path="/coming-soon" element={<ComingSoon />}></Route>
 
       </Routes>
