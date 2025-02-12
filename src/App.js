@@ -11,7 +11,7 @@ import ForgetPassword from "./components/Login/forgetpassword";
 import PasswordLogin from "./components/Login/passwordlogin";
 import Register from "./components/Register/Register";
 import ComingSoon from "./pages/Gallery/ComingSoon";
-
+import RegisterOTP from "./components/Register/RegisterOTP";
 function App() {
   return (
     <BrowserRouter>
@@ -27,6 +27,7 @@ function App() {
         <Route path="/loginpassword" element={<PasswordLogin />}></Route>
         <Route path="/Register" element={<Register />}></Route>
         <Route path="/coming-soon" element={<ComingSoon />}></Route>
+        <Route path="/verify-email" element={<RegisterOTP />}></Route>
       </Routes>
     </BrowserRouter>
   );

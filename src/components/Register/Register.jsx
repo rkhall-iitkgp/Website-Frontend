@@ -28,8 +28,10 @@ import { Typography, colors } from "@mui/material";
 import { useMediaQuery } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 const Register = () => {
+  const navigate = useNavigate()
   // const [details, setDetails] = useState({
   //   email: "",
   //   password: "",
@@ -68,6 +70,7 @@ const Register = () => {
   //   }
   // };
   const submithandler = async (event) => {
+    
     event.preventDefault(); // Prevent default form submission
   
     // Remove confirm password field before sending
@@ -96,9 +99,11 @@ const Register = () => {
         { headers: { "Content-Type": "application/json" } }
       );
   
-      if (response.status === 200) {
+      if (response.status === 201) {
         console.log("Registration successful:", response.data);
-        toast.success("Registration Successful");
+        await toast.success("Registration Successful");
+        navigate("/verify-email", { state: { email : formik.values.personalEmail  } });
+
       } else {
         console.error("Registration failed:", response.statusText);
         toast.error("Registration Failed!");
@@ -285,6 +290,7 @@ const formik = useFormik({
 
   return (
     <>
+    
       <ToastContainer />
       <form
         className="register_form"
