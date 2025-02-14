@@ -1,35 +1,24 @@
 import React from "react";
 import "./profileCard.css";
 
-const ProfileCard = () => {
+const ProfileCard = ({ onClose }) => {
   return (
-    <div className="card-container">
-      <div className="card">
-        <label htmlFor="department" className="label">
-          Enter your Department :
-        </label>
-        <input
-          type="text"
-          id="department"
-          placeholder="Your Department"
-          className="input"
-        />
+    <div className="card">
+      <button className="exit-button" onClick={onClose}>×</button>
+      <p className="rk-id">Your RK Id : Xyyy ( default )</p>
 
-        <p className="rk-id">Your RK Id : Xyyy ( default )</p>
-
-        <div className="image-upload">
-          <button className="upload-button">
-            <img
-              src="/camera-icon.png" // replace with your camera icon URL
-              alt="Upload"
-              className="camera-icon"
-            />
-          </button>
-          <p className="upload-text">Edit your profile Image</p>
-        </div>
-
-        <button className="save-button">Save</button>
+      <div className="image-upload">
+        <button className="upload-button">
+          <img
+            src="/camera-icon.png"
+            alt="Upload"
+            className="camera-icon"
+          />
+        </button>
+        <p className="upload-text">Edit your profile Image</p>
       </div>
+
+      <button className="save-button">Save</button>
     </div>
   );
 };

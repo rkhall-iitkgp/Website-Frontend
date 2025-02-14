@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./profileCard.css";
+import { FaEdit } from "react-icons/fa";
 
 const YourInfo = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -26,7 +27,7 @@ const YourInfo = () => {
     setEditableInfo((prev) => ({ ...prev, [name]: value }));
   };
   return (
-    <div className="info-card-container">
+    <div>
       {!isEditing ? (
         <div className="info-card">
           <h2 className="info-title">Your Information</h2>
@@ -43,7 +44,7 @@ const YourInfo = () => {
             <strong>Room No.:</strong> {YourInfo.roomNumber}
           </p>
           <button className="edit-button" onClick={handleEditClick}>
-            ✏️
+            <FaEdit />
           </button>
         </div>
       ) : (
