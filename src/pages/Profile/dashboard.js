@@ -37,8 +37,40 @@ const Dashboard = () => {
       description: "Building responsive and interactive user interfaces"
     },
   ];
+  
   const [showProfileCard, setShowProfileCard] = useState(false);
   const [showAddProfile, setShowAddProfile] = useState(false);
+  const certificates = [
+    {
+      title: "Certificate of Completion",
+      issuedBy: "Coursera",
+      issueDate: "2022",
+      description: "Completed the 'Python for Everybody' course"
+    },
+    {
+      title: "Advanced Web Development Certification",
+      issuedBy: "Google",
+      issueDate: "2023",
+      description: "Completed the Advanced Web Development course"
+    },
+  ];
+
+  const projects = [
+    {
+      title: "E-Commerce Platform",
+      company: "Personal Project",
+      year: "2023",
+      description: "Built a full-stack e-commerce platform using MERN stack with features like user authentication, product management, and payment integration.",
+      image: null
+    },
+    {
+      title: "Portfolio Website",
+      company: "Client Project",
+      year: "2022",
+      description: "Designed and developed a responsive portfolio website using React.js and modern CSS techniques.",
+      image: null
+    },
+  ];
 
   return (
     <div className="dashboard-container">
@@ -208,6 +240,96 @@ const Dashboard = () => {
           </div>
         </section>
 
+        {/* Certificates Section */}
+        <section className="content-section">
+          <div className="section-header">
+            <h3>Certificates</h3>
+            <button className="edit-button">
+              <FaPlus />
+            </button>
+          </div>
+          <div className="experience-cards">
+            {certificates.map((cert, index) => (
+              <div key={index} className="experience-card">
+                <div className="cert-content">
+                  <div className="exp-header">
+                    <h4>{cert.title}</h4>
+                    <span className="company-name">{cert.issuedBy}</span>
+                  </div>
+                  <span className="exp-duration">{cert.issueDate}</span>
+                  <p className="exp-description">{cert.description}</p>
+                </div>
+                <div className="cert-image-section">
+                  <div className="image-upload-area">
+                    <input
+                      type="file"
+                      id={`cert-image-${index}`}
+                      className="image-input"
+                      accept="image/*"
+                      hidden
+                    />
+                    <label htmlFor={`cert-image-${index}`} className="upload-label">
+                      {cert.image ? (
+                        <img src={cert.image} alt="Certificate" className="uploaded-cert" />
+                      ) : (
+                        <div className="upload-placeholder">
+                          <FaPlus />
+                          <span>Add Certificate Image</span>
+                        </div>
+                      )}
+                    </label>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section className="content-section">
+          <div className="section-header">
+            <h3>Projects</h3>
+            <button className="edit-button">
+              <FaPlus />
+            </button>
+          </div>
+          <div className="experience-cards">
+            {projects.map((project, index) => (
+              <div key={index} className="experience-card">
+                <div className="cert-content">
+                  <div className="exp-header">
+                    <h4>{project.title}</h4>
+                    <span className="company-name">{project.company}</span>
+                  </div>
+                  <span className="exp-duration">{project.year}</span>
+                  <p className="exp-description">{project.description}</p>
+                </div>
+                <div className="cert-image-section">
+                  <div className="image-upload-area">
+                    <input
+                      type="file"
+                      id={`project-image-${index}`}
+                      className="image-input"
+                      accept="image/*"
+                      hidden
+                    />
+                    <label htmlFor={`project-image-${index}`} className="upload-label">
+                      {project.image ? (
+                        <img src={project.image} alt="Project" className="uploaded-cert" />
+                      ) : (
+                        <div className="upload-placeholder">
+                          <FaPlus />
+                          <span>Add Project Image</span>
+                        </div>
+                      )}
+                    </label>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Add ProfileCard Modal */}
         {showProfileCard && (
           <div style={overlayStyle}>
@@ -276,3 +398,25 @@ const closeButtonStyle = {
 };
 
 export default Dashboard;
+
+
+/*
+data = {
+  experiences:
+    [{
+      name : ,
+      copny nane:
+      date:
+      description
+    },{},{},{}]
+}
+  
+Experiencedata = data.experiences
+Experiencedata.forEach((experience,i)=>{
+  return (
+    <h1>experience.name</h1>
+  )
+  })
+<h1>ame</h1>
+
+*/
