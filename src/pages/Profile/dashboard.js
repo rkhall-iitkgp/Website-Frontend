@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./css/dashboardUI.css";
-import { FaEdit, FaPlus } from "react-icons/fa";
+import { FaEdit, FaPlus, FaTrash } from "react-icons/fa";
 // import { Dashboard } from "@mui/icons-material";
 import YourInfo from "./Component/yourInfo";
 import AddSkillModal from "./Component/skill";
@@ -13,30 +13,19 @@ const Dashboard = () => {
   const [showSkillModal, setShowSkillModal] = useState(false);
   const [showInfoModal, setShowInfoModal] = useState(false);
   const [showWriteAbout, setShowWriteAbout] = useState(false);
+  const [showExperienceModal, setShowExperienceModal] = useState(false);
   const [aboutText, setAboutText] = useState(
-    "Final year student at IIT Kharagpur with a passion for technology and innovation. Specializing in Civil Engineering with a focus on sustainable development."
+    "Write about yourself here"
   );
-  const skills = ["JavaScript", "React", "Node.js", "CSS", "HTML", "Python", "Git", "MongoDB"];
-  const experiences = [
-    { 
-      title: "UI/UX Designer",
-      company: "Tech Solutions Inc.",
-      year: "2018 - 2022",
-      description: "Led design initiatives for enterprise applications"
-    },
-    { 
-      title: "Full-Stack Developer",
-      company: "Innovation Labs",
-      year: "2019 - 2023",
-      description: "Developed scalable web applications using MERN stack"
-    },
-    { 
-      title: "Frontend Developer",
-      company: "Digital Creators",
-      year: "2020 - Present",
-      description: "Building responsive and interactive user interfaces"
-    },
-  ];
+  const [skills, setSkills] = useState([]);
+  const [newSkill, setNewSkill] = useState("");
+  const [experiences, setExperiences] = useState([]);
+  const [newExperience, setNewExperience] = useState({
+    title: '',
+    company: '',
+    year: '',
+    description: ''
+  });
   
   const [showProfileCard, setShowProfileCard] = useState(false);
   const [showAddProfile, setShowAddProfile] = useState(false);
@@ -71,6 +60,47 @@ const Dashboard = () => {
       image: null
     },
   ];
+
+  const [editingExperience, setEditingExperience] = useState(null);
+  const [editIndex, setEditIndex] = useState(null);
+
+  const handleAddExperience = () => {
+    if (editIndex !== null) {
+      // Update existing experience
+      const updatedExperiences = [...experiences];
+      updatedExperiences[editIndex] = newExperience;
+      setExperiences(updatedExperiences);
+      setEditIndex(null);
+    } else {
+      // Add new experience
+      setExperiences([...experiences, newExperience]);
+    }
+    setNewExperience({ title: '', company: '', year: '', description: '' });
+    setShowExperienceModal(false);
+  };
+
+  const handleEditExperience = (exp, index) => {
+    setNewExperience(exp);
+    setEditIndex(index);
+    setShowExperienceModal(true);
+  };
+
+  const handleDeleteExperience = (index) => {
+    const updatedExperiences = experiences.filter((_, i) => i !== index);
+    setExperiences(updatedExperiences);
+  };
+
+  const handleAddSkill = () => {
+    if (newSkill.trim()) {
+      setSkills([...skills, newSkill.trim()]);
+      setNewSkill("");
+      setShowSkillModal(false);
+    }
+  };
+
+  const handleDeleteSkill = (indexToDelete) => {
+    setSkills(skills.filter((_, index) => index !== indexToDelete));
+  };
 
   return (
     <div className="dashboard-container">
@@ -161,29 +191,80 @@ const Dashboard = () => {
         <section className="content-section">
           <div className="section-header">
             <h3>Skills</h3>
-            <button className="edit-button"><FaPlus /></button>
+            <button 
+              className="edit-button"
+              onClick={() => {
+                setNewSkill("");
+                setShowSkillModal(true);
+              }}
+            >
+              <FaPlus />
+            </button>
           </div>
           <div className="skills-container">
             <div className="skills-grid">
               {skills.map((skill, index) => (
                 <div key={index} className="skill-tag">
                   {skill}
+                  <button 
+                    onClick={() => handleDeleteSkill(index)}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      marginLeft: '8px',
+                      cursor: 'pointer',
+                      color: '#666',
+                      padding: '0 4px'
+                    }}
+                  >
+                    <FaTrash size={12} />
+                  </button>
                 </div>
               ))}
             </div>
-            <button 
-              className="add-skill-btn"
-              onClick={() => setShowSkillModal(true)}
-            >
-              <FaPlus className="add-icon" />
-              <span>Add new skill</span>
-            </button>
           </div>
         </section>
 
         {/* Skill Modal */}
         {showSkillModal && (
-          <AddSkillModal onClose={() => setShowSkillModal(false)} />
+          <div style={overlayStyle}>
+            <div style={{...modalStyle, width: '400px'}}>
+              <button 
+                style={closeButtonStyle}
+                onClick={() => setShowSkillModal(false)}
+              >
+                ×
+              </button>
+              <div style={formStyle}>
+                <h3 style={modalTitleStyle}>Add New Skill</h3>
+                <div style={formGroupStyle}>
+                  <label style={labelStyle}>Skill Name</label>
+                  <input
+                    type="text"
+                    placeholder="e.g., JavaScript, Python, React"
+                    value={newSkill}
+                    onChange={(e) => setNewSkill(e.target.value)}
+                    style={enhancedInputStyle}
+                  />
+                </div>
+                <div style={buttonContainerStyle}>
+                  <button 
+                    onClick={() => setShowSkillModal(false)}
+                    style={cancelButtonStyle}
+                  >
+                    Cancel
+                  </button>
+                  <button 
+                    onClick={handleAddSkill}
+                    style={enhancedSaveButtonStyle}
+                    disabled={!newSkill.trim()}
+                  >
+                    Add Skill
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         )}
 
         {showInfoModal && (
@@ -224,21 +305,132 @@ const Dashboard = () => {
         <section className="content-section">
           <div className="section-header">
             <h3>Experience</h3>
-            <button className="edit-button"><FaPlus /></button>
+            <button 
+              className="edit-button"
+              onClick={() => {
+                setEditIndex(null);
+                setNewExperience({ title: '', company: '', year: '', description: '' });
+                setShowExperienceModal(true);
+              }}
+            >
+              <FaPlus />
+            </button>
           </div>
           <div className="experience-cards">
-            {experiences.map((exp, index) => (
-              <div key={index} className="experience-card">
-                <div className="exp-header">
-                  <h4>{exp.title}</h4>
-                  <span className="company-name">{exp.company}</span>
-                </div>
-                <span className="exp-duration">{exp.year}</span>
-                <p className="exp-description">{exp.description}</p>
+            {experiences.length === 0 ? (
+              <div className="empty-state">
+                No experiences added yet. Click the plus button to add one.
               </div>
-            ))}
+            ) : (
+              experiences.map((exp, index) => (
+                <div key={index} className="experience-card">
+                  <div className="exp-header">
+                    <div className="exp-title-section">
+                      <h4>{exp.title}</h4>
+                      <span className="company-name">{exp.company}</span>
+                    </div>
+                    <div style={actionContainerStyle}>
+                      <button 
+                        style={actionIconStyle}
+                        className="edit-icon"
+                        onClick={() => handleEditExperience(exp, index)}
+                        title="Edit Experience"
+                      >
+                        <FaEdit size={15} />
+                      </button>
+                      <button 
+                        style={{...actionIconStyle, marginLeft: '8px'}}
+                        className="delete-icon"
+                        onClick={() => handleDeleteExperience(index)}
+                        title="Delete Experience"
+                      >
+                        <FaTrash size={15} />
+                      </button>
+                    </div>
+                  </div>
+                  <span className="exp-duration">{exp.year}</span>
+                  <p className="exp-description">{exp.description}</p>
+                </div>
+              ))
+            )}
           </div>
         </section>
+
+        {/* Experience Modal */}
+        {showExperienceModal && (
+          <div style={overlayStyle}>
+            <div style={{...modalStyle, width: '500px'}}>
+              <button 
+                style={closeButtonStyle}
+                onClick={() => {
+                  setShowExperienceModal(false);
+                  setEditIndex(null);
+                  setNewExperience({ title: '', company: '', year: '', description: '' });
+                }}
+              >×</button>
+              <div className="experience-form" style={formStyle}>
+                <h3 style={modalTitleStyle}>{editIndex !== null ? 'Edit Experience' : 'Add New Experience'}</h3>
+                <div style={formGroupStyle}>
+                  <label style={labelStyle}>Position/Title</label>
+                  <input
+                    type="text"
+                    placeholder="e.g., Software Engineer"
+                    value={newExperience.title}
+                    onChange={(e) => setNewExperience({...newExperience, title: e.target.value})}
+                    style={enhancedInputStyle}
+                  />
+                </div>
+                <div style={formGroupStyle}>
+                  <label style={labelStyle}>Company Name</label>
+                  <input
+                    type="text"
+                    placeholder="e.g., Tech Solutions Inc."
+                    value={newExperience.company}
+                    onChange={(e) => setNewExperience({...newExperience, company: e.target.value})}
+                    style={enhancedInputStyle}
+                  />
+                </div>
+                <div style={formGroupStyle}>
+                  <label style={labelStyle}>Duration</label>
+                  <input
+                    type="text"
+                    placeholder="e.g., 2020 - Present"
+                    value={newExperience.year}
+                    onChange={(e) => setNewExperience({...newExperience, year: e.target.value})}
+                    style={enhancedInputStyle}
+                  />
+                </div>
+                <div style={formGroupStyle}>
+                  <label style={labelStyle}>Description</label>
+                  <textarea
+                    placeholder="Describe your role and achievements..."
+                    value={newExperience.description}
+                    onChange={(e) => setNewExperience({...newExperience, description: e.target.value})}
+                    style={{...enhancedInputStyle, height: '120px', resize: 'vertical'}}
+                  />
+                </div>
+                <div style={buttonContainerStyle}>
+                  <button 
+                    onClick={() => {
+                      setShowExperienceModal(false);
+                      setEditIndex(null);
+                      setNewExperience({ title: '', company: '', year: '', description: '' });
+                    }}
+                    style={cancelButtonStyle}
+                  >
+                    Cancel
+                  </button>
+                  <button 
+                    onClick={handleAddExperience}
+                    style={enhancedSaveButtonStyle}
+                  >
+                    {editIndex !== null ? 'Update Experience' : 'Save Experience'}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Certificates Section */}
         <section className="content-section">
@@ -395,6 +587,144 @@ const closeButtonStyle = {
   justifyContent: "center",
   transition: "all 0.2s ease",
   zIndex: 2,
+};
+
+const inputStyle = {
+  width: '100%',
+  padding: '10px',
+  marginBottom: '15px',
+  borderRadius: '8px',
+  border: '1px solid #ddd',
+  fontSize: '14px'
+};
+
+const saveButtonStyle = {
+  background: 'var(--primary-color)',
+  color: 'black',
+  padding: '10px 20px',
+  border: 'none',
+  borderRadius: '8px',
+  cursor: 'pointer',
+  fontSize: '14px',
+  fontWeight: '500'
+};
+
+const actionButtonStyle = {
+  background: 'none',
+  border: 'none',
+  cursor: 'pointer',
+  padding: '8px',
+  borderRadius: '6px',
+  transition: 'all 0.2s ease',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  color: '#666',
+};
+
+const formStyle = {
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '20px'
+};
+
+const modalTitleStyle = {
+  fontSize: '24px',
+  fontWeight: '600',
+  color: '#1a1a1a',
+  marginBottom: '8px',
+  textAlign: 'center'
+};
+
+const formGroupStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '8px'
+};
+
+const labelStyle = {
+  fontSize: '14px',
+  fontWeight: '500',
+  color: '#666'
+};
+
+const enhancedInputStyle = {
+  width: '100%',
+  padding: '12px 16px',
+  borderRadius: '8px',
+  border: '1px solid #ddd',
+  fontSize: '14px',
+  transition: 'all 0.2s ease',
+  outline: 'none',
+  backgroundColor: '#f8f8f8',
+  '&:focus': {
+    borderColor: 'var(--primary-color)',
+    backgroundColor: '#fff',
+    boxShadow: '0 0 0 3px rgba(255, 208, 80, 0.2)'
+  }
+};
+
+const buttonContainerStyle = {
+  display: 'flex',
+  gap: '12px',
+  justifyContent: 'flex-end',
+  marginTop: '20px'
+};
+
+const enhancedSaveButtonStyle = {
+  background: 'var(--primary-color)',
+  color: 'black',
+  padding: '12px 24px',
+  border: 'none',
+  borderRadius: '8px',
+  cursor: 'pointer',
+  fontSize: '14px',
+  fontWeight: '500',
+  transition: 'all 0.2s ease',
+  '&:hover': {
+    transform: 'translateY(-1px)',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+  }
+};
+
+const cancelButtonStyle = {
+  background: '#f5f5f5',
+  color: '#666',
+  padding: '12px 24px',
+  border: 'none',
+  borderRadius: '8px',
+  cursor: 'pointer',
+  fontSize: '14px',
+  fontWeight: '500',
+  transition: 'all 0.2s ease',
+  '&:hover': {
+    background: '#ebebeb'
+  }
+};
+
+const actionContainerStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  opacity: 1,
+  transition: 'opacity 0.2s ease',
+  marginLeft: '8px'
+};
+
+const actionIconStyle = {
+  background: 'transparent',
+  border: 'none',
+  cursor: 'pointer',
+  padding: '8px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  borderRadius: '50%',
+  color: '#666',
+  transition: 'all 0.2s ease',
+  '&:hover': {
+    background: '#f5f5f5'
+  }
 };
 
 export default Dashboard;
