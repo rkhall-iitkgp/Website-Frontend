@@ -10,10 +10,10 @@ import { toast } from "react-toastify";
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
 const RegisterOTP = ({ setPage, emailC, setEmail, backpage, setBackPage }) => {
   const navigate = useNavigate()
   const location = useLocation();
-    const email = location.state?.email;
   const [otp, setOtp] = useState('');
   const isMobile = useMediaQuery("(max-width: 920px)");
   
@@ -24,7 +24,7 @@ const RegisterOTP = ({ setPage, emailC, setEmail, backpage, setBackPage }) => {
   const handleVerifyOTP = async () => {
     try {
       const data = {
-        emailId: email,
+        emailId: emailC,
         code: otp
       };
       console.log(data);
@@ -51,7 +51,7 @@ const RegisterOTP = ({ setPage, emailC, setEmail, backpage, setBackPage }) => {
       await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/resend-otp`,
         {
-          email: email
+          email: emailC
         }
       );
       toast.success("OTP resent successfully!");
@@ -69,6 +69,7 @@ const RegisterOTP = ({ setPage, emailC, setEmail, backpage, setBackPage }) => {
 
   return (
     <div style={divStyle}>
+      <ToastContainer/>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
         <Card sx={{ padding: 4, maxWidth: '500px', width: '90%' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: 2 }}>
@@ -82,7 +83,7 @@ const RegisterOTP = ({ setPage, emailC, setEmail, backpage, setBackPage }) => {
           </div>
 
           <Typography variant="body1" sx={{ mb: 3 }}>
-            Please enter the verification code sent to {email}
+            Please enter the verification code sent to {emailC}
           </Typography>
 
           <MuiOtpInput

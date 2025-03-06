@@ -30,7 +30,36 @@ import Divider from "@mui/material/Divider";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
-const Register = ({ setPage, emailC, setEmail, backpage, setBackPage }) => {
+const Register = ({ 
+  setPage,
+  emailC,
+  setEmail,
+  backpage,
+  setBackPage,
+  name,
+  setName,
+  personalEmail,
+  dateOfBirth,
+  setDateOfBirth,
+  yearOfPassing,
+  setYearOfPassing,
+  phoneNo,
+  setPhoneNo,
+  instiEmail,
+  setInstiEmail,
+  emergencyPhoneNo,
+  setEmergencyPhoneNo,
+  rollNo,
+  setRollNo,
+  department,
+  setDepartment,
+  roomNo,
+  setRoomNo,
+  password,
+  setPassword,
+  confirmPass,
+  setConfirmPass
+ }) => {
   const navigate = useNavigate()
   // const [details, setDetails] = useState({
   //   email: "",
@@ -104,6 +133,16 @@ const Register = ({ setPage, emailC, setEmail, backpage, setBackPage }) => {
         console.log("Registration successful:", response.data);
         toast.success("Registration Successful");
         setEmail(formik.values.personalEmail);
+        setName(formik.values.name);
+        setRollNo(formik.values.rollNo);
+        setPhoneNo(formik.values.phoneNo);
+        setYearOfPassing(formik.values.yearOfPassing);
+        setInstiEmail(formik.values.instiEmail);
+        setDateOfBirth(formik.values.dateOfBirth);
+        setEmergencyPhoneNo(formik.values.emergencyPhoneNo);
+        setRoomNo(formik.values.roomNo);
+        setPassword(formik.values.password);
+        setConfirmPass(formik.values.confirmPass);
         setPage("verify-email"); 
         setBackPage("register"); 
 
@@ -152,18 +191,18 @@ const instiEmailRegExp = /^[a-zA-Z0-9._%+-]+@kgpian\.iitkgp\.ac.in$/;
 
 const formik = useFormik({
   initialValues: {
-    name: "",
-    personalEmail: "",
-    dateOfBirth: "",
-    yearOfPassing: "",
-    phoneNo: "",
-    instiEmail: "",
-    emergencyPhoneNo: "",
-    rollNo: "",
-    department: "",
-    roomNo: "",
-    password: "",
-    confirmPass: "",
+    name: name,
+    personalEmail: personalEmail,
+    dateOfBirth: dateOfBirth,
+    yearOfPassing: yearOfPassing,
+    phoneNo: phoneNo,
+    instiEmail: instiEmail,
+    emergencyPhoneNo: emergencyPhoneNo,
+    rollNo: rollNo,
+    department: department,
+    roomNo: roomNo,
+    password: password,
+    confirmPass: confirmPass,
   },
   validationSchema: Yup.object({
     name: Yup.string().required("Required!"),
