@@ -49,9 +49,9 @@ const RegisterOTP = ({ setPage, emailC, setEmail, backpage, setBackPage }) => {
   const handleResendOTP = async () => {
     try {
       await axios.post(
-        `${process.env.REACT_APP_BACKEND_URL}/resend-otp`,
+        `${process.env.REACT_APP_BACKEND_URL}/resend-verification`,
         {
-          email: emailC
+          emailId: emailC
         }
       );
       toast.success("OTP resent successfully!");
