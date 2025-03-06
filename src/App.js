@@ -27,6 +27,7 @@ function App() {
         <Route path="/loginpassword" element={<PasswordLogin />}></Route>
         <Route path="/Register" element={<Register />}></Route>
         <Route path="/coming-soon" element={<ComingSoon />}></Route>
+        <Route path="/mess-feedback" element={<Mess-feedback />}></Route>
       </Routes>
     </BrowserRouter>
   );

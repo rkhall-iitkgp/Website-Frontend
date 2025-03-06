@@ -1,0 +1,26 @@
+.ratingsContainer {
+  margin: 2rem 0;
+}
+
+.ratingsBox {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.totalReviews, .averageRating {
+  text-align: center;
+}
+
+.stars {
+  color: #ffd700;
+  font-size: 1.5rem;
+}
+
+.stars span {
+  margin-right: 1rem;
+  color: #333;
+} 

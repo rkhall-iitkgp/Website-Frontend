@@ -1,0 +1,33 @@
+.mealCard {
+  background-color: #FBF6EA;
+  padding: 3rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #FBF6EA;
+  cursor: pointer;
+}
+
+
+.mealCard:hover {
+  transform: translateY(-5px);
+  background-color: #FFD050;
+  border-color: #FFD050;
+}
+
+.selected {
+  background-color: #FFD050;
+  border-color: #FFD050;
+  transform: translateY(-5px);
+}
+
+.mealCard h3 {
+  margin: 0;
+  color: #333;
+}
+
+.mealCard p {
+  margin: 0.5rem 0 0;
+  color: #666;
+} 

@@ -1,0 +1,40 @@
+.dailyContainer {
+  background-color: #f0f7ff;
+  padding: 2rem;
+  border-radius: 10px;
+  flex: 1;
+}
+.dailyContainer h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.menuList {
+  list-style-type: none;
+}
+
+.menuList li {
+  margin: 0.8rem 0;
+  color: #333;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  padding-top: 1rem;
+}
+
+.menuList li:before {
+  content: "•";
+  color: #333;
+  margin-right: 0.5rem;
+} 
+
+.menuList li:hover {
+  background-color: #FBF6EA;
+}
+
+@media (max-width: 768px) {
+  .dailyContainer {
+    max-width: 100%;
+  }
+}
