@@ -7,6 +7,8 @@ const RegisterLanding = () => {
   const navigate = useNavigate();
   const [page, setPage] = useState('register');
   const [formData, setFormData] = useState(null);
+  const [backpage, setBackPage] = useState(null);
+  const [emailC, setEmail] = useState('');
   
   if (localStorage.getItem("token")) {
     navigate("/dashboard");
@@ -14,18 +16,8 @@ const RegisterLanding = () => {
 
   return (
     <div>
-      {page === 'register' && (
-        <Register 
-          setPage={setPage} 
-          setFormData={setFormData}
-        />
-      )}
-      {page === 'verify-otp' && (
-        <RegisterOTP 
-          setPage={setPage}
-          formData={formData}
-        />
-      )}
+      {page === 'register' && <Register setPage={setPage} emailC = {emailC} setEmail= {setEmail} backpage={backpage} setBackPage={setBackPage} />}
+      {page === 'verify-email' && <RegisterOTP setPage={setPage} emailC = {emailC} setEmail= {setEmail} backpage={backpage} setBackPage={setBackPage} />}
     </div>
   );
 };

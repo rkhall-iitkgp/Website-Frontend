@@ -30,7 +30,7 @@ import Divider from "@mui/material/Divider";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
-const Register = () => {
+const Register = ({ setPage, emailC, setEmail, backpage, setBackPage }) => {
   const navigate = useNavigate()
   // const [details, setDetails] = useState({
   //   email: "",
@@ -88,7 +88,8 @@ const Register = () => {
     };
   
     console.log("Final requestData:", requestData);
-  
+    
+    
     try {
       // Ensure backend URL is correctly set
       console.log("Backend URL:", process.env.REACT_APP_BACKEND_URL);
@@ -101,8 +102,10 @@ const Register = () => {
   
       if (response.status === 201) {
         console.log("Registration successful:", response.data);
-        await toast.success("Registration Successful");
-        navigate("/verify-email", { state: { email : formik.values.personalEmail  } });
+        toast.success("Registration Successful");
+        setEmail(formik.values.personalEmail);
+        setPage("verify-email"); 
+        setBackPage("register"); 
 
       } else {
         console.error("Registration failed:", response.statusText);

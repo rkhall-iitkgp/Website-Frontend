@@ -8,8 +8,12 @@ import { useMediaQuery } from "@mui/material";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { toast } from "react-toastify";
 import axios from 'axios';
-
-const RegisterOTP = ({ email}) => {
+import { useLocation } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+const RegisterOTP = ({ setPage, emailC, setEmail, backpage, setBackPage }) => {
+  const navigate = useNavigate()
+  const location = useLocation();
+    const email = location.state?.email;
   const [otp, setOtp] = useState('');
   const isMobile = useMediaQuery("(max-width: 920px)");
   
@@ -19,19 +23,23 @@ const RegisterOTP = ({ email}) => {
 
   const handleVerifyOTP = async () => {
     try {
-      // First verify OTP
+      const data = {
+        emailId: email,
+        code: otp
+      };
+      console.log(data);
+      
       const verifyResponse = await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/verify-email`,
-        {
-          email: email,
-          otp: otp
+          data,
+        { headers: { "Content-Type": "application/json" }
         }
       );
 
-      if (verifyResponse.status === 200) {
-        // If OTP is verified, proceed with registration
+      if (verifyResponse.status == 200) {
         
           toast.success("OTP Verification successful!");
+          navigate("/");
       }
     } catch (error) {
       toast.error(error.response?.data?.message || "OTP verification failed!");
@@ -66,6 +74,9 @@ const RegisterOTP = ({ email}) => {
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: 2 }}>
             <ArrowBackIosNewIcon 
               style={{ cursor: 'pointer', marginRight: 10 }}
+              onClick={() => 
+                setPage('register')
+              }
             />
             <Typography variant="h4">Verify Email</Typography>
           </div>

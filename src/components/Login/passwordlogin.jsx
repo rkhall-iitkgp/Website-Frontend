@@ -28,6 +28,7 @@ const validationSchema = yup.object({
 });
 
 const PasswordLogin = ({ setPage, email, setEmail, backpage, setBackPage }) => {
+  const navigate = useNavigate()
   const [password, setPassword] = useState("");
   const [details, setDetails] = useState({
     email: "",
@@ -74,6 +75,8 @@ const PasswordLogin = ({ setPage, email, setEmail, backpage, setBackPage }) => {
       console.log("Login successful! Token:", token, typeof token);
       console.log(data);
       localStorage.setItem("Token", token);
+      toast.success("Login successful!");
+      navigate("/");
     } catch (error) {
       toast(error);
       console.error("Login failed:", error);
