@@ -1,11 +1,21 @@
 .dailyContainer {
-  background-color: #f0f7ff;
+  background-color: #E3F2FD;
   padding: 2rem;
   border-radius: 10px;
   flex: 1;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
+.dailyContainer:hover {
+  transform: translateY(-4px);
+  background-color: #D6EBFC; /* very soft blue, close to initial but lighter */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* gentle shadow */
+ 
+}
+
 .dailyContainer h2 {
-  font-size: 3rem;
+  color: #1565C0;
+  font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -30,7 +40,9 @@
 } 
 
 .menuList li:hover {
-  background-color: #FBF6EA;
+  /* background-color: #FBF6EA; */
+  color: #0D47A1;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {

@@ -6,7 +6,8 @@ const ReviewForm = () => {
     name: '',
     roomNumber: '',
     phoneNumber: '',
-    review: ''
+    review: '',
+    mealType: 'Breakfast'
   });
 
   const handleSubmit = (e) => {
@@ -30,6 +31,7 @@ const ReviewForm = () => {
         placeholder="Name"
         value={formData.name}
         onChange={handleChange}
+        required
       />
       <div className={styles.formRow}>
         <input
@@ -38,6 +40,7 @@ const ReviewForm = () => {
           placeholder="Room Number"
           value={formData.roomNumber}
           onChange={handleChange}
+          required
         />
         <input
           type="tel"
@@ -45,8 +48,15 @@ const ReviewForm = () => {
           placeholder="Phone Number"
           value={formData.phoneNumber}
           onChange={handleChange}
+          required
         />
       </div>
+      <select name="mealType" value={formData.mealType} onChange={handleChange} required>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Snacks">Snacks</option>
+                <option value="Dinner">Dinner</option>
+            </select>
       <textarea
         name="review"
         placeholder="Your Review"
