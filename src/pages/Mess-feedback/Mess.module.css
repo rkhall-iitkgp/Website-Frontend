@@ -1,5 +1,10 @@
+body{
+  font-family: 'San';
+  background-color: #FFF8E7;
+}
 .container {
   margin: 0 auto;
+  text-align: center; /* Center the content */
 }
 
 .navbar {
@@ -15,10 +20,10 @@
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #000;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter, sans-serif';
 }
 
 .navLinks {
@@ -40,9 +45,10 @@
 .section {
   margin-bottom: 2rem;
 }
+
 .sectionHeader {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
 }
@@ -51,36 +57,50 @@
   font-size: 1.5rem;
   font-style: italic;
   font-family: 'Inter', sans-serif;
-  
   text-align: right;
   margin-bottom: 1rem;
   margin-right: 3rem;
+  color: #555;
 }
+
 .sectionTitle {
   font-size: 3rem;
   font-weight: bold;
   color: #333;
   margin-bottom: 1rem;
-  padding-left: 2rem;
-  justify-content: space-between;
-  font-family: 'Inter', sans-serif;
-
+  font-family: 'San';
+  text-align: center; /* Centered Title */
 }
 
 .mealTimings {
   display: flex;
-  flex-direction: row;
-  gap: 1rem;
+  justify-content: center; 
+  gap: 0.1rem;
   flex-wrap: wrap;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-  padding-bottom: 2rem;
-  flex-wrap: wrap;
+  padding: 0 2.5rem 2rem 2.5rem;
+}
+
+.mealCard {
+  padding: 1rem;
+  background-color: #fff8e1;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 150px;
+  flex: 1;
+  max-width: 200px;
+}
+
+.mealCard.active {
+  background-color: #ffcc4d;
+  font-weight: bold;
 }
 
 .menuContainer {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 768px) {
@@ -91,21 +111,20 @@
   .navbar {
     padding: 1rem;
   }
-  .sectionTitle{
-    margin-left: 3rem;
+
+  .sectionTitle {
+    text-align: center;
+    margin: 0 auto;
   }
+
   .mealTimings {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-self: center;
-    margin-left: 3rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
   }
 
   .menuContainer {
     flex-direction: column;
-    
+    align-items: center;
   }
-  .sectionTitle {
-    align-self: center;
-  }
-} 
+}
