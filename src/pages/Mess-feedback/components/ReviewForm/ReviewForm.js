@@ -12,8 +12,7 @@ const ReviewForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log(formData);
+    
   };
 
   const handleChange = (e) => {

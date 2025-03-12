@@ -1,8 +1,9 @@
 .dailyContainer {
-  background: #E3F2FD; 
+  background: rgba(216,226,247,1); 
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-top : 1px solid black;
+  border-bottom : 1px solid black;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
   font-family: 'Sen', sans-serif;
   flex: 1; 
   display: flex;
@@ -10,14 +11,14 @@
   align-items: center;
   justify-content: center;
 }
-.dailyContainer:hover {
+/* .dailyContainer:hover {
   background-color: #D6EBFC;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
  
-}
+} */
 
 .dailyContainer h2 {
-  color: #0277BD; 
+  color: #000; 
   font-size: 1.6rem;
   margin-bottom: 12px;
 }
@@ -34,7 +35,7 @@
   font-size: 1.2rem;
   padding: 8px 0;
   color: #333;
-  border-bottom: 1px solid #ddd;
+  
 }
 
 .menuList li:before {
@@ -43,10 +44,10 @@
   margin-right: 0.5rem;
 } 
 
-.menuList li:hover {
+/* .menuList li:hover {
   color: #0D47A1;
   cursor: pointer;
-}
+} */
 
 @media (max-width: 768px) {
   .dailyContainer {
