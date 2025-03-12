@@ -124,11 +124,11 @@ body{
   }
 
   .mealTimings {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.1rem;  
     flex-wrap: wrap;
-    padding: 0 2.5rem 2rem 2.5rem;
+    padding: 1rem;
   }
 
   .menuContainer {
@@ -142,11 +142,11 @@ body{
     display: none;
   }
 }
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .mealTimings {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.1rem;
     padding: 1rem;
   }
-}
+} */
