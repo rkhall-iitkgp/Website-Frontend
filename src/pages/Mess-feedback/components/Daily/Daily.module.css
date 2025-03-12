@@ -1,36 +1,40 @@
 .dailyContainer {
-  background-color: #E3F2FD;
-  padding: 2rem;
-  border-radius: 10px;
-  flex: 1;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  background: #E3F2FD; 
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Sen', sans-serif;
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .dailyContainer:hover {
-  transform: translateY(-4px);
-  background-color: #D6EBFC; /* very soft blue, close to initial but lighter */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* gentle shadow */
+  background-color: #D6EBFC;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
  
 }
 
 .dailyContainer h2 {
-  color: #1565C0;
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  color: #0277BD; 
+  font-size: 1.6rem;
+  margin-bottom: 12px;
 }
 
 .menuList {
-  list-style-type: none;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+
 }
 
 .menuList li {
-  margin: 0.8rem 0;
+  font-size: 1.2rem;
+  padding: 8px 0;
   color: #333;
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
-  padding-top: 1rem;
+  border-bottom: 1px solid #ddd;
 }
 
 .menuList li:before {
@@ -40,13 +44,12 @@
 } 
 
 .menuList li:hover {
-  /* background-color: #FBF6EA; */
   color: #0D47A1;
   cursor: pointer;
 }
 
 @media (max-width: 768px) {
   .dailyContainer {
-    max-width: 100%;
+    width: 100%;
   }
 }

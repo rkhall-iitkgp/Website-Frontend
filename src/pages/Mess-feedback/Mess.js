@@ -83,8 +83,7 @@ export default function Mess() {
 
   return (
     <div className={styles.container}>
-      <nav className={styles.navbar}>
-        <div className={styles.logo}>Radhakrishnan Hall</div>
+      {/* <nav className={styles.navbar}>
         <div className={styles.navLinks}>
           <a href="#home">Home</a>
           <a href="#mess">Mess</a>
@@ -95,10 +94,13 @@ export default function Mess() {
           <a href="#login">Log In</a>
         </div>
         <HamburgerMenu />
-      </nav>
+      </nav> */}
 
       <div className={styles.section}>
-        <div className={styles.date}>{dateString}</div>
+        <div className={styles.headerName}>
+          <div className={styles.hallname}>Radhakrishnan Hall</div>
+          <div className={styles.date}>{dateString}</div>
+        </div>
         <div className={styles.sectionTitle}>Meal Timings</div>
         <div className={styles.mealTimings}>
           {Object.entries(mealTimings).map(([meal, timing]) => (
@@ -115,7 +117,7 @@ export default function Mess() {
 
       <div className={styles.section}>
         <div className={styles.sectionHeader}>
-          <div className={styles.sectionTitle}>Today's Menu</div>
+          {/* <div className={styles.sectionTitle}>Today's Menu</div> */}
         </div>
         <div className={styles.menuContainer}>
           <Special currentMeal={selectedMeal} currentDay={currentDay} />
