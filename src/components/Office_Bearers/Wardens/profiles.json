@@ -1,9 +1,9 @@
 [
     {
       "id": 1,
-      "name": "Prof. Bharath Haridas Aithal",
+      "name": "Prof. Sushil Punia",
       "position": "Warden",
-      "imageUrl": "office-bearers-images/Warden.jpg",
+      "imageUrl": "office-bearers-images/AssWardenMess.jpg",
       "twitterUrl": "",
       "facebookUrl": "",
       "instagramUrl": "",
@@ -21,9 +21,9 @@
     },
     {
       "id": 3,
-      "name": "Prof. Sushil Punia",
-      "position": "Assistant Warden (Mess)",
-      "imageUrl": "office-bearers-images/AssWardenMess.jpg",
+      "name": "Prof. Gajanand Sharma",
+      "position": "Assistant Warden (Welfare)",
+      "imageUrl": "office-bearers-images/asswardenwelfare.png",
       "twitterUrl": "",
       "facebookUrl": "",
       "instagramUrl": "",
