@@ -1,9 +1,9 @@
 [
     {
       "id": 6,
-      "name": "Vishu Gour",
-      "position": "General Secretary Social and Cultural",
-      "imageUrl": "office-bearers-images/GsecSocult.jpg",
+      "name": "Huzaifa Iftekhar",
+      "position": "General Secretary Sports and Games",
+      "imageUrl": "Img-26/Huzaifa_Iftekhar_GSec_Sports_.jpg",
       "twitterUrl": "",
       "facebookUrl": "",
       "instagramUrl": "",
@@ -11,9 +11,9 @@
     },
     {
       "id": 7,
-      "name": "Prince Bhadauriya",
-      "position": "Coordinator Social and Cultural",
-      "imageUrl": "office-bearers-images/cordisocult.jpg",
+      "name": "Anant Pal",
+      "position": "General Secretary Sports and Games",
+      "imageUrl": "Img-26/Anant_Pal_Singh_Gsec_Sports.jpg",
       "twitterUrl": "",
       "facebookUrl": "",
       "instagramUrl": "",
@@ -21,30 +21,29 @@
     },
     {
       "id": 8,
-      "name": "Avichal Trivedi",
+      "name": "Harshraj Dudhgaonkar",
       "position": "General Secretary Technology",
-      "imageUrl": "office-bearers-images/GsecTech.jpg",
+      "imageUrl": "Img-26/Harshraj_Dudhgaonkar_Gsec_Tech.jpg",
       "twitterUrl": "",
       "facebookUrl": "",
       "instagramUrl": "",
       "linkedinUrl": ""
     },
-    {
+     {
       "id": 9,
-      "name": "Rathin Ghosh",
-      "position": "Coordinator Technology",
-      "imageUrl": "office-bearers-images/corditech.jpg",
+      "name": "Jasmeet Singh Chadha",
+      "position": "General Secretary Technology",
+      "imageUrl": "Img-26/Jasmeet_Singh_Chadha_GSec_TECH.jpg",
       "twitterUrl": "",
       "facebookUrl": "",
       "instagramUrl": "",
       "linkedinUrl": ""
     },
-    
     {
       "id": 10,
-      "name": "Kartikey Singhal",
-      "position": "General Secretary Sports and Games",
-      "imageUrl": "office-bearers-images/GsecSports.jpg",
+      "name": "Ashish Kumar",
+      "position": "General Secretary Maintenance",
+      "imageUrl": "Img-26/Ashish_Kumar_GSec_Mainta.png",
       "twitterUrl": "",
       "facebookUrl": "",
       "instagramUrl": "",
@@ -52,42 +51,39 @@
     },
     {
       "id": 11,
-      "name": "Aryan Lamba",
-      "position": "Coordinator Sports and Games",
-      "imageUrl": "office-bearers-images/cordisports.jpg",
+      "name": "Ayush Dey",
+      "position": "General Secretary Maintenance",
+      "imageUrl": "Img-26/Ayush_Dey_Gsec_Maintainance_.jpg",
       "twitterUrl": "",
       "facebookUrl": "",
       "instagramUrl": "",
       "linkedinUrl": ""
     },
-  
     {
       "id": 12,
-      "name": "Priyavrat Jay Mishra",
-      "position": "General Secretary Maintenance",
-      "imageUrl": "office-bearers-images/GsecMaintenance.jpg",
+      "name": "Pratyay Ganguly",
+      "position": "General Secretary Student Welfare",
+      "imageUrl": "Img-26/Pratyay_Ganguly_GSec_Welfare.png",
       "twitterUrl": "",
       "facebookUrl": "",
       "instagramUrl": "",
       "linkedinUrl": ""
     },
-    
     {
       "id": 13,
-      "name": "Mayank Sethia",
-      "position": "General Secretary Alumni Affairs",
-      "imageUrl": "office-bearers-images/GsecAlumni.jpg",
+      "name": "Yayavaram Vivekadithya",
+      "position": "General Secretary Student Welfare",
+      "imageUrl": "Img-26/Yayavaram_Vivekadithya_Gsec_Students__Welfare.jpg",
       "twitterUrl": "",
       "facebookUrl": "",
       "instagramUrl": "",
       "linkedinUrl": ""
     },
-
     {
       "id": 14,
-      "name": "Rohan Kulshreshtha",
-      "position": "Coordinator Alumni Affairs",
-      "imageUrl": "office-bearers-images/cordialumni.jpg",
+      "name": "Virendra Bharti",
+      "position": "General Secretary Alumni Affairs",
+      "imageUrl": "Img-26/Virendra_Bharti_Gsec_AlumniAffairs.png",
       "twitterUrl": "",
       "facebookUrl": "",
       "instagramUrl": "",
@@ -95,9 +91,9 @@
     },
     {
       "id": 15,
-      "name": "Ishan Mukherjee",
+      "name": "Krish Kumar",
       "position": "General Secretary Mess",
-      "imageUrl": "office-bearers-images/GsecMess.jpg",
+      "imageUrl": "Img-26/Krish_Kumar_Gsec_Mess.jpg",
       "twitterUrl": "",
       "facebookUrl": "",
       "instagramUrl": "",
@@ -105,18 +101,13 @@
     },
     {
       "id": 16,
-      "name": "Harmik Doshi",
-      "position": "General Secretary Students Welfare",
-      "imageUrl": "office-bearers-images/gsecwelfare.png",
+      "name": "Apurba Kumar Show",
+      "position": "Students’ Auditor",
+      "imageUrl": "Img-26/Apurba_Kumar_Show_Students’ Auditor.jpeg",
       "twitterUrl": "",
       "facebookUrl": "",
       "instagramUrl": "",
       "linkedinUrl": ""
     }
-
-  
-  
-  
-
   ]
   
