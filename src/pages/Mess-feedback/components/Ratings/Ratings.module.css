@@ -2,110 +2,140 @@
   padding: 2rem;
   background: white;
   border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+  font-family: 'Sen', sans-serif;
+}
+
+.mainHeader {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #000;
 }
 
 .ratingsBox {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .ratingHeader {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 4rem;
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid #eee;
-}
-.ratingHeader {
-  display: flex;
-  justify-content: space-between;  /* Changed from center to space-between */
-  gap: 4rem;
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid #eee;
-  width: 100%;  /* Added to ensure full width */
+  margin-bottom: 3rem;
+  position: relative;
 }
 
-.totalReviewsBox {
-  text-align: left;  /* Changed from center to left */
+.separator {
+    width: 1px;
+    height: 60px;
+    background-color: #000;
 }
 
-.averageRatingBox {
-  text-align: right;  /* Changed from center to right */
-}
-
-.averageRatingBox, .totalReviewsBox {
- 
+.totalReviewsBox, .averageRatingBox {
   text-align: center;
 }
 
 .averageRatingBox h3, .totalReviewsBox h3 {
-  color: #666;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.ratingNumber {
-  display: block;
-  font-size: 3.5rem;
-  font-weight: bold;
-  color: #333;
-  line-height: 1;
-}
-
-.stars {
-  color: #ffc107;
   font-size: 1.5rem;
-  margin: 0.5rem 0;
-}
-
-.outOf, .reviewText {
-  display: block;
-  color: #666;
-  font-size: 0.9rem;
+  font-weight: bold;
+  color: #000;
+  margin: 0 0 0.5rem 0;
 }
 
 .reviewCount {
   display: block;
-  font-size: 3.5rem;
-  font-weight: bold;
-  color: #333;
-  line-height: 1;
+  font-size: 2rem;
+  font-weight: normal;
+  color: #000;
 }
 
-.ratingBars {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.ratingValueWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
-.ratingBar {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.ratingNumber {
+  font-size: 2rem;
+  font-weight: normal;
+  color: #000;
 }
 
-.starLabel {
-  width: 100px;
-  color: #ffc107;
-  font-size: 1.2rem;
+.stars {
+  color: #ffd700; /* Gold color */
+  font-size: 1.5rem;
+  letter-spacing: 2px;
 }
 
-.barContainer {
-  flex: 1;
-  height: 12px;
-  background-color: #eee;
-  border-radius: 6px;
-  overflow: hidden;
+/* Review Slider Styles */
+.reviewsSlider {
+    padding-bottom: 40px; /* Space for pagination */
 }
 
-.barFill {
-  height: 100%;
-  background-color: #ffc107;
-  border-radius: 6px;
-  transition: width 0.3s ease;
+.reviewCard {
+    background-color: #DDE8FA; /* Light blue styling from image */
+    padding: 2rem;
+    border-radius: 4px; /* Slightly squarish as per image */
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.reviewHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.userIconWrapper {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+.userIcon {
+    width: 60%;
+    height: 60%;
+    color: #000;
+}
+
+.reviewTime {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.reviewStars {
+    color: #ffd700;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 4px;
+}
+
+.reviewText {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+    text-align: left; /* Image shows left aligned or justified, text-align center in parent but let's see */
+    text-align: center; /* Actually card text looks centered/justified block */
 }
 
 @media (max-width: 768px) {
@@ -114,16 +144,8 @@
     gap: 2rem;
   }
   
-  .ratingNumber, .reviewCount {
-    font-size: 2.5rem;
-  }
-  
-  .stars {
-    font-size: 1.2rem;
-  }
-  
-  .starLabel {
-    width: 80px;
-    font-size: 1rem;
+  .separator {
+      width: 100%;
+      height: 1px;
   }
 }
