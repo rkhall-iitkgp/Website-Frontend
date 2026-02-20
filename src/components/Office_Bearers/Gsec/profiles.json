@@ -11,7 +11,7 @@
     },
     {
       "id": 7,
-      "name": "Anant Pal",
+      "name": "Anant Pal Singh",
       "position": "General Secretary Sports and Games",
       "imageUrl": "Img-26/Anant_Pal_Singh_Gsec_Sports.jpg",
       "twitterUrl": "",
@@ -51,7 +51,7 @@
     },
     {
       "id": 11,
-      "name": "Ayush Dey",
+      "name": "Ayush Chandra Dey",
       "position": "General Secretary Maintenance",
       "imageUrl": "Img-26/Ayush_Dey_Gsec_Maintainance_.jpg",
       "twitterUrl": "",
@@ -91,6 +91,16 @@
     },
     {
       "id": 15,
+      "name": "Lakshya Raj Chourasia",
+      "position": "General Secretary Social and Cultural",
+      "imageUrl": "Img-26/Lakshya_raj_chourasia_socult.jpeg",
+      "twitterUrl": "",
+      "facebookUrl": "",
+      "instagramUrl": "",
+      "linkedinUrl": ""
+    },
+    {
+      "id": 16,
       "name": "Krish Kumar",
       "position": "General Secretary Mess",
       "imageUrl": "Img-26/Krish_Kumar_Gsec_Mess.jpg",
@@ -100,7 +110,7 @@
       "linkedinUrl": ""
     },
     {
-      "id": 16,
+      "id": 17,
       "name": "Apurba Kumar Show",
       "position": "Students’ Auditor",
       "imageUrl": "Img-26/Apurba_Kumar_Show_Students’ Auditor.jpeg",
