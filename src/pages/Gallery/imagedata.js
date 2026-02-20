@@ -8,41 +8,34 @@ export default function Imagedata(event, year) {
   console.log(year);
   const [photos, setPhotos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [currentPage, setCurrentPage] = useState(1);
-  const imagesPerPage = 30;
   const url = `${BACKEND_URL}/api/${year}/${event}`;
 
   useEffect(() => {
+    function getPics() {
+      setIsLoading(true);
+      axios
+        .get(`${url}`)
+        .then((response) => {
+          const pics = response.data.photoURLs;
+          console.log(pics);
+          setPhotos(
+            pics.map((imageUrl) => {
+              return {
+                src: imageUrl,
+                width: 4,
+                height: 3,
+              };
+            })
+          );
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          console.log(error);
+          setIsLoading(false);
+        });
+    }
     getPics();
-  }, [url, currentPage]);
-
-  function getPics() {
-    setIsLoading(true);
-    axios
-      .get(`${url}`)
-      .then((response) => {
-        const pics = response.data.photoURLs;
-        console.log(pics);
-        setPhotos(
-          pics.map((imageUrl) => {
-            return {
-              src: imageUrl,
-              width: 4,
-              height: 3,
-            };
-          })
-        );
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-        setIsLoading(false);
-      });
-  }
-
-  function handleLoadMore() {
-    setCurrentPage(currentPage + 1);
-  }
+  }, [url]);
 
   return [photos, isLoading];
 

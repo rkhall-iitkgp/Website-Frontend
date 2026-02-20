@@ -1,6 +1,4 @@
 import styles from "./css/gallery.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSquareCaretLeft } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 import img1 from "./illumination.png";
