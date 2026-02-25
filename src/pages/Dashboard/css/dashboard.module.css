@@ -1,0 +1,409 @@
+.container{
+    background-color: #F5F2EF;
+    width: 80%;
+    margin: 4rem auto 0;
+    padding: 1.5rem 0;
+}
+
+.section {
+    background-color: #FFFEFE;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 1.5rem;
+    width : 95%;
+    margin : 1rem auto;
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+/*Personal Information section*/
+.detailsSection{
+    background-color: #464646;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width : 95%;
+    padding: 1.5rem;
+    margin : 1rem auto;
+    position: relative;
+}
+
+.editBtn,.editBtn2{
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;    
+}
+
+.editBtn3{
+    position: absolute;
+    top:0rem;
+    right:0rem;
+}
+
+.details1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {  
+    .details1 {
+        flex-direction: column;
+        gap: 1rem;         
+        align-items: center; 
+    }
+}
+
+.profileImage {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profileImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profileImageOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.profileImage:hover .profileImageOverlay {
+    opacity: 1;
+}
+
+.photoUploadContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.previewContainer {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagePreview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.uploadButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.uploadButton:hover {
+    background-color: #e0e0e0;
+}
+
+.uploadHint {
+    color: #666;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.info{
+    width : 60%;
+    display: grid;
+    padding: 0.25rem;
+    margin: 0 10%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap : 1rem;
+    align-items: center;
+    place-items: center;
+}
+
+.infoItem{
+    width : 80%;
+    background-color: #FFD050;
+    border-radius: 0.25rem;
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+
+@media screen and (max-width: 768px) {  
+    .info{
+        width : 100%;
+    }
+    
+    .infoItem p {
+        font-size: 1rem;
+    }
+}
+.details2{
+    background-color: #D0CDCD;
+    margin: 1rem 0 0;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.details2 span{
+    font-weight: 600;
+}
+
+
+.editButton, .addButton {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.editButton:hover, .addButton:hover {
+    background-color: #357ab8;
+}
+
+.skillsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skillTag {
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.experienceItem, .certificateItem, .projectItem {
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.itemHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.company, .issuedBy {
+    font-weight: 500;
+    color: #555;
+}
+
+.year, .issueDate {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.description {
+    line-height: 1.5;
+}
+
+.certificateImage {
+    margin-top: 10px;
+    max-width: 300px;
+}
+
+.certificateImage img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+/* Modal styles */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.modal {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #777;
+}
+
+.modalContent {
+    padding: 20px;
+}
+
+.formGroup {
+    margin-bottom: 15px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.formGroup input, .formGroup textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.formActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.formActions2{
+    display: flex;
+    justify-content: space-between;
+}
+
+.saveButton {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin : 0 10px;
+    cursor: pointer;
+}
+
+.cancelButton {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.saveButton:hover {
+    background-color: #3e8e41;
+}
+
+.cancelButton:hover {
+    background-color: #d32f2f;
+}
+
+.deleteButton {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.deleteButton:hover {
+    background-color: #cc0000;
+}
+
+/*Skills*/
+.skillInputContainer {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.addSkillButton {
+    padding: 5px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.skillsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.skillItem {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.deleteSkillButton {
+    background: none;
+    border: none;
+    color: #ff4444;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0 5px;
+}
+
+.deleteSkillButton:hover {
+    color: #cc0000;
+}
+
