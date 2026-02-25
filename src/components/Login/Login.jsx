@@ -147,15 +147,19 @@ const Login = ({ setPage, email, setEmail, backpage, setBackPage }) => {
 
                 <Button
                   onClick={async () => {
+                    const fieldsToValidate = pageFields[0];
                     await formik.validateForm(); 
+
                     const hasErrors = Object.keys(formik.errors).length > 0; 
                    const hasEmptyFields = Object.values(formik.values).some(value => value === '');
                     if (formik.isValid&& !hasErrors && !hasEmptyFields) { 
-
-   
-                      setPage("ologin");
-                      setBackPage("login");
-                      }
+                        setPage("plogin"); 
+                        setBackPage("login"); }
+                        else {
+                          fieldsToValidate.forEach((field) => {
+                            formik.setFieldTouched(field, true, true); // Mark fields as touched to show errors
+                          });
+                        }
                   }}
                   sx={{
                     marginTop: "1.5rem",

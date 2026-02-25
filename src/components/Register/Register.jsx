@@ -28,9 +28,39 @@ import { Typography, colors } from "@mui/material";
 import { useMediaQuery } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
-
-const Register = () => {
+const Register = ({ 
+  setPage,
+  emailC,
+  setEmail,
+  backpage,
+  setBackPage,
+  name,
+  setName,
+  personalEmail,
+  dateOfBirth,
+  setDateOfBirth,
+  yearOfPassing,
+  setYearOfPassing,
+  phoneNo,
+  setPhoneNo,
+  instiEmail,
+  setInstiEmail,
+  emergencyPhoneNo,
+  setEmergencyPhoneNo,
+  rollNo,
+  setRollNo,
+  department,
+  setDepartment,
+  roomNo,
+  setRoomNo,
+  password,
+  setPassword,
+  confirmPass,
+  setConfirmPass
+ }) => {
+  const navigate = useNavigate()
   // const [details, setDetails] = useState({
   //   email: "",
   //   password: "",
@@ -69,39 +99,63 @@ const Register = () => {
   //   }
   // };
   const submithandler = async (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
-    const { confirmPass, ...requestData } = formik.values;
-    let d = requestData.dateOfBirth.split("-");
-    requestData.dateOfBirth = `${d[2]}-${d[1]}-${d[0]}`;
-    console.log(requestData);
+    
+    event.preventDefault(); // Prevent default form submission
+  
+    // Remove confirm password field before sending
+    const requestData = {
+      name: formik.values.name,
+      rollNumber: formik.values.rollNo,
+      phoneNumber: String(formik.values.phoneNo),
+      yearOfPassing: parseInt(formik.values.yearOfPassing), 
+      emailId: formik.values.personalEmail,
+      instituteEmailId: formik.values.instiEmail,
+      dateOfBirth: formik.values.dateOfBirth,
+      emergencyMobileNumber: String(formik.values.emergencyPhoneNo),
+      roomNumber: formik.values.roomNo,
+      password: formik.values.password,
+    };
+  
+    console.log("Final requestData:", requestData);
+    
+    
     try {
-      console.log("requstData", requestData);
-      // Make an HTTP POST request to the /register route
+      // Ensure backend URL is correctly set
+      console.log("Backend URL:", process.env.REACT_APP_BACKEND_URL);
+  
       const response = await axios.post(
-        process.env.REACT_APP_BACKEND_URL + "/register",
+        `${process.env.REACT_APP_BACKEND_URL}/register`,
         requestData,
-        {
-          headers: {
-            "Content-Type": "application/json", // Specify the content type as JSON
-          },
-        }
+        { headers: { "Content-Type": "application/json" } }
       );
-      console.log("payload", response.config.data);
-      // Check if the response is successful
-      if (response.status === 200) {
-        // If successful, you can handle the response as needed
+  
+      if (response.status === 201) {
         console.log("Registration successful:", response.data);
-        toast.success("Registrastion Successful");
+        toast.success("Registration Successful");
+        setEmail(formik.values.personalEmail);
+        setName(formik.values.name);
+        setRollNo(formik.values.rollNo);
+        setPhoneNo(formik.values.phoneNo);
+        setYearOfPassing(formik.values.yearOfPassing);
+        setInstiEmail(formik.values.instiEmail);
+        setDateOfBirth(formik.values.dateOfBirth);
+        setEmergencyPhoneNo(formik.values.emergencyPhoneNo);
+        setRoomNo(formik.values.roomNo);
+        setPassword(formik.values.password);
+        setConfirmPass(formik.values.confirmPass);
+        setPage("verify-email"); 
+        setBackPage("register"); 
+
       } else {
-        // If not successful, handle the error
         console.error("Registration failed:", response.statusText);
-        toast.error("Registration Failed! ");
+        toast.error("Registration Failed!");
       }
     } catch (error) {
-      toast.error(error.message);
       console.error("Error registering:", error);
+      toast.error(error.response?.data?.message || "Network Error! Try again.");
     }
   };
+  
 
   const [errors, setErrors] = useState({});
 
@@ -133,22 +187,22 @@ const Register = () => {
   const rollNoRegExp = /^(1[0-9]|2[0-9])(AE|AG|AR|BT|CE|CH|CS|CY|EE|EC|EX|GG|HS|IM|MA|ME|MI|MT|NA|PH)[0-9]{5}$/;
 
 const roomNoRegExp = /^[A-E]-[1-4][0-9]{2}$/;
-const instiEmailRegExp = /^[a-zA-Z0-9._%+-]+@kgpian\.iitkgp\.in$/;
+const instiEmailRegExp = /^[a-zA-Z0-9._%+-]+@kgpian\.iitkgp\.ac.in$/;
 
 const formik = useFormik({
   initialValues: {
-    name: "",
-    personalEmail: "",
-    dateOfBirth: "",
-    yearOfPassing: "",
-    phoneNo: "",
-    instiEmail: "",
-    emergencyPhoneNo: "",
-    rollNo: "",
-    department: "",
-    roomNo: "",
-    password: "",
-    confirmPass: "",
+    name: name,
+    personalEmail: personalEmail,
+    dateOfBirth: dateOfBirth,
+    yearOfPassing: yearOfPassing,
+    phoneNo: phoneNo,
+    instiEmail: instiEmail,
+    emergencyPhoneNo: emergencyPhoneNo,
+    rollNo: rollNo,
+    department: department,
+    roomNo: roomNo,
+    password: password,
+    confirmPass: confirmPass,
   },
   validationSchema: Yup.object({
     name: Yup.string().required("Required!"),
@@ -171,7 +225,7 @@ const formik = useFormik({
       .matches(roomNoRegExp, "Invalid Room Number! Format: [A-E]-[100-499]")
       .required("Required!"),
     instiEmail: Yup.string()
-      .matches(instiEmailRegExp, "Invalid Institute Email! Must contain '@kgpian.iitkgp.in'")
+      .matches(instiEmailRegExp, "Invalid Institute Email! Must contain '@kgpian.iitkgp.ac.in'")
       .required("Required!"),
     password: Yup.string()
       .min(8, "Must be at least 8 characters long!")
@@ -183,7 +237,6 @@ const formik = useFormik({
   }),
 
   onSubmit: (values) => {
-    alert(JSON.stringify(values, null, 2));
     console.log("The values are:", values);
   },
 });
@@ -279,6 +332,7 @@ const formik = useFormik({
 
   return (
     <>
+    
       <ToastContainer />
       <form
         className="register_form"
@@ -682,7 +736,7 @@ const formik = useFormik({
                         );
 
                         if (!hasErrors && !hasEmptyFields) {
-                          handleNext(); // Proceed to the next page
+                          formik.handleSubmit();
                         } else {
                           fieldsToValidate.forEach((field) => {
                             formik.setFieldTouched(field, true, true); // Mark fields as touched to show errors
