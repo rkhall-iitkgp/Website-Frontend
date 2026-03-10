@@ -1,0 +1,281 @@
+.reviewFormContainer {
+  max-width: 800px;
+  margin: 2rem auto;
+  font-family: 'Sen', sans-serif;
+  padding: 0 1rem;
+}
+
+.rateExperienceSection {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.starRating {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.starFilled {
+  color: #ffd700;
+}
+
+.starEmpty {
+  color: #d1d5db;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 2rem 0;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reviewForm {
+  /* background-color: #F9FAFB; */
+  padding: 1rem;
+  /* border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.complaintTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.hiddenFields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  /* opacity: 0.5; For debugging, maybe hide later or keep visible */
+}
+
+.formRow {
+  display: flex;
+  gap: 1rem;
+}
+
+.inputField,
+.selectField,
+.textArea {
+  padding: 12px;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.inputField:focus,
+.selectField:focus,
+.textArea:focus {
+  border-color: #64B5F6;
+  box-shadow: 0 0 5px rgba(100, 181, 246, 0.5);
+}
+
+.textArea {
+  height: 150px;
+  resize: none;
+  font-family: inherit;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.uploadButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #DDE8FA;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.uploadButton:hover {
+  background-color: #c5d8f7;
+}
+
+.submitButton {
+  background-color: #42A5F5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 30px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+  /* Push to right if needed, or stick to left/center */
+}
+
+.submitButton:hover {
+  background-color: #1E88E5;
+}
+
+@media (max-width: 500px) {
+  .formRow {
+    flex-direction: column;
+  }
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+
+.modalContent {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modalTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: #000;
+  font-family: 'Sen', sans-serif;
+}
+
+.modalStars {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.modalStars span {
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.modalStars span:hover {
+  transform: scale(1.1);
+}
+
+.starFilled {
+  color: #ffd700 !important;
+  /* Gold */
+}
+
+.starEmpty {
+  color: #d1d5db !important;
+  /* Light Gray */
+}
+
+.modalTextArea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  min-height: 120px;
+  margin-bottom: 2rem;
+  resize: none;
+  font-family: 'Sen', sans-serif;
+  font-size: 1rem;
+  color: #333;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.modalTextArea::placeholder {
+  color: #9ca3af;
+}
+
+.modalTextArea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.modalDoneButton {
+  background-color: #4169E1;
+  /* Royal Blue-ish to match image */
+  color: white;
+  border: none;
+  padding: 0.75rem 4rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 0 4px 6px rgba(65, 105, 225, 0.3);
+}
+
+.modalDoneButton:hover {
+  background-color: #2563eb;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #9ca3af;
+  padding: 0;
+}
+
+.closeButton:hover {
+  color: #000;
+}

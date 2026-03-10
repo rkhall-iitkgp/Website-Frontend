@@ -1,0 +1,74 @@
+.mealCard {
+  background-color: #FDFDFD;
+  /* padding: 2rem; */
+  padding: 0.2rem 4rem 0.2rem 4rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px #E0E0E0;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #FBF6EA;
+  cursor: pointer;
+  max-width: 250px;
+  min-width: 150px;
+  margin: 1rem;
+  color: #555;
+}
+
+.mealCard:hover {
+  transform: translateY(-6px) scale(1.03);
+  background-color: #FFE8CC; 
+  border-color: #FFAB66;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.selected {
+  background-color: #FFD050; 
+  border-color: #FF9800;
+  transform: translateY(-6px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.mealCard h3 {
+  margin: 0;
+  color: #444;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.mealCard p {
+  margin-top: 0.7rem;
+  color: #666;
+  font-size: 0.8rem;
+}
+
+.mealContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .mealContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+  }
+  .mealCard {
+    padding: 0.5rem;  
+  }
+}
+/* @media (max-width: 700px) {
+  .mealContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.1rem;
+    padding: 1rem;
+  }
+
+  .mealCard {
+    padding: 0.5rem;  
+  }
+ 
+} */

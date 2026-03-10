@@ -1,0 +1,151 @@
+.ratingsContainer {
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+  font-family: 'Sen', sans-serif;
+}
+
+.mainHeader {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #000;
+}
+
+.ratingsBox {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.ratingHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.separator {
+    width: 1px;
+    height: 60px;
+    background-color: #000;
+}
+
+.totalReviewsBox, .averageRatingBox {
+  text-align: center;
+}
+
+.averageRatingBox h3, .totalReviewsBox h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+  margin: 0 0 0.5rem 0;
+}
+
+.reviewCount {
+  display: block;
+  font-size: 2rem;
+  font-weight: normal;
+  color: #000;
+}
+
+.ratingValueWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.ratingNumber {
+  font-size: 2rem;
+  font-weight: normal;
+  color: #000;
+}
+
+.stars {
+  color: #ffd700; /* Gold color */
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+/* Review Slider Styles */
+.reviewsSlider {
+    padding-bottom: 40px; /* Space for pagination */
+}
+
+.reviewCard {
+    background-color: #DDE8FA; /* Light blue styling from image */
+    padding: 2rem;
+    border-radius: 4px; /* Slightly squarish as per image */
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.reviewHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.userIconWrapper {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+.userIcon {
+    width: 60%;
+    height: 60%;
+    color: #000;
+}
+
+.reviewTime {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.reviewStars {
+    color: #ffd700;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 4px;
+}
+
+.reviewText {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+    text-align: left; /* Image shows left aligned or justified, text-align center in parent but let's see */
+    text-align: center; /* Actually card text looks centered/justified block */
+}
+
+@media (max-width: 768px) {
+  .ratingHeader {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .separator {
+      width: 100%;
+      height: 1px;
+  }
+}

@@ -1,0 +1,22 @@
+{
+    "dailyItems": {
+      "breakfast": [
+        "Sprouts",
+        "Milk/Tea/Bornvita Milk",
+        "Banana, Boiled Egg/Omlete",
+        "Bread with Jam/Butter",
+        "Cornflakes"
+      ],
+      "lunch": [
+        "Chapatti (Plain/Butter)",
+        "Salad(Cucumber+carrot+onion)",
+        "Green Chilli",
+        "Pickle"
+      ],
+      "dinner": [
+        "Roti",
+        "Pickle",
+        "dal"
+      ]
+    }
+}
