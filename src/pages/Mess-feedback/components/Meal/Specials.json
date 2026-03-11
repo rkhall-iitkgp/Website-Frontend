@@ -1,0 +1,203 @@
+{
+    "Monday": {
+      "breakfast": {
+        "special": "Poha/Sweet Corn Bhujiya+Chutney"
+      },
+      "lunch": {
+        "special": [
+          "Veg: Karela Chips",
+          "Non-Veg: mustard Fish",
+          "Curd"
+        ]
+      },
+      "snacks": {
+        "special": [
+          "Green peas kachori"
+        ],
+        "daily": [
+            "tea"
+        ]
+      },
+      "dinner": {
+        "special": [
+          "Aloo Gobhi + Palak Dal",
+          "Jeera Rice(raw rice)",
+          "Seasonal fruit + Kesar milk"
+        ]
+      }
+    },
+    "Tuesday": {
+      "breakfast": {
+        "special": "Sambhar Vada"
+      },
+      "lunch": {
+        "special": "Kadi Pakoda + Aloo Methi"
+      },
+      "snacks": {
+        "special": [
+          "Maggie/Chowmein"
+        ],
+        "daily": [
+            "coffee"
+        ]
+      },
+      "dinner": {
+        "special": [
+          "Aloo Paratha",
+          "Chana masala + Green Chutney",
+          "Custard"
+        ]
+      }
+    },
+    "Wednesday": {
+      "breakfast": {
+        "special": "Dosa"
+      },
+      "lunch": {
+        "special": [
+          "Gutta curry/Aloo Capsicum",
+          "Curd",
+          "Lemon Rice and Plain Rice"
+        ]
+      },
+      "snacks": {
+        "special": [
+          "Dahibada"
+        ],
+        "daily": [
+            "tea"
+        ]
+      },
+      "dinner": {
+        "special": [
+          "V: Palak Paneer + chocolate",
+          "NV: Kadhai Chicken/Chilli Chicken",
+          "Sweets"
+        ]
+      }
+    },
+    "Thursday": {
+      "breakfast": {
+        "special": "Puri sabji"
+      },
+      "lunch": {
+        "special": [
+          "Soyabean chilli/matter mushroom masala",
+          "Curd"
+        ]
+      },
+      "snacks": {
+        "special": [
+          "Samosa chat/Papadi chat"
+        ],
+        "daily": [
+            "coffee"
+        ]
+      },
+      "dinner": {
+        "special": [
+          "Mix Dal Tadka + Lason Chutney",
+          "Gajar ka Halwa",
+          "Palak dal"
+        ]
+      }
+    },
+    "Friday": {
+      "breakfast": {
+        "special": "Methi Paratha"
+      },
+      "lunch": {
+        "special": [
+          "Mix veg with Paneer/Aloo Rajma",
+          "Papad + Butter milk",
+          "Jeera rice"
+        ]
+      },
+      "snacks": {
+        "special": [
+          "Fried Chilli",
+          "Vada Pav + Tea"
+        ],
+        "daily": [
+            "tea"
+        ]
+      },
+      "dinner": {
+        "special": [
+          "V: Kaju Paneer",
+          "NV: Chicken Biryani",
+          "Sweets + Raita + Veg Biryani"
+        ]
+      }
+    },
+    "Saturday": {
+      "breakfast": {
+        "special": "Uttapam"
+      },
+      "lunch": {
+        "special": [
+          "Khichdi + Badminton/Chips",
+          "Curd",
+          "Aloo bhartha+Chutney"
+        ]
+      },
+      "snacks": {
+        "special": [
+          "Onion Pakoda/Bread Pakoda"
+        ],
+        "daily": [
+            "tea"
+        ]
+      },
+      "dinner": {
+        "special": [
+          "V: Malai kofta",
+          "NV: Egg Bhurji",
+          "Rice/Sewai Kheer"
+        ]
+      }
+    },
+    "Sunday": {
+      "breakfast": {
+        "special": "Chole Bhature"
+      },
+      "lunch": {
+        "special": [
+          "V: Honey chilli potato",
+          "NV: Egg Curry",
+          "Boondi Raita"
+        ]
+      },
+      "snacks": {
+        "special": [
+          "tikki chat"
+        ],
+        "daily": [
+            "coffee"
+        ]
+      },
+      "dinner": {
+        "special": [
+          "V: Dahi Paneer+ Chocolate",
+          "NV Butter chicken",
+          "Sweets"
+        ]
+      }
+    },
+    "Breakfast": {
+      "title": "Masala Dosa",
+      "image": "masala-dosa.jpg"
+    },
+    "Lunch": {
+      "title": "Kadhi Pakora + Aloo Methi",
+      "image": "kadhi-pakora.jpg"
+    },
+    "Snacks": {
+      "title": "Samosa & Chai",
+      "image": "samosa-chai.jpg"
+    },
+    "Dinner": {
+      "title": "Butter Chicken & Naan",
+      "image": "butter-chicken.jpg"
+    }
+}

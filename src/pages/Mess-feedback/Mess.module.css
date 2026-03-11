@@ -1,0 +1,152 @@
+body{
+  font-family: 'Sen', sans-serif;
+  background-color: #fdfdfd;
+}
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navLinks a:hover {
+  color: #4a90e2;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.headerName{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+.hallname {
+  font-size: 2.5rem;
+  color: #000;
+  font-weight: 700;
+  text-align: left;
+  margin-left: 2rem;
+}
+.date {
+  font-size: 1.5rem;
+  font-style: italic;
+  text-align: right;
+  margin-right: 3rem;
+  margin-top: 1rem;
+  color: #555;
+}
+@media (max-width: 945px) {
+  .hallname {
+    font-size: 2rem;
+  }
+  .date {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center; 
+}
+
+.mealTimings {
+  display: flex;
+  justify-content: center; 
+  gap: 0.1rem;
+  flex-wrap: wrap;
+  padding: 0 2.5rem 2rem 2.5rem;
+}
+
+.mealCard {
+  padding: 1rem;
+  background-color: #fff8e1;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 150px;
+  flex: 1;
+  max-width: 200px;
+}
+
+.mealCard.active {
+  background-color: #ffcc4d;
+  font-weight: bold;
+}
+
+.menuContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+  }
+
+  .navbar {
+    padding: 1rem;
+  }
+
+  .mealTimings {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.1rem;  
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+
+  .menuContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .date {
+    display: none;
+  }
+  .sectionTitle {
+    display: none;
+  }
+}
+/* @media (max-width: 600px) {
+  .mealTimings {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.1rem;
+    padding: 1rem;
+  }
+} */
